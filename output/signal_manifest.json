@@ -1,0 +1,999 @@
+{
+  "vcd_source": "F:\\GraduatePrj\\Classify\\data\\sim_output.vcd",
+  "timescale": "1ps",
+  "scope": "tb_top",
+  "signals": [
+    {
+      "name": "bit_cnt_r [3:0]",
+      "full_name": "tb_top.u_soc.u_spi_master.bit_cnt_r [3:0]",
+      "type": "reg",
+      "width": 4,
+      "symbol": ">!",
+      "csv_file": "bit_cnt_r__3_0_.csv"
+    },
+    {
+      "name": "clk",
+      "full_name": "tb_top.clk",
+      "type": "reg",
+      "width": 1,
+      "symbol": "!",
+      "csv_file": "clk.csv"
+    },
+    {
+      "name": "cs_n_r",
+      "full_name": "tb_top.u_soc.u_spi_master.cs_n_r",
+      "type": "reg",
+      "width": 1,
+      "symbol": "@!",
+      "csv_file": "cs_n_r.csv"
+    },
+    {
+      "name": "gpio_dir_r [15:0]",
+      "full_name": "tb_top.u_soc.u_gpio_ctrl.gpio_dir_r [15:0]",
+      "type": "reg",
+      "width": 16,
+      "symbol": "j",
+      "csv_file": "gpio_dir_r__15_0_.csv"
+    },
+    {
+      "name": "gpio_in [15:0]",
+      "full_name": "tb_top.gpio_in [15:0]",
+      "type": "reg",
+      "width": 16,
+      "symbol": "1",
+      "csv_file": "gpio_in__15_0_.csv"
+    },
+    {
+      "name": "gpio_in_i [15:0]",
+      "full_name": "tb_top.u_soc.u_gpio_ctrl.gpio_in_i [15:0]",
+      "type": "wire",
+      "width": 16,
+      "symbol": "H",
+      "csv_file": "gpio_in_i__15_0_.csv"
+    },
+    {
+      "name": "gpio_out_o [15:0]",
+      "full_name": "tb_top.u_soc.u_gpio_ctrl.gpio_out_o [15:0]",
+      "type": "wire",
+      "width": 16,
+      "symbol": "2",
+      "csv_file": "gpio_out_o__15_0_.csv"
+    },
+    {
+      "name": "gpio_out_r [15:0]",
+      "full_name": "tb_top.u_soc.u_gpio_ctrl.gpio_out_r [15:0]",
+      "type": "reg",
+      "width": 16,
+      "symbol": "i",
+      "csv_file": "gpio_out_r__15_0_.csv"
+    },
+    {
+      "name": "gpio_sync1_r [15:0]",
+      "full_name": "tb_top.u_soc.u_gpio_ctrl.gpio_sync1_r [15:0]",
+      "type": "reg",
+      "width": 16,
+      "symbol": "k",
+      "csv_file": "gpio_sync1_r__15_0_.csv"
+    },
+    {
+      "name": "gpio_sync2_r [15:0]",
+      "full_name": "tb_top.u_soc.u_gpio_ctrl.gpio_sync2_r [15:0]",
+      "type": "reg",
+      "width": 16,
+      "symbol": "l",
+      "csv_file": "gpio_sync2_r__15_0_.csv"
+    },
+    {
+      "name": "haddr [31:0]",
+      "full_name": "tb_top.haddr [31:0]",
+      "type": "reg",
+      "width": 32,
+      "symbol": "#",
+      "csv_file": "haddr__31_0_.csv"
+    },
+    {
+      "name": "haddr_i [31:0]",
+      "full_name": "tb_top.u_soc.u_ahb_slave.haddr_i [31:0]",
+      "type": "wire",
+      "width": 32,
+      "symbol": ">",
+      "csv_file": "haddr_i__31_0_.csv"
+    },
+    {
+      "name": "haddr_r [31:0]",
+      "full_name": "tb_top.u_soc.u_ahb_slave.haddr_r [31:0]",
+      "type": "reg",
+      "width": 32,
+      "symbol": "a",
+      "csv_file": "haddr_r__31_0_.csv"
+    },
+    {
+      "name": "half_done_w",
+      "full_name": "tb_top.u_soc.u_spi_master.half_done_w",
+      "type": "wire",
+      "width": 1,
+      "symbol": "B!",
+      "csv_file": "half_done_w.csv"
+    },
+    {
+      "name": "hrdata_o [31:0]",
+      "full_name": "tb_top.u_soc.u_ahb_slave.hrdata_o [31:0]",
+      "type": "wire",
+      "width": 32,
+      "symbol": "(",
+      "csv_file": "hrdata_o__31_0_.csv"
+    },
+    {
+      "name": "hrdata_w [31:0]",
+      "full_name": "tb_top.u_soc.u_ahb_slave.hrdata_w [31:0]",
+      "type": "reg",
+      "width": 32,
+      "symbol": "d",
+      "csv_file": "hrdata_w__31_0_.csv"
+    },
+    {
+      "name": "hready_o",
+      "full_name": "tb_top.u_soc.u_ahb_slave.hready_o",
+      "type": "wire",
+      "width": 1,
+      "symbol": ")",
+      "csv_file": "hready_o.csv"
+    },
+    {
+      "name": "hresp_o",
+      "full_name": "tb_top.u_soc.u_ahb_slave.hresp_o",
+      "type": "wire",
+      "width": 1,
+      "symbol": "*",
+      "csv_file": "hresp_o.csv"
+    },
+    {
+      "name": "hsize [2:0]",
+      "full_name": "tb_top.hsize [2:0]",
+      "type": "reg",
+      "width": 3,
+      "symbol": "&",
+      "csv_file": "hsize__2_0_.csv"
+    },
+    {
+      "name": "hsize_i [2:0]",
+      "full_name": "tb_top.u_soc.u_ahb_slave.hsize_i [2:0]",
+      "type": "wire",
+      "width": 3,
+      "symbol": "A",
+      "csv_file": "hsize_i__2_0_.csv"
+    },
+    {
+      "name": "htrans [1:0]",
+      "full_name": "tb_top.htrans [1:0]",
+      "type": "reg",
+      "width": 2,
+      "symbol": "$",
+      "csv_file": "htrans__1_0_.csv"
+    },
+    {
+      "name": "htrans_i [1:0]",
+      "full_name": "tb_top.u_soc.u_ahb_slave.htrans_i [1:0]",
+      "type": "wire",
+      "width": 2,
+      "symbol": "?",
+      "csv_file": "htrans_i__1_0_.csv"
+    },
+    {
+      "name": "hwdata [31:0]",
+      "full_name": "tb_top.hwdata [31:0]",
+      "type": "reg",
+      "width": 32,
+      "symbol": "'",
+      "csv_file": "hwdata__31_0_.csv"
+    },
+    {
+      "name": "hwdata_i [31:0]",
+      "full_name": "tb_top.u_soc.u_ahb_slave.hwdata_i [31:0]",
+      "type": "wire",
+      "width": 32,
+      "symbol": "B",
+      "csv_file": "hwdata_i__31_0_.csv"
+    },
+    {
+      "name": "hwrite",
+      "full_name": "tb_top.hwrite",
+      "type": "reg",
+      "width": 1,
+      "symbol": "%",
+      "csv_file": "hwrite.csv"
+    },
+    {
+      "name": "hwrite_i",
+      "full_name": "tb_top.u_soc.u_ahb_slave.hwrite_i",
+      "type": "wire",
+      "width": 1,
+      "symbol": "@",
+      "csv_file": "hwrite_i.csv"
+    },
+    {
+      "name": "hwrite_r",
+      "full_name": "tb_top.u_soc.u_ahb_slave.hwrite_r",
+      "type": "reg",
+      "width": 1,
+      "symbol": "b",
+      "csv_file": "hwrite_r.csv"
+    },
+    {
+      "name": "irq [7:0]",
+      "full_name": "tb_top.irq [7:0]",
+      "type": "reg",
+      "width": 8,
+      "symbol": "9",
+      "csv_file": "irq__7_0_.csv"
+    },
+    {
+      "name": "irq_enable_r [7:0]",
+      "full_name": "tb_top.u_soc.u_irq_ctrl.irq_enable_r [7:0]",
+      "type": "reg",
+      "width": 8,
+      "symbol": "J!",
+      "csv_file": "irq_enable_r__7_0_.csv"
+    },
+    {
+      "name": "irq_i [7:0]",
+      "full_name": "tb_top.u_soc.u_irq_ctrl.irq_i [7:0]",
+      "type": "wire",
+      "width": 8,
+      "symbol": "K",
+      "csv_file": "irq_i__7_0_.csv"
+    },
+    {
+      "name": "irq_pending_r [7:0]",
+      "full_name": "tb_top.u_soc.u_irq_ctrl.irq_pending_r [7:0]",
+      "type": "reg",
+      "width": 8,
+      "symbol": "K!",
+      "csv_file": "irq_pending_r__7_0_.csv"
+    },
+    {
+      "name": "irq_status_w [7:0]",
+      "full_name": "tb_top.u_soc.u_irq_ctrl.irq_status_w [7:0]",
+      "type": "wire",
+      "width": 8,
+      "symbol": "N!",
+      "csv_file": "irq_status_w__7_0_.csv"
+    },
+    {
+      "name": "irq_sync1_r [7:0]",
+      "full_name": "tb_top.u_soc.u_irq_ctrl.irq_sync1_r [7:0]",
+      "type": "reg",
+      "width": 8,
+      "symbol": "L!",
+      "csv_file": "irq_sync1_r__7_0_.csv"
+    },
+    {
+      "name": "irq_sync2_r [7:0]",
+      "full_name": "tb_top.u_soc.u_irq_ctrl.irq_sync2_r [7:0]",
+      "type": "reg",
+      "width": 8,
+      "symbol": "M!",
+      "csv_file": "irq_sync2_r__7_0_.csv"
+    },
+    {
+      "name": "k",
+      "full_name": "tb_top.k",
+      "type": "integer",
+      "width": 32,
+      "symbol": ";",
+      "csv_file": "k.csv"
+    },
+    {
+      "name": "paddr_i [7:0]",
+      "full_name": "tb_top.u_soc.u_pwr_ctrl.paddr_i [7:0]",
+      "type": "wire",
+      "width": 8,
+      "symbol": "M",
+      "csv_file": "paddr_i__7_0_.csv"
+    },
+    {
+      "name": "prdata_reg_i [31:0]",
+      "full_name": "tb_top.u_soc.u_ahb_slave.prdata_reg_i [31:0]",
+      "type": "wire",
+      "width": 32,
+      "symbol": "W",
+      "csv_file": "prdata_reg_i__31_0_.csv"
+    },
+    {
+      "name": "pvalid_o",
+      "full_name": "tb_top.u_soc.u_ahb_slave.pvalid_o",
+      "type": "wire",
+      "width": 1,
+      "symbol": "P",
+      "csv_file": "pvalid_o.csv"
+    },
+    {
+      "name": "pwdata_i [31:0]",
+      "full_name": "tb_top.u_soc.u_pwr_ctrl.pwdata_i [31:0]",
+      "type": "wire",
+      "width": 32,
+      "symbol": "N",
+      "csv_file": "pwdata_i__31_0_.csv"
+    },
+    {
+      "name": "pwr_mode [1:0]",
+      "full_name": "tb_top.pwr_mode [1:0]",
+      "type": "reg",
+      "width": 2,
+      "symbol": ":",
+      "csv_file": "pwr_mode__1_0_.csv"
+    },
+    {
+      "name": "pwr_mode_i [1:0]",
+      "full_name": "tb_top.u_soc.u_pwr_ctrl.pwr_mode_i [1:0]",
+      "type": "wire",
+      "width": 2,
+      "symbol": "L",
+      "csv_file": "pwr_mode_i__1_0_.csv"
+    },
+    {
+      "name": "pwr_mode_r [1:0]",
+      "full_name": "tb_top.u_soc.u_pwr_ctrl.pwr_mode_r [1:0]",
+      "type": "reg",
+      "width": 2,
+      "symbol": "Q!",
+      "csv_file": "pwr_mode_r__1_0_.csv"
+    },
+    {
+      "name": "pwrite_i",
+      "full_name": "tb_top.u_soc.u_pwr_ctrl.pwrite_i",
+      "type": "wire",
+      "width": 1,
+      "symbol": "O",
+      "csv_file": "pwrite_i.csv"
+    },
+    {
+      "name": "ri",
+      "full_name": "tb_top.u_soc.ri",
+      "type": "integer",
+      "width": 32,
+      "symbol": "]",
+      "csv_file": "ri.csv"
+    },
+    {
+      "name": "rst_n",
+      "full_name": "tb_top.rst_n",
+      "type": "reg",
+      "width": 1,
+      "symbol": "\"",
+      "csv_file": "rst_n.csv"
+    },
+    {
+      "name": "rx_baud_done",
+      "full_name": "tb_top.u_soc.u_uart_ctrl.rx_baud_done",
+      "type": "wire",
+      "width": 1,
+      "symbol": "%!",
+      "csv_file": "rx_baud_done.csv"
+    },
+    {
+      "name": "rx_baud_r [9:0]",
+      "full_name": "tb_top.u_soc.u_uart_ctrl.rx_baud_r [9:0]",
+      "type": "reg",
+      "width": 10,
+      "symbol": "{",
+      "csv_file": "rx_baud_r__9_0_.csv"
+    },
+    {
+      "name": "rx_bit_r [2:0]",
+      "full_name": "tb_top.u_soc.u_uart_ctrl.rx_bit_r [2:0]",
+      "type": "reg",
+      "width": 3,
+      "symbol": "}",
+      "csv_file": "rx_bit_r__2_0_.csv"
+    },
+    {
+      "name": "rx_err_r",
+      "full_name": "tb_top.u_soc.u_uart_ctrl.rx_err_r",
+      "type": "reg",
+      "width": 1,
+      "symbol": "\"!",
+      "csv_file": "rx_err_r.csv"
+    },
+    {
+      "name": "rx_half_done",
+      "full_name": "tb_top.u_soc.u_uart_ctrl.rx_half_done",
+      "type": "wire",
+      "width": 1,
+      "symbol": "&!",
+      "csv_file": "rx_half_done.csv"
+    },
+    {
+      "name": "rx_last_bit",
+      "full_name": "tb_top.u_soc.u_uart_ctrl.rx_last_bit",
+      "type": "wire",
+      "width": 1,
+      "symbol": "'!",
+      "csv_file": "rx_last_bit.csv"
+    },
+    {
+      "name": "rx_state_nxt [1:0]",
+      "full_name": "tb_top.u_soc.u_uart_ctrl.rx_state_nxt [1:0]",
+      "type": "reg",
+      "width": 2,
+      "symbol": "z",
+      "csv_file": "rx_state_nxt__1_0_.csv"
+    },
+    {
+      "name": "rx_state_r [1:0]",
+      "full_name": "tb_top.u_soc.u_uart_ctrl.rx_state_r [1:0]",
+      "type": "reg",
+      "width": 2,
+      "symbol": "y",
+      "csv_file": "rx_state_r__1_0_.csv"
+    },
+    {
+      "name": "rx_sync1_r",
+      "full_name": "tb_top.u_soc.u_uart_ctrl.rx_sync1_r",
+      "type": "reg",
+      "width": 1,
+      "symbol": "#!",
+      "csv_file": "rx_sync1_r.csv"
+    },
+    {
+      "name": "rx_sync2_r",
+      "full_name": "tb_top.u_soc.u_uart_ctrl.rx_sync2_r",
+      "type": "reg",
+      "width": 1,
+      "symbol": "$!",
+      "csv_file": "rx_sync2_r.csv"
+    },
+    {
+      "name": "rx_valid_r",
+      "full_name": "tb_top.u_soc.u_uart_ctrl.rx_valid_r",
+      "type": "reg",
+      "width": 1,
+      "symbol": "!!",
+      "csv_file": "rx_valid_r.csv"
+    },
+    {
+      "name": "sclk_r",
+      "full_name": "tb_top.u_soc.u_spi_master.sclk_r",
+      "type": "reg",
+      "width": 1,
+      "symbol": "?!",
+      "csv_file": "sclk_r.csv"
+    },
+    {
+      "name": "sel_gpio_o",
+      "full_name": "tb_top.u_soc.u_ahb_slave.sel_gpio_o",
+      "type": "wire",
+      "width": 1,
+      "symbol": "R",
+      "csv_file": "sel_gpio_o.csv"
+    },
+    {
+      "name": "sel_irq_o",
+      "full_name": "tb_top.u_soc.u_ahb_slave.sel_irq_o",
+      "type": "wire",
+      "width": 1,
+      "symbol": "U",
+      "csv_file": "sel_irq_o.csv"
+    },
+    {
+      "name": "sel_pwr_o",
+      "full_name": "tb_top.u_soc.u_ahb_slave.sel_pwr_o",
+      "type": "wire",
+      "width": 1,
+      "symbol": "V",
+      "csv_file": "sel_pwr_o.csv"
+    },
+    {
+      "name": "sel_reg_o",
+      "full_name": "tb_top.u_soc.u_ahb_slave.sel_reg_o",
+      "type": "wire",
+      "width": 1,
+      "symbol": "Q",
+      "csv_file": "sel_reg_o.csv"
+    },
+    {
+      "name": "sel_spi_o",
+      "full_name": "tb_top.u_soc.u_ahb_slave.sel_spi_o",
+      "type": "wire",
+      "width": 1,
+      "symbol": "T",
+      "csv_file": "sel_spi_o.csv"
+    },
+    {
+      "name": "sel_uart_o",
+      "full_name": "tb_top.u_soc.u_ahb_slave.sel_uart_o",
+      "type": "wire",
+      "width": 1,
+      "symbol": "S",
+      "csv_file": "sel_uart_o.csv"
+    },
+    {
+      "name": "shift_done_w",
+      "full_name": "tb_top.u_soc.u_spi_master.shift_done_w",
+      "type": "wire",
+      "width": 1,
+      "symbol": "C!",
+      "csv_file": "shift_done_w.csv"
+    },
+    {
+      "name": "slp_time_r [31:0]",
+      "full_name": "tb_top.u_soc.u_pwr_ctrl.slp_time_r [31:0]",
+      "type": "reg",
+      "width": 32,
+      "symbol": "R!",
+      "csv_file": "slp_time_r__31_0_.csv"
+    },
+    {
+      "name": "spi_cs_n_o",
+      "full_name": "tb_top.u_soc.u_spi_master.spi_cs_n_o",
+      "type": "wire",
+      "width": 1,
+      "symbol": "8",
+      "csv_file": "spi_cs_n_o.csv"
+    },
+    {
+      "name": "spi_div_cnt_r [7:0]",
+      "full_name": "tb_top.u_soc.u_spi_master.spi_div_cnt_r [7:0]",
+      "type": "reg",
+      "width": 8,
+      "symbol": ":!",
+      "csv_file": "spi_div_cnt_r__7_0_.csv"
+    },
+    {
+      "name": "spi_div_r [7:0]",
+      "full_name": "tb_top.u_soc.u_spi_master.spi_div_r [7:0]",
+      "type": "reg",
+      "width": 8,
+      "symbol": "7!",
+      "csv_file": "spi_div_r__7_0_.csv"
+    },
+    {
+      "name": "spi_miso",
+      "full_name": "tb_top.spi_miso",
+      "type": "reg",
+      "width": 1,
+      "symbol": "5",
+      "csv_file": "spi_miso.csv"
+    },
+    {
+      "name": "spi_miso_i",
+      "full_name": "tb_top.u_soc.u_spi_master.spi_miso_i",
+      "type": "wire",
+      "width": 1,
+      "symbol": "J",
+      "csv_file": "spi_miso_i.csv"
+    },
+    {
+      "name": "spi_mosi_o",
+      "full_name": "tb_top.u_soc.u_spi_master.spi_mosi_o",
+      "type": "wire",
+      "width": 1,
+      "symbol": "6",
+      "csv_file": "spi_mosi_o.csv"
+    },
+    {
+      "name": "spi_sclk_o",
+      "full_name": "tb_top.u_soc.u_spi_master.spi_sclk_o",
+      "type": "wire",
+      "width": 1,
+      "symbol": "7",
+      "csv_file": "spi_sclk_o.csv"
+    },
+    {
+      "name": "spi_start_w",
+      "full_name": "tb_top.u_soc.u_spi_master.spi_start_w",
+      "type": "wire",
+      "width": 1,
+      "symbol": "A!",
+      "csv_file": "spi_start_w.csv"
+    },
+    {
+      "name": "spi_state_nxt [1:0]",
+      "full_name": "tb_top.u_soc.u_spi_master.spi_state_nxt [1:0]",
+      "type": "reg",
+      "width": 2,
+      "symbol": "9!",
+      "csv_file": "spi_state_nxt__1_0_.csv"
+    },
+    {
+      "name": "spi_state_r [1:0]",
+      "full_name": "tb_top.u_soc.u_spi_master.spi_state_r [1:0]",
+      "type": "reg",
+      "width": 2,
+      "symbol": "8!",
+      "csv_file": "spi_state_r__1_0_.csv"
+    },
+    {
+      "name": "sram_addr [17:0]",
+      "full_name": "tb_top.sram_addr [17:0]",
+      "type": "reg",
+      "width": 18,
+      "symbol": "+",
+      "csv_file": "sram_addr__17_0_.csv"
+    },
+    {
+      "name": "sram_addr_i [17:0]",
+      "full_name": "tb_top.u_soc.u_sram_ctrl.sram_addr_i [17:0]",
+      "type": "wire",
+      "width": 18,
+      "symbol": "C",
+      "csv_file": "sram_addr_i__17_0_.csv"
+    },
+    {
+      "name": "sram_ben [3:0]",
+      "full_name": "tb_top.sram_ben [3:0]",
+      "type": "reg",
+      "width": 4,
+      "symbol": "0",
+      "csv_file": "sram_ben__3_0_.csv"
+    },
+    {
+      "name": "sram_ben_i [3:0]",
+      "full_name": "tb_top.u_soc.u_sram_ctrl.sram_ben_i [3:0]",
+      "type": "wire",
+      "width": 4,
+      "symbol": "G",
+      "csv_file": "sram_ben_i__3_0_.csv"
+    },
+    {
+      "name": "sram_rdata [31:0]",
+      "full_name": "tb_top.u_soc.sram_rdata [31:0]",
+      "type": "wire",
+      "width": 32,
+      "symbol": "-",
+      "csv_file": "sram_rdata__31_0_.csv"
+    },
+    {
+      "name": "sram_rdata_o [31:0]",
+      "full_name": "tb_top.u_soc.u_sram_ctrl.sram_rdata_o [31:0]",
+      "type": "reg",
+      "width": 32,
+      "symbol": "e",
+      "csv_file": "sram_rdata_o__31_0_.csv"
+    },
+    {
+      "name": "sram_ren",
+      "full_name": "tb_top.sram_ren",
+      "type": "reg",
+      "width": 1,
+      "symbol": "/",
+      "csv_file": "sram_ren.csv"
+    },
+    {
+      "name": "sram_ren_i",
+      "full_name": "tb_top.u_soc.u_sram_ctrl.sram_ren_i",
+      "type": "wire",
+      "width": 1,
+      "symbol": "F",
+      "csv_file": "sram_ren_i.csv"
+    },
+    {
+      "name": "sram_wdata [31:0]",
+      "full_name": "tb_top.sram_wdata [31:0]",
+      "type": "reg",
+      "width": 32,
+      "symbol": ",",
+      "csv_file": "sram_wdata__31_0_.csv"
+    },
+    {
+      "name": "sram_wdata_i [31:0]",
+      "full_name": "tb_top.u_soc.u_sram_ctrl.sram_wdata_i [31:0]",
+      "type": "wire",
+      "width": 32,
+      "symbol": "D",
+      "csv_file": "sram_wdata_i__31_0_.csv"
+    },
+    {
+      "name": "sram_wen",
+      "full_name": "tb_top.sram_wen",
+      "type": "reg",
+      "width": 1,
+      "symbol": ".",
+      "csv_file": "sram_wen.csv"
+    },
+    {
+      "name": "sram_wen_i",
+      "full_name": "tb_top.u_soc.u_sram_ctrl.sram_wen_i",
+      "type": "wire",
+      "width": 1,
+      "symbol": "E",
+      "csv_file": "sram_wen_i.csv"
+    },
+    {
+      "name": "sw_ctrl_r [1:0]",
+      "full_name": "tb_top.u_soc.u_pwr_ctrl.sw_ctrl_r [1:0]",
+      "type": "reg",
+      "width": 2,
+      "symbol": "S!",
+      "csv_file": "sw_ctrl_r__1_0_.csv"
+    },
+    {
+      "name": "transfer_r",
+      "full_name": "tb_top.u_soc.u_ahb_slave.transfer_r",
+      "type": "reg",
+      "width": 1,
+      "symbol": "c",
+      "csv_file": "transfer_r.csv"
+    },
+    {
+      "name": "tx_baud_done",
+      "full_name": "tb_top.u_soc.u_uart_ctrl.tx_baud_done",
+      "type": "wire",
+      "width": 1,
+      "symbol": "w",
+      "csv_file": "tx_baud_done.csv"
+    },
+    {
+      "name": "tx_baud_r [9:0]",
+      "full_name": "tb_top.u_soc.u_uart_ctrl.tx_baud_r [9:0]",
+      "type": "reg",
+      "width": 10,
+      "symbol": "s",
+      "csv_file": "tx_baud_r__9_0_.csv"
+    },
+    {
+      "name": "tx_bit_r [3:0]",
+      "full_name": "tb_top.u_soc.u_uart_ctrl.tx_bit_r [3:0]",
+      "type": "reg",
+      "width": 4,
+      "symbol": "r",
+      "csv_file": "tx_bit_r__3_0_.csv"
+    },
+    {
+      "name": "tx_busy_r",
+      "full_name": "tb_top.u_soc.u_uart_ctrl.tx_busy_r",
+      "type": "reg",
+      "width": 1,
+      "symbol": "u",
+      "csv_file": "tx_busy_r.csv"
+    },
+    {
+      "name": "tx_frame_r [9:0]",
+      "full_name": "tb_top.u_soc.u_uart_ctrl.tx_frame_r [9:0]",
+      "type": "reg",
+      "width": 10,
+      "symbol": "q",
+      "csv_file": "tx_frame_r__9_0_.csv"
+    },
+    {
+      "name": "tx_last_bit",
+      "full_name": "tb_top.u_soc.u_uart_ctrl.tx_last_bit",
+      "type": "wire",
+      "width": 1,
+      "symbol": "x",
+      "csv_file": "tx_last_bit.csv"
+    },
+    {
+      "name": "tx_out_r",
+      "full_name": "tb_top.u_soc.u_uart_ctrl.tx_out_r",
+      "type": "reg",
+      "width": 1,
+      "symbol": "t",
+      "csv_file": "tx_out_r.csv"
+    },
+    {
+      "name": "tx_shift_r [7:0]",
+      "full_name": "tb_top.u_soc.u_spi_master.tx_shift_r [7:0]",
+      "type": "reg",
+      "width": 8,
+      "symbol": ";!",
+      "csv_file": "tx_shift_r__7_0_.csv"
+    },
+    {
+      "name": "tx_start_w",
+      "full_name": "tb_top.u_soc.u_uart_ctrl.tx_start_w",
+      "type": "wire",
+      "width": 1,
+      "symbol": "v",
+      "csv_file": "tx_start_w.csv"
+    },
+    {
+      "name": "tx_state_nxt",
+      "full_name": "tb_top.u_soc.u_uart_ctrl.tx_state_nxt",
+      "type": "reg",
+      "width": 1,
+      "symbol": "p",
+      "csv_file": "tx_state_nxt.csv"
+    },
+    {
+      "name": "tx_state_r",
+      "full_name": "tb_top.u_soc.u_uart_ctrl.tx_state_r",
+      "type": "reg",
+      "width": 1,
+      "symbol": "o",
+      "csv_file": "tx_state_r.csv"
+    },
+    {
+      "name": "u_soc.u_gpio_ctrl.prdata_o [31:0]",
+      "full_name": "tb_top.u_soc.u_gpio_ctrl.prdata_o [31:0]",
+      "type": "wire",
+      "width": 32,
+      "symbol": "X",
+      "csv_file": "u_soc_u_gpio_ctrl_prdata_o__31_0_.csv"
+    },
+    {
+      "name": "u_soc.u_gpio_ctrl.prdata_w [31:0]",
+      "full_name": "tb_top.u_soc.u_gpio_ctrl.prdata_w [31:0]",
+      "type": "reg",
+      "width": 32,
+      "symbol": "m",
+      "csv_file": "u_soc_u_gpio_ctrl_prdata_w__31_0_.csv"
+    },
+    {
+      "name": "u_soc.u_gpio_ctrl.pvalid_i",
+      "full_name": "tb_top.u_soc.u_gpio_ctrl.pvalid_i",
+      "type": "wire",
+      "width": 1,
+      "symbol": "h",
+      "csv_file": "u_soc_u_gpio_ctrl_pvalid_i.csv"
+    },
+    {
+      "name": "u_soc.u_irq_ctrl.prdata_o [31:0]",
+      "full_name": "tb_top.u_soc.u_irq_ctrl.prdata_o [31:0]",
+      "type": "wire",
+      "width": 32,
+      "symbol": "[",
+      "csv_file": "u_soc_u_irq_ctrl_prdata_o__31_0_.csv"
+    },
+    {
+      "name": "u_soc.u_irq_ctrl.prdata_w [31:0]",
+      "full_name": "tb_top.u_soc.u_irq_ctrl.prdata_w [31:0]",
+      "type": "reg",
+      "width": 32,
+      "symbol": "O!",
+      "csv_file": "u_soc_u_irq_ctrl_prdata_w__31_0_.csv"
+    },
+    {
+      "name": "u_soc.u_irq_ctrl.pvalid_i",
+      "full_name": "tb_top.u_soc.u_irq_ctrl.pvalid_i",
+      "type": "wire",
+      "width": 1,
+      "symbol": "I!",
+      "csv_file": "u_soc_u_irq_ctrl_pvalid_i.csv"
+    },
+    {
+      "name": "u_soc.u_pwr_ctrl.clk",
+      "full_name": "tb_top.u_soc.u_pwr_ctrl.clk",
+      "type": "wire",
+      "width": 1,
+      "symbol": "<",
+      "csv_file": "u_soc_u_pwr_ctrl_clk.csv"
+    },
+    {
+      "name": "u_soc.u_pwr_ctrl.prdata_o [31:0]",
+      "full_name": "tb_top.u_soc.u_pwr_ctrl.prdata_o [31:0]",
+      "type": "wire",
+      "width": 32,
+      "symbol": "\\",
+      "csv_file": "u_soc_u_pwr_ctrl_prdata_o__31_0_.csv"
+    },
+    {
+      "name": "u_soc.u_pwr_ctrl.prdata_w [31:0]",
+      "full_name": "tb_top.u_soc.u_pwr_ctrl.prdata_w [31:0]",
+      "type": "reg",
+      "width": 32,
+      "symbol": "T!",
+      "csv_file": "u_soc_u_pwr_ctrl_prdata_w__31_0_.csv"
+    },
+    {
+      "name": "u_soc.u_pwr_ctrl.pvalid_i",
+      "full_name": "tb_top.u_soc.u_pwr_ctrl.pvalid_i",
+      "type": "wire",
+      "width": 1,
+      "symbol": "P!",
+      "csv_file": "u_soc_u_pwr_ctrl_pvalid_i.csv"
+    },
+    {
+      "name": "u_soc.u_pwr_ctrl.rst_n",
+      "full_name": "tb_top.u_soc.u_pwr_ctrl.rst_n",
+      "type": "wire",
+      "width": 1,
+      "symbol": "=",
+      "csv_file": "u_soc_u_pwr_ctrl_rst_n.csv"
+    },
+    {
+      "name": "u_soc.u_spi_master.prdata_o [31:0]",
+      "full_name": "tb_top.u_soc.u_spi_master.prdata_o [31:0]",
+      "type": "wire",
+      "width": 32,
+      "symbol": "Z",
+      "csv_file": "u_soc_u_spi_master_prdata_o__31_0_.csv"
+    },
+    {
+      "name": "u_soc.u_spi_master.prdata_w [31:0]",
+      "full_name": "tb_top.u_soc.u_spi_master.prdata_w [31:0]",
+      "type": "reg",
+      "width": 32,
+      "symbol": "D!",
+      "csv_file": "u_soc_u_spi_master_prdata_w__31_0_.csv"
+    },
+    {
+      "name": "u_soc.u_spi_master.pvalid_i",
+      "full_name": "tb_top.u_soc.u_spi_master.pvalid_i",
+      "type": "wire",
+      "width": 1,
+      "symbol": "6!",
+      "csv_file": "u_soc_u_spi_master_pvalid_i.csv"
+    },
+    {
+      "name": "u_soc.u_spi_master.rx_data_r [7:0]",
+      "full_name": "tb_top.u_soc.u_spi_master.rx_data_r [7:0]",
+      "type": "reg",
+      "width": 8,
+      "symbol": "=!",
+      "csv_file": "u_soc_u_spi_master_rx_data_r__7_0_.csv"
+    },
+    {
+      "name": "u_soc.u_spi_master.rx_shift_r [7:0]",
+      "full_name": "tb_top.u_soc.u_spi_master.rx_shift_r [7:0]",
+      "type": "reg",
+      "width": 8,
+      "symbol": "<!",
+      "csv_file": "u_soc_u_spi_master_rx_shift_r__7_0_.csv"
+    },
+    {
+      "name": "u_soc.u_uart_ctrl.prdata_o [31:0]",
+      "full_name": "tb_top.u_soc.u_uart_ctrl.prdata_o [31:0]",
+      "type": "wire",
+      "width": 32,
+      "symbol": "Y",
+      "csv_file": "u_soc_u_uart_ctrl_prdata_o__31_0_.csv"
+    },
+    {
+      "name": "u_soc.u_uart_ctrl.prdata_w [31:0]",
+      "full_name": "tb_top.u_soc.u_uart_ctrl.prdata_w [31:0]",
+      "type": "reg",
+      "width": 32,
+      "symbol": "(!",
+      "csv_file": "u_soc_u_uart_ctrl_prdata_w__31_0_.csv"
+    },
+    {
+      "name": "u_soc.u_uart_ctrl.pvalid_i",
+      "full_name": "tb_top.u_soc.u_uart_ctrl.pvalid_i",
+      "type": "wire",
+      "width": 1,
+      "symbol": "n",
+      "csv_file": "u_soc_u_uart_ctrl_pvalid_i.csv"
+    },
+    {
+      "name": "u_soc.u_uart_ctrl.rx_data_r [7:0]",
+      "full_name": "tb_top.u_soc.u_uart_ctrl.rx_data_r [7:0]",
+      "type": "reg",
+      "width": 8,
+      "symbol": "~",
+      "csv_file": "u_soc_u_uart_ctrl_rx_data_r__7_0_.csv"
+    },
+    {
+      "name": "u_soc.u_uart_ctrl.rx_shift_r [7:0]",
+      "full_name": "tb_top.u_soc.u_uart_ctrl.rx_shift_r [7:0]",
+      "type": "reg",
+      "width": 8,
+      "symbol": "|",
+      "csv_file": "u_soc_u_uart_ctrl_rx_shift_r__7_0_.csv"
+    },
+    {
+      "name": "uart_rx",
+      "full_name": "tb_top.uart_rx",
+      "type": "reg",
+      "width": 1,
+      "symbol": "3",
+      "csv_file": "uart_rx.csv"
+    },
+    {
+      "name": "uart_rx_i",
+      "full_name": "tb_top.u_soc.u_uart_ctrl.uart_rx_i",
+      "type": "wire",
+      "width": 1,
+      "symbol": "I",
+      "csv_file": "uart_rx_i.csv"
+    },
+    {
+      "name": "uart_tx_o",
+      "full_name": "tb_top.u_soc.u_uart_ctrl.uart_tx_o",
+      "type": "wire",
+      "width": 1,
+      "symbol": "4",
+      "csv_file": "uart_tx_o.csv"
+    }
+  ]
+}
