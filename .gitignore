@@ -9,3 +9,18 @@ dist/
 build/
 *.log
 .DS_Store
+
+# Pipeline generated output
+output/*.csv
+output/*.vcd
+output/signal_manifest.json
+
+# Temp/working files
+temp/
+
+# IDE
+.vscode/
+.idea/
+
+# Claude Code
+.claude/
