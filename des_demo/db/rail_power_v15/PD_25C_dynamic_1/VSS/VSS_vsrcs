@@ -1,0 +1,8 @@
+addvs pad_vss_3 102 r=0 l=0 c=0 volt- 0
+addvs pad_vss_2 82 r=0 l=0 c=0 volt- 0
+addvs pad_vss_1 97 r=0 l=0 c=0 volt- 0
+addvs pad_vss_0 75 r=0 l=0 c=0 volt- 0
+addvs pad_vss_7 60 r=0 l=0 c=0 volt- 0
+addvs pad_vss_6 43 r=0 l=0 c=0 volt- 0
+addvs pad_vss_5 26 r=0 l=0 c=0 volt- 0
+addvs pad_vss_4 9 r=0 l=0 c=0 volt- 0

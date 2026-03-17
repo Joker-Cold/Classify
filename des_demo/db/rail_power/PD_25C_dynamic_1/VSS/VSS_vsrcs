@@ -1,0 +1,8 @@
+addvs pad_vss_3 72265 r=0 l=0 c=0 volt- 0
+addvs pad_vss_2 72266 r=0 l=0 c=0 volt- 0
+addvs pad_vss_1 72300 r=0 l=0 c=0 volt- 0
+addvs pad_vss_0 72301 r=0 l=0 c=0 volt- 0
+addvs pad_vss_7 72341 r=0 l=0 c=0 volt- 0
+addvs pad_vss_6 72357 r=0 l=0 c=0 volt- 0
+addvs pad_vss_5 72375 r=0 l=0 c=0 volt- 0
+addvs pad_vss_4 72391 r=0 l=0 c=0 volt- 0

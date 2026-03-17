@@ -1,0 +1,15 @@
+.SUBCKT dummy
+
+*Header information for model connection protocol
+*[MCP Begin]
+*[MCP Version] 1.1
+*[Structure Type] DIE
+*[MCP Source] voltus_rail64 Version v15.20-p002_1 (10/29/2015 02:13:51)
+
+*[Coordinate Unit] um
+*[Connection] des3 dummy 0
+*[Connection Type] PKG
+*[MCP End]
+*End of header information for model connection protocol
+
+.ENDS dummy

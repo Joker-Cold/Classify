@@ -1,0 +1,225 @@
+INFO (PRL-725): EDP_DBG: start server on 127.0.1.1:43753
+
+INFO (PRL-756): Fri Dec 19 21:45:19 2025: Successfully connected to the master.
+
+INFO (PRL-760): sending server data to client hzhb-Super-Server 43753 0 1259979 
+
+Invoking: "/data/Installed_tools/cadence/INNOVUS191/tools.lnx86/ssvtools/bin/64bit/voltus_rail_smg -cmd ../../db/rail_power/PD_25C_dynamic_1/voltus_rail_smg.VSS.cmd -l ../../db/rail_power/PD_25C_dynamic_1/voltus_rail_smg.VSS.log" ...
+Begin Merging power grid
+Tech reference temperature: 25
+Target temperature: 25
+
+Grid Statistics of Net VSS:
+- NODE
+  Total node: 72391
+    Top Level grid node: 72391
+      Top level interface node: 64179
+    Missing interface node: 0
+    Cell internal node: 0
+- ELEM
+  Total element: 82648
+    Top Level grid element: 82648
+    Cell internal element: 0
+- INST
+  Instance logically connected: 64179
+    Tech: 64179
+    StdCell: 0
+    Macro:
+      Early: 0
+      IR: 0
+      EM: 0
+    Current Region:  0
+  Dropped instance due to missing/incomplete cell library: 0
+- TAP
+  Total tap: 64179
+
+Ended Merging power grid: (cpu=0:00:01, real=0:00:00, mem(process/total/peak)=46.50MB/24901.09MB/3868.21MB)
+
+Analysis_Output_Directory is ../../db/rail_power/PD_25C_dynamic_1//VSS
+Analysis_Power_Domain is PD
+
+
+
+Begin Report Generation
+
+
+Net VSS:
+
+
+Begin Preparing Database for Report Generation
+
+Circuit profile:
+                                                      Current    Voltage
+Layer Name                       Nodes   Resistors    Sources    Sources
+----- --------------------  ----------  ----------  ---------  ---------
+0     M6                            66          64          0          4
+1     V5                             0          62          0          0
+2     M5                           100          40          0          4
+3     V4                             0          94          0          0
+4     M4                            94           0          0          0
+5     V3                             0          94          0          0
+6     M3                           634         558          0          0
+7     V2                             0         580          0          0
+8     M2                          5626        5597          0          0
+9     V1                             0        5017          0          0
+10    M1                          5190        5017          0          0
+11    V0                             0        5017          0          0
+12    LISD                       60681       60508      56292          0
+                            ----------  ----------  ---------  ---------
+13    Circuit total              72392       82648      56292          8
+Ended Preparing Database for Report Generation: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=567.00MB/642209.23MB/3868.21MB)
+
+Initializing Report Generation: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=567.00MB/642209.23MB/3868.21MB)
+
+Begin IR Drop (Linear) Report Generation
+  Voltage: 0
+  Threshold: 0.1
+  Minimum, Average, Maximum IR Drop: 0.000V, 15.605mV, 24.585mV
+    Range 1(  21.512mV  -    24.585mV ):      8574 ( 11.84%)
+    Range 2(  18.439mV  -    21.512mV ):     12023 ( 16.61%)
+    Range 3(  15.366mV  -    18.439mV ):     17581 ( 24.29%)
+    Range 4(  12.293mV  -    15.366mV ):     15800 ( 21.83%)
+    Range 5(   9.219mV  -    12.293mV ):     12101 ( 16.72%)
+    Range 6(   6.146mV  -     9.219mV ):      5388 (  7.44%)
+    Range 7(   3.073mV  -     6.146mV ):       865 (  1.19%)
+    Range 8(    0.000V  -     3.073mV ):        59 (  0.08%)
+    Layer with maximum IR Drop:  M5
+      M6: 0.022843 [0 - 0.022843]
+      M5: 0.022858 [0 - 0.022858]
+      M4: 0.021467 [0.0014526 - 0.022919]
+      M3: 0.022406 [0.001702 - 0.024108]
+      M2: 0.022241 [0.0019651 - 0.024206]
+      M1: 0.021584 [0.0026892 - 0.024273]
+      LISD: 0.021886 [0.0026996 - 0.024585]
+  Worst case interval: 50
+  IR Report: ../../db/rail_power/PD_25C_dynamic_1/Reports/VSS/VSS.main.rpt
+  GIF plot: ../../db/rail_power/PD_25C_dynamic_1/Reports/VSS/ir_linear.gif
+Ended IR Drop (Linear) Report Generation: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=567.00MB/642209.23MB/3868.21MB)
+
+Begin IR Drop (Limit) Report Generation
+  Voltage: 0
+  Threshold: 0.1
+  Minimum, Average, Maximum IR Drop: 0.000V, 15.605mV, 24.585mV
+    Range 1( 100.000mV  -   100.000mV ):         0 (  0.00%)
+    Range 2(  91.667mV  -   100.000mV ):         0 (  0.00%)
+    Range 3(  83.333mV  -    91.667mV ):         0 (  0.00%)
+    Range 4(  75.000mV  -    83.333mV ):         0 (  0.00%)
+    Range 5(  66.667mV  -    75.000mV ):         0 (  0.00%)
+    Range 6(  58.333mV  -    66.667mV ):         0 (  0.00%)
+    Range 7(  50.000mV  -    58.333mV ):         0 (  0.00%)
+    Range 8(  -1.000uV  -    50.000mV ):     72391 (100.00%)
+    Layer with maximum IR Drop:  M5
+      M6: 0.022843 [0 - 0.022843]
+      M5: 0.022858 [0 - 0.022858]
+      M4: 0.021467 [0.0014526 - 0.022919]
+      M3: 0.022406 [0.001702 - 0.024108]
+      M2: 0.022241 [0.0019651 - 0.024206]
+      M1: 0.021584 [0.0026892 - 0.024273]
+      LISD: 0.021886 [0.0026996 - 0.024585]
+  Worst case interval: 50
+  IR Report: ../../db/rail_power/PD_25C_dynamic_1/Reports/VSS/VSS.main.rpt
+  GIF plot: ../../db/rail_power/PD_25C_dynamic_1/Reports/VSS/ir_limit.gif
+Ended IR Drop (Limit) Report Generation: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=567.00MB/642209.23MB/3868.21MB)
+
+Begin Tap Current Report Generation
+  Minimum, Average, Maximum Tap Current: -45.020uA, -0.595uA, 0.000A
+  Total Current: -33.488mA
+    Range 1(  -1.000GA  -    -1.000mA ):         0 (  0.00%)
+    Range 2(  -1.000mA  -  -100.000uA ):         0 (  0.00%)
+    Range 3(-100.000uA  -   -10.000uA ):        93 (  0.17%)
+    Range 4( -10.000uA  -    -1.000uA ):     11926 ( 21.19%)
+    Range 5(  -1.000uA  -  -100.000nA ):     10820 ( 19.22%)
+    Range 6(-100.000nA  -   -10.000nA ):      6600 ( 11.72%)
+    Range 7( -10.000nA  -    -1.000nA ):     20175 ( 35.84%)
+    Range 8(  -1.000nA  -      0.000A ):      6678 ( 11.86%)
+  GIF plot: ../../db/rail_power/PD_25C_dynamic_1/Reports/VSS/tc.gif
+Ended Tap Current Report Generation: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=567.00MB/642209.23MB/3868.21MB)
+
+
+Begin Instance Based IR Drop Report Generation
+  Minimum, Average, Maximum Instance Based IR Drop: 2.700mV, 15.759mV, 24.585mV
+    Range 1( 100.000mV  -      0.100V ):         0 (  0.00%)
+    Range 2(  91.667mV  -   100.000mV ):         0 (  0.00%)
+    Range 3(  83.333mV  -    91.667mV ):         0 (  0.00%)
+    Range 4(  75.000mV  -    83.333mV ):         0 (  0.00%)
+    Range 5(  66.667mV  -    75.000mV ):         0 (  0.00%)
+    Range 6(  58.333mV  -    66.667mV ):         0 (  0.00%)
+    Range 7(  50.000mV  -    58.333mV ):         0 (  0.00%)
+    Range 8(  -1.000uV  -    50.000mV ):     56292 (100.00%)
+  GIF plot: ../../db/rail_power/PD_25C_dynamic_1/Reports/VSS/iv.gif
+Ended Instance Based IR Drop Report Generation: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=568.50MB/642209.23MB/3868.21MB)
+
+
+Begin Effective Instance Voltage Report Generation
+Ended Effective Instance Voltage Report Generation: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=568.50MB/642209.23MB/3868.21MB)
+
+
+Begin Voltage Source Current Report Generation
+  Minimum, Average, Maximum Voltage Source Current: 0.541mA, 1.698mA, 3.022mA
+  Total Current: 13.581mA
+    Range 1(   2.711mA  -     3.022mA ):         2 ( 25.00%)
+    Range 2(   2.401mA  -     2.711mA ):         0 (  0.00%)
+    Range 3(   2.091mA  -     2.401mA ):         0 (  0.00%)
+    Range 4(   1.781mA  -     2.091mA ):         2 ( 25.00%)
+    Range 5(   1.471mA  -     1.781mA ):         1 ( 12.50%)
+    Range 6(   1.161mA  -     1.471mA ):         1 ( 12.50%)
+    Range 7(   0.851mA  -     1.161mA ):         0 (  0.00%)
+    Range 8(   0.541mA  -     0.851mA ):         2 ( 25.00%)
+  GIF plot: ../../db/rail_power/PD_25C_dynamic_1/Reports/VSS/vc.gif
+Ended Voltage Source Current Report Generation: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=568.50MB/642209.23MB/3868.21MB)
+
+
+Begin Decoupling Cap Density Report Generation
+  Minimum, Average, Maximum Decoupling Cap Density: 0.000F/um^2, 0.000F/um^2, 0.000F/um^2
+    Range 1(    0.000F/um^2  -      0.000F/um^2 ):     72391 (100.00%)
+    Range 2(    0.000F/um^2  -      0.000F/um^2 ):         0 (  0.00%)
+    Range 3(    0.000F/um^2  -      0.000F/um^2 ):         0 (  0.00%)
+    Range 4(    0.000F/um^2  -      0.000F/um^2 ):         0 (  0.00%)
+    Range 5(    0.000F/um^2  -      0.000F/um^2 ):         0 (  0.00%)
+    Range 6(    0.000F/um^2  -      0.000F/um^2 ):         0 (  0.00%)
+    Range 7(    0.000F/um^2  -      0.000F/um^2 ):         0 (  0.00%)
+    Range 8(    0.000F/um^2  -      0.000F/um^2 ):         0 (  0.00%)
+  GIF plot: ../../db/rail_power/PD_25C_dynamic_1/Reports/VSS/dd.gif
+Ended Decoupling Cap Density Report Generation: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=568.50MB/642209.23MB/3868.21MB)
+
+
+Begin Power Gate I/Idsat Report Generation
+  No data found.
+Ended Power Gate I/Idsat Report Generation: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=568.50MB/642209.23MB/3868.21MB)
+
+
+Begin Power Gate Voltage Report Generation
+  No data found.
+Ended Power Gate Voltage Report Generation: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=568.50MB/642209.23MB/3868.21MB)
+
+
+Begin Capacitance Report Generation
+	Type                  disconnected          connected             used                
+	Intrinsic-decap       0.000F                0.000F                0.000F              
+	Intrinsic-standard    0.000F                0.000F                0.000F              
+	Intrinsic-macro       0.000F                0.000F                0.000F              
+	Load Cap              0.000F                46.978pF              46.978pF            
+	Grid Cap              0.000F                1.846pF               1.846pF             
+	Total Cap             0.000F                48.824pF              48.824pF            
+Ended Capacitance Report Generation: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=568.50MB/642209.23MB/3868.21MB)
+
+
+Begin Weak Grid Connectivity Report
+Ended Weak Grid Connectivity Report: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=568.50MB/642209.23MB/3868.21MB)
+
+
+Begin Grid Integrity Report Generation
+  # Missing Cell Power-Grid Views: 0
+  # Physically Disconnected Instances: 0
+  # Instances with Floating Power Pins: 0
+  # Disconnected Wire Segments: 0
+  # Weakly Connected Metal Segments: 0
+  # Dropped Voltage Sources: 0
+Ended Grid Integrity Report Generation: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=568.50MB/642209.23MB/3868.21MB)
+
+Ended Report Generation: (cpu=0:00:04, real=0:00:04, mem(process/total/peak)=568.50MB/642209.23MB/3868.21MB)
+
+INFO (PRL-700): EDP_DBG: Close channel handler 12 when receive message in connection server side
+
+INFO (PRL-701): EDP_DBG: Close channel handler 12 when meet event 25 in connection server side
+

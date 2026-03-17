@@ -1,0 +1,186 @@
+0 
+49
++itf+/opt/synopsys/vcs2018/vcs/O-2018.09-SP2/linux64/lib/vcsdp_lite.tab
++neg_tchk
++notimingchecks
++v2k
++vcsd1
++vpi
+-Mamsrun=
+-Masflags=
+-Mcc=gcc
+-Mcfl= -pipe -fPIC -O -I/opt/synopsys/vcs2018/vcs/O-2018.09-SP2/include
+-Mcplusplus=g++
+-Mcrt0=
+-Mcrtn=
+-Mcsrc=
+-Mexternalobj=
+-Mldflags= -Wl,--no-as-needed -rdynamic
+-Mobjects= /opt/synopsys/vcs2018/vcs/O-2018.09-SP2/linux64/lib/libvirsim.so /opt/synopsys/vcs2018/vcs/O-2018.09-SP2/linux64/lib/liberrorinf.so /opt/synopsys/vcs2018/vcs/O-2018.09-SP2/linux64/lib/libsnpsmalloc.so /opt/synopsys/vcs2018/vcs/O-2018.09-SP2/linux64/lib/libvfs.so
+-Mout=simv
+-Msaverestoreobj=/opt/synopsys/vcs2018/vcs/O-2018.09-SP2/linux64/lib/vcs_save_restore_new.o
+-Msyslibs=/opt/synopsys/verdi2018/verdi/Verdi_O-2018.09-SP2/share/PLI/VCS/LINUX64/pli.a -ldl
+-Mvcsaceobjs=
+-Mxcflags= -pipe -fPIC -I/opt/synopsys/vcs2018/vcs/O-2018.09-SP2/include
+-Mxllcflags=
+-P
+-debug_acc+fsdb
+-debug_access+all
+-fsdb
+-full64
+-gen_obj
+-l
+-o simv
+-picarchive
+-sverilog
+-timescale=1ps/1ps
+../../../lib/asap7sc7p5t_AO_LVT_TT_201020.v
+../../../lib/asap7sc7p5t_AO_SLVT_TT_201020.v
+../../../lib/asap7sc7p5t_INVBUF_LVT_TT_201020.v
+../../../lib/asap7sc7p5t_INVBUF_SLVT_TT_201020.v
+../../../lib/asap7sc7p5t_OA_LVT_TT_201020.v
+../../../lib/asap7sc7p5t_OA_SLVT_TT_201020.v
+../../../lib/asap7sc7p5t_SEQ_LVT_TT_220101.v
+../../../lib/asap7sc7p5t_SEQ_SLVT_TT_220101.v
+../../../lib/asap7sc7p5t_SIMPLE_LVT_TT_201020.v
+../../../lib/asap7sc7p5t_SIMPLE_SLVT_TT_201020.v
+../db/des3.v
+../testbench/des3_test_po_vcd.v
+/opt/synopsys/vcs2018/vcs/O-2018.09-SP2/linux64/bin/vcs1
+/opt/synopsys/verdi2018/verdi/Verdi_O-2018.09-SP2/share/PLI/VCS/LINUX64/verdi.tab
+vcs_compile.log
+111
+totem_HOME=/opt/ansys/totem/Totem_Linux64e5_V14.1.b2/
+sysc_uni_pwd=/home/jchu/Projects/ECO/Experiment/benchmark/des_demo/vcd
+redhawk_HOME=/opt/ansys/redhawk/redhawk19
+_CE_M=
+_CE_CONDA=
+XDG_SESSION_TYPE=tty
+XDG_SESSION_ID=730902
+XDG_SESSION_CLASS=user
+XDG_RUNTIME_DIR=/run/user/1030
+XDG_DATA_DIRS=/usr/share/gnome:/usr/local/share:/usr/share:/var/lib/snapd/desktop
+W3264_NO_HOST_CHECK=1
+VSCODE_PYTHON_AUTOACTIVATE_GUARD=1
+VSCODE_IPC_HOOK_CLI=/run/user/1030/vscode-ipc-3d94de10-7980-4f90-8003-9084bee909ce.sock
+VSCODE_GIT_IPC_HANDLE=/run/user/1030/vscode-git-62a53b9520.sock
+VSCODE_GIT_ASKPASS_NODE=/home/jchu/.vscode-server/cli/servers/Stable-994fd12f8d3a5aa16f17d42c041e5809167e845a/server/node
+VSCODE_GIT_ASKPASS_MAIN=/home/jchu/.vscode-server/cli/servers/Stable-994fd12f8d3a5aa16f17d42c041e5809167e845a/server/extensions/git/dist/askpass-main.js
+VSCODE_GIT_ASKPASS_EXTRA_ARGS=
+VSCODE_DEBUGPY_ADAPTER_ENDPOINTS=/home/jchu/.vscode-server/extensions/ms-python.debugpy-2025.18.0-linux-x64/.noConfigDebugAdapterEndpoints/endpoint-63ea2460b34bf32b.txt
+VRST_HOME=/opt/cadence/INCISIVE152
+VMR_MODE_FLAG=64
+VERDI_HOME=/opt/synopsys/verdi2018/verdi/Verdi_O-2018.09-SP2
+VERDI_DIR=/opt/synopsys/verdi2018/verdi/Verdi_O-2018.09-SP2
+VCS_TARGET_ARCH=amd64
+VCS_MODE_FLAG=64
+VCS_LOG_FILE=vcs_compile.log
+VCS_HOME=/opt/synopsys/vcs2018/vcs/O-2018.09-SP2
+VCS_DEPTH=0
+VCS_ARG_ADDED_FOR_TMP=1
+VCS_ARCH_OVERRIDE=linux
+VCS_ARCH=linux64
+UNAME=/bin/uname
+TOOL_HOME=/opt/synopsys/vcs2018/vcs/O-2018.09-SP2/linux64
+TERM_PROGRAM_VERSION=1.107.1
+TERM_PROGRAM=vscode
+SYNOPSYS_HOME=/opt/synopsys
+SSL_CERT_FILE=/usr/lib/ssl/certs/ca-certificates.crt
+SSL_CERT_DIR=/usr/lib/ssl/certs
+SSH_CONNECTION=10.193.33.241 9321 10.98.193.24 2223
+SSH_CLIENT=10.193.33.241 9321 2223
+SPECTRE_FEATURE_FILE=/data/Installed_tools/cadence/SPECTRE191/tools.lnx86/spectre/etc/files/spectre.dat
+SPECTREHOME=/data/Installed_tools/cadence/SPECTRE191
+SNPS_VCS_INTERNAL_UBUNTU_PRE_LDFLAGS= -no-pie 
+SNPS_VCS_INTERNAL_ROOT_START_TIME=1766151813.768060134
+SNPS_VCS_INTERNAL_ROOT_PID=1256880
+SNPS_VCS_INTERNAL_CURR_PID=1256880
+SCRNAME=vcs
+SCRIPT_NAME=vcs
+QRC_HOME=/data/Installed_tools/cadence/QUANTUS201
+PYTHON_BASIC_REPL=1
+PYTHONSTARTUP=/home/jchu/.vscode-server/data/User/workspaceStorage/6ed1d584729d9e64466c6ae32778f9b3/ms-python.python/pythonrc.py
+PYDEVD_DISABLE_FILE_VALIDATION=1
+PVSHOME=/data/Installed_tools/cadence/PVS201
+OVA_UUM=0
+OA_PLUGIN_PATH=/opt/mentor/calibre2023/aoj_cal_2023.2_16.9/shared/pkgs/icv/tools/queryskl
+NPI_PLATFORM=LINUX64_GNU_472
+NOVAS_INST_DIR=/opt/synopsys/verdi2018/verdi/Verdi_O-2018.09-SP2
+NOVAS_HOME=/opt/synopsys/verdi2018/verdi/Verdi_O-2018.09-SP2
+MOTD_SHOWN=pam
+MMSIMHOME=/data/Installed_tools/cadence/SPECTRE191
+MGLS_LICENSE_FILE=/opt/mentor/license2023/mentor.lic
+MGC_LICENSE_FILE=/opt/mentor/license2023/mentor.lic
+MGC_LIB_PATH=/opt/mentor/calibre2023/aoj_cal_2023.2_16.9/lib
+MGC_HOME=/opt/mentor/calibre2023/aoj_cal_2023.2_16.9
+MGC_CALIBRE_REALTIME_VIRTUOSO_SAVE_MESSENGER_CELL=1
+MGC_CALIBRE_REALTIME_VIRTUOSO_ENABLED=1
+LIBVIRT_DEFAULT_URI=qemu:///system
+LESSOPEN=| /bin/lesspipe %s
+LESSCLOSE=/bin/lesspipe %s %s
+LC_TIME=zh_CN.UTF-8
+LC_TELEPHONE=zh_CN.UTF-8
+LC_PAPER=zh_CN.UTF-8
+LC_NUMERIC=zh_CN.UTF-8
+LC_NAME=zh_CN.UTF-8
+LC_MONETARY=zh_CN.UTF-8
+LC_MEASUREMENT=zh_CN.UTF-8
+LC_IDENTIFICATION=zh_CN.UTF-8
+LC_ALL=C
+LC_ADDRESS=zh_CN.UTF-8
+JAVA_HOME=/usr/lib/jvm/java-19-openjdk-amd64
+IUS_HOME=/data/Installed_tools/cadence/INCISIVE152
+GRB_LICENSE_FILE=/home/jchu/software/GurobiLicense/gurobi.lic
+GIT_ASKPASS=/home/jchu/.vscode-server/cli/servers/Stable-994fd12f8d3a5aa16f17d42c041e5809167e845a/server/extensions/git/dist/askpass.sh
+EXTHOME=/data/Installed_tools/cadence/QUANTUS201
+DVE_HOME=/opt/synopsys/vcs2018/vcs/O-2018.09-SP2/gui/dve
+DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1030/bus
+CONDA_SHLVL=1
+CONDA_PYTHON_EXE=/home/jchu/miniconda3/bin/python
+CONDA_PROMPT_MODIFIER=(base) 
+CONDA_PREFIX=/home/jchu/miniconda3
+CONDA_EXE=/home/jchu/miniconda3/bin/conda
+CONDA_DEFAULT_ENV=base
+COLORTERM=truecolor
+CDS_ROOT=/data/Installed_tools/cadence/IC618
+CDS_Netlisting_Mode=Analog
+CDS_LOAD_ENV=CWD
+CDS_LIC_FILE=/data/Installed_tools/cadence/license/license.dat:/data/Installed_tools/cadence/license/cadence.dat:/data/Installed_tools/cadence/license/cadence2.dat
+CDS_INST_DIR=/data/Installed_tools/cadence/IC618
+CDS_AUTO_64BIT=ALL
+CDSROOT=/data/Installed_tools/cadence/IC618
+CDSHOME=/data/Installed_tools/cadence/IC618
+CDSDIR=/data/Installed_tools/cadence/IC618
+CDS=/data/Installed_tools/cadence/IC618
+CALIBRE_HOME=/opt/mentor/calibre2023/aoj_cal_2023.2_16.9
+CADHOME=/data/Installed_tools/cadence
+BUNDLED_DEBUGPY_PATH=/home/jchu/.vscode-server/extensions/ms-python.debugpy-2025.18.0-linux-x64/bundled/libs/debugpy
+ASSSURAHOME=/data/Installed_tools/cadence/ASSURA41
+APACHEDA_LICENSE_FILE=/opt/ansys/redhawk/redhawk19/license/redhawk.lic
+AMS_HOME=/data/Installed_tools/cadence/INCISIVE152
+AMS_FEATURE_FILE=/data/Installed_tools/cadence/INCISIVE152/tools.lnx86/affirma_ams/etc/files/amssim.dat
+ALTOS_64=1
+ALTOSHOME=/data/Installed_tools/cadence/LIBERATE151
+0
+14
+1766132450 ../testbench/des3_test_po_vcd.v
+1766150503 ../db/des3.v
+1762875981 ../../../lib/asap7sc7p5t_SIMPLE_SLVT_TT_201020.v
+1762875981 ../../../lib/asap7sc7p5t_SIMPLE_LVT_TT_201020.v
+1762875981 ../../../lib/asap7sc7p5t_SEQ_SLVT_TT_220101.v
+1762875981 ../../../lib/asap7sc7p5t_SEQ_LVT_TT_220101.v
+1762875981 ../../../lib/asap7sc7p5t_OA_SLVT_TT_201020.v
+1762875981 ../../../lib/asap7sc7p5t_OA_LVT_TT_201020.v
+1762875981 ../../../lib/asap7sc7p5t_INVBUF_SLVT_TT_201020.v
+1762875981 ../../../lib/asap7sc7p5t_INVBUF_LVT_TT_201020.v
+1762875981 ../../../lib/asap7sc7p5t_AO_SLVT_TT_201020.v
+1762875980 ../../../lib/asap7sc7p5t_AO_LVT_TT_201020.v
+1550753332 /opt/synopsys/verdi2018/verdi/Verdi_O-2018.09-SP2/share/PLI/VCS/LINUX64/verdi.tab
+1551421246 /opt/synopsys/vcs2018/vcs/O-2018.09-SP2/linux64/lib/vcsdp_lite.tab
+4
+1551422344 /opt/synopsys/vcs2018/vcs/O-2018.09-SP2/linux64/lib/libvirsim.so
+1551421792 /opt/synopsys/vcs2018/vcs/O-2018.09-SP2/linux64/lib/liberrorinf.so
+1551421768 /opt/synopsys/vcs2018/vcs/O-2018.09-SP2/linux64/lib/libsnpsmalloc.so
+1551421789 /opt/synopsys/vcs2018/vcs/O-2018.09-SP2/linux64/lib/libvfs.so
+1766151822 simv.daidir
+-1 partitionlib

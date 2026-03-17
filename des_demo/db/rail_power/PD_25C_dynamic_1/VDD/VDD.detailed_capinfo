@@ -1,0 +1,35 @@
+{
+    "total_nonSwitchCap": "4.697839697063969e-11",
+    "orig": {
+        "total_added_cap": "0",
+        "totalConnected_added_cap": "0",
+        "total_c1": "0",
+        "totalConnected_c1": "0",
+        "total_c2": "4.697839697063969e-11",
+        "totalConnected_c2": "4.697839697063969e-11",
+        "total_grid_cap": "1.8528987438071702e-12",
+        "totalConnected_grid_cap": "1.8528987438071702e-12",
+        "total_decap": "0",
+        "totalConnected_decap": "0",
+        "total_stdcell_c1": "0",
+        "totalConnected_stdcell_c1": "0",
+        "total_macro_c1": "0",
+        "totalConnected_macro_c1": "0"
+    },
+    "scaled": {
+        "total_added_cap": "0",
+        "totalConnected_added_cap": "0",
+        "total_c1": "0",
+        "totalConnected_c1": "0",
+        "total_c2": "4.697839697063969e-11",
+        "totalConnected_c2": "4.697839697063969e-11",
+        "total_grid_cap": "1.8528987438071702e-12",
+        "totalConnected_grid_cap": "1.8528987438071702e-12",
+        "total_decap": "0",
+        "totalConnected_decap": "0",
+        "total_stdcell_c1": "0",
+        "totalConnected_stdcell_c1": "0",
+        "total_macro_c1": "0",
+        "totalConnected_macro_c1": "0"
+    }
+}

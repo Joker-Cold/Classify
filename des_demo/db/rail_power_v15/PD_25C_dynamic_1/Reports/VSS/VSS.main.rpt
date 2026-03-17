@@ -1,0 +1,92 @@
+POWER NET REPORT
+Generated Date: Tue Mar 17 13:56:33 2026
+Host Name: IC
+
+
+==============================
+POWER NET
+==============================
+Power Net: VSS 
+Voltage: 0 
+Threshold: 0.1 
+
+
+==============================
+POWER-GRID VIEWS
+==============================
+Power-Grid Views Used: 100
+
+
+==============================
+POWER-GRID ATTRIBUTES
+==============================
+Total Resistor Elements: 82654
+    Please refer to ../VSS/grid.gif for more details
+Top-level Resistor Elements: 82654 
+Cell Library Resistor Elements: 0 
+Total Number of Current Taps: 64179
+    Please refer to ../VSS/tc.gif for more details
+
+
+==============================
+IR DROP ANALYSIS
+==============================
+Layer based IR Drop Report: M1
+Minimum, Average, Maximum IR drop: 0.000V  18.337mV  31.920mV
+    Please refer to ../VSS/ir_linear.gif for more details
+Dynamic Worst Case Interval: 350  (0.350us) 
+Peak Dynamic Current Specified: 15.769mA 
+Peak Dynamic Current Loaded: 15.769mA 
+Number of Violations: 0
+    Please refer to ../VSS/ir_limit.gif for more details
+
+
+==============================
+EFFECTIVE RESISTANCE ANALYSIS
+==============================
+Minimum, Average, Maximum Reff:          
+
+
+==============================
+POWER SWITCH ANALYSIS
+==============================
+PowerGate Current I/Idsat violations:         
+    Please refer to  for more details
+Minimum, Average, Maximum I/Idsat (pi):  
+Minimum, Average, Maximum IRdrop Across PowerGate (pv):          
+Power Switch ECO file for Soc Encounter:          
+
+
+==============================
+PACKAGE ANALYSIS
+==============================
+Voltage Drop Across Package (vu):          
+
+
+==============================
+CAPACITANCE ANALYSIS
+==============================
+Decap Optimization method: area  
+Total Coupling Capacitance: 39.651pF
+    Please refer to ../VSS/dd.gif for more details
+Grid Coupling Capacitance: 1.638pF 
+Gate Coupling Capacitance (internal): 1.121pF 
+Loading Coupling Capacitance: 36.893pF 
+Capacitance Offered by Placed Decaps: 0.000F 
+Additional Capacitance Required: 0.000F
+    Please refer to ../VSS/dr.gif for more details
+Total Feasible Capacitance: 0.000F 
+Total Leakage Current of Placed Decaps: 0.000A 
+Total Leakage Current of ECO Decaps: 0.000A 
+What-if ECO File:   
+SoC Encounter ECO File:   
+
+
+==============================
+ADDITIONAL FILES
+==============================
+Instance Voltage File:  
+Dynamic IR drop Waveform File (dynamic): ../../db/rail_power_v15/PD_25C_dynamic_1//VSS/VSS.ptiavg 
+Effective Instance Voltage File (dynamic): ../../db/rail_power_v15/PD_25C_dynamic_1/Reports/VDD_VSS.iv 
+Summary: ../../db/rail_power_v15/PD_25C_dynamic_1//VSS/results 
+

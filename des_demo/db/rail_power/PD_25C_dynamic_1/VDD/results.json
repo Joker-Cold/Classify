@@ -1,0 +1,41 @@
+{
+    "created_on": "2025-Dec-19 21:46:09",
+    "creator": "voltus_rail",
+    "nominal_voltage": "0.699999988",
+    "is_power_net": "true",
+    "is_dynamic_analysis": "true",
+    "results": [
+        {
+            "type": "worst",
+            "num_voltages": "72531",
+            "min_node_voltage": "0.671845496",
+            "max_node_voltage": "0.699999988",
+            "num_currents": "72531",
+            "min_tap_current": "-0",
+            "max_tap_current": "4.49207473e-05",
+            "min_voltage_source_current": "-0.0033609338570386171",
+            "max_voltage_source_current": "-0.00059192650951445103",
+            "min_voltage_source_voltage": "0.69999998807907104",
+            "max_voltage_source_voltage": "0.69999998807907104",
+            "worst_time": "4.9999998585903427e-08",
+            "timestep": "9.9999997171806854e-10"
+        },
+        {
+            "type": "average",
+            "num_voltages": "72531",
+            "min_node_voltage": "0.698712945",
+            "max_node_voltage": "0.700006962",
+            "num_currents": "72531",
+            "min_tap_current": "-0",
+            "max_tap_current": "6.10181758e-07",
+            "min_voltage_source_current": "-0.00016911129932850599",
+            "max_voltage_source_current": "-4.2914991354336962e-05",
+            "min_voltage_source_voltage": "0.70000696182250977",
+            "max_voltage_source_voltage": "0.70000696182250977"
+        }
+    ],
+    "VC_SUM_Peak": "0.0139796734",
+    "TC_SUM_Peak": "0.0152807664",
+    "VC_SUM_Avg": "0.000839416229",
+    "TC_SUM_Avg": "0.000839432061"
+}

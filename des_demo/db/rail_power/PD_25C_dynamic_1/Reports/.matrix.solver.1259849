@@ -1,0 +1,126 @@
+
+#================================================
+# Matrix Solver Manager run time performance profile:
+	Stamp Matrix (1): 0.0067 user, 0.0011 system, 0.0048 real seconds
+	Factorize Matrix (1): 1.1354 user, 0.0377 system, 0.2542 real seconds
+	Solve Matrix (1): 0.0124 user, 0.0032 system, 0.0025 real seconds
+		Direct Solve (1): 0.0000 user, 0.0000 system, 0.0000 real seconds
+
+# Matrix Solver Manager memory performance profile:
+	Before DC Factorization: 15816.6960 peak virtual, 15816.6960 current virtual, 592.8960 peak resident, 408.5000 current resident mbytes
+	After DC Factorization: 15822.9680 peak virtual, 15822.9680 current virtual, 592.8960 peak resident, 408.5000 current resident mbytes
+#================================================
+
+#================================================
+# des3_VSS:0 performance profile:
+	Stamping Stimulus:       0.0013 user, 0.0005 system, 0.0004 real seconds
+	Stamping DC:             0.0012 user, 0.0004 system, 0.0017 real seconds
+	Stamping Transient:      0.0000 user, 0.0000 system, 0.0000 real seconds
+	Stamping Transient Step: 0.0000 user, 0.0000 system, 0.0000 real seconds
+	Stamping Matrix Change:  0.0000 user, 0.0000 system, 0.0000 real seconds
+		Resistor             (82648     ,	1.3224    M):  0.0009 user, 0.0003 system, 0.0013 real seconds
+		VSource              (8         ,	0.0002    M):  0.0000 user, 0.0000 system, 0.0000 real seconds
+		Node                 (72391     ,	0.8687    M):  0.0002 user, 0.0001 system, 0.0002 real seconds
+	Factorization Time:     0.9556 user, 0.0357 system, 0.2001 real seconds
+	Forward Solve Time:      0.0034 user, 0.0009 system, 0.0007 real seconds
+	Backward Solve Time:     0.0028 user, 0.0007 system, 0.0006 real seconds
+#================================================
+
+#================================================
+# des3_VDD:0 performance profile:
+	Stamping Stimulus:       0.0015 user, 0.0000 system, 0.0003 real seconds
+	Stamping DC:             0.0014 user, 0.0000 system, 0.0014 real seconds
+	Stamping Transient:      0.0000 user, 0.0000 system, 0.0000 real seconds
+	Stamping Transient Step: 0.0000 user, 0.0000 system, 0.0000 real seconds
+	Stamping Matrix Change:  0.0000 user, 0.0000 system, 0.0000 real seconds
+		Resistor             (82787     ,	1.3246    M):  0.0011 user, 0.0000 system, 0.0011 real seconds
+		VSource              (8         ,	0.0002    M):  0.0000 user, 0.0000 system, 0.0000 real seconds
+		Node                 (72530     ,	0.8704    M):  0.0002 user, 0.0000 system, 0.0002 real seconds
+	Factorization Time:     0.1776 user, 0.0000 system, 0.0499 real seconds
+	Forward Solve Time:      0.0034 user, 0.0009 system, 0.0007 real seconds
+	Backward Solve Time:     0.0028 user, 0.0007 system, 0.0006 real seconds
+#================================================
+
+#================================================
+# Matrix Solver Manager run time performance profile:
+	Stamp Matrix (1000): 6.5374 user, 8.0137 system, 10.3994 real seconds
+	Factorize Matrix (2): 1.0480 user, 0.0487 system, 0.3508 real seconds
+	Solve Matrix (1000): 11.2974 user, 4.9155 system, 3.3634 real seconds
+		Direct Solve (1000): 0.0678 user, 0.0213 system, 0.0892 real seconds
+
+# Matrix Solver Manager memory performance profile:
+	Before DC Factorization: 623934.8200 peak virtual, 623934.8200 current virtual, 592.8960 peak resident, 440.5560 current resident mbytes
+	After DC Factorization: 623934.8200 peak virtual, 623934.8200 current virtual, 592.8960 peak resident, 440.5560 current resident mbytes
+	Before Transient Factorization: 624483.9640 peak virtual, 624483.9640 current virtual, 1145.5800 peak resident, 1145.5800 current resident mbytes
+	After Transient Factorization: 624495.1800 peak virtual, 624495.1800 current virtual, 1157.8680 peak resident, 1157.8680 current resident mbytes
+#================================================
+
+#================================================
+# des3_VSS:0 performance profile:
+	Stamping Stimulus:       0.2506 user, 0.5522 system, 0.2257 real seconds
+	Stamping DC:             0.0011 user, 0.0046 system, 0.0057 real seconds
+	Stamping Transient:      0.0051 user, 0.0050 system, 0.0101 real seconds
+	Stamping Transient Step: 3.1227 user, 2.7916 system, 4.6565 real seconds
+	Stamping Matrix Change:  0.0000 user, 0.0000 system, 0.0000 real seconds
+		Resistor             (82648     ,	1.3224    M):  0.0634 user, 0.0305 system, 0.0938 real seconds
+		GroundCap            (54436     ,	0.8710    M):  0.4357 user, 0.2695 system, 0.2108 real seconds
+			Run at 8 jobs:
+			* Job (1 ): range is [0         	--	 6804      )
+			* Job (2 ): range is [6804      	--	 13608     )
+			* Job (3 ): range is [13608     	--	 20412     )
+			* Job (4 ): range is [20412     	--	 27216     )
+			* Job (5 ): range is [27216     	--	 34021     )
+			* Job (6 ): range is [34021     	--	 40827     )
+			* Job (7 ): range is [40827     	--	 47631     )
+			* Job (8 ): range is [47631     	--	 54436     )
+		GroundSeriesRC       (53829     ,	1.7225    M):  0.6234 user, 0.3978 system, 0.2612 real seconds
+			Run at 8 jobs:
+			* Job (1 ): range is [0         	--	 6728      )
+			* Job (2 ): range is [6728      	--	 13456     )
+			* Job (3 ): range is [13456     	--	 20184     )
+			* Job (4 ): range is [20184     	--	 26913     )
+			* Job (5 ): range is [26913     	--	 33642     )
+			* Job (6 ): range is [33642     	--	 40371     )
+			* Job (7 ): range is [40371     	--	 47100     )
+			* Job (8 ): range is [47100     	--	 53829     )
+		VSource              (8         ,	0.0002    M):  0.0502 user, 0.0398 system, 0.0897 real seconds
+		Node                 (72391     ,	0.8687    M):  0.0485 user, 0.0414 system, 0.0898 real seconds
+	Factorization Time:     0.4813 user, 0.0225 system, 0.1403 real seconds
+	Forward Solve Time:      2.3187 user, 1.9090 system, 0.7067 real seconds
+	Backward Solve Time:     2.6496 user, 0.9238 system, 0.6598 real seconds
+#================================================
+
+#================================================
+# des3_VDD:0 performance profile:
+	Stamping Stimulus:       0.1830 user, 0.6404 system, 0.2278 real seconds
+	Stamping DC:             0.0045 user, 0.0012 system, 0.0057 real seconds
+	Stamping Transient:      0.0083 user, 0.0016 system, 0.0099 real seconds
+	Stamping Transient Step: 2.4567 user, 3.4233 system, 4.6528 real seconds
+	Stamping Matrix Change:  0.0000 user, 0.0000 system, 0.0000 real seconds
+		Resistor             (82787     ,	1.3246    M):  0.0388 user, 0.0551 system, 0.0936 real seconds
+		GroundCap            (54436     ,	0.8710    M):  0.2770 user, 0.4080 system, 0.2089 real seconds
+			Run at 8 jobs:
+			* Job (1 ): range is [0         	--	 6804      )
+			* Job (2 ): range is [6804      	--	 13608     )
+			* Job (3 ): range is [13608     	--	 20412     )
+			* Job (4 ): range is [20412     	--	 27216     )
+			* Job (5 ): range is [27216     	--	 34021     )
+			* Job (6 ): range is [34021     	--	 40826     )
+			* Job (7 ): range is [40826     	--	 47631     )
+			* Job (8 ): range is [47631     	--	 54436     )
+		GroundSeriesRC       (53829     ,	1.7225    M):  0.5101 user, 0.4978 system, 0.2603 real seconds
+			Run at 8 jobs:
+			* Job (1 ): range is [0         	--	 6728      )
+			* Job (2 ): range is [6728      	--	 13456     )
+			* Job (3 ): range is [13456     	--	 20184     )
+			* Job (4 ): range is [20184     	--	 26913     )
+			* Job (5 ): range is [26913     	--	 33643     )
+			* Job (6 ): range is [33643     	--	 40371     )
+			* Job (7 ): range is [40371     	--	 47100     )
+			* Job (8 ): range is [47100     	--	 53829     )
+		VSource              (8         ,	0.0002    M):  0.0502 user, 0.0396 system, 0.0896 real seconds
+		Node                 (72530     ,	0.8704    M):  0.0497 user, 0.0403 system, 0.0898 real seconds
+	Factorization Time:     0.4917 user, 0.0192 system, 0.1406 real seconds
+	Forward Solve Time:      3.1181 user, 1.0938 system, 0.7118 real seconds
+	Backward Solve Time:     2.7817 user, 0.7897 system, 0.6564 real seconds
+#================================================

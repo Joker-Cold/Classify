@@ -2,7 +2,7 @@
 """
 VCD Worst-Case Power Pipeline
 ==============================
-Runs all 4 steps to compress a VCD file to its worst-case power windows.
+Runs all 5 steps to compress a VCD file to its worst-case power windows.
 
 Usage:
     python run_pipeline.py data/random_test.vcd
@@ -12,6 +12,7 @@ Usage:
 Pipeline:
     Step 1  VCD -> per-signal CSVs + signal_manifest.json
     Step 2  Count signal toggles per clock-cycle window
+    Step 3  3D signal waveform visualization (interactive HTML)
     Step 4  Extract worst-case windows -> CSV3
     Step 5  CSV3 -> compressed VCD
 """
@@ -25,6 +26,7 @@ sys.path.insert(0, str(Path(__file__).parent))
 from task1_vcd_to_csv import vcd_to_csvs
 from task2_count_toggles import run as run_task2
 from task4_extract_worst_case import run as run_task4
+from task3_visualize import run as run_task3
 from task5_csv_to_vcd import run as run_task5
 
 
@@ -74,6 +76,10 @@ def main():
     # ── Step 2 ─────────────────────────────────────────────────────
     banner("Step 2: Count toggles per clock-cycle window")
     run_task2(output_dir, window_sizes)
+
+    # ── Step 3 ─────────────────────────────────────────────────────
+    banner("Step 3: 3D Signal Visualization")
+    run_task3(output_dir)
 
     # ── Step 4 ─────────────────────────────────────────────────────
     banner("Step 4: Extract worst-case windows")

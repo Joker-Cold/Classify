@@ -1,0 +1,17 @@
+* The organization, structure, and layout of this file are copyrights and
+* confidential and proprietary trade secrets of Cadence Design Systems, Inc.,
+* subject to the terms and conditions of the license agreement in effect
+* between you and Cadence Design Systems, Inc. This file and its information
+* may not be disclosed, sold, or otherwise transferred to any third party
+* without the express written consent of Cadence Design Systems, Inc. Export
+* of any or all of this file in violation of any statute or regulation is
+* strictly prohibited.
+* 
+B 72395 pad_vdd_3 0
+B 72396 pad_vdd_2 0
+B 72432 pad_vdd_1 0
+B 72433 pad_vdd_0 0
+B 72470 pad_vdd_7 0
+B 72471 pad_vdd_6 0
+B 72504 pad_vdd_5 0
+B 72505 pad_vdd_4 0

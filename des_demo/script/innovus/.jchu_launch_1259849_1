@@ -1,0 +1,8 @@
+#!/bin/tcsh -f
+setenv CDS_LIC_FILE /data/Installed_tools/cadence/license/license.dat:/data/Installed_tools/cadence/license/cadence.dat:/data/Installed_tools/cadence/license/cadence2.dat
+setenv LM_LICENSE_FILE /opt/mentor/license2023/mentor.lic:
+setenv EDP_STRENGTHEN_PROTOCOL_V1 1.0
+setenv EDP_MIN_PORT 1
+setenv EDP_MAX_PORT 65535
+setenv EDP_C_CODE 1
+/bin/tcsh -f -c  " /data/Installed_tools/cadence/INNOVUS191/share/ssvtools/bin/voltus_rail -64  -nhbPort 47279  -procInfoHost hzhb-Super-Server:39427  -temp_directory_name /tmp/innovus_temp_1156836_hzhb-Super-Server_jchu_sfaKPv -eps   -machine 127.0.1.1 -port 44735 -hbPort -1 -id 1 "  >& 1259849_1.stdout;

@@ -1,0 +1,238 @@
+# PPCMD 1 
+# setViaGenMode -use_clone_via 1
+# 15 
+# 0 
+# 0 
+# 0 
+# 0 
+# 0 
+# BOX_LIST 
+# END_BOX_LIST 
+# NET_INFO_LIST 
+# END_NET_INFO_LIST 
+# END_PPCMD 1 
+
+# PPCMD 2 
+# sroute -connect { corePin } -layerChangeRange { M1(1) M7(1) } -blockPinTarget { nearestTarget } -floatingStripeTarget { blockring padring ring stripe ringpin blockpin followpin } -deleteExistingRoutes -allowJogging 0 -crossoverViaLayerRange { M1(1) Pad(10) } -nets { VDD VSS } -allowLayerChange 0 -targetViaLayerRange { M1(1) Pad(10) }
+# 14 
+# 16 
+# 0 
+# 0 
+# 0 
+# 0 
+# BOX_LIST 
+# END_BOX_LIST 
+# NET_INFO_LIST 
+# END_NET_INFO_LIST 
+# END_PPCMD 2 
+
+# PPCMD 3 
+# addStripe -skip_via_on_wire_shape Noshape -direction horizontal -set_to_set_distance 21.6 -skip_via_on_pin Standardcell -stacked_via_top_layer M7 -spacing 0.864 -layer M4 -width 0.864 -nets {VDD VSS} -stacked_via_bottom_layer M3 -start_from bottom
+# 13 
+# 2 
+# 1 
+# 0 
+# 0 
+# 2 
+# BOX_LIST 
+# 4864 13568 1527520 1536224 0 
+# 15104 23808 1517280 1525984 0 
+# END_BOX_LIST 
+# NET_INFO_LIST 
+# VSS 3456 4 0 32256 1515744 86400 0 0 
+# VDD 3456 4 0 25344 1515744 86400 0 0 
+# END_NET_INFO_LIST 
+# END_PPCMD 3 
+
+# PPCMD 4 
+# addStripe -skip_via_on_wire_shape Noshape -set_to_set_distance 12.960 -skip_via_on_pin Standardcell -stacked_via_top_layer Pad -spacing 0.360 -xleft_offset 0.360 -layer M3 -width 0.936 -nets {VDD VSS} -stacked_via_bottom_layer M2 -start_from left
+# 12 
+# 2 
+# 1 
+# 0 
+# 0 
+# 2 
+# BOX_LIST 
+# 4864 4864 1527520 1527520 0 
+# 15104 15104 1517280 1517280 0 
+# END_BOX_LIST 
+# NET_INFO_LIST 
+# VSS 3744 3 0 31968 1516032 51840 0 0 
+# VDD 3744 3 0 26784 1516032 51840 0 0 
+# END_NET_INFO_LIST 
+# END_PPCMD 4 
+
+# PPCMD 5 
+# addStripe -skip_via_on_wire_shape blockring -direction horizontal -set_to_set_distance 2.16 -skip_via_on_pin Standardcell -stacked_via_top_layer M1 -layer M2 -width 0.072 -nets VSS -stacked_via_bottom_layer M1 -start_from bottom -snap_wire_center_to_grid None -start_offset 1.036 -stop_offset -0.044
+# 11 
+# 2 
+# 1 
+# 0 
+# 0 
+# 1 
+# BOX_LIST 
+# 25344 25344 1516032 1515744 0 
+# END_BOX_LIST 
+# NET_INFO_LIST 
+# VSS 288 2 0 29488 1515920 8640 0 0 
+# END_NET_INFO_LIST 
+# END_PPCMD 5 
+
+# PPCMD 6 
+# addStripe -skip_via_on_wire_shape blockring -direction horizontal -set_to_set_distance 2.16 -skip_via_on_pin Standardcell -stacked_via_top_layer M1 -layer M2 -width 0.072 -nets VDD -stacked_via_bottom_layer M1 -start_from bottom -snap_wire_center_to_grid None -start_offset -0.044 -stop_offset -0.044
+# 10 
+# 2 
+# 1 
+# 0 
+# 0 
+# 1 
+# BOX_LIST 
+# 25344 25344 1516032 1515744 0 
+# END_BOX_LIST 
+# NET_INFO_LIST 
+# VDD 288 2 0 25168 1515920 8640 0 0 
+# END_NET_INFO_LIST 
+# END_PPCMD 6 
+
+# PPCMD 7 
+# setAddStripeMode -preventive_color_opt false
+# 9 
+# 0 
+# 0 
+# 0 
+# 0 
+# 0 
+# BOX_LIST 
+# END_BOX_LIST 
+# NET_INFO_LIST 
+# END_NET_INFO_LIST 
+# END_PPCMD 7 
+
+# PPCMD 8 
+# addRing -nets {VDD VSS} -type core_rings -follow core -layer {top M7 bottom M7 left M6 right M6} -width 2.176 -spacing 0.384 -offset 0.384 -center 0 -threshold 0 -jog_distance 0 -snap_wire_center_to_grid None
+# 8 
+# 32 
+# 1 
+# 0 
+# 0 
+# 0 
+# BOX_LIST 
+# END_BOX_LIST 
+# NET_INFO_LIST 
+# VSS 8704 7 1 0 0 0 0 0 
+# RING_PT_INFO_LIST 
+# 770544 9216 770544 1531872 
+# END_RING_PT_INFO_LIST 
+# VSS 8704 6 1 0 0 0 0 0 
+# RING_PT_INFO_LIST 
+# 9216 770544 1531872 770544 
+# END_RING_PT_INFO_LIST 
+# VDD 8704 7 1 0 0 0 0 0 
+# RING_PT_INFO_LIST 
+# 770544 19456 770544 1521632 
+# END_RING_PT_INFO_LIST 
+# VDD 8704 6 1 0 0 0 0 0 
+# RING_PT_INFO_LIST 
+# 19456 770544 1521632 770544 
+# END_RING_PT_INFO_LIST 
+# END_NET_INFO_LIST 
+# END_PPCMD 8 
+
+# PPCMD 9 
+# setViaGenMode -keep_existing_via 1
+# 7 
+# 0 
+# 0 
+# 0 
+# 0 
+# 0 
+# BOX_LIST 
+# END_BOX_LIST 
+# NET_INFO_LIST 
+# END_NET_INFO_LIST 
+# END_PPCMD 9 
+
+# PPCMD 10 
+# setViaGenMode -disable_via_merging true
+# 6 
+# 0 
+# 0 
+# 0 
+# 0 
+# 0 
+# BOX_LIST 
+# END_BOX_LIST 
+# NET_INFO_LIST 
+# END_NET_INFO_LIST 
+# END_PPCMD 10 
+
+# PPCMD 11 
+# setViaGenMode -optimize_cross_via true
+# 5 
+# 0 
+# 0 
+# 0 
+# 0 
+# 0 
+# BOX_LIST 
+# END_BOX_LIST 
+# NET_INFO_LIST 
+# END_NET_INFO_LIST 
+# END_PPCMD 11 
+
+# PPCMD 12 
+# setViaGenMode -use_cce 1
+# 4 
+# 0 
+# 0 
+# 0 
+# 0 
+# 0 
+# BOX_LIST 
+# END_BOX_LIST 
+# NET_INFO_LIST 
+# END_NET_INFO_LIST 
+# END_PPCMD 12 
+
+# PPCMD 13 
+# setAddStripeMode -use_fgc 1
+# 3 
+# 0 
+# 0 
+# 0 
+# 0 
+# 0 
+# BOX_LIST 
+# END_BOX_LIST 
+# NET_INFO_LIST 
+# END_NET_INFO_LIST 
+# END_PPCMD 13 
+
+# PPCMD 14 
+# setViaGenMode -use_fgc 1
+# 2 
+# 0 
+# 0 
+# 0 
+# 0 
+# 0 
+# BOX_LIST 
+# END_BOX_LIST 
+# NET_INFO_LIST 
+# END_NET_INFO_LIST 
+# END_PPCMD 14 
+
+# PPCMD 15 
+# setAddRingMode -ring_target default -extend_over_row 0 -ignore_rows 0 -avoid_short 0 -skip_crossing_trunks none -stacked_via_top_layer Pad -stacked_via_bottom_layer M1 -via_using_exact_crossover_size 1 -orthogonal_only true -skip_via_on_pin {  standardcell } -skip_via_on_wire_shape {  noshape }
+# 1 
+# 0 
+# 0 
+# 0 
+# 0 
+# 0 
+# BOX_LIST 
+# END_BOX_LIST 
+# NET_INFO_LIST 
+# END_NET_INFO_LIST 
+# END_PPCMD 15 
+

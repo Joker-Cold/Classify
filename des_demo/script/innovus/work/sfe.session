@@ -1,0 +1,22 @@
+run_status {
+  sfe_preparation: SUCCESS
+  sfe_zx: SUCCESS
+}
+extraction_config {
+  zx_config {
+    cluster_via_size: 25
+    cluster_via1_maximum: true
+    need_c_extraction: true
+    pgdb_name: "TopLevelPGDB"
+    load_optimized_views: true
+  }
+  layout_file_md5: "599b660edf53ac3229bcd5365ab8e6fd"
+  extracted_nets_md5: "246791408522920722269326355163748624057"
+  library_name: "./des3_pg_v15/techonly.cl"
+  use_cellid: true
+  label_ports_md5: "471941883572331978455424712812685137142"
+  hierachy_char: "/"
+  enable_metal_fill_effects: true
+  extraction_mode: "early"
+  inst_id_type_size: 4
+}

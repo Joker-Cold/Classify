@@ -1,0 +1,1708 @@
+[03/17 13:44:20     0s] 
+[03/17 13:44:20     0s] Cadence Innovus(TM) Implementation System.
+[03/17 13:44:20     0s] Copyright 2015 Cadence Design Systems, Inc. All rights reserved worldwide.
+[03/17 13:44:20     0s] 
+[03/17 13:44:20     0s] Version:	v15.20-p005_1, built Wed Nov 11 11:16:39 PST 2015
+[03/17 13:44:20     0s] Options:	
+[03/17 13:44:20     0s] Date:		Tue Mar 17 13:44:20 2026
+[03/17 13:44:20     0s] Host:		IC (x86_64 w/Linux 2.6.32-573.el6.x86_64) (2cores*4cpus*12th Gen Intel(R) Core(TM) i7-12700H 24576KB)
+[03/17 13:44:20     0s] OS:		Red Hat Enterprise Linux Server release 6.7 (Santiago)
+[03/17 13:44:20     0s] 
+[03/17 13:44:20     0s] License:
+[03/17 13:44:20     0s] 		invs	Innovus Implementation System	15.2	checkout succeeded
+[03/17 13:44:20     0s] 		8 CPU jobs allowed with the current license(s). Use setMultiCpuUsage to set your required CPU count.
+[03/17 13:44:31    11s] @(#)CDS: Innovus v15.20-p005_1 (64bit) 11/11/2015 11:16 (Linux 2.6.18-194.el5)
+[03/17 13:44:31    11s] @(#)CDS: NanoRoute 15.20-p005_1 NR151028-1715/15_20-UB (database version 2.30, 298.6.1) {superthreading v1.26}
+[03/17 13:44:31    11s] @(#)CDS: AAE 15.20-p002 (64bit) 11/11/2015 (Linux 2.6.18-194.el5)
+[03/17 13:44:31    11s] @(#)CDS: CTE 15.20-p001_1 () Oct 29 2015 01:50:39 ( )
+[03/17 13:44:31    11s] @(#)CDS: SYNTECH 15.20-b002_1 () Oct 20 2015 02:35:29 ( )
+[03/17 13:44:31    11s] @(#)CDS: CPE v15.20-p002
+[03/17 13:44:31    11s] @(#)CDS: IQRC/TQRC 15.1.2-s269 (64bit) Mon Aug 24 18:22:18 PDT 2015 (Linux 2.6.18-194.el5)
+[03/17 13:44:31    11s] @(#)CDS: OA 22.50-p028 Thu Jul 23 14:59:57 2015
+[03/17 13:44:31    11s] @(#)CDS: SGN 10.10-p124 (19-Aug-2014) (64 bit executable)
+[03/17 13:44:31    11s] @(#)CDS: RCDB 11.6
+[03/17 13:44:31    11s] --- Running on IC (x86_64 w/Linux 2.6.32-573.el6.x86_64) (2cores*4cpus*12th Gen Intel(R) Core(TM) i7-12700H 24576KB) ---
+[03/17 13:44:31    11s] Create and set the environment variable TMPDIR to /tmp/innovus_temp_65366_IC_IC_3lzmeZ.
+
+[03/17 13:44:32    12s] 
+[03/17 13:44:32    12s] **INFO:  MMMC transition support version v31-84 
+[03/17 13:44:32    12s] 
+[03/17 13:44:32    12s] <CMD> set_global _enable_mmmc_by_default_flow      $CTE::mmmc_default
+[03/17 13:44:32    12s] <CMD> suppressMessage ENCEXT-2799
+[03/17 13:44:33    12s] <CMD> getDrawView
+[03/17 13:44:33    12s] <CMD> loadWorkspace -name Physical
+[03/17 13:44:33    12s] <CMD> win
+[03/17 13:48:02   126s] <CMD> set init_design_uniquify 1
+[03/17 13:48:02   126s] <CMD> set init_design_netlisttype Verilog
+[03/17 13:48:02   126s] <CMD> set init_design_settop 1
+[03/17 13:48:02   126s] <CMD> set init_top_cell des3
+[03/17 13:48:02   126s] <CMD> set init_verilog ../../db/des3.v
+[03/17 13:48:02   126s] <CMD> set init_lef_file {  ../../db/des3.enc.dat/libs/lef/asap7_tech_4x_201209.lef  ../../db/des3.enc.dat/libs/lef/asap7sc7p5t_28_L_4x_220121a.lef  ../../db/des3.enc.dat/libs/lef/asap7sc7p5t_28_SL_4x_220121a.lef  }
+[03/17 13:48:02   126s] <CMD> set init_pwr_net VDD
+[03/17 13:48:02   126s] <CMD> set init_gnd_net VSS
+[03/17 13:48:02   126s] <CMD> set init_mmmc_file ../../db/des3.enc.dat/viewDefinition.tcl
+[03/17 13:48:02   126s] <CMD> init_design
+[03/17 13:48:02   126s] 
+[03/17 13:48:02   126s] Loading LEF file ../../db/des3.enc.dat/libs/lef/asap7_tech_4x_201209.lef ...
+[03/17 13:48:02   126s] 
+[03/17 13:48:02   126s] Loading LEF file ../../db/des3.enc.dat/libs/lef/asap7sc7p5t_28_L_4x_220121a.lef ...
+[03/17 13:48:02   126s] Set DBUPerIGU to M1 pitch 576.
+[03/17 13:48:02   126s] 
+[03/17 13:48:02   126s] Loading LEF file ../../db/des3.enc.dat/libs/lef/asap7sc7p5t_28_SL_4x_220121a.lef ...
+[03/17 13:48:02   126s] 
+[03/17 13:48:02   126s] viaInitial starts at Tue Mar 17 13:48:02 2026
+viaInitial ends at Tue Mar 17 13:48:02 2026
+Loading view definition file from ../../db/des3.enc.dat/viewDefinition.tcl
+[03/17 13:48:02   126s] Reading tc timing library '/home/IC/Desktop/des_demo/db/des3.enc.dat/libs/mmmc/asap7sc7p5t_AO_LVT_TT_nldm_211120.lib' ...
+[03/17 13:48:02   126s] **WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'Y' of cell 'A2O1A1Ixp33_ASAP7_75t_L' is not defined in the library.
+[03/17 13:48:02   126s] **WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'Y' of cell 'A2O1A1O1Ixp25_ASAP7_75t_L' is not defined in the library.
+[03/17 13:48:02   126s] **WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'Y' of cell 'AO211x2_ASAP7_75t_L' is not defined in the library.
+[03/17 13:48:02   126s] **WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'Y' of cell 'AO21x1_ASAP7_75t_L' is not defined in the library.
+[03/17 13:48:02   126s] **WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'Y' of cell 'AO21x2_ASAP7_75t_L' is not defined in the library.
+[03/17 13:48:02   126s] **WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'Y' of cell 'AO221x1_ASAP7_75t_L' is not defined in the library.
+[03/17 13:48:02   126s] **WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'Y' of cell 'AO221x2_ASAP7_75t_L' is not defined in the library.
+[03/17 13:48:02   126s] **WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'Y' of cell 'AO222x2_ASAP7_75t_L' is not defined in the library.
+[03/17 13:48:02   126s] **WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'Y' of cell 'AO22x1_ASAP7_75t_L' is not defined in the library.
+[03/17 13:48:02   126s] **WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'Y' of cell 'AO22x2_ASAP7_75t_L' is not defined in the library.
+[03/17 13:48:02   126s] **WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'Y' of cell 'AO31x2_ASAP7_75t_L' is not defined in the library.
+[03/17 13:48:02   126s] **WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'Y' of cell 'AO322x2_ASAP7_75t_L' is not defined in the library.
+[03/17 13:48:02   126s] **WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'Y' of cell 'AO32x1_ASAP7_75t_L' is not defined in the library.
+[03/17 13:48:02   126s] **WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'Y' of cell 'AO32x2_ASAP7_75t_L' is not defined in the library.
+[03/17 13:48:02   126s] **WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'Y' of cell 'AO331x1_ASAP7_75t_L' is not defined in the library.
+[03/17 13:48:02   126s] **WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'Y' of cell 'AO331x2_ASAP7_75t_L' is not defined in the library.
+[03/17 13:48:02   127s] **WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'Y' of cell 'AO332x1_ASAP7_75t_L' is not defined in the library.
+[03/17 13:48:03   127s] **WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'Y' of cell 'AO332x2_ASAP7_75t_L' is not defined in the library.
+[03/17 13:48:03   127s] **WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'Y' of cell 'AO333x1_ASAP7_75t_L' is not defined in the library.
+[03/17 13:48:03   127s] **WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'Y' of cell 'AO333x2_ASAP7_75t_L' is not defined in the library.
+[03/17 13:48:03   127s] Message <TECHLIB-436> has exceeded the message display limit of '20'. setMessageLimit/set_message_limit sets the limit. unsetMessageLimit/unset_message_limit can be used to reset this.
+[03/17 13:48:04   128s] Read 42 cells in library 'asap7sc7p5t_AO_LVT_TT_nldm_211120' 
+[03/17 13:48:04   128s] Reading tc timing library '/home/IC/Desktop/des_demo/db/des3.enc.dat/libs/mmmc/asap7sc7p5t_INVBUF_LVT_TT_nldm_220122.lib' ...
+[03/17 13:48:04   128s] Read 37 cells in library 'asap7sc7p5t_INVBUF_LVT_TT_nldm_211120' 
+[03/17 13:48:04   128s] Reading tc timing library '/home/IC/Desktop/des_demo/db/des3.enc.dat/libs/mmmc/asap7sc7p5t_OA_LVT_TT_nldm_211120.lib' ...
+[03/17 13:48:06   130s] Read 34 cells in library 'asap7sc7p5t_OA_LVT_TT_nldm_211120' 
+[03/17 13:48:06   130s] Reading tc timing library '/home/IC/Desktop/des_demo/db/des3.enc.dat/libs/mmmc/asap7sc7p5t_SEQ_LVT_TT_nldm_220123.lib' ...
+[03/17 13:48:06   130s] Read 33 cells in library 'asap7sc7p5t_SEQ_LVT_TT_nldm_220123' 
+[03/17 13:48:06   130s] Reading tc timing library '/home/IC/Desktop/des_demo/db/des3.enc.dat/libs/mmmc/asap7sc7p5t_SIMPLE_LVT_TT_nldm_211120.lib' ...
+[03/17 13:48:06   130s] Read 56 cells in library 'asap7sc7p5t_SIMPLE_LVT_TT_nldm_211120' 
+[03/17 13:48:06   130s] Reading tc timing library '/home/IC/Desktop/des_demo/db/des3.enc.dat/libs/mmmc/asap7sc7p5t_AO_SLVT_TT_nldm_211120.lib' ...
+[03/17 13:48:07   132s] Read 42 cells in library 'asap7sc7p5t_AO_SLVT_TT_nldm_211120' 
+[03/17 13:48:07   132s] Reading tc timing library '/home/IC/Desktop/des_demo/db/des3.enc.dat/libs/mmmc/asap7sc7p5t_INVBUF_SLVT_TT_nldm_220122.lib' ...
+[03/17 13:48:07   132s] Read 37 cells in library 'asap7sc7p5t_INVBUF_SLVT_TT_nldm_211120' 
+[03/17 13:48:07   132s] Reading tc timing library '/home/IC/Desktop/des_demo/db/des3.enc.dat/libs/mmmc/asap7sc7p5t_OA_SLVT_TT_nldm_211120.lib' ...
+[03/17 13:48:09   133s] Read 34 cells in library 'asap7sc7p5t_OA_SLVT_TT_nldm_211120' 
+[03/17 13:48:09   133s] Reading tc timing library '/home/IC/Desktop/des_demo/db/des3.enc.dat/libs/mmmc/asap7sc7p5t_SEQ_SLVT_TT_nldm_220123.lib' ...
+[03/17 13:48:09   133s] Read 33 cells in library 'asap7sc7p5t_SEQ_SLVT_TT_nldm_220123' 
+[03/17 13:48:09   133s] Reading tc timing library '/home/IC/Desktop/des_demo/db/des3.enc.dat/libs/mmmc/asap7sc7p5t_SIMPLE_SLVT_TT_nldm_211120.lib' ...
+[03/17 13:48:09   133s] Read 56 cells in library 'asap7sc7p5t_SIMPLE_SLVT_TT_nldm_211120' 
+[03/17 13:48:09   133s] *** End library_loading (cpu=0.00min, mem=0.0M, fe_cpu=2.22min, fe_real=3.82min, fe_mem=551.6M) ***
+[03/17 13:48:09   133s] *** Begin netlist parsing (mem=551.6M) ***
+[03/17 13:48:09   133s] Created 404 new cells from 10 timing libraries.
+[03/17 13:48:09   133s] Reading netlist ...
+[03/17 13:48:09   133s] Backslashed names will retain backslash and a trailing blank character.
+[03/17 13:48:09   133s] Reading verilog netlist '../../db/des3.v'
+[03/17 13:48:09   134s] 
+[03/17 13:48:09   134s] *** Memory Usage v#1 (Current mem = 573.617M, initial mem = 164.598M) ***
+[03/17 13:48:09   134s] *** End netlist parsing (cpu=0:00:00.4, real=0:00:00.0, mem=573.6M) ***
+[03/17 13:48:09   134s] Set top cell to des3.
+[03/17 13:48:10   134s] Hooked 404 DB cells to tlib cells.
+[03/17 13:48:10   134s] Starting recursive module instantiation check.
+[03/17 13:48:10   134s] No recursion found.
+[03/17 13:48:10   134s] Building hierarchical netlist for Cell des3 ...
+[03/17 13:48:10   134s] *** Netlist is unique.
+[03/17 13:48:10   134s] Set DBUPerIGU to techSite asap7sc7p5t width 864.
+[03/17 13:48:10   134s] ** info: there are 433 modules.
+[03/17 13:48:10   134s] ** info: there are 53829 stdCell insts.
+[03/17 13:48:10   134s] 
+[03/17 13:48:10   134s] *** Memory Usage v#1 (Current mem = 649.125M, initial mem = 164.598M) ***
+[03/17 13:48:10   134s] Set Default Net Delay as 1000 ps.
+[03/17 13:48:10   134s] Set Default Net Load as 0.5 pF. 
+[03/17 13:48:10   134s] Set Default Input Pin Transition as 0.1 ps.
+[03/17 13:48:10   134s] Initializing multi-corner RC extraction with 1 active RC Corners ...
+[03/17 13:48:10   134s] Captable file(s) not specified in multi-corner setup. PreRoute extraction will use technology file. For postRoute extraction, default value for effort level would be 'medium' and effort level 'low' would not be allowed.
+[03/17 13:48:11   135s] Importing multi-corner technology file(s) for preRoute extraction...
+[03/17 13:48:11   135s] /home/IC/Desktop/des_demo/db/des3.enc.dat/libs/mmmc/rc_typ_25/qrcTechFile_typ03_scaled4xV06
+[03/17 13:48:14   139s] Completed (cpu: 0:00:04.0 real: 0:00:04.0)
+[03/17 13:48:14   139s] Set Shrink Factor to 1.00000
+[03/17 13:48:14   139s] Summary of Active RC-Corners : 
+[03/17 13:48:14   139s]  
+[03/17 13:48:14   139s]  Analysis View: view_tc
+[03/17 13:48:14   139s]     RC-Corner Name        : rc_typ_25
+[03/17 13:48:14   139s]     RC-Corner Index       : 0
+[03/17 13:48:14   139s]     RC-Corner Temperature : 25 Celsius
+[03/17 13:48:14   139s]     RC-Corner Cap Table   : ''
+[03/17 13:48:14   139s]     RC-Corner PreRoute Res Factor         : 1
+[03/17 13:48:14   139s]     RC-Corner PreRoute Cap Factor         : 1
+[03/17 13:48:14   139s]     RC-Corner PostRoute Res Factor        : 1 {1 1 1}
+[03/17 13:48:14   139s]     RC-Corner PostRoute Cap Factor        : 1 {1 1 1}
+[03/17 13:48:14   139s]     RC-Corner PostRoute XCap Factor       : 1 {1 1 1}
+[03/17 13:48:14   139s]     RC-Corner PreRoute Clock Res Factor   : 1	[Derived from postRoute_res (effortLevel low)]
+[03/17 13:48:14   139s]     RC-Corner PreRoute Clock Cap Factor   : 1	[Derived from postRoute_cap (effortLevel low)]
+[03/17 13:48:14   139s]     RC-Corner PostRoute Clock Cap Factor  : 1 {1 1 1} 	[Derived from postRoute_cap (effortLevel low)]
+[03/17 13:48:14   139s]     RC-Corner PostRoute Clock Res Factor  : 1 {1 1 1} 	[Derived from postRoute_res (effortLevel low)]
+[03/17 13:48:14   139s]     RC-Corner Technology file: '/home/IC/Desktop/des_demo/db/des3.enc.dat/libs/mmmc/rc_typ_25/qrcTechFile_typ03_scaled4xV06'
+[03/17 13:48:14   139s] Default value for postRoute extraction mode's effortLevel (-effortLevel option of setExtractRCMode) changed to 'medium'.
+[03/17 13:48:14   139s] *Info: initialize multi-corner CTS.
+[03/17 13:48:14   139s] Reading timing constraints file '/home/IC/Desktop/des_demo/db/des3.enc.dat/mmmc/modes/sdc/sdc.sdc' ...
+[03/17 13:48:14   139s] Current (total cpu=0:02:19, real=0:03:54, peak res=418.5M, current mem=829.7M)
+[03/17 13:48:15   139s] INFO (CTE): Constraints read successfully.
+[03/17 13:48:15   139s] Ending "Constraint file reading stats" (total cpu=0:00:00.1, real=0:00:01.0, peak res=434.0M, current mem=843.9M)
+[03/17 13:48:15   139s] Current (total cpu=0:02:19, real=0:03:55, peak res=434.0M, current mem=843.9M)
+[03/17 13:48:15   139s] Summary for sequential cells idenfication: 
+[03/17 13:48:15   139s] Identified SBFF number: 34
+[03/17 13:48:15   139s] Identified MBFF number: 0
+[03/17 13:48:15   139s] Not identified SBFF number: 0
+[03/17 13:48:15   139s] Not identified MBFF number: 0
+[03/17 13:48:15   139s] Number of sequential cells which are not FFs: 32
+[03/17 13:48:15   139s] 
+[03/17 13:48:15   139s] Total number of combinational cells: 334
+[03/17 13:48:15   139s] Total number of sequential cells: 66
+[03/17 13:48:15   139s] Total number of tristate cells: 0
+[03/17 13:48:15   139s] Total number of level shifter cells: 0
+[03/17 13:48:15   139s] Total number of power gating cells: 0
+[03/17 13:48:15   139s] Total number of isolation cells: 0
+[03/17 13:48:15   139s] Total number of power switch cells: 0
+[03/17 13:48:15   139s] Total number of pulse generator cells: 0
+[03/17 13:48:15   139s] Total number of always on buffers: 0
+[03/17 13:48:15   139s] Total number of retention cells: 0
+[03/17 13:48:15   139s] List of usable buffers: BUFx10_ASAP7_75t_SL BUFx12_ASAP7_75t_SL BUFx12f_ASAP7_75t_SL BUFx16f_ASAP7_75t_SL BUFx24_ASAP7_75t_SL BUFx2_ASAP7_75t_SL BUFx3_ASAP7_75t_SL BUFx4_ASAP7_75t_SL BUFx5_ASAP7_75t_SL BUFx4f_ASAP7_75t_SL BUFx6f_ASAP7_75t_SL BUFx8_ASAP7_75t_SL HB1xp67_ASAP7_75t_SL HB2xp67_ASAP7_75t_SL BUFx10_ASAP7_75t_L BUFx12_ASAP7_75t_L BUFx12f_ASAP7_75t_L BUFx16f_ASAP7_75t_L BUFx24_ASAP7_75t_L BUFx2_ASAP7_75t_L BUFx3_ASAP7_75t_L BUFx4_ASAP7_75t_L BUFx5_ASAP7_75t_L BUFx4f_ASAP7_75t_L BUFx6f_ASAP7_75t_L BUFx8_ASAP7_75t_L HB1xp67_ASAP7_75t_L HB2xp67_ASAP7_75t_L
+[03/17 13:48:15   139s] Total number of usable buffers: 28
+[03/17 13:48:15   139s] List of unusable buffers:
+[03/17 13:48:15   139s] Total number of unusable buffers: 0
+[03/17 13:48:15   139s] List of usable inverters: CKINVDCx10_ASAP7_75t_SL CKINVDCx12_ASAP7_75t_SL CKINVDCx11_ASAP7_75t_SL CKINVDCx14_ASAP7_75t_SL CKINVDCx16_ASAP7_75t_SL CKINVDCx20_ASAP7_75t_SL CKINVDCx8_ASAP7_75t_SL CKINVDCx5p33_ASAP7_75t_SL CKINVDCx6p67_ASAP7_75t_SL CKINVDCx9p33_ASAP7_75t_SL INVx11_ASAP7_75t_SL INVx13_ASAP7_75t_SL INVx1_ASAP7_75t_SL INVx2_ASAP7_75t_SL INVx3_ASAP7_75t_SL INVx4_ASAP7_75t_SL INVx5_ASAP7_75t_SL INVx6_ASAP7_75t_SL INVx8_ASAP7_75t_SL INVxp67_ASAP7_75t_SL INVxp33_ASAP7_75t_SL CKINVDCx10_ASAP7_75t_L CKINVDCx12_ASAP7_75t_L CKINVDCx11_ASAP7_75t_L CKINVDCx14_ASAP7_75t_L CKINVDCx16_ASAP7_75t_L CKINVDCx20_ASAP7_75t_L CKINVDCx8_ASAP7_75t_L CKINVDCx5p33_ASAP7_75t_L CKINVDCx6p67_ASAP7_75t_L CKINVDCx9p33_ASAP7_75t_L INVx11_ASAP7_75t_L INVx13_ASAP7_75t_L INVx1_ASAP7_75t_L INVx2_ASAP7_75t_L INVx3_ASAP7_75t_L INVx4_ASAP7_75t_L INVx5_ASAP7_75t_L INVx6_ASAP7_75t_L INVx8_ASAP7_75t_L INVxp67_ASAP7_75t_L INVxp33_ASAP7_75t_L
+[03/17 13:48:15   139s] Total number of usable inverters: 42
+[03/17 13:48:15   139s] List of unusable inverters:
+[03/17 13:48:15   139s] Total number of unusable inverters: 0
+[03/17 13:48:15   139s] List of identified usable delay cells: HB3xp67_ASAP7_75t_SL HB4xp67_ASAP7_75t_SL HB3xp67_ASAP7_75t_L HB4xp67_ASAP7_75t_L
+[03/17 13:48:15   139s] Total number of identified usable delay cells: 4
+[03/17 13:48:15   139s] List of identified unusable delay cells:
+[03/17 13:48:15   139s] Total number of identified unusable delay cells: 0
+[03/17 13:48:15   139s] *** Message Summary: 0 warning(s), 0 error(s)
+[03/17 13:48:15   139s] 
+[03/17 13:48:15   139s] <CMD> defIn ../../db/des3.def
+[03/17 13:48:15   139s] Reading DEF file '../../db/des3.def', current time is Tue Mar 17 13:48:15 2026 ...
+[03/17 13:48:15   139s] --- DIVIDERCHAR '/'
+[03/17 13:48:15   139s] --- UnitsPerDBU = 1.0000
+[03/17 13:48:15   139s] --- DIEAREA (0 0) (1541376 1541376)
+[03/17 13:48:15   139s] **WARN: (IMPDF-315):	Via 'VIA9Pad' is already defined in LEF file, DEF via is ignored.
+[03/17 13:48:15   139s] **WARN: (IMPDF-315):	Via 'VIA89' is already defined in LEF file, DEF via is ignored.
+[03/17 13:48:15   139s] **WARN: (IMPDF-315):	Via 'VIA78' is already defined in LEF file, DEF via is ignored.
+[03/17 13:48:15   139s] **WARN: (IMPDF-315):	Via 'VIA67' is already defined in LEF file, DEF via is ignored.
+[03/17 13:48:15   139s] **WARN: (IMPDF-315):	Via 'VIA56' is already defined in LEF file, DEF via is ignored.
+[03/17 13:48:15   139s] **WARN: (IMPDF-315):	Via 'VIA45' is already defined in LEF file, DEF via is ignored.
+[03/17 13:48:15   139s] **WARN: (IMPDF-315):	Via 'VIA34' is already defined in LEF file, DEF via is ignored.
+[03/17 13:48:15   139s] **WARN: (IMPDF-315):	Via 'VIA23' is already defined in LEF file, DEF via is ignored.
+[03/17 13:48:15   139s] **WARN: (IMPDF-315):	Via 'VIA12' is already defined in LEF file, DEF via is ignored.
+[03/17 13:48:15   139s] defIn read 10000 lines...
+[03/17 13:48:15   139s] defIn read 20000 lines...
+[03/17 13:48:15   139s] defIn read 30000 lines...
+[03/17 13:48:15   139s] defIn read 40000 lines...
+[03/17 13:48:15   139s] defIn read 50000 lines...
+[03/17 13:48:15   139s] defIn read 60000 lines...
+[03/17 13:48:15   139s] defIn read 70000 lines...
+[03/17 13:48:15   139s] defIn read 80000 lines...
+[03/17 13:48:15   139s] defIn read 90000 lines...
+[03/17 13:48:15   139s] defIn read 100000 lines...
+[03/17 13:48:15   139s] defIn read 110000 lines...
+[03/17 13:48:15   139s] defIn read 120000 lines...
+[03/17 13:48:15   139s] defIn read 130000 lines...
+[03/17 13:48:15   139s] defIn read 140000 lines...
+[03/17 13:48:15   139s] defIn read 150000 lines...
+[03/17 13:48:15   139s] Extracting standard cell pins and blockage ...... 
+[03/17 13:48:15   139s] **WARN: (IMPTR-2108):	For layer M10, the gaps of 30 out of 30 tracks are narrower than 16.000um (space 8.000 + width 8.000).
+[03/17 13:48:15   139s] Type 'man IMPTR-2108' for more detail.
+[03/17 13:48:15   139s]  As a result, your trialRoute congestion could be incorrect.
+[03/17 13:48:15   139s] Pin and blockage extraction finished
+[03/17 13:48:15   139s] Extracting macro/IO cell pins and blockage ...... 
+[03/17 13:48:15   139s] Pin and blockage extraction finished
+[03/17 13:48:15   139s] defIn read 160000 lines...
+[03/17 13:48:15   139s] defIn read 170000 lines...
+[03/17 13:48:15   139s] defIn read 180000 lines...
+[03/17 13:48:15   140s] defIn read 190000 lines...
+[03/17 13:48:15   140s] defIn read 200000 lines...
+[03/17 13:48:15   140s] defIn read 210000 lines...
+[03/17 13:48:15   140s] defIn read 220000 lines...
+[03/17 13:48:15   140s] defIn read 230000 lines...
+[03/17 13:48:15   140s] defIn read 240000 lines...
+[03/17 13:48:15   140s] defIn read 250000 lines...
+[03/17 13:48:15   140s] defIn read 260000 lines...
+[03/17 13:48:16   140s] defIn read 270000 lines...
+[03/17 13:48:16   140s] defIn read 280000 lines...
+[03/17 13:48:16   140s] defIn read 290000 lines...
+[03/17 13:48:16   140s] defIn read 300000 lines...
+[03/17 13:48:16   140s] defIn read 310000 lines...
+[03/17 13:48:16   140s] defIn read 320000 lines...
+[03/17 13:48:16   140s] defIn read 330000 lines...
+[03/17 13:48:16   140s] defIn read 340000 lines...
+[03/17 13:48:16   140s] defIn read 350000 lines...
+[03/17 13:48:16   140s] defIn read 360000 lines...
+[03/17 13:48:16   140s] defIn read 370000 lines...
+[03/17 13:48:16   140s] defIn read 380000 lines...
+[03/17 13:48:16   140s] defIn read 390000 lines...
+[03/17 13:48:16   141s] defIn read 400000 lines...
+[03/17 13:48:16   141s] defIn read 410000 lines...
+[03/17 13:48:16   141s] defIn read 420000 lines...
+[03/17 13:48:16   141s] defIn read 430000 lines...
+[03/17 13:48:16   141s] defIn read 440000 lines...
+[03/17 13:48:16   141s] defIn read 450000 lines...
+[03/17 13:48:16   141s] defIn read 460000 lines...
+[03/17 13:48:16   141s] defIn read 470000 lines...
+[03/17 13:48:17   141s] defIn read 480000 lines...
+[03/17 13:48:17   141s] defIn read 490000 lines...
+[03/17 13:48:17   141s] defIn read 500000 lines...
+[03/17 13:48:17   141s] defIn read 510000 lines...
+[03/17 13:48:17   141s] defIn read 520000 lines...
+[03/17 13:48:17   141s] defIn read 530000 lines...
+[03/17 13:48:17   141s] defIn read 540000 lines...
+[03/17 13:48:17   141s] **WARN: (IMPDF-1043):	Skip overlapping wires (508608 944208) (508608 944688)
+[03/17 13:48:17   141s] on layer 'M3' of net 'u1/uk_K_r4[25]'.
+[03/17 13:48:17   141s] It will be an error in tape out mode which can be set by the command
+[03/17 13:48:17   141s] 
+[03/17 13:48:17   141s] setCheckMode -tapeOut true
+[03/17 13:48:17   141s] 
+[03/17 13:48:17   141s] **WARN: (IMPDF-128):	Wire creation failed.
+[03/17 13:48:17   141s] defIn read 550000 lines...
+[03/17 13:48:17   141s] defIn read 560000 lines...
+[03/17 13:48:17   141s] defIn read 570000 lines...
+[03/17 13:48:17   142s] defIn read 580000 lines...
+[03/17 13:48:17   142s] defIn read 590000 lines...
+[03/17 13:48:17   142s] defIn read 600000 lines...
+[03/17 13:48:17   142s] defIn read 610000 lines...
+[03/17 13:48:17   142s] defIn read 620000 lines...
+[03/17 13:48:17   142s] defIn read 630000 lines...
+[03/17 13:48:18   142s] defIn read 640000 lines...
+[03/17 13:48:18   142s] defIn read 650000 lines...
+[03/17 13:48:18   142s] defIn read 660000 lines...
+[03/17 13:48:18   142s] defIn read 670000 lines...
+[03/17 13:48:18   142s] defIn read 680000 lines...
+[03/17 13:48:18   142s] defIn read 690000 lines...
+[03/17 13:48:18   142s] defIn read 700000 lines...
+[03/17 13:48:18   142s] defIn read 710000 lines...
+[03/17 13:48:18   142s] defIn read 720000 lines...
+[03/17 13:48:18   142s] defIn read 730000 lines...
+[03/17 13:48:18   142s] defIn read 740000 lines...
+[03/17 13:48:18   142s] defIn read 750000 lines...
+[03/17 13:48:18   142s] defIn read 760000 lines...
+[03/17 13:48:18   143s] defIn read 770000 lines...
+[03/17 13:48:18   143s] defIn read 780000 lines...
+[03/17 13:48:18   143s] defIn read 790000 lines...
+[03/17 13:48:18   143s] defIn read 800000 lines...
+[03/17 13:48:18   143s] defIn read 810000 lines...
+[03/17 13:48:18   143s] defIn read 820000 lines...
+[03/17 13:48:18   143s] defIn read 830000 lines...
+[03/17 13:48:19   143s] defIn read 840000 lines...
+[03/17 13:48:19   143s] defIn read 850000 lines...
+[03/17 13:48:19   143s] defIn read 860000 lines...
+[03/17 13:48:19   143s] defIn read 870000 lines...
+[03/17 13:48:19   143s] defIn read 880000 lines...
+[03/17 13:48:19   143s] defIn read 890000 lines...
+[03/17 13:48:19   143s] defIn read 900000 lines...
+[03/17 13:48:19   143s] defIn read 910000 lines...
+[03/17 13:48:19   143s] DEF file '../../db/des3.def' is parsed, current time is Tue Mar 17 13:48:19 2026.
+[03/17 13:48:19   143s] **WARN: (IMPTR-2108):	For layer M10, the gaps of 30 out of 30 tracks are narrower than 16.000um (space 8.000 + width 8.000).
+[03/17 13:48:19   143s] Type 'man IMPTR-2108' for more detail.
+[03/17 13:48:19   143s]  As a result, your trialRoute congestion could be incorrect.
+[03/17 13:48:19   143s] Updating the floorplan ...
+[03/17 13:48:19   144s] <CMD> globalNetConnect VDD -type pgpin -pin VDD -inst *
+[03/17 13:48:19   144s] <CMD> globalNetConnect VSS -type pgpin -pin VSS -inst *
+[03/17 13:48:19   144s] <CMD> setMultiCpuUsage -localCpu 4
+[03/17 13:48:19   144s] <CMD> set_power_analysis_mode -reset
+[03/17 13:48:19   144s] <CMD> set_power_analysis_mode -method dynamic_vectorbased -create_binary_db true -current_generation_method avg
+[03/17 13:48:19   144s] <CMD> read_activity_file -format VCD ../../vcd/test.vcd -scope test/u0 -start 4000ns -end 5000ns
+[03/17 13:48:19   144s] <CMD> set_dynamic_power_simulation -resolution 1ns
+[03/17 13:48:19   144s] <CMD> report_power -o ../../db/power/avg_v15
+[03/17 13:48:19   144s] This command "report_power -o ../../db/power/avg_v15" required an extra checkout of license vtsxl.
+[03/17 13:48:19   144s] Additional license(s) checked out: 1 'Voltus_Power_Integrity_XL' license(s)
+[03/17 13:48:21   147s] 
+[03/17 13:48:21   147s] Power Net Detected:
+[03/17 13:48:21   147s]     Voltage	    Name
+[03/17 13:48:21   147s]     0.00V	    VSS
+[03/17 13:48:21   147s]     0.70V	    VDD
+[03/17 13:48:21   147s] #################################################################################
+[03/17 13:48:21   147s] # Design Stage: PostRoute
+[03/17 13:48:21   147s] # Design Name: des3
+[03/17 13:48:21   147s] # Design Mode: 90nm
+[03/17 13:48:21   147s] # Analysis Mode: MMMC Non-OCV 
+[03/17 13:48:21   147s] # Parasitics Mode: No SPEF/RCDB
+[03/17 13:48:21   147s] # Signoff Settings: SI Off 
+[03/17 13:48:21   147s] #################################################################################
+[03/17 13:48:21   147s] Extraction called for design 'des3' of instances=64179 and nets=56064 using extraction engine 'preRoute' .
+[03/17 13:48:21   147s] **WARN: (IMPEXT-3530):	The process node is not set. Use the command setDesignMode -process <process node> prior to extraction for maximum accuracy and optimal automatic threshold setting.
+[03/17 13:48:21   147s] Type 'man IMPEXT-3530' for more detail.
+[03/17 13:48:21   147s] PreRoute RC Extraction called for design des3.
+[03/17 13:48:21   147s] RC Extraction called in multi-corner(1) mode.
+[03/17 13:48:21   147s] RCMode: PreRoute
+[03/17 13:48:21   147s]       RC Corner Indexes            0   
+[03/17 13:48:21   147s] Capacitance Scaling Factor   : 1.00000 
+[03/17 13:48:21   147s] Resistance Scaling Factor    : 1.00000 
+[03/17 13:48:21   147s] Clock Cap. Scaling Factor    : 1.00000 
+[03/17 13:48:21   147s] Clock Res. Scaling Factor    : 1.00000 
+[03/17 13:48:21   147s] Shrink Factor                : 1.00000
+[03/17 13:48:21   147s] PreRoute extraction is honoring NDR/Shielding/ExtraSpace for clock nets.
+[03/17 13:48:21   147s] Using Quantus QRC technology file ...
+[03/17 13:48:22   147s] Updating RC grid for preRoute extraction ...
+[03/17 13:48:22   147s] Initializing multi-corner resistance tables ...
+[03/17 13:48:22   147s] PreRoute RC Extraction DONE (CPU Time: 0:00:00.2  Real Time: 0:00:01.0  MEM: 890.992M)
+[03/17 13:48:22   147s] Multithreaded Timing Analysis is initialized with 4 threads
+[03/17 13:48:22   147s] 
+[03/17 13:48:23   149s] Calculate delays in Single mode...
+[03/17 13:48:23   149s] Topological Sorting (CPU = 0:00:00.1, MEM = 1057.8M, InitMEM = 1048.6M)
+[03/17 13:48:23   150s] siFlow : Timing analysis mode is single, using late cdB files
+[03/17 13:48:26   158s] End Timing Check Calculation. (CPU Time=0:00:00.2, Real Time=0:00:00.0)
+[03/17 13:48:26   158s] End delay calculation. (MEM=1423.84 CPU=0:00:07.7 REAL=0:00:02.0)
+[03/17 13:48:26   158s] *** CDM Built up (cpu=0:00:11.1  real=0:00:05.0  mem= 1423.8M) ***
+[03/17 13:48:27   161s] **WARN: (TCLCMD-1233):	The -view option should be specified for the command write_timing_windows in MMMC mode. For now The tool will assume the view specified as 'view_tc' and write the timing windows corresponding to this view. For compatibility with future releases, update your scripts to provide -view option.
+[03/17 13:48:30   162s] 
+[03/17 13:48:30   162s] 
+[03/17 13:48:30   162s] 
+[03/17 13:48:30   162s] Started Power Analysis at 13:48:28 03/17/2026
+[03/17 13:48:30   162s] 
+[03/17 13:48:30   162s] 
+[03/17 13:48:30   162s] Begin Processing Timing Library for Power Calculation
+[03/17 13:48:30   162s] /home/IC/Desktop/des_demo/db/des3.enc.dat/libs/mmmc/asap7sc7p5t_AO_LVT_TT_nldm_211120.lib
+[03/17 13:48:34   162s] /home/IC/Desktop/des_demo/db/des3.enc.dat/libs/mmmc/asap7sc7p5t_INVBUF_LVT_TT_nldm_220122.lib
+[03/17 13:48:34   162s] /home/IC/Desktop/des_demo/db/des3.enc.dat/libs/mmmc/asap7sc7p5t_OA_LVT_TT_nldm_211120.lib
+[03/17 13:48:37   162s] /home/IC/Desktop/des_demo/db/des3.enc.dat/libs/mmmc/asap7sc7p5t_SEQ_LVT_TT_nldm_220123.lib
+[03/17 13:48:37   162s] /home/IC/Desktop/des_demo/db/des3.enc.dat/libs/mmmc/asap7sc7p5t_SIMPLE_LVT_TT_nldm_211120.lib
+[03/17 13:48:37   162s] /home/IC/Desktop/des_demo/db/des3.enc.dat/libs/mmmc/asap7sc7p5t_AO_SLVT_TT_nldm_211120.lib
+[03/17 13:48:40   162s] /home/IC/Desktop/des_demo/db/des3.enc.dat/libs/mmmc/asap7sc7p5t_INVBUF_SLVT_TT_nldm_220122.lib
+[03/17 13:48:40   162s] /home/IC/Desktop/des_demo/db/des3.enc.dat/libs/mmmc/asap7sc7p5t_OA_SLVT_TT_nldm_211120.lib
+[03/17 13:48:42   162s] /home/IC/Desktop/des_demo/db/des3.enc.dat/libs/mmmc/asap7sc7p5t_SEQ_SLVT_TT_nldm_220123.lib
+[03/17 13:48:42   162s] /home/IC/Desktop/des_demo/db/des3.enc.dat/libs/mmmc/asap7sc7p5t_SIMPLE_SLVT_TT_nldm_211120.lib
+[03/17 13:48:42   162s] Ended Processing Timing Library for Power Calculation: (cpu=0:00:12, real=0:00:12, mem(process/total)=914.97MB/914.97MB)
+[03/17 13:48:42   162s] 
+[03/17 13:48:42   162s] 
+[03/17 13:48:42   162s] ../../db/des3.enc.dat/libs/lef/asap7_tech_4x_201209.lef
+[03/17 13:48:42   162s] ../../db/des3.enc.dat/libs/lef/asap7sc7p5t_28_L_4x_220121a.lef
+[03/17 13:48:42   162s] ../../db/des3.enc.dat/libs/lef/asap7sc7p5t_28_SL_4x_220121a.lef
+[03/17 13:48:42   162s] Begin Processing Netlist for Power Calculation
+[03/17 13:48:42   162s] Detected compressed DEF file /tmp/innovus_temp_65366_IC_IC_3lzmeZ/eps_out_65366.def.gz
+[03/17 13:48:42   162s] 
+[03/17 13:48:42   162s] Parsing DEF file /tmp/innovus_temp_65366_IC_IC_3lzmeZ/eps_out_65366.def.gz
+[03/17 13:48:42   162s] 
+[03/17 13:48:42   162s] Starting Reading 64179 components
+[03/17 13:48:42   162s] 2026-Mar-17 13:48:42 (2026-Mar-17 05:48:42 GMT)
+[03/17 13:48:43   162s] 2026-Mar-17 13:48:43 (2026-Mar-17 05:48:43 GMT): 10%
+[03/17 13:48:43   162s] 2026-Mar-17 13:48:43 (2026-Mar-17 05:48:43 GMT): 20%
+[03/17 13:48:43   162s] 2026-Mar-17 13:48:43 (2026-Mar-17 05:48:43 GMT): 30%
+[03/17 13:48:43   162s] 2026-Mar-17 13:48:43 (2026-Mar-17 05:48:43 GMT): 40%
+[03/17 13:48:43   162s] 2026-Mar-17 13:48:43 (2026-Mar-17 05:48:43 GMT): 50%
+[03/17 13:48:43   162s] 2026-Mar-17 13:48:43 (2026-Mar-17 05:48:43 GMT): 60%
+[03/17 13:48:44   162s] 2026-Mar-17 13:48:44 (2026-Mar-17 05:48:44 GMT): 70%
+[03/17 13:48:44   162s] 2026-Mar-17 13:48:44 (2026-Mar-17 05:48:44 GMT): 80%
+[03/17 13:48:44   162s] 2026-Mar-17 13:48:44 (2026-Mar-17 05:48:44 GMT): 90%
+[03/17 13:48:44   162s] 
+[03/17 13:48:44   162s] Finished Reading 64179 components
+[03/17 13:48:44   162s] 2026-Mar-17 13:48:44 (2026-Mar-17 05:48:44 GMT)
+[03/17 13:48:44   162s] 
+[03/17 13:48:44   162s] Starting Reading 2 special nets
+[03/17 13:48:44   162s] 2026-Mar-17 13:48:44 (2026-Mar-17 05:48:44 GMT)
+[03/17 13:48:44   162s] 
+[03/17 13:48:44   162s] Finished Reading 2 special nets
+[03/17 13:48:44   162s] 2026-Mar-17 13:48:44 (2026-Mar-17 05:48:44 GMT)
+[03/17 13:48:44   162s] 
+[03/17 13:48:44   162s] Starting Reading 54063 nets
+[03/17 13:48:44   162s] 2026-Mar-17 13:48:44 (2026-Mar-17 05:48:44 GMT)
+[03/17 13:48:45   162s] 2026-Mar-17 13:48:45 (2026-Mar-17 05:48:45 GMT): 10%
+[03/17 13:48:45   162s] 2026-Mar-17 13:48:45 (2026-Mar-17 05:48:45 GMT): 20%
+[03/17 13:48:45   162s] 2026-Mar-17 13:48:45 (2026-Mar-17 05:48:45 GMT): 30%
+[03/17 13:48:45   162s] 2026-Mar-17 13:48:45 (2026-Mar-17 05:48:45 GMT): 40%
+[03/17 13:48:46   162s] 2026-Mar-17 13:48:46 (2026-Mar-17 05:48:46 GMT): 50%
+[03/17 13:48:46   162s] 2026-Mar-17 13:48:46 (2026-Mar-17 05:48:46 GMT): 60%
+[03/17 13:48:46   162s] 2026-Mar-17 13:48:46 (2026-Mar-17 05:48:46 GMT): 70%
+[03/17 13:48:47   162s] 2026-Mar-17 13:48:47 (2026-Mar-17 05:48:47 GMT): 80%
+[03/17 13:48:47   162s] 2026-Mar-17 13:48:47 (2026-Mar-17 05:48:47 GMT): 90%
+[03/17 13:48:47   162s] 
+[03/17 13:48:47   162s] Finished Reading 54063 nets
+[03/17 13:48:47   162s] 2026-Mar-17 13:48:47 (2026-Mar-17 05:48:47 GMT)
+[03/17 13:48:47   162s] ** INFO:  (VOLTUS_POWR-2040): Did not load 10350 instances.  These instances have been determined to be fillers - they
+[03/17 13:48:47   162s]    have no signal pins, no power or leakage current data, and do not contribute to power results.
+[03/17 13:48:47   162s]    To avoid skipping these instances, add "<powerObj> rPreloadLiberty 0" using the set_power_include_file.
+[03/17 13:48:47   162s] 
+[03/17 13:48:47   162s] Ended Processing Netlist for Power Calculation: (cpu=0:00:05, real=0:00:04, mem(process/total)=965.68MB/965.68MB)
+[03/17 13:48:47   162s] 
+[03/17 13:48:47   162s] 
+[03/17 13:48:47   162s] 
+[03/17 13:48:47   162s] 
+[03/17 13:48:47   162s] Begin Processing Power Net/Grid for Power Calculation
+[03/17 13:48:47   162s] 
+[03/17 13:48:47   162s] 
+[03/17 13:48:47   162s] Rail status:
+[03/17 13:48:47   162s]   0.7V    VDD
+[03/17 13:48:47   162s]   0V    VSS
+[03/17 13:48:47   162s]   
+[03/17 13:48:47   162s] 
+[03/17 13:48:47   162s] Ended Processing Power Net/Grid for Power Calculation: (cpu=0:00:00, real=0:00:00, mem(process/total)=965.92MB/965.92MB)
+[03/17 13:48:47   162s] 
+[03/17 13:48:47   162s] 
+[03/17 13:48:47   162s] Begin Processing Timing Window Data for Power Calculation
+[03/17 13:48:47   162s]    core_clk(100MHz) 
+[03/17 13:48:48   162s] ** INFO:  (VOLTUS_POWR-2054): Setting default frequency to the dominant frequency 100MHz.
+[03/17 13:48:48   162s] 
+[03/17 13:48:48   162s] 
+[03/17 13:48:48   162s]   Timing Window Statistics:
+[03/17 13:48:48   162s]     Waveform definitions parsed             : 1
+[03/17 13:48:48   162s]     Clock roots assigned/parsed             : 1/1 (100%)
+[03/17 13:48:48   162s]     Constants assigned/parsed               : 0/0 (0%)
+[03/17 13:48:48   162s]     External loads assigned/parsed          : 0/0 (0%)
+[03/17 13:48:48   162s]     Slews assigned/parsed                   : 108554/108554 (100%)
+[03/17 13:48:48   162s]     Nets with slew/Nets in design           : 54063/54063 (100%)
+[03/17 13:48:48   162s]     Slew range                              : 5e-12s - 3.1025e-10s
+[03/17 13:48:48   162s] 
+[03/17 13:48:48   162s] 
+[03/17 13:48:48   162s] Ended Processing Timing Window Data for Power Calculation: (cpu=0:00:00, real=0:00:00, mem(process/total)=968.36MB/968.36MB)
+[03/17 13:48:48   162s] 
+[03/17 13:48:48   162s] 
+[03/17 13:48:48   162s] Loading SDC file design.sdc1
+[03/17 13:48:48   162s] 
+[03/17 13:48:54   162s] Begin Processing VCD Vectors
+[03/17 13:48:54   162s] Parsing VCD file ../../vcd/test.vcd
+[03/17 13:48:54   162s] 
+[03/17 13:48:54   162s] 
+[03/17 13:48:54   162s] Starting Reading VCD variables
+[03/17 13:48:54   162s] 2026-Mar-17 13:48:54 (2026-Mar-17 05:48:54 GMT)
+[03/17 13:48:54   162s] 2026-Mar-17 13:48:54 (2026-Mar-17 05:48:54 GMT): 10%
+[03/17 13:48:54   162s] 2026-Mar-17 13:48:54 (2026-Mar-17 05:48:54 GMT): 20%
+[03/17 13:48:54   162s] 2026-Mar-17 13:48:54 (2026-Mar-17 05:48:54 GMT): 30%
+[03/17 13:48:54   162s] 2026-Mar-17 13:48:54 (2026-Mar-17 05:48:54 GMT): 40%
+[03/17 13:48:55   162s] 2026-Mar-17 13:48:55 (2026-Mar-17 05:48:55 GMT): 50%
+[03/17 13:48:55   162s] 2026-Mar-17 13:48:55 (2026-Mar-17 05:48:55 GMT): 60%
+[03/17 13:48:55   162s] 2026-Mar-17 13:48:55 (2026-Mar-17 05:48:55 GMT): 70%
+[03/17 13:48:55   162s] 2026-Mar-17 13:48:55 (2026-Mar-17 05:48:55 GMT): 80%
+[03/17 13:48:55   162s] 2026-Mar-17 13:48:55 (2026-Mar-17 05:48:55 GMT): 90%
+[03/17 13:48:55   162s] 
+[03/17 13:48:55   162s] Finished Reading VCD variables
+[03/17 13:48:55   162s] 2026-Mar-17 13:48:55 (2026-Mar-17 05:48:55 GMT)
+[03/17 13:48:55   162s] 
+[03/17 13:48:55   162s] Starting Reading VCD toggles
+[03/17 13:48:55   162s] 2026-Mar-17 13:48:55 (2026-Mar-17 05:48:55 GMT)
+[03/17 13:48:55   162s] 2026-Mar-17 13:48:55 (2026-Mar-17 05:48:55 GMT): 10%
+[03/17 13:48:55   162s] 2026-Mar-17 13:48:55 (2026-Mar-17 05:48:55 GMT): 20%
+[03/17 13:48:55   162s] 2026-Mar-17 13:48:55 (2026-Mar-17 05:48:55 GMT): 30%
+[03/17 13:48:55   162s] 2026-Mar-17 13:48:55 (2026-Mar-17 05:48:55 GMT): 40%
+[03/17 13:48:55   162s] 2026-Mar-17 13:48:55 (2026-Mar-17 05:48:55 GMT): 50%
+[03/17 13:48:55   162s] 2026-Mar-17 13:48:55 (2026-Mar-17 05:48:55 GMT): 60%
+[03/17 13:48:55   162s] 2026-Mar-17 13:48:55 (2026-Mar-17 05:48:55 GMT): 70%
+[03/17 13:48:55   162s] 2026-Mar-17 13:48:55 (2026-Mar-17 05:48:55 GMT): 80%
+[03/17 13:48:55   162s] 2026-Mar-17 13:48:55 (2026-Mar-17 05:48:55 GMT): 90%
+[03/17 13:48:55   162s] 
+[03/17 13:48:55   162s] Finished Reading VCD toggles
+[03/17 13:48:55   162s] 2026-Mar-17 13:48:55 (2026-Mar-17 05:48:55 GMT)
+[03/17 13:48:55   162s] ** WARN:  (VOLTUS_POWR-1784): Existing clock frequency 100MHz is being overwritten with 10MHz on clock rooted on net
+[03/17 13:48:55   162s] 'clk'
+[03/17 13:48:55   162s] from VCD file. If intent is to calculate static power using original clock frequency, use the command
+[03/17 13:48:55   162s] 'set_switching_activity -clock <clock name> -scale_factor <num>' to scale frequency of this clock.
+[03/17 13:48:55   162s] 
+[03/17 13:48:55   162s]    With this vcd command,  87272 value changes and 1e-06 second simulation time were counted for power consumption calculation.
+[03/17 13:48:55   162s] 
+[03/17 13:48:55   162s]   Filename (activity)                    : ../../vcd/test.vcd
+[03/17 13:48:55   162s]   Names in file that matched to design   : 54063/56733
+[03/17 13:48:55   162s]   Annotation coverage for this file      : 54063/54063 = 100%
+[03/17 13:48:55   162s] 
+[03/17 13:48:55   162s] 
+[03/17 13:48:55   162s]   2670 nets were found in the VCD file(s) but were not in
+[03/17 13:48:55   162s]   the design.  These nets are not reported because set_power_analysis_mode -report_missing_nets
+[03/17 13:48:55   162s]   is set to false.
+[03/17 13:48:55   162s] 
+[03/17 13:48:55   162s] 
+[03/17 13:48:55   162s]   Total annotation coverage for all files of type VCD: 54063/54063 = 100%
+[03/17 13:48:55   162s]   Percent of VCD annotated nets with zero toggles: 34509/54063 = 63.8311%
+[03/17 13:48:55   162s] 
+[03/17 13:48:55   162s] 
+[03/17 13:48:55   162s] Ended Processing VCD Vectors: (cpu=0:00:01, real=0:00:01, mem(process/total)=981.99MB/981.99MB)
+[03/17 13:48:55   162s] 
+[03/17 13:48:55   162s] 
+[03/17 13:48:55   162s] Begin Processing FSDB Vectors
+[03/17 13:48:55   162s] Ended Processing FSDB Vectors: (cpu=0:00:00, real=0:00:00, mem(process/total)=981.99MB/981.99MB)
+[03/17 13:48:55   162s] 
+[03/17 13:48:55   162s] 
+[03/17 13:48:55   162s] Begin Processing User Attributes
+[03/17 13:48:55   162s] Ended Processing User Attributes: (cpu=0:00:00, real=0:00:00, mem(process/total)=982.00MB/982.00MB)
+[03/17 13:48:55   162s] 
+[03/17 13:48:55   162s] 
+[03/17 13:48:55   162s] Begin Processing Signal Activity
+[03/17 13:48:55   162s] 
+[03/17 13:48:55   162s] Starting Levelizing
+[03/17 13:48:55   162s] 2026-Mar-17 13:48:55 (2026-Mar-17 05:48:55 GMT)
+[03/17 13:48:55   162s] 2026-Mar-17 13:48:55 (2026-Mar-17 05:48:55 GMT): 10%
+[03/17 13:48:56   162s] 2026-Mar-17 13:48:56 (2026-Mar-17 05:48:56 GMT): 20%
+[03/17 13:48:56   162s] 2026-Mar-17 13:48:56 (2026-Mar-17 05:48:56 GMT): 30%
+[03/17 13:48:56   162s] 2026-Mar-17 13:48:56 (2026-Mar-17 05:48:56 GMT): 40%
+[03/17 13:48:56   162s] 2026-Mar-17 13:48:56 (2026-Mar-17 05:48:56 GMT): 50%
+[03/17 13:48:56   162s] 2026-Mar-17 13:48:56 (2026-Mar-17 05:48:56 GMT): 60%
+[03/17 13:48:56   162s] 2026-Mar-17 13:48:56 (2026-Mar-17 05:48:56 GMT): 70%
+[03/17 13:48:56   162s] 2026-Mar-17 13:48:56 (2026-Mar-17 05:48:56 GMT): 80%
+[03/17 13:48:56   162s] 2026-Mar-17 13:48:56 (2026-Mar-17 05:48:56 GMT): 90%
+[03/17 13:48:56   162s] 
+[03/17 13:48:56   162s] Finished Levelizing
+[03/17 13:48:56   162s] 2026-Mar-17 13:48:56 (2026-Mar-17 05:48:56 GMT)
+[03/17 13:48:56   162s] 
+[03/17 13:48:56   162s] Starting Activity Propagation
+[03/17 13:48:56   162s] 2026-Mar-17 13:48:56 (2026-Mar-17 05:48:56 GMT)
+[03/17 13:48:57   162s] 
+[03/17 13:48:57   162s] Finished Activity Propagation
+[03/17 13:48:57   162s] 2026-Mar-17 13:48:57 (2026-Mar-17 05:48:57 GMT)
+[03/17 13:48:57   162s] 
+[03/17 13:48:57   162s] Activity annotation summary:
+[03/17 13:48:57   162s]         Primary Inputs : 234/234 = 100%
+[03/17 13:48:57   162s]           Flop outputs : 8808/8808 = 100%
+[03/17 13:48:57   162s]   Memory/Macro outputs : 0/0 = 0%
+[03/17 13:48:57   162s]       Tristate outputs : 0/0 = 0%
+[03/17 13:48:57   162s]             Total Nets : 54063/54063 = 100%
+[03/17 13:48:57   162s] 
+[03/17 13:48:57   162s] 
+[03/17 13:48:57   162s] Ended Processing Signal Activity: (cpu=0:00:01, real=0:00:01, mem(process/total)=983.52MB/983.52MB)
+[03/17 13:48:57   162s] 
+[03/17 13:48:57   162s] 
+[03/17 13:48:57   162s] Begin Power Analysis
+[03/17 13:48:57   162s]   ----------------------------------------------------------
+[03/17 13:48:57   162s]   # of cell(s) missing both power/leakage table: 1
+[03/17 13:48:57   162s]   # of cell(s) missing power table: 0
+[03/17 13:48:57   162s]   # of cell(s) missing leakage table: 0
+[03/17 13:48:57   162s]   # of MSMV cell(s) missing power_level: 0
+[03/17 13:48:57   162s]   ----------------------------------------------------------
+[03/17 13:48:57   162s]   CellName                                  Missing Table(s)
+[03/17 13:48:57   162s]   TAPCELL_ASAP7_75t_L                       power data, lib data, 
+[03/17 13:48:57   162s]   
+[03/17 13:48:57   162s] 
+[03/17 13:48:57   162s] 
+[03/17 13:48:57   162s] Starting Calculating power
+[03/17 13:48:57   162s] 2026-Mar-17 13:48:57 (2026-Mar-17 05:48:57 GMT)
+[03/17 13:48:57   162s]  ... Preparing power data for dynamic calculation
+[03/17 13:48:57   162s] 2026-Mar-17 13:48:57 (2026-Mar-17 05:48:57 GMT): 10%
+[03/17 13:48:57   162s] 2026-Mar-17 13:48:57 (2026-Mar-17 05:48:57 GMT): 20%
+[03/17 13:48:57   162s] 2026-Mar-17 13:48:57 (2026-Mar-17 05:48:57 GMT): 30%
+[03/17 13:48:57   162s] 2026-Mar-17 13:48:57 (2026-Mar-17 05:48:57 GMT): 40%
+[03/17 13:48:57   162s] 2026-Mar-17 13:48:57 (2026-Mar-17 05:48:57 GMT): 50%
+[03/17 13:48:57   162s] 2026-Mar-17 13:48:57 (2026-Mar-17 05:48:57 GMT): 60%
+[03/17 13:48:57   162s] 2026-Mar-17 13:48:57 (2026-Mar-17 05:48:57 GMT): 70%
+[03/17 13:48:58   162s] 2026-Mar-17 13:48:58 (2026-Mar-17 05:48:58 GMT): 80%
+[03/17 13:48:58   162s] 2026-Mar-17 13:48:58 (2026-Mar-17 05:48:58 GMT): 90%
+[03/17 13:48:58   162s] 
+[03/17 13:48:58   162s] Finished Calculating power
+[03/17 13:48:58   162s] 2026-Mar-17 13:48:58 (2026-Mar-17 05:48:58 GMT)
+[03/17 13:48:58   162s] Ended Power Analysis: (cpu=0:00:01, real=0:00:00, mem(process/total)=1009.92MB/1009.92MB)
+[03/17 13:48:58   162s] 
+[03/17 13:48:58   162s] 
+[03/17 13:48:58   162s] Begin Writing Current Files
+[03/17 13:48:58   162s]   This vectcorbased dynamic simulation is from 4e-06 second to 5e-06 second.
+[03/17 13:48:58   162s]   CPU              : 4
+[03/17 13:48:58   162s]   Simulation Period: 1000ns
+[03/17 13:48:58   162s]   Step Size        : 1000ps
+[03/17 13:48:58   162s] 
+[03/17 13:48:58   162s] 
+[03/17 13:48:58   162s] Starting Processing toggles for instances
+[03/17 13:48:58   162s] 2026-Mar-17 13:48:58 (2026-Mar-17 05:48:58 GMT)
+[03/17 13:48:58   162s] ** INFO:  (VOLTUS_POWR-2042): Beginning parallel processing, using 4 CPUs
+[03/17 13:48:58   162s] 
+[03/17 13:48:58   162s] 2026-Mar-17 13:48:58 (2026-Mar-17 05:48:58 GMT): 10%
+[03/17 13:48:58   162s] 2026-Mar-17 13:48:58 (2026-Mar-17 05:48:58 GMT): 20%
+[03/17 13:48:59   162s] 2026-Mar-17 13:48:59 (2026-Mar-17 05:48:59 GMT): 30%
+[03/17 13:48:59   162s] 2026-Mar-17 13:48:59 (2026-Mar-17 05:48:59 GMT): 40%
+[03/17 13:49:00   162s] 2026-Mar-17 13:49:00 (2026-Mar-17 05:49:00 GMT): 50%
+[03/17 13:49:00   162s] 2026-Mar-17 13:49:00 (2026-Mar-17 05:49:00 GMT): 60%
+[03/17 13:49:01   162s] 2026-Mar-17 13:49:01 (2026-Mar-17 05:49:01 GMT): 70%
+[03/17 13:49:01   162s] 2026-Mar-17 13:49:01 (2026-Mar-17 05:49:01 GMT): 80%
+[03/17 13:49:02   162s] 2026-Mar-17 13:49:02 (2026-Mar-17 05:49:02 GMT): 90%
+[03/17 13:49:02   162s] 
+[03/17 13:49:02   162s] Finished Processing toggles for instances
+[03/17 13:49:02   162s] 2026-Mar-17 13:49:02 (2026-Mar-17 05:49:02 GMT)
+[03/17 13:49:02   162s] Ended Writing Current Files: (cpu=0:00:17, real=0:00:04, mem(process/total)=1046.43MB/1046.43MB)
+[03/17 13:49:02   162s] 
+[03/17 13:49:02   162s] 
+[03/17 13:49:02   162s] Power Analysis Statistics:
+[03/17 13:49:02   162s]   Warning messages: 1
+[03/17 13:49:02   162s]   Error messages: 0
+[03/17 13:49:02   162s] 
+[03/17 13:49:02   162s] 
+[03/17 13:49:02   162s] Finished Power Analysis at 13:49:02 03/17/2026 (cpu=0:00:46, real=0:00:34, peak mem=0.00MB)
+[03/17 13:49:02   162s] Current Voltus resource usage: (total cpu=0:00:00, real=0:00:00, mem=0.00MB)
+[03/17 13:49:02   162s] 
+[03/17 13:49:02   162s] 
+[03/17 13:49:02   162s] 
+[03/17 13:49:02   162s] Exit code 0.
+[03/17 13:49:02   162s] Voltus Power Analysis exited successfully.
+[03/17 13:49:02   208s] <CMD> set_pg_nets -net VDD -voltage 0.7 -threshold 0.651
+[03/17 13:49:02   208s] <CMD> set_pg_nets -net VSS -voltage 0 -threshold 0.1
+[03/17 13:49:02   208s] <CMD> set_power_pads -net VDD -format xy -file ./ring_pads_vdd.ppl
+[03/17 13:49:02   208s] <CMD> set_power_pads -net VSS -format xy -file ./ring_pads_vss.ppl
+[03/17 13:49:02   208s] <CMD> set_power_data -format current {../../db/power/avg_v15/dynamic_VDD.ptiavg  ../../db/power/avg_v15/dynamic_VSS.ptiavg}
+[03/17 13:49:02   208s] <CMD> set_rail_analysis_mode -method dynamic -accuracy xd
+[03/17 13:49:02   208s] **ERROR: (VOLTUS-1185):	Specify power grid libraries with option -power_grid_library.
+[03/17 13:49:02   208s] <CMD> set_rail_analysis_domain -name PD -pwrnets VDD -gndnets VSS
+[03/17 13:49:02   208s] <CMD> analyze_rail -type domain -output ../../db/rail_power_v15 PD
+[03/17 13:49:02   208s] **ERROR: (VOLTUS-1129):	Rail analysis mode should be set properly with command set_rail_analysis_mode before running analyze_rail.
+[03/17 13:52:08   310s] <CMD> set_pg_library_mode -celltype techonly -extraction_tech_file ../../db/des3.enc.dat/libs/mmmc/rc_typ_25/qrcTechFile_typ03_scaled4xV06
+[03/17 13:52:11   311s] <CMD> generate_pg_library -output ./des3_pg_v15
+[03/17 13:52:13   311s] Started PGV Library Generator at 13:52:10 03/17/2026
+[03/17 13:52:13   311s] 
+[03/17 13:52:13   311s] ** INFO:  (VOLTUS_LGEN-3599): Library generation settings: 
+[03/17 13:52:13   311s] 	Mode: TECH 
+[03/17 13:52:13   311s] 	Capacitance: area_cap 
+[03/17 13:52:13   311s] 	Current Distribution: estimation 
+[03/17 13:52:13   311s] 	Grid Port Definition: LEF 
+[03/17 13:52:13   311s] 	Grid Current Sinks: LEF pin 
+[03/17 13:52:13   311s] 	Power Gate: no
+[03/17 13:52:13   311s] 
+[03/17 13:52:13   311s] ** INFO:  (VOLTUS_LGEN-3598): Processing LEF files: 
+[03/17 13:52:13   311s] /home/IC/Desktop/des_demo/db/des3.enc.dat/libs/lef/asap7_tech_4x_201209.lef
+[03/17 13:52:13   311s] /home/IC/Desktop/des_demo/db/des3.enc.dat/libs/lef/asap7sc7p5t_28_L_4x_220121a.lef
+[03/17 13:52:13   311s] /home/IC/Desktop/des_demo/db/des3.enc.dat/libs/lef/asap7sc7p5t_28_SL_4x_220121a.lef
+[03/17 13:52:13   311s] 
+[03/17 13:52:13   311s] ** INFO:  (VOLTUS_LGEN-3611): No lef leyarmap specified. Tool has
+[03/17 13:52:13   311s] internally generated the mapping between technology layers and lef layers
+[03/17 13:52:13   311s] using information in technology file and technology lef. To specify your
+[03/17 13:52:13   311s] own layer mapping, use set_pg_library_mode -lef_layermap.
+[03/17 13:52:13   311s] 
+[03/17 13:52:13   311s]   TECH-LAYER    LEF-LAYER
+[03/17 13:52:13   311s]   GATE    nwell
+[03/17 13:52:13   311s]   V0    V0
+[03/17 13:52:13   311s]   M1    M1
+[03/17 13:52:13   311s]   V1    V1
+[03/17 13:52:13   311s]   M2    M2
+[03/17 13:52:13   311s]   V2    V2
+[03/17 13:52:13   311s]   M3    M3
+[03/17 13:52:13   311s]   V3    V3
+[03/17 13:52:13   311s]   M4    M4
+[03/17 13:52:13   311s]   V4    V4
+[03/17 13:52:13   311s]   M5    M5
+[03/17 13:52:13   311s]   V5    V5
+[03/17 13:52:13   311s]   M6    M6
+[03/17 13:52:13   311s]   V6    V6
+[03/17 13:52:13   311s]   M7    M7
+[03/17 13:52:13   311s]   V7    V7
+[03/17 13:52:13   311s]   M8    M8
+[03/17 13:52:13   311s]   V8    V8
+[03/17 13:52:13   311s]   M9    M9
+[03/17 13:52:13   311s] 
+[03/17 13:52:13   311s] 
+[03/17 13:52:13   311s] ** INFO:  (VOLTUS_LGEN-3606): 
+[03/17 13:52:13   311s] Power Grid View Generation Statistics:
+[03/17 13:52:13   311s]         # Total number of cells: 424 
+[03/17 13:52:13   311s]         # TECH view created: 424 (100%)
+[03/17 13:52:13   311s] Finished PGV Library Generator at 13:52:13 03/17/2026 (cpu=0:00:01, real=0:00:03, peak mem=0.00MB)
+[03/17 13:52:13   311s] Current Voltus resource usage: (total cpu=0:00:00, real=0:00:00, mem=0.00MB)
+[03/17 13:53:28   350s] <CMD> set_pg_nets -net VDD -voltage 0.7 -threshold 0.651 set_pg_nets -net VSS -voltage 0 -threshold 0.1
+[03/17 13:53:28   350s] 
+[03/17 13:53:28   350s] Usage: set_pg_nets [-help] [-die_instance_name <string>] [-force] -net <string>
+[03/17 13:53:28   350s]                    [-pkg_net_name <string>] [-threshold <float>]
+[03/17 13:53:28   350s]                    [-tolerance <float>] -voltage <float>
+[03/17 13:53:28   350s] 
+[03/17 13:53:28   350s] **ERROR: (IMPTCM-48):	"set_pg_nets" is not a legal option for command "set_pg_nets". Either the current option or an option prior to it is not specified correctly.
+[03/17 13:53:28   350s]   
+[03/17 13:53:28   350s] <CMD> set_power_pads -net VDD -format xy -file ./ring_pads_vdd.ppl
+[03/17 13:53:28   350s] <CMD> set_power_pads -net VSS -format xy -file ./ring_pads_vss.ppl
+[03/17 13:53:28   350s] <CMD> set_power_data -format current {../../db/power/avg_v15/dynamic_VDD.ptiavg  ../../db/power/avg_v15/dynamic_VSS.ptiavg}
+[03/17 13:53:28   350s] <CMD> set_rail_analysis_mode -method dynamic -accuracy xd -power_grid_library ./des3_pg_v15/techonly.cl
+[03/17 13:53:28   350s] <CMD> set_rail_analysis_domain -name PD -pwrnets VDD -gndnets VSS
+[03/17 13:53:29   351s] <CMD> analyze_rail -type domain -output ../../db/rail_power_v15 PD
+[03/17 13:53:33   354s] 
+[03/17 13:53:33   354s] 
+[03/17 13:53:33   354s] Started Rail Analysis at 13:53:31 03/17/2026
+[03/17 13:53:33   354s] 
+[03/17 13:53:34   354s] Connected to IC 47876 0 ( PID=66733 )
+[03/17 13:53:34   354s] Connected to IC 33300 1 ( PID=66743 )
+[03/17 13:53:34   354s]  
+[03/17 13:53:34   354s] Opening dproc sockets
+[03/17 13:53:34   354s] connection complete
+[03/17 13:53:34   354s] 
+[03/17 13:53:34   354s] Multi-CPU Configuration:
+[03/17 13:53:34   354s] 	#CPU: 4
+[03/17 13:53:34   354s] 	Mode: local
+[03/17 13:53:34   354s] 	Host: IC
+[03/17 13:53:34   354s] 
+[03/17 13:53:34   354s] 
+[03/17 13:53:34   354s] Start distributed processes ...
+[03/17 13:53:34   354s] INFO (PRL-36): The timeout for a remote job to respond is 30 seconds.
+[03/17 13:53:34   354s] 
+[03/17 13:53:34   354s] Submit command for task runs will be: local
+[03/17 13:53:34   354s] Begin Processing Cell Libraries for Rail Analysis
+[03/17 13:53:35   354s] 
+[03/17 13:53:35   354s] Merging libraries:
+[03/17 13:53:35   354s] ./des3_pg_v15/techonly.cl
+[03/17 13:53:35   354s] 
+[03/17 13:53:35   354s] Output library: ./work/lib_merged.cl
+[03/17 13:53:35   354s] 
+[03/17 13:53:36   354s] Ended Processing Cell Libraries for Rail Analysis: (cpu=0:00:00, real=0:00:01, mem(process/total)=22.59MB/22.59MB)
+[03/17 13:53:36   354s] Created merged cell library ./work/lib_merged.cl.
+[03/17 13:53:36   354s] 
+[03/17 13:53:36   354s] 
+[03/17 13:53:36   354s] Running RC  extraction for /tmp/innovus_temp_65366_IC_IC_3lzmeZ/eps_out_65366.def.gz ...
+[03/17 13:53:36   354s] 
+[03/17 13:53:36   354s] [libprotobuf ERROR google/protobuf/text_format.cc:275] Error parsing text-format VOLTUS.SESSION.SessionConfig: 2:1: Invalid control characters encountered in text.
+[03/17 13:53:36   354s] [libprotobuf ERROR google/protobuf/text_format.cc:275] Error parsing text-format VOLTUS.SESSION.SessionConfig: 2:7: Interpreting non ascii codepoint 213.
+[03/17 13:53:36   354s] [libprotobuf ERROR google/protobuf/text_format.cc:275] Error parsing text-format VOLTUS.SESSION.SessionConfig: 2:7: Expected identifier.
+[03/17 13:53:36   354s] ** ERROR: (VOLTUS_SCHD-0122):	Failed to parse configuration file ./work/sfe.session
+[03/17 13:53:36   354s] *** Error: In processing command script
+[03/17 13:53:36   354s] Voltus scheduler preparation failed.DEF extraction failed.Run OCI extraction flow failed.
+[03/17 13:53:36   354s] 
+[03/17 13:53:36   354s] 1 error was found while processing the file /tmp/innovus_temp_65366_IC_IC_3lzmeZ/voltus_rail_65366.cmd
+[03/17 13:53:36   354s] 
+[03/17 13:53:36   354s] Rail Analysis Statistics:
+[03/17 13:53:36   354s] Warning messages:      0
+[03/17 13:53:36   354s] Error messages:        1
+[03/17 13:53:36   354s] 
+[03/17 13:53:36   354s] Rail Analysis is unsuccessful due to errors.
+[03/17 13:53:36   354s] 
+[03/17 13:53:36   354s] Finished Rail Analysis at 13:53:36 03/17/2026 (cpu=0:00:02, real=0:00:05, peak mem=0.00MB)
+[03/17 13:53:36   354s] Current Voltus resource usage: (total cpu=0:00:00, real=0:00:00, mem=0.00MB)
+[03/17 13:53:36   354s] voltus_rail exited unsuccessfully.
+[03/17 13:53:36   356s] **ERROR: (PRL-387):	"Rail Analysis" failed to finish successfully.
+[03/17 13:55:11   408s] <CMD> analyze_rail -type domain -output ../../db/rail_power_v15 PD
+[03/17 13:55:15   412s] 
+[03/17 13:55:15   412s] 
+[03/17 13:55:15   412s] Started Rail Analysis at 13:55:14 03/17/2026
+[03/17 13:55:15   412s] 
+[03/17 13:55:16   412s] Connected to IC 49621 0 ( PID=67082 )
+[03/17 13:55:16   412s] Connected to IC 53995 1 ( PID=67089 )
+[03/17 13:55:16   412s]  
+[03/17 13:55:16   412s] Opening dproc sockets
+[03/17 13:55:16   412s] connection complete
+[03/17 13:55:16   412s] 
+[03/17 13:55:16   412s] Multi-CPU Configuration:
+[03/17 13:55:16   412s] 	#CPU: 4
+[03/17 13:55:16   412s] 	Mode: local
+[03/17 13:55:16   412s] 	Host: IC
+[03/17 13:55:16   412s] 
+[03/17 13:55:16   412s] 
+[03/17 13:55:16   412s] Start distributed processes ...
+[03/17 13:55:16   412s] INFO (PRL-36): The timeout for a remote job to respond is 30 seconds.
+[03/17 13:55:16   412s] 
+[03/17 13:55:16   412s] Submit command for task runs will be: local
+[03/17 13:55:16   412s] Begin Processing Cell Libraries for Rail Analysis
+[03/17 13:55:17   412s] 
+[03/17 13:55:18   412s] Merging libraries:
+[03/17 13:55:18   412s] ./des3_pg_v15/techonly.cl
+[03/17 13:55:18   412s] 
+[03/17 13:55:18   412s] Output library: ./work/lib_merged.cl
+[03/17 13:55:18   412s] 
+[03/17 13:55:18   412s] Ended Processing Cell Libraries for Rail Analysis: (cpu=0:00:01, real=0:00:01, mem(process/total)=22.80MB/22.80MB)
+[03/17 13:55:18   412s] Created merged cell library ./work/lib_merged.cl.
+[03/17 13:55:18   412s] 
+[03/17 13:55:18   412s] 
+[03/17 13:55:18   412s] Running RC  extraction for /tmp/innovus_temp_65366_IC_IC_3lzmeZ/eps_out_65366.def.gz ...
+[03/17 13:55:18   412s] 
+[03/17 13:55:18   412s] Begin Preparing Data for Parasitic Extraction
+[03/17 13:55:22   412s] Extracting following DFM effects:
+[03/17 13:55:22   412s] MetalFill        : n/a
+[03/17 13:55:22   412s] WEE Effects      : n/a
+[03/17 13:55:22   412s] Erosion Effects  : n/a
+[03/17 13:55:22   412s] T/B Enlargements : ON
+[03/17 13:55:22   412s] R(w) Effects     : ON
+[03/17 13:55:22   412s] R(w,s) Effects   : n/a
+[03/17 13:55:22   412s] R(sw,st) Effects : n/a
+[03/17 13:55:22   412s] TC(w) Effects    : n/a
+[03/17 13:55:22   412s] Some effects indicate n/a because of non-availability of relevant input data (or) requested to be off.
+[03/17 13:55:22   412s] Ended Preparing Data for Parasitic Extraction: (cpu=0:00:04, real=0:00:04, mem(process/total)=50.04MB/50.04MB)
+[03/17 13:55:22   412s] 
+[03/17 13:55:22   412s] Begin Parasitic Extraction
+[03/17 13:55:22   412s] Extracting Progress:
+[03/17 13:55:22   412s]     0% at 13:55:22 03/17/2026
+[03/17 13:55:30   412s]    50% at 13:55:30 03/17/2026
+[03/17 13:55:30   412s]   100% at 13:55:30 03/17/2026
+[03/17 13:55:30   412s] Ended Parasitic Extraction: (cpu=0:00:11, real=0:00:07, mem(process/total)=7.90MB/7.90MB)
+[03/17 13:55:30   412s] 
+[03/17 13:55:33   412s] 
+[03/17 13:55:33   412s] Analyze Rail Settings:
+[03/17 13:55:33   412s] 	Temp directory: /tmp/innovus_temp_65366_IC_IC_3lzmeZ
+[03/17 13:55:33   412s] 	Output directory: ../../db/rail_power_v15
+[03/17 13:55:33   412s] 	Run directory: ../../db/rail_power_v15/PD_25C_dynamic_1/
+[03/17 13:55:33   412s] (proc 1) Begin Merging Power Grid for net VSS
+[03/17 13:55:33   412s] (proc 0) Begin Merging Power Grid for net VDD
+[03/17 13:55:33   412s] (proc 1)  VSS:   10%  at 13:55:32 03/17/26
+[03/17 13:55:33   412s] (proc 0)  VDD:   10%  at 13:55:32 03/17/26
+[03/17 13:55:33   412s] (proc 0)  VDD:   20%  at 13:55:32 03/17/26
+[03/17 13:55:33   412s] (proc 1)  VSS:   20%  at 13:55:32 03/17/26
+[03/17 13:55:33   412s] (proc 1)  VSS:   30%  at 13:55:32 03/17/26
+[03/17 13:55:33   412s] (proc 0)  VDD:   30%  at 13:55:32 03/17/26
+[03/17 13:55:33   412s] (proc 1)  VSS:   40%  at 13:55:32 03/17/26
+[03/17 13:55:33   412s] (proc 0)  VDD:   40%  at 13:55:32 03/17/26
+[03/17 13:55:33   412s] (proc 1)  VSS:   50%  at 13:55:32 03/17/26
+[03/17 13:55:33   412s] (proc 0)  VDD:   50%  at 13:55:32 03/17/26
+[03/17 13:55:33   412s] (proc 1)  VSS:   60%  at 13:55:32 03/17/26
+[03/17 13:55:33   412s] (proc 0)  VDD:   60%  at 13:55:32 03/17/26
+[03/17 13:55:33   412s] (proc 1)  VSS:   70%  at 13:55:32 03/17/26
+[03/17 13:55:33   412s] (proc 0)  VDD:   70%  at 13:55:32 03/17/26
+[03/17 13:55:33   412s] (proc 1)  VSS:   80%  at 13:55:32 03/17/26
+[03/17 13:55:33   412s] (proc 0)  VDD:   80%  at 13:55:33 03/17/26
+[03/17 13:55:33   412s] (proc 1)  VSS:   90%  at 13:55:33 03/17/26
+[03/17 13:55:33   412s] (proc 0)  VDD:   90%  at 13:55:33 03/17/26
+[03/17 13:55:33   412s] (proc 1)  VSS:   100%  at 13:55:33 03/17/26
+[03/17 13:55:33   412s] (proc 0)  VDD:   100%  at 13:55:33 03/17/26
+[03/17 13:55:33   412s] (proc 1) Ended Merging Power Grid for net VSS: (cpu=0:00:02, real=0:00:02, mem(process/total)=75.14MB/75.14MB)
+[03/17 13:55:33   412s] (proc 0) Ended Merging Power Grid for net VDD: (cpu=0:00:02, real=0:00:02, mem(process/total)=75.77MB/75.77MB)
+[03/17 13:55:33   412s] (proc 1) ** WARN: (VOLTUS_RAIL-2082): Mergegrid for net VSS finished with 3 warning(s).
+[03/17 13:55:33   412s] 	Check "voltus_rail_1.log" for more information.
+[03/17 13:55:33   412s] (proc 0) ** WARN: (VOLTUS_RAIL-2082): Mergegrid for net VDD finished with 3 warning(s).
+[03/17 13:55:33   412s] 	Check "voltus_rail_0.log" for more information.
+[03/17 13:55:33   412s] 
+[03/17 13:55:33   412s] Merge Grid Statistics:
+[03/17 13:55:33   412s] 
+[03/17 13:55:33   412s]  VDD: 64179 cells
+[03/17 13:55:33   412s] 	EM: 0  IR: 0  Early: 0  Tech: 64179  Unused: 0
+[03/17 13:55:33   412s] 	64179 cell internal tap current sources, 0 cell internal resistors
+[03/17 13:55:33   412s] 
+[03/17 13:55:33   412s]  VSS: 64179 cells
+[03/17 13:55:33   412s] 	EM: 0  IR: 0  Early: 0  Tech: 64179  Unused: 0
+[03/17 13:55:33   412s] 	64179 cell internal tap current sources, 0 cell internal resistors
+[03/17 13:55:33   412s] 
+[03/17 13:55:33   412s] 
+[03/17 13:55:33   412s] ** WARN:  (VOLTUS_RAIL-4064): The following 100 cells do not contain a <Early|IR|EM> powergrid library,
+[03/17 13:55:33   412s] The technology library will be used and area based capacitance will apply.
+[03/17 13:55:33   412s] A2O1A1Ixp33_ASAP7_75t_SL A2O1A1O1Ixp25_ASAP7_75t_SL AND2x2_ASAP7_75t_SL AND3x1_ASAP7_75t_SL AND4x1_ASAP7_75t_SL AND5x1_ASAP7_75t_SL AO21x1_ASAP7_75t_SL AO221x1_ASAP7_75t_SL AO222x2_ASAP7_75t_SL AO22x1_ASAP7_75t_SL AO322x2_ASAP7_75t_SL AO32x1_ASAP7_75t_SL AO331x1_ASAP7_75t_SL AO332x1_ASAP7_75t_SL AO33x2_ASAP7_75t_SL AOI211xp5_ASAP7_75t_SL AOI21xp33_ASAP7_75t_SL AOI21xp5_ASAP7_75t_L AOI21xp5_ASAP7_75t_SL AOI221xp5_ASAP7_75t_SL AOI222xp33_ASAP7_75t_SL AOI22xp5_ASAP7_75t_L AOI22xp5_ASAP7_75t_SL AOI311xp33_ASAP7_75t_SL AOI31xp33_ASAP7_75t_SL AOI321xp33_ASAP7_75t_SL AOI322xp5_ASAP7_75t_SL AOI32xp33_ASAP7_75t_SL AOI331xp33_ASAP7_75t_SL AOI332xp33_ASAP7_75t_SL AOI33xp33_ASAP7_75t_SL BUFx10_ASAP7_75t_SL BUFx12_ASAP7_75t_SL BUFx16f_ASAP7_75t_L BUFx2_ASAP7_75t_L BUFx2_ASAP7_75t_SL BUFx3_ASAP7_75t_SL BUFx4_ASAP7_75t_SL BUFx4f_ASAP7_75t_SL BUFx5_ASAP7_75t_SL BUFx6f_ASAP7_75t_SL BUFx8_ASAP7_75t_SL DFFHQNx1_ASAP7_75t_L DFFHQNx1_ASAP7_75t_SL DFFHQx4_ASAP7_75t_L DFFHQx4_ASAP7_75t_SL HB1xp67_ASAP7_75t_L HB1xp67_ASAP7_75t_SL HB2xp67_ASAP7_75t_L HB2xp67_ASAP7_75t_SL HB3xp67_ASAP7_75t_L HB3xp67_ASAP7_75t_SL HB4xp67_ASAP7_75t_L HB4xp67_ASAP7_75t_SL INVx1_ASAP7_75t_SL INVx2_ASAP7_75t_SL INVx3_ASAP7_75t_SL NAND2xp5_ASAP7_75t_SL NAND3xp33_ASAP7_75t_SL NAND4xp25_ASAP7_75t_SL NAND5xp2_ASAP7_75t_SL NOR2xp33_ASAP7_75t_L NOR2xp33_ASAP7_75t_SL NOR3xp33_ASAP7_75t_SL NOR4xp25_ASAP7_75t_SL NOR5xp2_ASAP7_75t_SL O2A1O1Ixp33_ASAP7_75t_SL OA211x2_ASAP7_75t_SL OA21x2_ASAP7_75t_SL OA221x2_ASAP7_75t_SL OA222x2_ASAP7_75t_SL OA22x2_ASAP7_75t_SL OA331x1_ASAP7_75t_SL OA332x1_ASAP7_75t_SL OA333x1_ASAP7_75t_SL OA33x2_ASAP7_75t_SL OAI211xp5_ASAP7_75t_SL OAI21xp5_ASAP7_75t_SL OAI221xp5_ASAP7_75t_SL OAI222xp33_ASAP7_75t_SL OAI22xp5_ASAP7_75t_SL OAI311xp33_ASAP7_75t_SL OAI31xp33_ASAP7_75t_SL OAI321xp33_ASAP7_75t_SL OAI322xp33_ASAP7_75t_SL OAI32xp33_ASAP7_75t_SL OAI331xp33_ASAP7_75t_SL OAI332xp33_ASAP7_75t_SL OAI333xp33_ASAP7_75t_SL OAI33xp33_ASAP7_75t_SL OR2x2_ASAP7_75t_SL OR3x1_ASAP7_75t_SL OR4x1_ASAP7_75t_SL OR5x1_ASAP7_75t_SL TAPCELL_ASAP7_75t_L XNOR2x2_ASAP7_75t_SL XNOR2xp5_ASAP7_75t_L XNOR2xp5_ASAP7_75t_SL XOR2xp5_ASAP7_75t_L XOR2xp5_ASAP7_75t_SL 
+[03/17 13:55:33   412s] 
+[03/17 13:55:33   412s] 
+[03/17 13:55:33   412s] 
+[03/17 13:55:33   412s] ** WARN:  (VOLTUS_RAIL-4064): The following 100 cells do not contain a <Early|IR|EM> powergrid library,
+[03/17 13:55:33   412s] The technology library will be used and area based capacitance will apply.
+[03/17 13:55:33   412s] A2O1A1Ixp33_ASAP7_75t_SL A2O1A1O1Ixp25_ASAP7_75t_SL AND2x2_ASAP7_75t_SL AND3x1_ASAP7_75t_SL AND4x1_ASAP7_75t_SL AND5x1_ASAP7_75t_SL AO21x1_ASAP7_75t_SL AO221x1_ASAP7_75t_SL AO222x2_ASAP7_75t_SL AO22x1_ASAP7_75t_SL AO322x2_ASAP7_75t_SL AO32x1_ASAP7_75t_SL AO331x1_ASAP7_75t_SL AO332x1_ASAP7_75t_SL AO33x2_ASAP7_75t_SL AOI211xp5_ASAP7_75t_SL AOI21xp33_ASAP7_75t_SL AOI21xp5_ASAP7_75t_L AOI21xp5_ASAP7_75t_SL AOI221xp5_ASAP7_75t_SL AOI222xp33_ASAP7_75t_SL AOI22xp5_ASAP7_75t_L AOI22xp5_ASAP7_75t_SL AOI311xp33_ASAP7_75t_SL AOI31xp33_ASAP7_75t_SL AOI321xp33_ASAP7_75t_SL AOI322xp5_ASAP7_75t_SL AOI32xp33_ASAP7_75t_SL AOI331xp33_ASAP7_75t_SL AOI332xp33_ASAP7_75t_SL AOI33xp33_ASAP7_75t_SL BUFx10_ASAP7_75t_SL BUFx12_ASAP7_75t_SL BUFx16f_ASAP7_75t_L BUFx2_ASAP7_75t_L BUFx2_ASAP7_75t_SL BUFx3_ASAP7_75t_SL BUFx4_ASAP7_75t_SL BUFx4f_ASAP7_75t_SL BUFx5_ASAP7_75t_SL BUFx6f_ASAP7_75t_SL BUFx8_ASAP7_75t_SL DFFHQNx1_ASAP7_75t_L DFFHQNx1_ASAP7_75t_SL DFFHQx4_ASAP7_75t_L DFFHQx4_ASAP7_75t_SL HB1xp67_ASAP7_75t_L HB1xp67_ASAP7_75t_SL HB2xp67_ASAP7_75t_L HB2xp67_ASAP7_75t_SL HB3xp67_ASAP7_75t_L HB3xp67_ASAP7_75t_SL HB4xp67_ASAP7_75t_L HB4xp67_ASAP7_75t_SL INVx1_ASAP7_75t_SL INVx2_ASAP7_75t_SL INVx3_ASAP7_75t_SL NAND2xp5_ASAP7_75t_SL NAND3xp33_ASAP7_75t_SL NAND4xp25_ASAP7_75t_SL NAND5xp2_ASAP7_75t_SL NOR2xp33_ASAP7_75t_L NOR2xp33_ASAP7_75t_SL NOR3xp33_ASAP7_75t_SL NOR4xp25_ASAP7_75t_SL NOR5xp2_ASAP7_75t_SL O2A1O1Ixp33_ASAP7_75t_SL OA211x2_ASAP7_75t_SL OA21x2_ASAP7_75t_SL OA221x2_ASAP7_75t_SL OA222x2_ASAP7_75t_SL OA22x2_ASAP7_75t_SL OA331x1_ASAP7_75t_SL OA332x1_ASAP7_75t_SL OA333x1_ASAP7_75t_SL OA33x2_ASAP7_75t_SL OAI211xp5_ASAP7_75t_SL OAI21xp5_ASAP7_75t_SL OAI221xp5_ASAP7_75t_SL OAI222xp33_ASAP7_75t_SL OAI22xp5_ASAP7_75t_SL OAI311xp33_ASAP7_75t_SL OAI31xp33_ASAP7_75t_SL OAI321xp33_ASAP7_75t_SL OAI322xp33_ASAP7_75t_SL OAI32xp33_ASAP7_75t_SL OAI331xp33_ASAP7_75t_SL OAI332xp33_ASAP7_75t_SL OAI333xp33_ASAP7_75t_SL OAI33xp33_ASAP7_75t_SL OR2x2_ASAP7_75t_SL OR3x1_ASAP7_75t_SL OR4x1_ASAP7_75t_SL OR5x1_ASAP7_75t_SL TAPCELL_ASAP7_75t_L XNOR2x2_ASAP7_75t_SL XNOR2xp5_ASAP7_75t_L XNOR2xp5_ASAP7_75t_SL XOR2xp5_ASAP7_75t_L XOR2xp5_ASAP7_75t_SL 
+[03/17 13:55:33   412s] 
+[03/17 13:55:33   412s] 
+[03/17 13:55:33   412s] 
+[03/17 13:55:33   412s] 
+[03/17 13:55:33   412s] Begin Preparing Data for Rail Analysis
+[03/17 13:55:33   412s] 
+[03/17 13:55:33   412s] Net VSS
+[03/17 13:55:33   412s]   Power Pin Location File: /home/IC/Desktop/des_demo/script/innovus/./ring_pads_vss.ppl
+[03/17 13:55:33   412s] ** WARN: (VOLTUS_RAIL-2012): Unrecognized "Location)" in file /home/IC/Desktop/des_demo/script/innovus/./ring_pads_vss.ppl.
+[03/17 13:55:33   412s] ** WARN: (VOLTUS_RAIL-2012): Unrecognized "File" in file /home/IC/Desktop/des_demo/script/innovus/./ring_pads_vss.ppl.
+[03/17 13:55:33   412s] ** WARN: (VOLTUS_RAIL-2012): Unrecognized "script" in file /home/IC/Desktop/des_demo/script/innovus/./ring_pads_vss.ppl.
+[03/17 13:55:33   412s] ** WARN: (VOLTUS_RAIL-2012): Unrecognized "(Rule-based" in file /home/IC/Desktop/des_demo/script/innovus/./ring_pads_vss.ppl.
+[03/17 13:55:33   412s] ** WARN: (VOLTUS_RAIL-2012): Unrecognized "&" in file /home/IC/Desktop/des_demo/script/innovus/./ring_pads_vss.ppl.
+[03/17 13:55:33   412s] ** WARN: (VOLTUS_RAIL-2012): Unrecognized "Direction-aware)" in file /home/IC/Desktop/des_demo/script/innovus/./ring_pads_vss.ppl.
+[03/17 13:55:33   412s] ** WARN: (VOLTUS_RAIL-2012): Unrecognized "Y(um)" in file /home/IC/Desktop/des_demo/script/innovus/./ring_pads_vss.ppl.
+[03/17 13:55:33   412s] ** WARN: (VOLTUS_RAIL-2012): Unrecognized "Layer" in file /home/IC/Desktop/des_demo/script/innovus/./ring_pads_vss.ppl.
+[03/17 13:55:33   412s]   # Voltage Source Added/Total (%): 8/11 (72.73%)
+[03/17 13:55:33   412s] 
+[03/17 13:55:33   412s] 	Following voltage source cannot be added:
+[03/17 13:55:33   412s] #,#,#
+[03/17 13:55:33   412s] 
+[03/17 13:55:33   412s] 
+[03/17 13:55:34   412s]   Power Database: ../../db/power/avg_v15/dynamic_VSS.ptiavg
+[03/17 13:55:34   412s]   # Current Taps Matched/Total (%): 53829/53829 (100.00%)
+[03/17 13:55:34   412s]   # Instances Matched: 53829
+[03/17 13:55:34   412s] 
+[03/17 13:55:34   412s] Net VDD
+[03/17 13:55:34   412s]   Power Pin Location File: /home/IC/Desktop/des_demo/script/innovus/./ring_pads_vdd.ppl
+[03/17 13:55:34   412s] ** WARN: (VOLTUS_RAIL-2012): Unrecognized "Location)" in file /home/IC/Desktop/des_demo/script/innovus/./ring_pads_vdd.ppl.
+[03/17 13:55:34   412s] ** WARN: (VOLTUS_RAIL-2012): Unrecognized "File" in file /home/IC/Desktop/des_demo/script/innovus/./ring_pads_vdd.ppl.
+[03/17 13:55:34   412s] ** WARN: (VOLTUS_RAIL-2012): Unrecognized "script" in file /home/IC/Desktop/des_demo/script/innovus/./ring_pads_vdd.ppl.
+[03/17 13:55:34   412s] ** WARN: (VOLTUS_RAIL-2012): Unrecognized "(Rule-based" in file /home/IC/Desktop/des_demo/script/innovus/./ring_pads_vdd.ppl.
+[03/17 13:55:34   412s] ** WARN: (VOLTUS_RAIL-2012): Unrecognized "&" in file /home/IC/Desktop/des_demo/script/innovus/./ring_pads_vdd.ppl.
+[03/17 13:55:34   412s] ** WARN: (VOLTUS_RAIL-2012): Unrecognized "Direction-aware)" in file /home/IC/Desktop/des_demo/script/innovus/./ring_pads_vdd.ppl.
+[03/17 13:55:34   412s] ** WARN: (VOLTUS_RAIL-2012): Unrecognized "Y(um)" in file /home/IC/Desktop/des_demo/script/innovus/./ring_pads_vdd.ppl.
+[03/17 13:55:34   412s] ** WARN: (VOLTUS_RAIL-2012): Unrecognized "Layer" in file /home/IC/Desktop/des_demo/script/innovus/./ring_pads_vdd.ppl.
+[03/17 13:55:34   412s]   # Voltage Source Added/Total (%): 8/11 (72.73%)
+[03/17 13:55:34   412s] 
+[03/17 13:55:34   412s] 	Following voltage source cannot be added:
+[03/17 13:55:34   412s] #,#,#
+[03/17 13:55:34   412s] 
+[03/17 13:55:34   412s] 
+[03/17 13:55:34   412s]   Power Database: ../../db/power/avg_v15/dynamic_VDD.ptiavg
+[03/17 13:55:34   412s]   # Current Taps Matched/Total (%): 53829/53829 (100.00%)
+[03/17 13:55:34   412s]   # Instances Matched: 53829
+[03/17 13:55:35   412s] Ended Preparing Data for Rail Analysis: (cpu=0:00:01, real=0:00:01, mem(process/total)=166.71MB/166.71MB)
+[03/17 13:55:35   412s] 
+[03/17 13:55:35   412s] 
+[03/17 13:55:35   412s] Begin Steady-State Analysis
+[03/17 13:55:35   412s] Ended Steady-State Analysis: (cpu=0:00:01, real=0:00:00, mem(process/total)=195.01MB/195.01MB)
+[03/17 13:55:35   412s] 
+[03/17 13:55:36   412s] Begin Dynamic Rail Simulation
+[03/17 13:55:36   412s]   Start Time: 0s
+[03/17 13:55:36   412s]   End Time: 1e-06s
+[03/17 13:55:36   412s]   Steps: 1000
+[03/17 13:55:36   412s]   Resolution: 1e-09s
+[03/17 13:55:36   412s]     0% at 13:55:36 03/17/26 
+[03/17 13:55:45   412s]    10% at 13:55:45 03/17/26 
+[03/17 13:55:50   412s]    20% at 13:55:50 03/17/26 
+[03/17 13:55:55   412s]    30% at 13:55:55 03/17/26 
+[03/17 13:56:00   412s]    40% at 13:56:00 03/17/26 
+[03/17 13:56:05   412s]    50% at 13:56:05 03/17/26 
+[03/17 13:56:10   412s]    60% at 13:56:10 03/17/26 
+[03/17 13:56:14   412s]    70% at 13:56:14 03/17/26 
+[03/17 13:56:19   412s]    80% at 13:56:19 03/17/26 
+[03/17 13:56:24   412s]    90% at 13:56:24 03/17/26 
+[03/17 13:56:29   412s]   100% at 13:56:29 03/17/26 
+[03/17 13:56:29   412s] Ended Dynamic Rail Simulation: (cpu=0:02:17, real=0:00:53, mem(process/total)=1059.45MB/1059.45MB)
+[03/17 13:56:29   412s] 
+[03/17 13:56:29   412s] Begin Report Generation
+[03/17 13:56:34   412s] The report generation will be performed on multiple processes and the voltus.log will be updated once all the reports are generated.
+[03/17 13:56:34   412s] 
+[03/17 13:56:34   412s] 
+[03/17 13:56:34   412s] Net VSS:
+[03/17 13:56:34   412s] 
+[03/17 13:56:34   412s] 
+[03/17 13:56:34   412s] Begin Preparing Database for Report Generation
+[03/17 13:56:34   412s] # Warnings: 0
+[03/17 13:56:34   412s] # Errors: 0
+[03/17 13:56:34   412s] ** ERROR: (VOLTUS_RAIL-1063): Could not add voltage source # at (PPL,(Pad) on layer Placement: the layer doesn't exist.
+[03/17 13:56:34   412s] Layer name should be present in first cell library and should be a LEF layer name.
+[03/17 13:56:34   412s] ** ERROR: (VOLTUS_RAIL-1063): Could not add voltage source # at (Generated,by) on layer Python: the layer doesn't exist.
+[03/17 13:56:34   412s] Layer name should be present in first cell library and should be a LEF layer name.
+[03/17 13:56:34   412s] ** ERROR: (VOLTUS_RAIL-1063): Could not add voltage source # at (Columns:,Pin_Name) on layer X(um): the layer doesn't exist.
+[03/17 13:56:34   412s] Layer name should be present in first cell library and should be a LEF layer name.
+[03/17 13:56:34   412s] 
+[03/17 13:56:34   412s] Circuit profile:
+[03/17 13:56:34   412s]                                                   Current   Voltage
+[03/17 13:56:34   412s] Layer Name                     Nodes  Resistors   Sources   Sources
+[03/17 13:56:34   412s] ----- --------------------  --------  ---------  --------  --------
+[03/17 13:56:34   412s]   0   M7                          68         66         0         4
+[03/17 13:56:34   412s]   1   V6                           0         62         0         0
+[03/17 13:56:34   412s]   2   M6                         104         44         0         4
+[03/17 13:56:34   412s]   3   V5                           0         94         0         0
+[03/17 13:56:34   412s]   4   M5                          94          0         0         0
+[03/17 13:56:34   412s]   5   V4                           0         94         0         0
+[03/17 13:56:34   412s]   6   M4                         634        558         0         0
+[03/17 13:56:34   412s]   7   V3                           0        580         0         0
+[03/17 13:56:34   412s]   8   M3                        5626       5597         0         0
+[03/17 13:56:34   412s]   9   V2                           0       5017         0         0
+[03/17 13:56:34   412s]  10   M2                        5190       5017         0         0
+[03/17 13:56:34   412s]  11   V1                           0       5017         0         0
+[03/17 13:56:34   412s]  12   M1                       60681      60508     56292         0
+[03/17 13:56:34   412s]                             --------  ---------  --------  --------
+[03/17 13:56:34   412s]  13   Circuit total            72398      82654     56292         8
+[03/17 13:56:34   412s] Ended Preparing Database for Report Generation: (cpu=0:00:02, real=0:00:02, mem(process/total)=128.98MB/128.98MB)
+[03/17 13:56:34   412s] 
+[03/17 13:56:34   412s] 
+[03/17 13:56:34   412s] Begin IR Drop (Linear) Report Generation
+[03/17 13:56:34   412s]   Voltage: 0
+[03/17 13:56:34   412s]   Threshold: 0.1
+[03/17 13:56:34   412s]   Minimum, Average, Maximum IR Drop: 0.000V, 18.337mV, 31.920mV
+[03/17 13:56:34   412s]     Range 1( 27.930mV  -  31.920mV ):     6402 (  8.84%)
+[03/17 13:56:34   412s]     Range 2( 23.940mV  -  27.930mV ):     6998 (  9.67%)
+[03/17 13:56:34   412s]     Range 3( 19.950mV  -  23.940mV ):    14251 ( 19.68%)
+[03/17 13:56:34   412s]     Range 4( 15.960mV  -  19.950mV ):    17452 ( 24.11%)
+[03/17 13:56:34   412s]     Range 5( 11.970mV  -  15.960mV ):    15436 ( 21.32%)
+[03/17 13:56:34   412s]     Range 6(  7.980mV  -  11.970mV ):     9925 ( 13.71%)
+[03/17 13:56:34   412s]     Range 7(  3.990mV  -   7.980mV ):     1848 (  2.55%)
+[03/17 13:56:34   412s]     Range 8(   0.000V  -   3.990mV ):       85 (  0.12%)
+[03/17 13:56:34   412s]     Layer with maximum IR Drop:  M6
+[03/17 13:56:34   412s]       M7: 0.029797 [0 - 0.029797]
+[03/17 13:56:34   412s]       M6: 0.029837 [0 - 0.029837]
+[03/17 13:56:34   412s]       M5: 0.02812 [0.0018235 - 0.029943]
+[03/17 13:56:34   412s]       M4: 0.029013 [0.002016 - 0.031029]
+[03/17 13:56:34   412s]       M3: 0.028933 [0.0022554 - 0.031188]
+[03/17 13:56:34   412s]       M2: 0.028302 [0.0029986 - 0.031301]
+[03/17 13:56:34   412s]       M1: 0.028912 [0.0030081 - 0.03192]
+[03/17 13:56:34   412s]   Worst case interval: 350
+[03/17 13:56:34   412s]   IR Report: ../../db/rail_power_v15/PD_25C_dynamic_1/Reports/VSS/VSS.main.rpt
+[03/17 13:56:34   412s]   GIF plot: ../../db/rail_power_v15/PD_25C_dynamic_1/Reports/VSS/ir_linear.gif
+[03/17 13:56:34   412s] Ended IR Drop (Linear) Report Generation: (cpu=0:00:00, real=0:00:00, mem(process/total)=186.31MB/186.31MB)
+[03/17 13:56:34   412s] 
+[03/17 13:56:34   412s] 
+[03/17 13:56:34   412s] Begin IR Drop (Limit) Report Generation
+[03/17 13:56:34   412s]   Voltage: 0
+[03/17 13:56:34   412s]   Threshold: 0.1
+[03/17 13:56:34   412s]   Minimum, Average, Maximum IR Drop: 0.000V, 18.337mV, 31.920mV
+[03/17 13:56:34   412s]     Range 1(   0.100V  -    0.100V ):        0 (  0.00%)
+[03/17 13:56:34   412s]     Range 2( 91.667mV  -    0.100V ):        0 (  0.00%)
+[03/17 13:56:34   412s]     Range 3( 83.333mV  -  91.667mV ):        0 (  0.00%)
+[03/17 13:56:34   412s]     Range 4( 75.000mV  -  83.333mV ):        0 (  0.00%)
+[03/17 13:56:34   412s]     Range 5( 66.667mV  -  75.000mV ):        0 (  0.00%)
+[03/17 13:56:34   412s]     Range 6( 58.333mV  -  66.667mV ):        0 (  0.00%)
+[03/17 13:56:34   412s]     Range 7( 50.000mV  -  58.333mV ):        0 (  0.00%)
+[03/17 13:56:34   412s]     Range 8( -1.000uV  -  50.000mV ):    72397 (100.00%)
+[03/17 13:56:34   412s]     Layer with maximum IR Drop:  M6
+[03/17 13:56:34   412s]       M7: 0.029797 [0 - 0.029797]
+[03/17 13:56:34   412s]       M6: 0.029837 [0 - 0.029837]
+[03/17 13:56:34   412s]       M5: 0.02812 [0.0018235 - 0.029943]
+[03/17 13:56:34   412s]       M4: 0.029013 [0.002016 - 0.031029]
+[03/17 13:56:34   412s]       M3: 0.028933 [0.0022554 - 0.031188]
+[03/17 13:56:34   412s]       M2: 0.028302 [0.0029986 - 0.031301]
+[03/17 13:56:34   412s]       M1: 0.028912 [0.0030081 - 0.03192]
+[03/17 13:56:34   412s]   Worst case interval: 350
+[03/17 13:56:34   412s]   IR Report: ../../db/rail_power_v15/PD_25C_dynamic_1/Reports/VSS/VSS.main.rpt
+[03/17 13:56:34   412s]   GIF plot: ../../db/rail_power_v15/PD_25C_dynamic_1/Reports/VSS/ir_limit.gif
+[03/17 13:56:34   412s] Ended IR Drop (Limit) Report Generation: (cpu=0:00:00, real=0:00:00, mem(process/total)=186.32MB/186.32MB)
+[03/17 13:56:34   412s] 
+[03/17 13:56:34   412s] 
+[03/17 13:56:34   412s] Begin Tap Current Report Generation
+[03/17 13:56:34   412s]   Minimum, Average, Maximum Tap Current: -38.417uA, -0.610uA, 0.000A
+[03/17 13:56:34   412s]     Range 1( -1.000GA  -  -1.000mA ):        0 (  0.00%)
+[03/17 13:56:34   412s]     Range 2( -1.000mA  -  -0.100mA ):        0 (  0.00%)
+[03/17 13:56:34   412s]     Range 3( -0.100mA  - -10.000uA ):       89 (  0.17%)
+[03/17 13:56:34   412s]     Range 4(-10.000uA  -  -1.000uA ):    13151 ( 25.73%)
+[03/17 13:56:34   412s]     Range 5( -1.000uA  -  -0.100uA ):     9894 ( 19.36%)
+[03/17 13:56:34   412s]     Range 6( -0.100uA  - -10.000nA ):     6317 ( 12.36%)
+[03/17 13:56:34   412s]     Range 7(-10.000nA  -  -1.000nA ):    20163 ( 39.46%)
+[03/17 13:56:34   412s]     Range 8( -1.000nA  -   -0.000A ):     1488 (  2.91%)
+[03/17 13:56:34   412s]   GIF plot: ../../db/rail_power_v15/PD_25C_dynamic_1/Reports/VSS/tc.gif
+[03/17 13:56:34   412s] Ended Tap Current Report Generation: (cpu=0:00:00, real=0:00:00, mem(process/total)=186.39MB/186.39MB)
+[03/17 13:56:34   412s] 
+[03/17 13:56:34   412s] 
+[03/17 13:56:34   412s] Begin Instance Based IR Drop Report Generation
+[03/17 13:56:34   412s]   Minimum, Average, Maximum Instance Based IR Drop: 3.008mV, 18.536mV, 31.920mV
+[03/17 13:56:34   412s]     Range 1(   0.100V  -    0.100V ):        0 (  0.00%)
+[03/17 13:56:34   412s]     Range 2( 91.667mV  -    0.100V ):        0 (  0.00%)
+[03/17 13:56:34   412s]     Range 3( 83.333mV  -  91.667mV ):        0 (  0.00%)
+[03/17 13:56:34   412s]     Range 4( 75.000mV  -  83.333mV ):        0 (  0.00%)
+[03/17 13:56:34   412s]     Range 5( 66.667mV  -  75.000mV ):        0 (  0.00%)
+[03/17 13:56:34   412s]     Range 6( 58.333mV  -  66.667mV ):        0 (  0.00%)
+[03/17 13:56:34   412s]     Range 7( 50.000mV  -  58.333mV ):        0 (  0.00%)
+[03/17 13:56:34   412s]     Range 8( -1.000uV  -  50.000mV ):    56292 (100.00%)
+[03/17 13:56:34   412s]   GIF plot: ../../db/rail_power_v15/PD_25C_dynamic_1/Reports/VSS/iv.gif
+[03/17 13:56:34   412s] Ended Instance Based IR Drop Report Generation: (cpu=0:00:00, real=0:00:00, mem(process/total)=186.39MB/186.39MB)
+[03/17 13:56:34   412s] 
+[03/17 13:56:34   412s] 
+[03/17 13:56:34   412s] Begin Voltage Source Current Report Generation
+[03/17 13:56:34   412s]   Minimum, Average, Maximum Voltage Source Current: 0.599mA, 1.979mA, 3.575mA
+[03/17 13:56:34   412s]   Total current: 15.829mA
+[03/17 13:56:34   412s]     Range 1(  3.203mA  -   3.575mA ):        2 ( 25.00%)
+[03/17 13:56:34   412s]     Range 2(  2.831mA  -   3.203mA ):        0 (  0.00%)
+[03/17 13:56:34   412s]     Range 3(  2.459mA  -   2.831mA ):        0 (  0.00%)
+[03/17 13:56:34   412s]     Range 4(  2.087mA  -   2.459mA ):        1 ( 12.50%)
+[03/17 13:56:34   412s]     Range 5(  1.715mA  -   2.087mA ):        2 ( 25.00%)
+[03/17 13:56:34   412s]     Range 6(  1.343mA  -   1.715mA ):        1 ( 12.50%)
+[03/17 13:56:34   412s]     Range 7(  0.971mA  -   1.343mA ):        0 (  0.00%)
+[03/17 13:56:34   412s]     Range 8(  0.599mA  -   0.971mA ):        2 ( 25.00%)
+[03/17 13:56:34   412s]   GIF plot: ../../db/rail_power_v15/PD_25C_dynamic_1/Reports/VSS/vc.gif
+[03/17 13:56:34   412s] Ended Voltage Source Current Report Generation: (cpu=0:00:00, real=0:00:00, mem(process/total)=186.40MB/186.40MB)
+[03/17 13:56:34   412s] 
+[03/17 13:56:34   412s] 
+[03/17 13:56:34   412s] Begin Decoupling Cap Density Report Generation
+[03/17 13:56:34   412s]   Minimum, Average, Maximum Decoupling Cap Density: 0.000F/um^2, 7.742aF/um^2, 9.841aF/um^2
+[03/17 13:56:34   412s]     Range 1(  8.723aF/um^2 -   9.841aF/um^2):    16812 ( 23.22%)
+[03/17 13:56:34   412s]     Range 2(  7.605aF/um^2 -   8.723aF/um^2):    34646 ( 47.86%)
+[03/17 13:56:34   412s]     Range 3(  6.487aF/um^2 -   7.605aF/um^2):     5858 (  8.09%)
+[03/17 13:56:34   412s]     Range 4(  5.369aF/um^2 -   6.487aF/um^2):     7622 ( 10.53%)
+[03/17 13:56:34   412s]     Range 5(  4.251aF/um^2 -   5.369aF/um^2):     6135 (  8.47%)
+[03/17 13:56:34   412s]     Range 6(  3.134aF/um^2 -   4.251aF/um^2):      965 (  1.33%)
+[03/17 13:56:34   412s]     Range 7(  2.016aF/um^2 -   3.134aF/um^2):      154 (  0.21%)
+[03/17 13:56:34   412s]     Range 8(   0.000F/um^2 -   2.016aF/um^2):      205 (  0.28%)
+[03/17 13:56:34   412s]   GIF plot: ../../db/rail_power_v15/PD_25C_dynamic_1/Reports/VSS/dd.gif
+[03/17 13:56:34   412s] Ended Decoupling Cap Density Report Generation: (cpu=0:00:00, real=0:00:00, mem(process/total)=187.97MB/187.97MB)
+[03/17 13:56:34   412s] 
+[03/17 13:56:34   412s] 
+[03/17 13:56:34   412s] Begin Capacitance Report Generation
+[03/17 13:56:34   412s] 	Internal Capacitance from Cells (decap/total): 0.000F/1.121pF
+[03/17 13:56:34   412s] 	Loading Capacitance: 36.893pF
+[03/17 13:56:34   412s] 	Grid capacitance: 1.638pF
+[03/17 13:56:34   412s] 	Total capacitance: 39.651pF
+[03/17 13:56:34   412s] Ended Capacitance Report Generation: (cpu=0:00:00, real=0:00:00, mem(process/total)=188.02MB/188.02MB)
+[03/17 13:56:34   412s] 
+[03/17 13:56:34   412s] 
+[03/17 13:56:34   412s] Begin Weak Grid Connectivity Report
+[03/17 13:56:34   412s] Ended Weak Grid Connectivity Report: (cpu=0:00:00, real=0:00:00, mem(process/total)=188.10MB/188.10MB)
+[03/17 13:56:34   412s] 
+[03/17 13:56:34   412s] 
+[03/17 13:56:34   412s] Begin Power Gate I/Idsat Report Generation
+[03/17 13:56:34   412s] Ended Power Gate I/Idsat Report Generation: (cpu=0:00:00, real=0:00:00, mem(process/total)=188.11MB/188.11MB)
+[03/17 13:56:34   412s] 
+[03/17 13:56:34   412s] 
+[03/17 13:56:34   412s] Begin Grid Integrity Report Generation
+[03/17 13:56:34   412s]   # Missing Cell Power-Grid Views: 0
+[03/17 13:56:34   412s]   # Physically Disconnected Instances: 0
+[03/17 13:56:34   412s]   # Instances with Floating Power Pins: 0
+[03/17 13:56:34   412s]   # Disconnected Wire Segments: 0
+[03/17 13:56:34   412s]   # Weakly Connected Metal Segments: 0
+[03/17 13:56:34   412s]   # Dropped Voltage Sources: 3
+[03/17 13:56:34   412s] Ended Grid Integrity Report Generation: (cpu=0:00:00, real=0:00:00, mem(process/total)=188.16MB/188.16MB)
+[03/17 13:56:34   412s] 
+[03/17 13:56:34   412s] 
+[03/17 13:56:34   412s] 
+[03/17 13:56:34   412s] 
+[03/17 13:56:34   412s] Net VDD:
+[03/17 13:56:34   412s] 
+[03/17 13:56:34   412s] 
+[03/17 13:56:34   412s] Begin Preparing Database for Report Generation
+[03/17 13:56:34   412s] # Warnings: 0
+[03/17 13:56:34   412s] # Errors: 0
+[03/17 13:56:34   412s] ** ERROR: (VOLTUS_RAIL-1063): Could not add voltage source # at (PPL,(Pad) on layer Placement: the layer doesn't exist.
+[03/17 13:56:34   412s] Layer name should be present in first cell library and should be a LEF layer name.
+[03/17 13:56:34   412s] ** ERROR: (VOLTUS_RAIL-1063): Could not add voltage source # at (Generated,by) on layer Python: the layer doesn't exist.
+[03/17 13:56:34   412s] Layer name should be present in first cell library and should be a LEF layer name.
+[03/17 13:56:34   412s] ** ERROR: (VOLTUS_RAIL-1063): Could not add voltage source # at (Columns:,Pin_Name) on layer X(um): the layer doesn't exist.
+[03/17 13:56:34   412s] Layer name should be present in first cell library and should be a LEF layer name.
+[03/17 13:56:34   412s] 
+[03/17 13:56:34   412s] Circuit profile:
+[03/17 13:56:34   412s]                                                   Current   Voltage
+[03/17 13:56:34   412s] Layer Name                     Nodes  Resistors   Sources   Sources
+[03/17 13:56:34   412s] ----- --------------------  --------  ---------  --------  --------
+[03/17 13:56:34   412s]   0   M7                          68         66         0         4
+[03/17 13:56:34   412s]   1   V6                           0         62         0         0
+[03/17 13:56:34   412s]   2   M6                         104         44         0         4
+[03/17 13:56:34   412s]   3   V5                           0         94         0         0
+[03/17 13:56:34   412s]   4   M5                          94          0         0         0
+[03/17 13:56:34   412s]   5   V4                           0         94         0         0
+[03/17 13:56:34   412s]   6   M4                         634        558         0         0
+[03/17 13:56:34   412s]   7   V3                           0        580         0         0
+[03/17 13:56:34   412s]   8   M3                        5626       5597         0         0
+[03/17 13:56:34   412s]   9   V2                           0       5017         0         0
+[03/17 13:56:34   412s]  10   M2                        5190       5017         0         0
+[03/17 13:56:34   412s]  11   V1                           0       5017         0         0
+[03/17 13:56:34   412s]  12   M1                       60820      60647     56349         0
+[03/17 13:56:34   412s]                             --------  ---------  --------  --------
+[03/17 13:56:34   412s]  13   Circuit total            72537      82793     56349         8
+[03/17 13:56:34   412s] Ended Preparing Database for Report Generation: (cpu=0:00:02, real=0:00:02, mem(process/total)=122.89MB/122.89MB)
+[03/17 13:56:34   412s] 
+[03/17 13:56:34   412s] 
+[03/17 13:56:34   412s] Begin IR Drop (Linear) Report Generation
+[03/17 13:56:34   412s]   Voltage: 0.7
+[03/17 13:56:34   412s]   Threshold: 0.651
+[03/17 13:56:34   412s]   Minimum, Average, Maximum IR Drop: 0.667V, 0.682V, 0.700V
+[03/17 13:56:34   412s]     Range 1(   0.667V  -    0.671V ):     4758 (  6.56%)
+[03/17 13:56:34   412s]     Range 2(   0.671V  -    0.675V ):     6491 (  8.95%)
+[03/17 13:56:34   412s]     Range 3(   0.675V  -    0.679V ):    13741 ( 18.94%)
+[03/17 13:56:34   412s]     Range 4(   0.679V  -    0.683V ):    18693 ( 25.77%)
+[03/17 13:56:34   412s]     Range 5(   0.683V  -    0.688V ):    15566 ( 21.46%)
+[03/17 13:56:34   412s]     Range 6(   0.688V  -    0.692V ):    10362 ( 14.29%)
+[03/17 13:56:34   412s]     Range 7(   0.692V  -    0.696V ):     2741 (  3.78%)
+[03/17 13:56:34   412s]     Range 8(   0.696V  -    0.700V ):      184 (  0.25%)
+[03/17 13:56:34   412s]     Layer with maximum IR Drop:  M1
+[03/17 13:56:34   412s]       M7: 0.029761 [0.67024 - 0.7]
+[03/17 13:56:34   412s]       M6: 0.029801 [0.6702 - 0.7]
+[03/17 13:56:34   412s]       M5: 0.028769 [0.67009 - 0.69886]
+[03/17 13:56:34   412s]       M4: 0.029515 [0.66913 - 0.69864]
+[03/17 13:56:34   412s]       M3: 0.029404 [0.66899 - 0.69839]
+[03/17 13:56:34   412s]       M2: 0.029234 [0.66884 - 0.69808]
+[03/17 13:56:34   412s]       M1: 0.031233 [0.66684 - 0.69807]
+[03/17 13:56:34   412s]   Worst case interval: 50
+[03/17 13:56:34   412s]   IR Report: ../../db/rail_power_v15/PD_25C_dynamic_1/Reports/VDD/VDD.main.rpt
+[03/17 13:56:34   412s]   GIF plot: ../../db/rail_power_v15/PD_25C_dynamic_1/Reports/VDD/ir_linear.gif
+[03/17 13:56:34   412s] Ended IR Drop (Linear) Report Generation: (cpu=0:00:01, real=0:00:01, mem(process/total)=180.25MB/180.25MB)
+[03/17 13:56:34   412s] 
+[03/17 13:56:34   412s] 
+[03/17 13:56:34   412s] Begin IR Drop (Limit) Report Generation
+[03/17 13:56:34   412s]   Voltage: 0.7
+[03/17 13:56:34   412s]   Threshold: 0.651
+[03/17 13:56:34   412s]   Minimum, Average, Maximum IR Drop: 0.667V, 0.682V, 0.700V
+[03/17 13:56:34   412s]     Range 1(   0.651V  -    0.651V ):        0 (  0.00%)
+[03/17 13:56:34   412s]     Range 2(   0.651V  -    0.655V ):        0 (  0.00%)
+[03/17 13:56:34   412s]     Range 3(   0.655V  -    0.659V ):        0 (  0.00%)
+[03/17 13:56:34   412s]     Range 4(   0.659V  -    0.663V ):        0 (  0.00%)
+[03/17 13:56:34   412s]     Range 5(   0.663V  -    0.667V ):        1 (  0.00%)
+[03/17 13:56:34   412s]     Range 6(   0.667V  -    0.671V ):     5413 (  7.46%)
+[03/17 13:56:34   412s]     Range 7(   0.671V  -    0.675V ):     6515 (  8.98%)
+[03/17 13:56:34   412s]     Range 8(   0.675V  -    0.700V ):    60607 ( 83.55%)
+[03/17 13:56:34   412s]     Layer with maximum IR Drop:  M1
+[03/17 13:56:34   412s]       M7: 0.029761 [0.67024 - 0.7]
+[03/17 13:56:34   412s]       M6: 0.029801 [0.6702 - 0.7]
+[03/17 13:56:34   412s]       M5: 0.028769 [0.67009 - 0.69886]
+[03/17 13:56:34   412s]       M4: 0.029515 [0.66913 - 0.69864]
+[03/17 13:56:34   412s]       M3: 0.029404 [0.66899 - 0.69839]
+[03/17 13:56:34   412s]       M2: 0.029234 [0.66884 - 0.69808]
+[03/17 13:56:34   412s]       M1: 0.031233 [0.66684 - 0.69807]
+[03/17 13:56:34   412s]   Worst case interval: 50
+[03/17 13:56:34   412s]   IR Report: ../../db/rail_power_v15/PD_25C_dynamic_1/Reports/VDD/VDD.main.rpt
+[03/17 13:56:34   412s]   GIF plot: ../../db/rail_power_v15/PD_25C_dynamic_1/Reports/VDD/ir_limit.gif
+[03/17 13:56:34   412s] Ended IR Drop (Limit) Report Generation: (cpu=0:00:00, real=0:00:00, mem(process/total)=180.26MB/180.26MB)
+[03/17 13:56:34   412s] 
+[03/17 13:56:34   412s] 
+[03/17 13:56:34   412s] Begin Tap Current Report Generation
+[03/17 13:56:34   412s]   Minimum, Average, Maximum Tap Current: 0.000A, 0.659uA, 38.625uA
+[03/17 13:56:34   412s]     Range 1(  1.000mA  -   1.000GA ):        0 (  0.00%)
+[03/17 13:56:34   412s]     Range 2(  0.100mA  -   1.000mA ):        0 (  0.00%)
+[03/17 13:56:34   412s]     Range 3( 10.000uA  -   0.100mA ):       89 (  0.17%)
+[03/17 13:56:34   412s]     Range 4(  1.000uA  -  10.000uA ):    13257 ( 25.91%)
+[03/17 13:56:34   412s]     Range 5(  0.100uA  -   1.000uA ):     9805 ( 19.17%)
+[03/17 13:56:34   412s]     Range 6( 10.000nA  -   0.100uA ):     6294 ( 12.30%)
+[03/17 13:56:34   412s]     Range 7(  1.000nA  -  10.000nA ):    20308 ( 39.70%)
+[03/17 13:56:34   412s]     Range 8(   0.000A  -   1.000nA ):     1406 (  2.75%)
+[03/17 13:56:34   412s]   GIF plot: ../../db/rail_power_v15/PD_25C_dynamic_1/Reports/VDD/tc.gif
+[03/17 13:56:34   412s] Ended Tap Current Report Generation: (cpu=0:00:00, real=0:00:00, mem(process/total)=180.33MB/180.33MB)
+[03/17 13:56:34   412s] 
+[03/17 13:56:34   412s] 
+[03/17 13:56:34   412s] Begin Instance Based IR Drop Report Generation
+[03/17 13:56:34   412s]   Minimum, Average, Maximum Instance Based IR Drop: 0.667V, 0.681V, 0.698V
+[03/17 13:56:34   412s]     Range 1(   0.651V  -    0.651V ):        0 (  0.00%)
+[03/17 13:56:34   412s]     Range 2(   0.651V  -    0.655V ):        0 (  0.00%)
+[03/17 13:56:34   412s]     Range 3(   0.655V  -    0.659V ):        0 (  0.00%)
+[03/17 13:56:34   412s]     Range 4(   0.659V  -    0.663V ):        0 (  0.00%)
+[03/17 13:56:34   412s]     Range 5(   0.663V  -    0.667V ):        1 (  0.00%)
+[03/17 13:56:34   412s]     Range 6(   0.667V  -    0.671V ):     4364 (  7.74%)
+[03/17 13:56:34   412s]     Range 7(   0.671V  -    0.675V ):     5219 (  9.26%)
+[03/17 13:56:34   412s]     Range 8(   0.675V  -    0.700V ):    46765 ( 82.99%)
+[03/17 13:56:34   412s]   GIF plot: ../../db/rail_power_v15/PD_25C_dynamic_1/Reports/VDD/iv.gif
+[03/17 13:56:34   412s] Ended Instance Based IR Drop Report Generation: (cpu=0:00:00, real=0:00:00, mem(process/total)=180.33MB/180.33MB)
+[03/17 13:56:34   412s] 
+[03/17 13:56:34   412s] 
+[03/17 13:56:34   412s] Begin Voltage Source Current Report Generation
+[03/17 13:56:34   412s]   Minimum, Average, Maximum Voltage Source Current: -3.718mA, -2.093mA, -0.623mA
+[03/17 13:56:34   412s]   Total current: -16.743mA
+[03/17 13:56:34   412s]     Range 1( -3.718mA  -  -3.331mA ):        2 ( 25.00%)
+[03/17 13:56:34   412s]     Range 2( -3.331mA  -  -2.944mA ):        0 (  0.00%)
+[03/17 13:56:34   412s]     Range 3( -2.944mA  -  -2.557mA ):        0 (  0.00%)
+[03/17 13:56:34   412s]     Range 4( -2.557mA  -  -2.170mA ):        1 ( 12.50%)
+[03/17 13:56:34   412s]     Range 5( -2.170mA  -  -1.783mA ):        2 ( 25.00%)
+[03/17 13:56:34   412s]     Range 6( -1.783mA  -  -1.396mA ):        1 ( 12.50%)
+[03/17 13:56:34   412s]     Range 7( -1.396mA  -  -1.009mA ):        0 (  0.00%)
+[03/17 13:56:34   412s]     Range 8( -1.009mA  -  -0.623mA ):        2 ( 25.00%)
+[03/17 13:56:34   412s]   GIF plot: ../../db/rail_power_v15/PD_25C_dynamic_1/Reports/VDD/vc.gif
+[03/17 13:56:34   412s] Ended Voltage Source Current Report Generation: (cpu=0:00:00, real=0:00:00, mem(process/total)=180.34MB/180.34MB)
+[03/17 13:56:34   412s] 
+[03/17 13:56:34   412s] 
+[03/17 13:56:34   412s] Begin Decoupling Cap Density Report Generation
+[03/17 13:56:34   412s]   Minimum, Average, Maximum Decoupling Cap Density: 0.000F/um^2, 7.736aF/um^2, 9.841aF/um^2
+[03/17 13:56:34   412s]     Range 1(  8.706aF/um^2 -   9.841aF/um^2):    16030 ( 22.10%)
+[03/17 13:56:34   412s]     Range 2(  7.572aF/um^2 -   8.706aF/um^2):    36195 ( 49.90%)
+[03/17 13:56:34   412s]     Range 3(  6.437aF/um^2 -   7.572aF/um^2):     5618 (  7.75%)
+[03/17 13:56:34   412s]     Range 4(  5.302aF/um^2 -   6.437aF/um^2):     8194 ( 11.30%)
+[03/17 13:56:34   412s]     Range 5(  4.168aF/um^2 -   5.302aF/um^2):     5147 (  7.10%)
+[03/17 13:56:34   412s]     Range 6(  3.033aF/um^2 -   4.168aF/um^2):      999 (  1.38%)
+[03/17 13:56:34   412s]     Range 7(  1.898aF/um^2 -   3.033aF/um^2):      144 (  0.20%)
+[03/17 13:56:34   412s]     Range 8(   0.000F/um^2 -   1.898aF/um^2):      209 (  0.29%)
+[03/17 13:56:34   412s]   GIF plot: ../../db/rail_power_v15/PD_25C_dynamic_1/Reports/VDD/dd.gif
+[03/17 13:56:34   412s] Ended Decoupling Cap Density Report Generation: (cpu=0:00:00, real=0:00:00, mem(process/total)=181.94MB/181.94MB)
+[03/17 13:56:34   412s] 
+[03/17 13:56:34   412s] 
+[03/17 13:56:34   412s] Begin Capacitance Report Generation
+[03/17 13:56:34   412s] 	Internal Capacitance from Cells (decap/total): 0.000F/1.121pF
+[03/17 13:56:34   412s] 	Loading Capacitance: 36.893pF
+[03/17 13:56:34   412s] 	Grid capacitance: 1.652pF
+[03/17 13:56:34   412s] 	Total capacitance: 39.665pF
+[03/17 13:56:34   412s] Ended Capacitance Report Generation: (cpu=0:00:00, real=0:00:00, mem(process/total)=181.99MB/181.99MB)
+[03/17 13:56:34   412s] 
+[03/17 13:56:34   412s] 
+[03/17 13:56:34   412s] Begin Weak Grid Connectivity Report
+[03/17 13:56:34   412s] Ended Weak Grid Connectivity Report: (cpu=0:00:00, real=0:00:00, mem(process/total)=182.09MB/182.09MB)
+[03/17 13:56:34   412s] 
+[03/17 13:56:34   412s] 
+[03/17 13:56:34   412s] Begin Power Gate I/Idsat Report Generation
+[03/17 13:56:34   412s] Ended Power Gate I/Idsat Report Generation: (cpu=0:00:00, real=0:00:00, mem(process/total)=182.11MB/182.11MB)
+[03/17 13:56:34   412s] 
+[03/17 13:56:34   412s] 
+[03/17 13:56:34   412s] Begin Effective Instance Voltage Report Generation
+[03/17 13:56:34   412s] 
+[03/17 13:56:34   412s]  Worst EIV:
+[03/17 13:56:34   412s]   Minimum, Average, Maximum Effective Instance Voltage: 0.636V, 0.663V, 0.695V
+[03/17 13:56:34   412s]     Range 1(   0.688V  -    0.695V ):      560 (  0.87%)
+[03/17 13:56:34   412s]     Range 2(   0.680V  -    0.688V ):     4637 (  7.23%)
+[03/17 13:56:34   412s]     Range 3(   0.673V  -    0.680V ):    10395 ( 16.20%)
+[03/17 13:56:34   412s]     Range 4(   0.665V  -    0.673V ):    13263 ( 20.67%)
+[03/17 13:56:34   412s]     Range 5(   0.658V  -    0.665V ):    14337 ( 22.34%)
+[03/17 13:56:34   412s]     Range 6(   0.651V  -    0.658V ):    10702 ( 16.68%)
+[03/17 13:56:34   412s]     Range 7(   0.643V  -    0.651V ):     5304 (  8.26%)
+[03/17 13:56:34   412s]     Range 8(   0.636V  -    0.643V ):     4981 (  7.76%)
+[03/17 13:56:34   412s]   GIF plot: ../../db/rail_power_v15/PD_25C_dynamic_1///Reports/VDD_VSS.worst_eiv.gif
+[03/17 13:56:34   412s]   GIF Limit plot: ../../db/rail_power_v15/PD_25C_dynamic_1///Reports/VDD_VSS.worst_limit_eiv.gif
+[03/17 13:56:34   412s] Ended Effective Instance Voltage Report Generation: (cpu=0:00:01, real=0:00:01, mem(process/total)=126.13MB/126.13MB)
+[03/17 13:56:34   412s] 
+[03/17 13:56:34   412s] 
+[03/17 13:56:34   412s] Begin Grid Integrity Report Generation
+[03/17 13:56:34   412s]   # Missing Cell Power-Grid Views: 0
+[03/17 13:56:34   412s]   # Physically Disconnected Instances: 0
+[03/17 13:56:34   412s]   # Instances with Floating Power Pins: 0
+[03/17 13:56:34   412s]   # Disconnected Wire Segments: 0
+[03/17 13:56:34   412s]   # Weakly Connected Metal Segments: 0
+[03/17 13:56:34   412s]   # Dropped Voltage Sources: 3
+[03/17 13:56:34   412s] Ended Grid Integrity Report Generation: (cpu=0:00:00, real=0:00:00, mem(process/total)=182.16MB/182.16MB)
+[03/17 13:56:34   412s] 
+[03/17 13:56:34   412s] 
+[03/17 13:56:34   412s] Ended Report Generation: (cpu=0:00:00, real=0:00:04, mem(process/total)=1060.43MB/1060.43MB)
+[03/17 13:56:34   412s] 
+[03/17 13:56:34   412s] 
+[03/17 13:56:34   412s] Rail Analysis Statistics:
+[03/17 13:56:34   412s] Warning messages:      16
+[03/17 13:56:34   412s] Error messages:        6
+[03/17 13:56:34   412s] 
+[03/17 13:56:34   412s] Rail Analysis completed successfully, but containing errors that can affect rail analysis result.
+[03/17 13:56:34   412s] 
+[03/17 13:56:34   412s] Finished Rail Analysis at 13:56:34 03/17/2026 (cpu=0:02:39, real=0:01:20, peak mem=0.00MB)
+[03/17 13:56:34   412s] Current Voltus resource usage: (total cpu=0:00:00, real=0:00:00, mem=0.00MB)
+[03/17 14:03:40   743s] <CMD> setLayerPreference coverCell -isVisible 0
+[03/17 14:03:41   743s] <CMD> setLayerPreference coverCell -isVisible 1
+[03/17 14:10:29   948s] <CMD> win
+[03/17 14:10:46   957s] invalid command name "gui_show_rail_result"
+[03/17 14:10:58   963s] <CMD> read_power_rail_results -rail_directory ../../db/rail_power_v15/PD_25C_dynamic_1
+[03/17 14:10:58   963s] **WARN: (VOLTUS_ERA-2462):	There are 72537 nodes in PGDB, and 72536 nodes are read into Innovus.
+[03/17 14:10:58   963s] **WARN: (VOLTUS_ERA-2463):	There are 82793 resistors in PGDB, and 82793 resistors are read into Innovus.
+[03/17 14:10:58   963s] **WARN: (VOLTUS_ERA-2462):	There are 72398 nodes in PGDB, and 72397 nodes are read into Innovus.
+[03/17 14:10:58   963s] 
+[03/17 14:10:58   963s] **WARN: (VOLTUS_ERA-2463):	There are 82654 resistors in PGDB, and 82654 resistors are read into Innovus.
+[03/17 14:10:58   963s] 
+[03/17 14:10:58   963s] Innovus terminated by internal (SEGV) error/signal...
+[03/17 14:10:58   963s] Innovus terminated by internal (SEGV) error/signal...
+[03/17 14:10:58   964s] *** Stack trace:
+*** Stack trace:
+/opt/Cadence/INNOVUS15/tools.lnx86/innovus/bin/64bit/innovus[0xbed1dda]
+/opt/Cadence/INNOVUS15/tools.lnx86/innovus/bin/64bit/innovus(syStackTrace+0x7c)[0xbed21ac]
+/opt/Cadence/INNOVUS15/tools.lnx86/innovus/bin/64bit/innovus[0x29fb665]
+/lib64/libpthread.so.0[0x3dfde0f790]
+/opt/Cadence/INNOVUS15/tools.lnx86/lib/64bit/libstdc++.so.6(_ZNSs6assignEPKcm+0x1b)[0x7fdc6f9073fb]
+/opt/Cadence/INNOVUS15/tools.lnx86/innovus/bin/64bit/innovus(_Z17psFilterNamesInitv+0x57a)[0xbca645a]
+/opt/Cadence/INNOVUS15/tools.lnx86/innovus/bin/64bit/innovus(_Z15psGetFilterName13pssFilterTypei+0x75)[0xbca6bc5]
+/opt/Cadence/INNOVUS15/tools.lnx86/innovus/bin/64bit/innovus(_ZN12pssInputData17getRailFilterTypeERKSs+0x1c)[0xbcaf4ec]
+/opt/Cadence/INNOVUS15/tools.lnx86/innovus/bin/64bit/innovus(_Z24ppLoadRailReportDatabaseRKSsS0_PKc+0x1d13)[0x7ab4483]
+/opt/Cadence/INNOVUS15/tools.lnx86/innovus/bin/64bit/innovus(_Z11ppLoadStatePKcS0_S0_S0_+0x230)[0x7ab54f0]
+/opt/Cadence/INNOVUS15/tools.lnx86/innovus/bin/64bit/innovus(_ZN7pssPGDB9loadStateEPcbb+0x214)[0xbcb72d4]
+/opt/Cadence/INNOVUS15/tools.lnx86/innovus/bin/64bit/innovus[0xbcb7b18]
+/opt/Cadence/INNOVUS15/tools.lnx86/innovus/bin/64bit/innovus(_ZN3CRL9Threading14ThreadPoolBase6threadEj+0x12d)[0xf824cad]
+/opt/Cadence/INNOVUS15/tools.lnx86/innovus/bin/64bit/innovus(_ZN3CRL9Threading14ThreadPoolBase6threadEPv+0xf)[0xf824d9f]
+/opt/Cadence/INNOVUS15/tools.lnx86/innovus/bin/64bit/innovus[0x2c230e9]
+/lib64/libpthread.so.0[0x3dfde07a51]
+/lib64/libc.so.6(clone+0x6d)[0x3dfdae896d]
+========================================
+               pstack
+========================================
+Thread 14 (Thread 0x7fdc6d825700 (LWP 65437)):
+#0  0x0000003dfdae13e3 in select () from /lib64/libc.so.6
+#1  0x000000000fb246e0 in NotifierThreadProc ()
+#2  0x0000000002c230e9 in create_head(void*) ()
+#3  0x0000003dfde07a51 in start_thread () from /lib64/libpthread.so.0
+#4  0x0000003dfdae896d in clone () from /lib64/libc.so.6
+Thread 13 (Thread 0x7fdc66efb700 (LWP 65438)):
+#0  0x0000003dfdaacaad in nanosleep () from /lib64/libc.so.6
+#1  0x0000003dfdaac920 in sleep () from /lib64/libc.so.6
+#2  0x000000000beeb153 in syiPeakMem(void*) ()
+#3  0x0000000002c230e9 in create_head(void*) ()
+#4  0x0000003dfde07a51 in start_thread () from /lib64/libpthread.so.0
+#5  0x0000003dfdae896d in clone () from /lib64/libc.so.6
+Thread 12 (Thread 0x7fdc65df9700 (LWP 65439)):
+#0  0x0000003dfde0efbd in nanosleep () from /lib64/libpthread.so.0
+#1  0x0000000003c236e9 in rdaiLicRecheck(void*) ()
+#2  0x0000000002c230e9 in create_head(void*) ()
+#3  0x0000003dfde07a51 in start_thread () from /lib64/libpthread.so.0
+#4  0x0000003dfdae896d in clone () from /lib64/libc.so.6
+Thread 11 (Thread 0x7fdc653f8700 (LWP 65440)):
+#0  0x0000003dfdaacaad in nanosleep () from /lib64/libc.so.6
+#1  0x0000003dfdaac920 in sleep () from /lib64/libc.so.6
+#2  0x000000000d64af92 in ?? ()
+#3  0x0000000002c230e9 in create_head(void*) ()
+#4  0x0000003dfde07a51 in start_thread () from /lib64/libpthread.so.0
+#5  0x0000003dfdae896d in clone () from /lib64/libc.so.6
+Thread 10 (Thread 0x7fdc637db700 (LWP 65460)):
+#0  0x0000003dfde0f535 in sigwait () from /lib64/libpthread.so.0
+#1  0x00000000029f869d in ctrlCHandle(void*) ()
+#2  0x0000000002c230e9 in create_head(void*) ()
+#3  0x0000003dfde07a51 in start_thread () from /lib64/libpthread.so.0
+#4  0x0000003dfdae896d in clone () from /lib64/libc.so.6
+Thread 9 (Thread 0x7fdc50513700 (LWP 65562)):
+#0  0x0000003dfde0b63c in pthread_cond_wait@@GLIBC_2.3.2 () from /lib64/libpthread.so.0
+#1  0x00007fdc737497d3 in QWaitCondition::wait(QMutex*, unsigned long) () from /opt/Cadence/INNOVUS15/tools.lnx86/Qt/64bit/lib/libQtCore.so.4
+#2  0x00007fdc74427c88 in QFileInfoGatherer::run() () from /opt/Cadence/INNOVUS15/tools.lnx86/Qt/64bit/lib/libQtGui.so.4
+#3  0x00007fdc73748ffe in QThreadPrivate::start(void*) () from /opt/Cadence/INNOVUS15/tools.lnx86/Qt/64bit/lib/libQtCore.so.4
+#4  0x0000000002c230e9 in create_head(void*) ()
+#5  0x0000003dfde07a51 in start_thread () from /lib64/libpthread.so.0
+#6  0x0000003dfdae896d in clone () from /lib64/libc.so.6
+Thread 8 (Thread 0x7fdc4fb12700 (LWP 65563)):
+#0  0x0000003dfdae13e3 in select () from /lib64/libc.so.6
+#1  0x00007fdc738969b6 in qt_safe_select(int, fd_set*, fd_set*, fd_set*, timeval const*) () from /opt/Cadence/INNOVUS15/tools.lnx86/Qt/64bit/lib/libQtCore.so.4
+#2  0x00007fdc7389ae08 in QEventDispatcherUNIXPrivate::doSelect(QFlags<QEventLoop::ProcessEventsFlag>, timeval*) () from /opt/Cadence/INNOVUS15/tools.lnx86/Qt/64bit/lib/libQtCore.so.4
+#3  0x00007fdc7389b537 in QEventDispatcherUNIX::processEvents(QFlags<QEventLoop::ProcessEventsFlag>) () from /opt/Cadence/INNOVUS15/tools.lnx86/Qt/64bit/lib/libQtCore.so.4
+#4  0x00007fdc73867382 in QEventLoop::processEvents(QFlags<QEventLoop::ProcessEventsFlag>) () from /opt/Cadence/INNOVUS15/tools.lnx86/Qt/64bit/lib/libQtCore.so.4
+#5  0x00007fdc738676e4 in QEventLoop::exec(QFlags<QEventLoop::ProcessEventsFlag>) () from /opt/Cadence/INNOVUS15/tools.lnx86/Qt/64bit/lib/libQtCore.so.4
+#6  0x00007fdc737460cf in QThread::exec() () from /opt/Cadence/INNOVUS15/tools.lnx86/Qt/64bit/lib/libQtCore.so.4
+#7  0x00007fdc73842718 in QInotifyFileSystemWatcherEngine::run() () from /opt/Cadence/INNOVUS15/tools.lnx86/Qt/64bit/lib/libQtCore.so.4
+#8  0x00007fdc73748ffe in QThreadPrivate::start(void*) () from /opt/Cadence/INNOVUS15/tools.lnx86/Qt/64bit/lib/libQtCore.so.4
+#9  0x0000000002c230e9 in create_head(void*) ()
+#10 0x0000003dfde07a51 in start_thread () from /lib64/libpthread.so.0
+#11 0x0000003dfdae896d in clone () from /lib64/libc.so.6
+Thread 7 (Thread 0x7fdc31853700 (LWP 65931)):
+#0  0x0000003dfde0b63c in pthread_cond_wait@@GLIBC_2.3.2 () from /lib64/libpthread.so.0
+#1  0x000000000c2b99b9 in TAThreadCondition::wait(TAThreadMutex&) ()
+#2  0x000000000d009601 in TAThreadJobPool::oneWorkerDone(int) ()
+#3  0x000000000d009771 in TAThread::run(TAThreadWorker*) ()
+#4  0x0000000002c230e9 in create_head(void*) ()
+#5  0x0000003dfde07a51 in start_thread () from /lib64/libpthread.so.0
+#6  0x0000003dfdae896d in clone () from /lib64/libc.so.6
+Thread 6 (Thread 0x7fdc32254700 (LWP 65932)):
+#0  0x0000003dfde0b63c in pthread_cond_wait@@GLIBC_2.3.2 () from /lib64/libpthread.so.0
+#1  0x000000000c2b99b9 in TAThreadCondition::wait(TAThreadMutex&) ()
+#2  0x000000000d009601 in TAThreadJobPool::oneWorkerDone(int) ()
+#3  0x000000000d009771 in TAThread::run(TAThreadWorker*) ()
+#4  0x0000000002c230e9 in create_head(void*) ()
+#5  0x0000003dfde07a51 in start_thread () from /lib64/libpthread.so.0
+#6  0x0000003dfdae896d in clone () from /lib64/libc.so.6
+Thread 5 (Thread 0x7fdc32c55700 (LWP 65933)):
+#0  0x0000003dfde0b63c in pthread_cond_wait@@GLIBC_2.3.2 () from /lib64/libpthread.so.0
+#1  0x000000000c2b99b9 in TAThreadCondition::wait(TAThreadMutex&) ()
+#2  0x000000000d009601 in TAThreadJobPool::oneWorkerDone(int) ()
+#3  0x000000000d009771 in TAThread::run(TAThreadWorker*) ()
+#4  0x0000000002c230e9 in create_head(void*) ()
+#5  0x0000003dfde07a51 in start_thread () from /lib64/libpthread.so.0
+#6  0x0000003dfdae896d in clone () from /lib64/libc.so.6
+Thread 4 (Thread 0x7fdc3f091700 (LWP 65934)):
+#0  0x0000003dfde0b63c in pthread_cond_wait@@GLIBC_2.3.2 () from /lib64/libpthread.so.0
+#1  0x000000000c2b99b9 in TAThreadCondition::wait(TAThreadMutex&) ()
+#2  0x000000000d009601 in TAThreadJobPool::oneWorkerDone(int) ()
+#3  0x000000000d009771 in TAThread::run(TAThreadWorker*) ()
+#4  0x0000000002c230e9 in create_head(void*) ()
+#5  0x0000003dfde07a51 in start_thread () from /lib64/libpthread.so.0
+#6  0x0000003dfdae896d in clone () from /lib64/libc.so.6
+Thread 3 (Thread 0x7fdc03ab4700 (LWP 68883)):
+#0  0x0000003dfde0e2e4 in __lll_lock_wait () from /lib64/libpthread.so.0
+#1  0x0000003dfde09588 in _L_lock_854 () from /lib64/libpthread.so.0
+#2  0x0000003dfde09457 in pthread_mutex_lock () from /lib64/libpthread.so.0
+#3  0x000000000bed2202 in syStackTrace ()
+#4  0x00000000029fb665 in rdaiErrorHandler(int, siginfo*, void*) ()
+#5  <signal handler called>
+#6  0x0000000002c19571 in process_pending_frees(mm_group_struct*) ()
+#7  0x0000000002c1790f in mm_fre_rare(void*, memblox_struct*) ()
+#8  0x00007fdc6f906f19 in std::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_mutate(unsigned long, unsigned long, unsigned long) () from /opt/Cadence/INNOVUS15/tools.lnx86/lib/64bit/libstdc++.so.6
+#9  0x00007fdc6f90738e in std::basic_string<char, std::char_traits<char>, std::allocator<char> >::_M_replace_safe(unsigned long, unsigned long, char const*, unsigned long) () from /opt/Cadence/INNOVUS15/tools.lnx86/lib/64bit/libstdc++.so.6
+#10 0x000000000bca6379 in psFilterNamesInit() ()
+#11 0x000000000bca6bc5 in psGetFilterName(pssFilterType, int) ()
+#12 0x000000000bcaf4ec in pssInputData::getRailFilterType(std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) ()
+#13 0x0000000007ab4483 in ppLoadRailReportDatabase(std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, char const*) ()
+#14 0x0000000007ab54f0 in ppLoadState(char const*, char const*, char const*, char const*) ()
+#15 0x000000000bcb72d4 in pssPGDB::loadState(char*, bool, bool) ()
+#16 0x000000000bcb7b18 in psiLoadStateMT(void*) ()
+#17 0x000000000f824cad in CRL::Threading::ThreadPoolBase::thread(unsigned int) ()
+#18 0x000000000f824d9f in CRL::Threading::ThreadPoolBase::thread(void*) ()
+#19 0x0000000002c230e9 in create_head(void*) ()
+#20 0x0000003dfde07a51 in start_thread () from /lib64/libpthread.so.0
+#21 0x0000003dfdae896d in clone () from /lib64/libc.so.6
+Thread 2 (Thread 0x7fdc030b3700 (LWP 68884)):
+#0  0x0000003dfdaac6cd in waitpid () from /lib64/libc.so.6
+#1  0x0000003dfda3e609 in do_system () from /lib64/libc.so.6
+#2  0x0000003dfda3e940 in system () from /lib64/libc.so.6
+#3  0x000000000bed1e29 in syStackTraceDump(_IO_FILE*, bool) ()
+#4  0x000000000bed21ac in syStackTrace ()
+#5  0x00000000029fb665 in rdaiErrorHandler(int, siginfo*, void*) ()
+#6  <signal handler called>
+#7  0x00007fdc6f9073fb in std::basic_string<char, std::char_traits<char>, std::allocator<char> >::assign(char const*, unsigned long) () from /opt/Cadence/INNOVUS15/tools.lnx86/lib/64bit/libstdc++.so.6
+#8  0x000000000bca645a in psFilterNamesInit() ()
+#9  0x000000000bca6bc5 in psGetFilterName(pssFilterType, int) ()
+#10 0x000000000bcaf4ec in pssInputData::getRailFilterType(std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&) ()
+#11 0x0000000007ab4483 in ppLoadRailReportDatabase(std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, char const*) ()
+#12 0x0000000007ab54f0 in ppLoadState(char const*, char const*, char const*, char const*) ()
+#13 0x000000000bcb72d4 in pssPGDB::loadState(char*, bool, bool) ()
+#14 0x000000000bcb7b18 in psiLoadStateMT(void*) ()
+#15 0x000000000f824cad in CRL::Threading::ThreadPoolBase::thread(unsigned int) ()
+#16 0x000000000f824d9f in CRL::Threading::ThreadPoolBase::thread(void*) ()
+#17 0x0000000002c230e9 in create_head(void*) ()
+#18 0x0000003dfde07a51 in start_thread () from /lib64/libpthread.so.0
+#19 0x0000003dfdae896d in clone () from /lib64/libc.so.6
+Thread 1 (Thread 0x7fdc6eb9d1a0 (LWP 65366)):
+#0  0x0000003dfde0b63c in pthread_cond_wait@@GLIBC_2.3.2 () from /lib64/libpthread.so.0
+#1  0x000000000f823fdb in CRL::Threading::ThreadPoolBase::waitAllJobs() ()
+#2  0x000000000bcb95b8 in pssPGDB::loadDomain(char*, bool, bool) ()
+#3  0x000000000bcb9f0f in pssPGDB::viewAnalysisResults(viewAnalysisResultArgs*) ()
+#4  0x000000000bc94108 in psiViewAnalysisResultsCmd ()
+#5  0x000000000d8fbeb9 in tcmBaseCmd::execute(Tcl_Interp*, int, char**) ()
+#6  0x000000000d8e5ce8 in tcmMgr::cmdParser(void*, Tcl_Interp*, int, char**) ()
+#7  0x000000000fa21c6f in TclInvokeStringCommand ()
+#8  0x000000000fa22097 in TclNRRunCallbacks ()
+#9  0x000000000fa22dcb in TclEvalEx ()
+#10 0x000000000fa23136 in Tcl_EvalEx ()
+#11 0x000000000fa2352d in Tcl_Eval ()
+#12 0x000000000bc98ee9 in psiReadPowerRailResultsCmd ()
+#13 0x000000000d8fbeb9 in tcmBaseCmd::execute(Tcl_Interp*, int, char**) ()
+#14 0x000000000d8e5ce8 in tcmMgr::cmdParser(void*, Tcl_Interp*, int, char**) ()
+#15 0x000000000fa21c6f in TclInvokeStringCommand ()
+#16 0x000000000fa22097 in TclNRRunCallbacks ()
+#17 0x000000000fabce6c in Tcl_RecordAndEvalObj ()
+#18 0x000000000fabd086 in Tcl_RecordAndEval ()
+#19 0x0000000002ac1a36 in rdaEditCmdLineEnd(char*) ()
+#20 0x0000000009b81767 in seConsole::sesMode::DoExecute(std::basic_string<char, std::char_traits<char>, std::allocator<char> > const&, void*) ()
+#21 0x000000000a4dd0fe in Redline::EmacsMode::AcceptLine() ()
+#22 0x000000000a4e6821 in Redline::ModeCommand<Redline::EmacsMode>::CommandFnNoKeys(boost::function<void ()(Redline::EmacsMode&)> const&, Redline::Editor&) ()
+#23 0x000000000a4f4bdb in boost::detail::function::void_function_obj_invoker2<boost::_bi::bind_t<boost::_bi::unspecified, boost::function<void ()(Redline::Editor&)>, boost::_bi::list1<boost::arg<1> > >, void, Redline::Editor&, Redline::KeyCombination const&>::invoke(boost::detail::function::function_buffer&, Redline::Editor&, Redline::KeyCombination const&) ()
+#24 0x000000000a4f37cc in Redline::Command::Run(Redline::Editor&, Redline::KeyCombination const&) const ()
+#25 0x000000000a4dc855 in Redline::Editor::Internals::Run(bool) ()
+#26 0x000000000fb23a5f in FileHandlerEventProc ()
+#27 0x000000000fae3ccf in Tcl_ServiceEvent ()
+#28 0x000000000fae403b in Tcl_DoOneEvent ()
+#29 0x00007fdc74fa2e2f in TqEventDispatcher::processEvents(QFlags<QEventLoop::ProcessEventsFlag>) () from /opt/Cadence/INNOVUS15/tools.lnx86/lib/64bit/libtq.so
+#30 0x00007fdc73867382 in QEventLoop::processEvents(QFlags<QEventLoop::ProcessEventsFlag>) () from /opt/Cadence/INNOVUS15/tools.lnx86/Qt/64bit/lib/libQtCore.so.4
+#31 0x00007fdc738676e4 in QEventLoop::exec(QFlags<QEventLoop::ProcessEventsFlag>) () from /opt/Cadence/INNOVUS15/tools.lnx86/Qt/64bit/lib/libQtCore.so.4
+#32 0x00007fdc7386d2ab in QCoreApplication::exec() () from /opt/Cadence/INNOVUS15/tools.lnx86/Qt/64bit/lib/libQtCore.so.4
+#33 0x00007fdc74fa587f in TqApplication::exec() () from /opt/Cadence/INNOVUS15/tools.lnx86/lib/64bit/libtq.so
+#34 0x0000000002aa74b9 in edi_app_init(Tcl_Interp*) ()
+#35 0x000000000fade971 in Tcl_MainEx ()
+#36 0x00000000027a913b in main ()
+========================================
+                gdb
+========================================
+Using: gdb
+[New LWP 68884]
+[New LWP 68883]
+[New LWP 65934]
+[New LWP 65933]
+[New LWP 65932]
+[New LWP 65931]
+[New LWP 65563]
+[New LWP 65562]
+[New LWP 65460]
+[New LWP 65440]
+[New LWP 65439]
+[New LWP 65438]
+[New LWP 65437]
+[Thread debugging using libthread_db enabled]
+Using host libthread_db library "/lib64/libthread_db.so.1".
+0x0000003dfde0b63c in pthread_cond_wait@@GLIBC_2.3.2 () from /lib64/libpthread.so.0
+
+Thread 14 (Thread 0x7fdc6d825700 (LWP 65437)):
+#0  0x0000003dfdae13e3 in select () from /lib64/libc.so.6
+#1  0x000000000fb246e0 in NotifierThreadProc ()
+#2  0x0000000002c230e9 in create_head(void*) ()
+#3  0x0000003dfde07a51 in start_thread () from /lib64/libpthread.so.0
+#4  0x0000003dfdae896d in clone () from /lib64/libc.so.6
+
+Thread 13 (Thread 0x7fdc66efb700 (LWP 65438)):
+#0  0x0000003dfdaacaad in nanosleep () from /lib64/libc.so.6
+#1  0x0000003dfdaac920 in sleep () from /lib64/libc.so.6
+#2  0x000000000beeb153 in syiPeakMem(void*) ()
+#3  0x0000000002c230e9 in create_head(void*) ()
+#4  0x0000003dfde07a51 in start_thread () from /lib64/libpthread.so.0
+#5  0x0000003dfdae896d in clone () from /lib64/libc.so.6
+
+Thread 12 (Thread 0x7fdc65df9700 (LWP 65439)):
+#0  0x0000003dfde0efbd in nanosleep () from /lib64/libpthread.so.0
+#1  0x0000000003c236e9 in rdaiLicRecheck(void*) ()
+#2  0x0000000002c230e9 in create_head(void*) ()
+#3  0x0000003dfde07a51 in start_thread () from /lib64/libpthread.so.0
+#4  0x0000003dfdae896d in clone () from /lib64/libc.so.6
+
+Thread 11 (Thread 0x7fdc653f8700 (LWP 65440)):
+#0  0x0000003dfdaacaad in nanosleep () from /lib64/libc.so.6
+#1  0x0000003dfdaac920 in sleep () from /lib64/libc.so.6
+#2  0x000000000d64af92 in ?? ()
+#3  0x0000000002c230e9 in create_head(void*) ()
+#4  0x0000003dfde07a51 in start_thread () from /lib64/libpthread.so.0
+#5  0x0000003dfdae896d in clone () from /lib64/libc.so.6
+
+Thread 10 (Thread 0x7fdc637db700 (LWP 65460)):
+#0  0x0000003dfde0f535 in sigwait () from /lib64/libpthread.so.0
+#1  0x00000000029f869d in ctrlCHandle(void*) ()
+#2  0x0000000002c230e9 in create_head(void*) ()
+#3  0x0000003dfde07a51 in start_thread () from /lib64/libpthread.so.0
+#4  0x0000003dfdae896d in clone () from /lib64/libc.so.6
+
+Thread 9 (Thread 0x7fdc50513700 (LWP 65562)):
+#0  0x0000003dfde0b63c in pthread_cond_wait@@GLIBC_2.3.2 () from /lib64/libpthread.so.0
+#1  0x00007fdc737497d3 in QWaitCondition::wait(QMutex*, unsigned long) () from /opt/Cadence/INNOVUS15/tools.lnx86/Qt/64bit/lib/libQtCore.so.4
+#2  0x00007fdc74427c88 in QFileInfoGatherer::run() () from /opt/Cadence/INNOVUS15/tools.lnx86/Qt/64bit/lib/libQtGui.so.4
+#3  0x00007fdc73748ffe in QThreadPrivate::start(void*) () from /opt/Cadence/INNOVUS15/tools.lnx86/Qt/64bit/lib/libQtCore.so.4
+#4  0x0000000002c230e9 in create_head(void*) ()
+#5  0x0000003dfde07a51 in start_thread () from /lib64/libpthread.so.0
+#6  0x0000003dfdae896d in clone () from /lib64/libc.so.6
+
+Thread 8 (Thread 0x7fdc4fb12700 (LWP 65563)):
+#0  0x0000003dfdae13e3 in select () from /lib64/libc.so.6
+#1  0x00007fdc738969b6 in qt_safe_select(int, fd_set*, fd_set*, fd_set*, timeval const*) () from /opt/Cadence/INNOVUS15/tools.lnx86/Qt/64bit/lib/libQtCore.so.4
+#2  0x00007fdc7389ae08 in QEventDispatcherUNIXPrivate::doSelect(QFlags<QEventLoop::ProcessEventsFlag>, timeval*) () from /opt/Cadence/INNOVUS15/tools.lnx86/Qt/64bit/lib/libQtCore.so.4
+#3  0x00007fdc7389b537 in QEventDispatcherUNIX::processEvents(QFlags<QEventLoop::ProcessEventsFlag>) () from /opt/Cadence/INNOVUS15/tools.lnx86/Qt/64bit/lib/libQtCore.so.4
+#4  0x00007fdc73867382 in QEventLoop::processEvents(QFlags<QEventLoop::ProcessEventsFlag>) () from /opt/Cadence/INNOVUS15/tools.lnx86/Qt/64bit/lib/libQtCore.so.4
+#5  0x00007fdc738676e4 in QEventLoop::exec(QFlags<QEventLoop::ProcessEventsFlag>) () from /opt/Cadence/INNOVUS15/tools.lnx86/Qt/64bit/lib/libQtCore.so.4
+#6  0x00007fdc737460cf in QThread::exec() () from /opt/Cadence/INNOVUS15/tools.lnx86/Qt/64bit/lib/libQtCore.so.4
+#7  0x00007fdc73842718 in QInotifyFileSystemWatcherEngine::run() () from /opt/Cadence/INNOVUS15/tools.lnx86/Qt/64bit/lib/libQtCore.so.4
+#8  0x00007fdc73748ffe in QThreadPrivate::start(void*) () from /opt/Cadence/INNOVUS15/tools.lnx86/Qt/64bit/lib/libQtCore.so.4
+#9  0x0000000002c230e9 in create_head(void*) ()
+#10 0x0000003dfde07a51 in start_thread () from /lib64/libpthread.so.0
+#11 0x0000003dfdae896d in clone () from /lib64/libc.so.6
+
+Thread 7 (Thread 0x7fdc31853700 (LWP 65931)):
+#0  0x0000003dfde0b63c in pthread_cond_wait@@GLIBC_2.3.2 () from /lib64/libpthread.so.0
+#1  0x000000000c2b99b9 in TAThreadCondition::wait(TAThreadMutex&) ()
+#2  0x000000000d009601 in TAThreadJobPool::oneWorkerDone(int) ()
+#3  0x000000000d009771 in TAThread::run(TAThreadWorker*) ()
+#4  0x0000000002c230e9 in create_head(void*) ()
+#5  0x0000003dfde07a51 in start_thread () from /lib64/libpthread.so.0
+#6  0x0000003dfdae896d in clone () from /lib64/libc.so.6
+
+Thread 6 (Thread 0x7fdc32254700 (LWP 65932)):
+#0  0x0000003dfde0b63c in pthread_cond_wait@@GLIBC_2.3.2 () from /lib64/libpthread.so.0
+#1  0x000000000c2b99b9 in TAThreadCondition::wait(TAThreadMutex&) ()
+#2  0x000000000d009601 in TAThreadJobPool::oneWorkerDone(int) ()
+#3  0x000000000d009771 in TAThread::run(TAThreadWorker*) ()
+#4  0x0000000002c230e9 in create_head(void*) ()
+#5  0x0000003dfde07a51 in start_thread () from /lib64/libpthread.so.0
+#6  0x0000003dfdae896d in clone () from /lib64/libc.so.6
+
+Thread 5 (Thread 0x7fdc32c55700 (LWP 65933)):
+#0  0x0000003dfde0b63c in pthread_cond_wait@@GLIBC_2.3.2 () from /lib64/libpthread.so.0
+#1  0x000000000c2b99b9 in TAThreadCondition::wait(TAThreadMutex&) ()
+#2  0x000000000d009601 in TAThreadJobPool::oneWorkerDone(int) ()
+#3  0x000000000d009771 in TAThread::run(TAThreadWorker*) ()
+#4  0x0000000002c230e9 in create_head(void*) ()
+#5  0x0000003dfde07a51 in start_thread () from /lib64/libpthread.so.0
+#6  0x0000003dfdae896d in clone () from /lib64/libc.so.6
+
+Thread 4 (Thread 0x7fdc3f091700 (LWP 65934)):
+#0  0x0000003dfde0b63c in pthread_cond_wait@@GLIBC_2.3.2 () from /lib64/libpthread.so.0
+#1  0x000000000c2b99b9 in TAThreadCondition::wait(TAThreadMutex&) ()
+#2  0x000000000d009601 in TAThreadJobPool::oneWorkerDone(int) ()
+#3  0x000000000d009771 in TAThread::run(TAThreadWorker*) ()
+#4  0x0000000002c230e9 in create_head(void*) ()
+#5  0x0000003dfde07a51 in start_thread () from /lib64/libpthread.so.0
+#6  0x0000003dfdae896d in clone () from /lib64/libc.so.6
+
+Thread 3 (Thread 0x7fdc03ab4700 (LWP 68883)):
+#0  0x0000003dfde0e2e4 in __lll_lock_wait () from /lib64/libpthread.so.0
+#1  0x0000003dfde09588 in _L_lock_854 () from /lib64/libpthread.so.0
+#2  0x0000003dfde09457 in pthread_mutex_lock () from /lib64/libpthread.so.0
+#3  0x000000000bed2202 in syStackTrace ()
+#4  0x00000000029fb665 in rdaiErrorHandler(int, siginfo*, void*) ()
+#5  <signal handler called>
+#6  0x0000000002c19571 in process_pending_frees(mm_group_struct*) ()
+#7  0x0000000002c1790f in mm_fre_rare(void*, memblox_struct*) ()
+#8  0x00007fdc6f906f19 in std::string::_M_mutate(unsigned long, unsigned long, unsigned long) () from /opt/Cadence/INNOVUS15/tools.lnx86/lib/64bit/libstdc++.so.6
+#9  0x00007fdc6f90738e in std::string::_M_replace_safe(unsigned long, unsigned long, char const*, unsigned long) () from /opt/Cadence/INNOVUS15/tools.lnx86/lib/64bit/libstdc++.so.6
+#10 0x000000000bca6379 in psFilterNamesInit() ()
+#11 0x000000000bca6bc5 in psGetFilterName(pssFilterType, int) ()
+#12 0x000000000bcaf4ec in pssInputData::getRailFilterType(std::string const&) ()
+#13 0x0000000007ab4483 in ppLoadRailReportDatabase(std::string const&, std::string const&, char const*) ()
+#14 0x0000000007ab54f0 in ppLoadState(char const*, char const*, char const*, char const*) ()
+#15 0x000000000bcb72d4 in pssPGDB::loadState(char*, bool, bool) ()
+#16 0x000000000bcb7b18 in psiLoadStateMT(void*) ()
+#17 0x000000000f824cad in CRL::Threading::ThreadPoolBase::thread(unsigned int) ()
+#18 0x000000000f824d9f in CRL::Threading::ThreadPoolBase::thread(void*) ()
+#19 0x0000000002c230e9 in create_head(void*) ()
+#20 0x0000003dfde07a51 in start_thread () from /lib64/libpthread.so.0
+#21 0x0000003dfdae896d in clone () from /lib64/libc.so.6
+
+Thread 2 (Thread 0x7fdc030b3700 (LWP 68884)):
+#0  0x0000003dfdaac6cd in waitpid () from /lib64/libc.so.6
+#1  0x0000003dfda3e609 in do_system () from /lib64/libc.so.6
+#2  0x0000003dfda3e940 in system () from /lib64/libc.so.6
+#3  0x000000000bed1e29 in syStackTraceDump(_IO_FILE*, bool) ()
+#4  0x000000000bed21ac in syStackTrace ()
+#5  0x00000000029fb665 in rdaiErrorHandler(int, siginfo*, void*) ()
+#6  <signal handler called>
+#7  0x00007fdc6f9073fb in std::string::assign(char const*, unsigned long) () from /opt/Cadence/INNOVUS15/tools.lnx86/lib/64bit/libstdc++.so.6
+#8  0x000000000bca645a in psFilterNamesInit() ()
+#9  0x000000000bca6bc5 in psGetFilterName(pssFilterType, int) ()
+#10 0x000000000bcaf4ec in pssInputData::getRailFilterType(std::string const&) ()
+#11 0x0000000007ab4483 in ppLoadRailReportDatabase(std::string const&, std::string const&, char const*) ()
+#12 0x0000000007ab54f0 in ppLoadState(char const*, char const*, char const*, char const*) ()
+#13 0x000000000bcb72d4 in pssPGDB::loadState(char*, bool, bool) ()
+#14 0x000000000bcb7b18 in psiLoadStateMT(void*) ()
+#15 0x000000000f824cad in CRL::Threading::ThreadPoolBase::thread(unsigned int) ()
+#16 0x000000000f824d9f in CRL::Threading::ThreadPoolBase::thread(void*) ()
+#17 0x0000000002c230e9 in create_head(void*) ()
+#18 0x0000003dfde07a51 in start_thread () from /lib64/libpthread.so.0
+#19 0x0000003dfdae896d in clone () from /lib64/libc.so.6
+
+Thread 1 (Thread 0x7fdc6eb9d1a0 (LWP 65366)):
+#0  0x0000003dfde0b63c in pthread_cond_wait@@GLIBC_2.3.2 () from /lib64/libpthread.so.0
+#1  0x000000000f823fdb in CRL::Threading::ThreadPoolBase::waitAllJobs() ()
+#2  0x000000000bcb95b8 in pssPGDB::loadDomain(char*, bool, bool) ()
+#3  0x000000000bcb9f0f in pssPGDB::viewAnalysisResults(viewAnalysisResultArgs*) ()
+#4  0x000000000bc94108 in psiViewAnalysisResultsCmd ()
+#5  0x000000000d8fbeb9 in tcmBaseCmd::execute(Tcl_Interp*, int, char**) ()
+#6  0x000000000d8e5ce8 in tcmMgr::cmdParser(void*, Tcl_Interp*, int, char**) ()
+#7  0x000000000fa21c6f in TclInvokeStringCommand ()
+#8  0x000000000fa22097 in TclNRRunCallbacks ()
+#9  0x000000000fa22dcb in TclEvalEx ()
+#10 0x000000000fa23136 in Tcl_EvalEx ()
+#11 0x000000000fa2352d in Tcl_Eval ()
+#12 0x000000000bc98ee9 in psiReadPowerRailResultsCmd ()
+#13 0x000000000d8fbeb9 in tcmBaseCmd::execute(Tcl_Interp*, int, char**) ()
+#14 0x000000000d8e5ce8 in tcmMgr::cmdParser(void*, Tcl_Interp*, int, char**) ()
+#15 0x000000000fa21c6f in TclInvokeStringCommand ()
+#16 0x000000000fa22097 in TclNRRunCallbacks ()
+#17 0x000000000fabce6c in Tcl_RecordAndEvalObj ()
+#18 0x000000000fabd086 in Tcl_RecordAndEval ()
+#19 0x0000000002ac1a36 in rdaEditCmdLineEnd(char*) ()
+#20 0x0000000009b81767 in seConsole::sesMode::DoExecute(std::string const&, void*) ()
+#21 0x000000000a4dd0fe in Redline::EmacsMode::AcceptLine() ()
+#22 0x000000000a4e6821 in Redline::ModeCommand<Redline::EmacsMode>::CommandFnNoKeys(boost::function<void (Redline::EmacsMode&)> const&, Redline::Editor&) ()
+#23 0x000000000a4f4bdb in boost::detail::function::void_function_obj_invoker2<boost::_bi::bind_t<boost::_bi::unspecified, boost::function<void (Redline::Editor&)>, boost::_bi::list1<boost::arg<1> > >, void, Redline::Editor&, Redline::KeyCombination const&>::invoke(boost::detail::function::function_buffer&, Redline::Editor&, Redline::KeyCombination const&) ()
+#24 0x000000000a4f37cc in Redline::Command::Run(Redline::Editor&, Redline::KeyCombination const&) const ()
+#25 0x000000000a4dc855 in Redline::Editor::Internals::Run(bool) ()
+#26 0x000000000fb23a5f in FileHandlerEventProc ()
+#27 0x000000000fae3ccf in Tcl_ServiceEvent ()
+#28 0x000000000fae403b in Tcl_DoOneEvent ()
+#29 0x00007fdc74fa2e2f in TqEventDispatcher::processEvents(QFlags<QEventLoop::ProcessEventsFlag>) () from /opt/Cadence/INNOVUS15/tools.lnx86/lib/64bit/libtq.so
+#30 0x00007fdc73867382 in QEventLoop::processEvents(QFlags<QEventLoop::ProcessEventsFlag>) () from /opt/Cadence/INNOVUS15/tools.lnx86/Qt/64bit/lib/libQtCore.so.4
+#31 0x00007fdc738676e4 in QEventLoop::exec(QFlags<QEventLoop::ProcessEventsFlag>) () from /opt/Cadence/INNOVUS15/tools.lnx86/Qt/64bit/lib/libQtCore.so.4
+#32 0x00007fdc7386d2ab in QCoreApplication::exec() () from /opt/Cadence/INNOVUS15/tools.lnx86/Qt/64bit/lib/libQtCore.so.4
+#33 0x00007fdc74fa587f in TqApplication::exec() () from /opt/Cadence/INNOVUS15/tools.lnx86/lib/64bit/libtq.so
+#34 0x0000000002aa74b9 in edi_app_init(Tcl_Interp*) ()
+#35 0x000000000fade971 in Tcl_MainEx ()
+#36 0x00000000027a913b in main ()
+A debugging session is active.
+
+	Inferior 1 [process 65366] will be detached.
+
+Quit anyway? (y or n) [answered Y; input not from terminal]

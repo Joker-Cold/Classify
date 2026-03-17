@@ -1,0 +1,134 @@
+
+Results for ir (linear filters):
+================================
+
+*
+* Data filtering results for IR drop:
+	Minimum, Average, Maximum IR Drop: 5.40637e-12V, 0.0156052V, 0.0245852V
+	Range 1(0.021512V  - 0.0245852V ):     8574 (11.84%)
+	Range 2(0.0184389V  - 0.021512V ):    12023 (16.61%)
+	Range 3(0.0153657V  - 0.0184389V ):    17581 (24.29%)
+	Range 4(0.0122926V  - 0.0153657V ):    15800 (21.83%)
+	Range 5(0.00921944V  - 0.0122926V ):    12101 (16.72%)
+	Range 6(0.00614629V  - 0.00921944V ):     5388 (7.44%)
+	Range 7(0.00307315V  - 0.00614629V ):      865 (1.19%)
+	Range 8(5.40637e-12V  - 0.00307315V ):       59 (0.08%)
+
+
+
+Results for ir (limit filters):
+===============================
+
+*
+* Data filtering results for IR drop:
+	Minimum, Average, Maximum IR Drop: 5.40637e-12V, 0.0156052V, 0.0245852V
+	Range 1(     0.1V  -      0.1V ):        0 (0.00%)
+	Range 2(0.0916667V  -      0.1V ):        0 (0.00%)
+	Range 3(0.0833333V  - 0.0916667V ):        0 (0.00%)
+	Range 4(   0.075V  - 0.0833333V ):        0 (0.00%)
+	Range 5(0.0666667V  -    0.075V ):        0 (0.00%)
+	Range 6(0.0583333V  - 0.0666667V ):        0 (0.00%)
+	Range 7(    0.05V  - 0.0583333V ):        0 (0.00%)
+	Range 8(  -1e-06V  -     0.05V ):    72391 (100.00%)
+
+======> PASSED !
+
+
+Results for tc:
+===============
+
+*
+* Data filtering results for tap current:
+	Minimum, Average, Maximum Tap Current: -4.50196e-05A, -5.94901e-07A, 0A
+	Range 1(  -1e+09A  -   -0.001A ):        0 (0.00%)
+	Range 2(  -0.001A  -  -0.0001A ):        0 (0.00%)
+	Range 3( -0.0001A  -   -1e-05A ):       93 (0.17%)
+	Range 4(  -1e-05A  -   -1e-06A ):    11926 (21.19%)
+	Range 5(  -1e-06A  -   -1e-07A ):    10820 (19.22%)
+	Range 6(  -1e-07A  -   -1e-08A ):     6600 (11.72%)
+	Range 7(  -1e-08A  -   -1e-09A ):    20175 (35.84%)
+	Range 8(  -1e-09A  -        0A ):     6678 (11.86%)
+
+
+
+Results for iv:
+===============
+
+*
+* Data filtering results for instance based IR drop:
+	Minimum, Average, Maximum Instance Based IR Drop: 0.00269956V, 0.0157589V, 0.0245852V
+	Range 1(     0.1V  -      0.1V ):        0 (0.00%)
+	Range 2(0.0916667V  -      0.1V ):        0 (0.00%)
+	Range 3(0.0833333V  - 0.0916667V ):        0 (0.00%)
+	Range 4(   0.075V  - 0.0833333V ):        0 (0.00%)
+	Range 5(0.0666667V  -    0.075V ):        0 (0.00%)
+	Range 6(0.0583333V  - 0.0666667V ):        0 (0.00%)
+	Range 7(    0.05V  - 0.0583333V ):        0 (0.00%)
+	Range 8(  -1e-06V  -     0.05V ):    56292 (100.00%)
+
+
+
+Results for vc:
+===============
+
+*
+* Data filtering results for voltage source current:
+	Minimum, Average, Maximum Voltage Source Current: 0.000540637A, 0.00169757A, 0.00302153A
+*	Total current: 0.0135805A
+	Range 1(0.00271142A  - 0.00302153A ):        2 (25.00%)
+	Range 2(0.00240131A  - 0.00271142A ):        0 (0.00%)
+	Range 3(0.0020912A  - 0.00240131A ):        0 (0.00%)
+	Range 4(0.00178108A  - 0.0020912A ):        2 (25.00%)
+	Range 5(0.00147097A  - 0.00178108A ):        1 (12.50%)
+	Range 6(0.00116086A  - 0.00147097A ):        1 (12.50%)
+	Range 7(0.000850749A  - 0.00116086A ):        0 (0.00%)
+	Range 8(0.000540637A  - 0.000850749A ):        2 (25.00%)
+
+
+
+Results for dd:
+===============
+
+*
+* Data filtering results for decoupling cap density:
+	Range 1(       0F/um^2 -        0F/um^2):    72391 (100.00%)
+	Range 2(       0F/um^2 -        0F/um^2):        0 (0.00%)
+	Range 3(       0F/um^2 -        0F/um^2):        0 (0.00%)
+	Range 4(       0F/um^2 -        0F/um^2):        0 (0.00%)
+	Range 5(       0F/um^2 -        0F/um^2):        0 (0.00%)
+	Range 6(       0F/um^2 -        0F/um^2):        0 (0.00%)
+	Range 7(       0F/um^2 -        0F/um^2):        0 (0.00%)
+	Range 8(       0F/um^2 -        0F/um^2):        0 (0.00%)
+
+
+
+Results for pi:
+===============
+
+*
+* Data filtering results for power gate I/Idsat:
+*	No data found.
+
+
+
+Results for pv:
+===============
+
+*
+* Data filtering results for power gate voltage:
+*	No data found.
+
+
+
+Begin Capacitance Report Generation
+	Type                  disconnected          connected             used                
+	Intrinsic-decap       0.000F                0.000F                0.000F              
+	Intrinsic-standard    0.000F                0.000F                0.000F              
+	Intrinsic-macro       0.000F                0.000F                0.000F              
+	Load Cap              0.000F                46.978pF              46.978pF            
+	Grid Cap              0.000F                1.846pF               1.846pF             
+	Total Cap             0.000F                48.824pF              48.824pF            
+
+
+Ended Capacitance Report Generation: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=568.50MB/642209.23MB/3868.21MB)
+

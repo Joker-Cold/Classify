@@ -1,0 +1,926 @@
+- Cell: A2O1A1Ixp33_ASAP7_75t_SL Tag: 
+ Temperature: 25
+* Cell: A2O1A1Ixp33_ASAP7_75t_SL Pin: VSS Instantiation: 522 Snapped: 0 PowerGate: No Hidden: No
+  Grid:
+          Layer            Node        IntfNode    InternalNode            Elem             Tap           PGTap
+           LISD               1               1               0               0               1               0
+          Total               1               1               0               0               1               0
+
+
+- Cell: A2O1A1O1Ixp25_ASAP7_75t_SL Tag: 
+ Temperature: 25
+* Cell: A2O1A1O1Ixp25_ASAP7_75t_SL Pin: VSS Instantiation: 109 Snapped: 0 PowerGate: No Hidden: No
+  Grid:
+          Layer            Node        IntfNode    InternalNode            Elem             Tap           PGTap
+           LISD               1               1               0               0               1               0
+          Total               1               1               0               0               1               0
+
+
+- Cell: AND2x2_ASAP7_75t_SL Tag: 
+ Temperature: 25
+* Cell: AND2x2_ASAP7_75t_SL Pin: VSS Instantiation: 369 Snapped: 0 PowerGate: No Hidden: No
+  Grid:
+          Layer            Node        IntfNode    InternalNode            Elem             Tap           PGTap
+           LISD               1               1               0               0               1               0
+          Total               1               1               0               0               1               0
+
+
+- Cell: AND3x1_ASAP7_75t_SL Tag: 
+ Temperature: 25
+* Cell: AND3x1_ASAP7_75t_SL Pin: VSS Instantiation: 23 Snapped: 0 PowerGate: No Hidden: No
+  Grid:
+          Layer            Node        IntfNode    InternalNode            Elem             Tap           PGTap
+           LISD               1               1               0               0               1               0
+          Total               1               1               0               0               1               0
+
+
+- Cell: AND4x1_ASAP7_75t_SL Tag: 
+ Temperature: 25
+* Cell: AND4x1_ASAP7_75t_SL Pin: VSS Instantiation: 102 Snapped: 0 PowerGate: No Hidden: No
+  Grid:
+          Layer            Node        IntfNode    InternalNode            Elem             Tap           PGTap
+           LISD               1               1               0               0               1               0
+          Total               1               1               0               0               1               0
+
+
+- Cell: AND5x1_ASAP7_75t_SL Tag: 
+ Temperature: 25
+* Cell: AND5x1_ASAP7_75t_SL Pin: VSS Instantiation: 81 Snapped: 0 PowerGate: No Hidden: No
+  Grid:
+          Layer            Node        IntfNode    InternalNode            Elem             Tap           PGTap
+           LISD               1               1               0               0               1               0
+          Total               1               1               0               0               1               0
+
+
+- Cell: AO21x1_ASAP7_75t_SL Tag: 
+ Temperature: 25
+* Cell: AO21x1_ASAP7_75t_SL Pin: VSS Instantiation: 356 Snapped: 0 PowerGate: No Hidden: No
+  Grid:
+          Layer            Node        IntfNode    InternalNode            Elem             Tap           PGTap
+           LISD               1               1               0               0               1               0
+          Total               1               1               0               0               1               0
+
+
+- Cell: AO221x1_ASAP7_75t_SL Tag: 
+ Temperature: 25
+* Cell: AO221x1_ASAP7_75t_SL Pin: VSS Instantiation: 42 Snapped: 0 PowerGate: No Hidden: No
+  Grid:
+          Layer            Node        IntfNode    InternalNode            Elem             Tap           PGTap
+           LISD               1               1               0               0               1               0
+          Total               1               1               0               0               1               0
+
+
+- Cell: AO222x2_ASAP7_75t_SL Tag: 
+ Temperature: 25
+* Cell: AO222x2_ASAP7_75t_SL Pin: VSS Instantiation: 50 Snapped: 0 PowerGate: No Hidden: No
+  Grid:
+          Layer            Node        IntfNode    InternalNode            Elem             Tap           PGTap
+           LISD               1               1               0               0               1               0
+          Total               1               1               0               0               1               0
+
+
+- Cell: AO22x1_ASAP7_75t_SL Tag: 
+ Temperature: 25
+* Cell: AO22x1_ASAP7_75t_SL Pin: VSS Instantiation: 658 Snapped: 0 PowerGate: No Hidden: No
+  Grid:
+          Layer            Node        IntfNode    InternalNode            Elem             Tap           PGTap
+           LISD               1               1               0               0               1               0
+          Total               1               1               0               0               1               0
+
+
+- Cell: AO322x2_ASAP7_75t_SL Tag: 
+ Temperature: 25
+* Cell: AO322x2_ASAP7_75t_SL Pin: VSS Instantiation: 2 Snapped: 0 PowerGate: No Hidden: No
+  Grid:
+          Layer            Node        IntfNode    InternalNode            Elem             Tap           PGTap
+           LISD               1               1               0               0               1               0
+          Total               1               1               0               0               1               0
+
+
+- Cell: AO32x1_ASAP7_75t_SL Tag: 
+ Temperature: 25
+* Cell: AO32x1_ASAP7_75t_SL Pin: VSS Instantiation: 217 Snapped: 0 PowerGate: No Hidden: No
+  Grid:
+          Layer            Node        IntfNode    InternalNode            Elem             Tap           PGTap
+           LISD               1               1               0               0               1               0
+          Total               1               1               0               0               1               0
+
+
+- Cell: AO331x1_ASAP7_75t_SL Tag: 
+ Temperature: 25
+* Cell: AO331x1_ASAP7_75t_SL Pin: VSS Instantiation: 107 Snapped: 0 PowerGate: No Hidden: No
+  Grid:
+          Layer            Node        IntfNode    InternalNode            Elem             Tap           PGTap
+           LISD               1               1               0               0               1               0
+          Total               1               1               0               0               1               0
+
+
+- Cell: AO332x1_ASAP7_75t_SL Tag: 
+ Temperature: 25
+* Cell: AO332x1_ASAP7_75t_SL Pin: VSS Instantiation: 55 Snapped: 0 PowerGate: No Hidden: No
+  Grid:
+          Layer            Node        IntfNode    InternalNode            Elem             Tap           PGTap
+           LISD               1               1               0               0               1               0
+          Total               1               1               0               0               1               0
+
+
+- Cell: AO33x2_ASAP7_75t_SL Tag: 
+ Temperature: 25
+* Cell: AO33x2_ASAP7_75t_SL Pin: VSS Instantiation: 2 Snapped: 0 PowerGate: No Hidden: No
+  Grid:
+          Layer            Node        IntfNode    InternalNode            Elem             Tap           PGTap
+           LISD               1               1               0               0               1               0
+          Total               1               1               0               0               1               0
+
+
+- Cell: AOI211xp5_ASAP7_75t_SL Tag: 
+ Temperature: 25
+* Cell: AOI211xp5_ASAP7_75t_SL Pin: VSS Instantiation: 321 Snapped: 0 PowerGate: No Hidden: No
+  Grid:
+          Layer            Node        IntfNode    InternalNode            Elem             Tap           PGTap
+           LISD               1               1               0               0               1               0
+          Total               1               1               0               0               1               0
+
+
+- Cell: AOI21xp33_ASAP7_75t_SL Tag: 
+ Temperature: 25
+* Cell: AOI21xp33_ASAP7_75t_SL Pin: VSS Instantiation: 7 Snapped: 0 PowerGate: No Hidden: No
+  Grid:
+          Layer            Node        IntfNode    InternalNode            Elem             Tap           PGTap
+           LISD               1               1               0               0               1               0
+          Total               1               1               0               0               1               0
+
+
+- Cell: AOI21xp5_ASAP7_75t_L Tag: 
+ Temperature: 25
+* Cell: AOI21xp5_ASAP7_75t_L Pin: VSS Instantiation: 4 Snapped: 0 PowerGate: No Hidden: No
+  Grid:
+          Layer            Node        IntfNode    InternalNode            Elem             Tap           PGTap
+           LISD               1               1               0               0               1               0
+          Total               1               1               0               0               1               0
+
+
+- Cell: AOI21xp5_ASAP7_75t_SL Tag: 
+ Temperature: 25
+* Cell: AOI21xp5_ASAP7_75t_SL Pin: VSS Instantiation: 671 Snapped: 0 PowerGate: No Hidden: No
+  Grid:
+          Layer            Node        IntfNode    InternalNode            Elem             Tap           PGTap
+           LISD               1               1               0               0               1               0
+          Total               1               1               0               0               1               0
+
+
+- Cell: AOI221xp5_ASAP7_75t_SL Tag: 
+ Temperature: 25
+* Cell: AOI221xp5_ASAP7_75t_SL Pin: VSS Instantiation: 458 Snapped: 0 PowerGate: No Hidden: No
+  Grid:
+          Layer            Node        IntfNode    InternalNode            Elem             Tap           PGTap
+           LISD               1               1               0               0               1               0
+          Total               1               1               0               0               1               0
+
+
+- Cell: AOI222xp33_ASAP7_75t_SL Tag: 
+ Temperature: 25
+* Cell: AOI222xp33_ASAP7_75t_SL Pin: VSS Instantiation: 12 Snapped: 0 PowerGate: No Hidden: No
+  Grid:
+          Layer            Node        IntfNode    InternalNode            Elem             Tap           PGTap
+           LISD               1               1               0               0               1               0
+          Total               1               1               0               0               1               0
+
+
+- Cell: AOI22xp5_ASAP7_75t_L Tag: 
+ Temperature: 25
+* Cell: AOI22xp5_ASAP7_75t_L Pin: VSS Instantiation: 934 Snapped: 0 PowerGate: No Hidden: No
+  Grid:
+          Layer            Node        IntfNode    InternalNode            Elem             Tap           PGTap
+           LISD               1               1               0               0               1               0
+          Total               1               1               0               0               1               0
+
+
+- Cell: AOI22xp5_ASAP7_75t_SL Tag: 
+ Temperature: 25
+* Cell: AOI22xp5_ASAP7_75t_SL Pin: VSS Instantiation: 2383 Snapped: 0 PowerGate: No Hidden: No
+  Grid:
+          Layer            Node        IntfNode    InternalNode            Elem             Tap           PGTap
+           LISD               1               1               0               0               1               0
+          Total               1               1               0               0               1               0
+
+
+- Cell: AOI311xp33_ASAP7_75t_SL Tag: 
+ Temperature: 25
+* Cell: AOI311xp33_ASAP7_75t_SL Pin: VSS Instantiation: 112 Snapped: 0 PowerGate: No Hidden: No
+  Grid:
+          Layer            Node        IntfNode    InternalNode            Elem             Tap           PGTap
+           LISD               1               1               0               0               1               0
+          Total               1               1               0               0               1               0
+
+
+- Cell: AOI31xp33_ASAP7_75t_SL Tag: 
+ Temperature: 25
+* Cell: AOI31xp33_ASAP7_75t_SL Pin: VSS Instantiation: 120 Snapped: 0 PowerGate: No Hidden: No
+  Grid:
+          Layer            Node        IntfNode    InternalNode            Elem             Tap           PGTap
+           LISD               1               1               0               0               1               0
+          Total               1               1               0               0               1               0
+
+
+- Cell: AOI321xp33_ASAP7_75t_SL Tag: 
+ Temperature: 25
+* Cell: AOI321xp33_ASAP7_75t_SL Pin: VSS Instantiation: 489 Snapped: 0 PowerGate: No Hidden: No
+  Grid:
+          Layer            Node        IntfNode    InternalNode            Elem             Tap           PGTap
+           LISD               1               1               0               0               1               0
+          Total               1               1               0               0               1               0
+
+
+- Cell: AOI322xp5_ASAP7_75t_SL Tag: 
+ Temperature: 25
+* Cell: AOI322xp5_ASAP7_75t_SL Pin: VSS Instantiation: 110 Snapped: 0 PowerGate: No Hidden: No
+  Grid:
+          Layer            Node        IntfNode    InternalNode            Elem             Tap           PGTap
+           LISD               1               1               0               0               1               0
+          Total               1               1               0               0               1               0
+
+
+- Cell: AOI32xp33_ASAP7_75t_SL Tag: 
+ Temperature: 25
+* Cell: AOI32xp33_ASAP7_75t_SL Pin: VSS Instantiation: 382 Snapped: 0 PowerGate: No Hidden: No
+  Grid:
+          Layer            Node        IntfNode    InternalNode            Elem             Tap           PGTap
+           LISD               1               1               0               0               1               0
+          Total               1               1               0               0               1               0
+
+
+- Cell: AOI331xp33_ASAP7_75t_SL Tag: 
+ Temperature: 25
+* Cell: AOI331xp33_ASAP7_75t_SL Pin: VSS Instantiation: 43 Snapped: 0 PowerGate: No Hidden: No
+  Grid:
+          Layer            Node        IntfNode    InternalNode            Elem             Tap           PGTap
+           LISD               1               1               0               0               1               0
+          Total               1               1               0               0               1               0
+
+
+- Cell: AOI332xp33_ASAP7_75t_SL Tag: 
+ Temperature: 25
+* Cell: AOI332xp33_ASAP7_75t_SL Pin: VSS Instantiation: 92 Snapped: 0 PowerGate: No Hidden: No
+  Grid:
+          Layer            Node        IntfNode    InternalNode            Elem             Tap           PGTap
+           LISD               1               1               0               0               1               0
+          Total               1               1               0               0               1               0
+
+
+- Cell: AOI33xp33_ASAP7_75t_SL Tag: 
+ Temperature: 25
+* Cell: AOI33xp33_ASAP7_75t_SL Pin: VSS Instantiation: 98 Snapped: 0 PowerGate: No Hidden: No
+  Grid:
+          Layer            Node        IntfNode    InternalNode            Elem             Tap           PGTap
+           LISD               1               1               0               0               1               0
+          Total               1               1               0               0               1               0
+
+
+- Cell: BUFx10_ASAP7_75t_SL Tag: 
+ Temperature: 25
+* Cell: BUFx10_ASAP7_75t_SL Pin: VSS Instantiation: 4 Snapped: 0 PowerGate: No Hidden: No
+  Grid:
+          Layer            Node        IntfNode    InternalNode            Elem             Tap           PGTap
+           LISD               1               1               0               0               1               0
+          Total               1               1               0               0               1               0
+
+
+- Cell: BUFx12_ASAP7_75t_SL Tag: 
+ Temperature: 25
+* Cell: BUFx12_ASAP7_75t_SL Pin: VSS Instantiation: 2 Snapped: 0 PowerGate: No Hidden: No
+  Grid:
+          Layer            Node        IntfNode    InternalNode            Elem             Tap           PGTap
+           LISD               1               1               0               0               1               0
+          Total               1               1               0               0               1               0
+
+
+- Cell: BUFx16f_ASAP7_75t_L Tag: 
+ Temperature: 25
+* Cell: BUFx16f_ASAP7_75t_L Pin: VSS Instantiation: 1 Snapped: 0 PowerGate: No Hidden: No
+  Grid:
+          Layer            Node        IntfNode    InternalNode            Elem             Tap           PGTap
+           LISD               1               1               0               0               1               0
+          Total               1               1               0               0               1               0
+
+
+- Cell: BUFx2_ASAP7_75t_L Tag: 
+ Temperature: 25
+* Cell: BUFx2_ASAP7_75t_L Pin: VSS Instantiation: 2 Snapped: 0 PowerGate: No Hidden: No
+  Grid:
+          Layer            Node        IntfNode    InternalNode            Elem             Tap           PGTap
+           LISD               1               1               0               0               1               0
+          Total               1               1               0               0               1               0
+
+
+- Cell: BUFx2_ASAP7_75t_SL Tag: 
+ Temperature: 25
+* Cell: BUFx2_ASAP7_75t_SL Pin: VSS Instantiation: 117 Snapped: 0 PowerGate: No Hidden: No
+  Grid:
+          Layer            Node        IntfNode    InternalNode            Elem             Tap           PGTap
+           LISD               1               1               0               0               1               0
+          Total               1               1               0               0               1               0
+
+
+- Cell: BUFx3_ASAP7_75t_SL Tag: 
+ Temperature: 25
+* Cell: BUFx3_ASAP7_75t_SL Pin: VSS Instantiation: 17 Snapped: 0 PowerGate: No Hidden: No
+  Grid:
+          Layer            Node        IntfNode    InternalNode            Elem             Tap           PGTap
+           LISD               1               1               0               0               1               0
+          Total               1               1               0               0               1               0
+
+
+- Cell: BUFx4_ASAP7_75t_SL Tag: 
+ Temperature: 25
+* Cell: BUFx4_ASAP7_75t_SL Pin: VSS Instantiation: 1 Snapped: 0 PowerGate: No Hidden: No
+  Grid:
+          Layer            Node        IntfNode    InternalNode            Elem             Tap           PGTap
+           LISD               1               1               0               0               1               0
+          Total               1               1               0               0               1               0
+
+
+- Cell: BUFx4f_ASAP7_75t_SL Tag: 
+ Temperature: 25
+* Cell: BUFx4f_ASAP7_75t_SL Pin: VSS Instantiation: 4 Snapped: 0 PowerGate: No Hidden: No
+  Grid:
+          Layer            Node        IntfNode    InternalNode            Elem             Tap           PGTap
+           LISD               1               1               0               0               1               0
+          Total               1               1               0               0               1               0
+
+
+- Cell: BUFx5_ASAP7_75t_SL Tag: 
+ Temperature: 25
+* Cell: BUFx5_ASAP7_75t_SL Pin: VSS Instantiation: 54 Snapped: 0 PowerGate: No Hidden: No
+  Grid:
+          Layer            Node        IntfNode    InternalNode            Elem             Tap           PGTap
+           LISD               1               1               0               0               1               0
+          Total               1               1               0               0               1               0
+
+
+- Cell: BUFx6f_ASAP7_75t_SL Tag: 
+ Temperature: 25
+* Cell: BUFx6f_ASAP7_75t_SL Pin: VSS Instantiation: 46 Snapped: 0 PowerGate: No Hidden: No
+  Grid:
+          Layer            Node        IntfNode    InternalNode            Elem             Tap           PGTap
+           LISD               1               1               0               0               1               0
+          Total               1               1               0               0               1               0
+
+
+- Cell: BUFx8_ASAP7_75t_SL Tag: 
+ Temperature: 25
+* Cell: BUFx8_ASAP7_75t_SL Pin: VSS Instantiation: 1 Snapped: 0 PowerGate: No Hidden: No
+  Grid:
+          Layer            Node        IntfNode    InternalNode            Elem             Tap           PGTap
+           LISD               1               1               0               0               1               0
+          Total               1               1               0               0               1               0
+
+
+- Cell: DFFHQNx1_ASAP7_75t_L Tag: 
+ Temperature: 25
+* Cell: DFFHQNx1_ASAP7_75t_L Pin: VSS Instantiation: 996 Snapped: 0 PowerGate: No Hidden: No
+  Grid:
+          Layer            Node        IntfNode    InternalNode            Elem             Tap           PGTap
+           LISD               1               1               0               0               1               0
+          Total               1               1               0               0               1               0
+
+
+- Cell: DFFHQNx1_ASAP7_75t_SL Tag: 
+ Temperature: 25
+* Cell: DFFHQNx1_ASAP7_75t_SL Pin: VSS Instantiation: 652 Snapped: 0 PowerGate: No Hidden: No
+  Grid:
+          Layer            Node        IntfNode    InternalNode            Elem             Tap           PGTap
+           LISD               1               1               0               0               1               0
+          Total               1               1               0               0               1               0
+
+
+- Cell: DFFHQx4_ASAP7_75t_L Tag: 
+ Temperature: 25
+* Cell: DFFHQx4_ASAP7_75t_L Pin: VSS Instantiation: 4671 Snapped: 0 PowerGate: No Hidden: No
+  Grid:
+          Layer            Node        IntfNode    InternalNode            Elem             Tap           PGTap
+           LISD               1               1               0               0               1               0
+          Total               1               1               0               0               1               0
+
+
+- Cell: DFFHQx4_ASAP7_75t_SL Tag: 
+ Temperature: 25
+* Cell: DFFHQx4_ASAP7_75t_SL Pin: VSS Instantiation: 2489 Snapped: 0 PowerGate: No Hidden: No
+  Grid:
+          Layer            Node        IntfNode    InternalNode            Elem             Tap           PGTap
+           LISD               1               1               0               0               1               0
+          Total               1               1               0               0               1               0
+
+
+- Cell: HB1xp67_ASAP7_75t_L Tag: 
+ Temperature: 25
+* Cell: HB1xp67_ASAP7_75t_L Pin: VSS Instantiation: 753 Snapped: 0 PowerGate: No Hidden: No
+  Grid:
+          Layer            Node        IntfNode    InternalNode            Elem             Tap           PGTap
+           LISD               1               1               0               0               1               0
+          Total               1               1               0               0               1               0
+
+
+- Cell: HB1xp67_ASAP7_75t_SL Tag: 
+ Temperature: 25
+* Cell: HB1xp67_ASAP7_75t_SL Pin: VSS Instantiation: 3400 Snapped: 0 PowerGate: No Hidden: No
+  Grid:
+          Layer            Node        IntfNode    InternalNode            Elem             Tap           PGTap
+           LISD               1               1               0               0               1               0
+          Total               1               1               0               0               1               0
+
+
+- Cell: HB2xp67_ASAP7_75t_L Tag: 
+ Temperature: 25
+* Cell: HB2xp67_ASAP7_75t_L Pin: VSS Instantiation: 675 Snapped: 0 PowerGate: No Hidden: No
+  Grid:
+          Layer            Node        IntfNode    InternalNode            Elem             Tap           PGTap
+           LISD               1               1               0               0               1               0
+          Total               1               1               0               0               1               0
+
+
+- Cell: HB2xp67_ASAP7_75t_SL Tag: 
+ Temperature: 25
+* Cell: HB2xp67_ASAP7_75t_SL Pin: VSS Instantiation: 1632 Snapped: 0 PowerGate: No Hidden: No
+  Grid:
+          Layer            Node        IntfNode    InternalNode            Elem             Tap           PGTap
+           LISD               1               1               0               0               1               0
+          Total               1               1               0               0               1               0
+
+
+- Cell: HB3xp67_ASAP7_75t_L Tag: 
+ Temperature: 25
+* Cell: HB3xp67_ASAP7_75t_L Pin: VSS Instantiation: 584 Snapped: 0 PowerGate: No Hidden: No
+  Grid:
+          Layer            Node        IntfNode    InternalNode            Elem             Tap           PGTap
+           LISD               1               1               0               0               1               0
+          Total               1               1               0               0               1               0
+
+
+- Cell: HB3xp67_ASAP7_75t_SL Tag: 
+ Temperature: 25
+* Cell: HB3xp67_ASAP7_75t_SL Pin: VSS Instantiation: 1268 Snapped: 0 PowerGate: No Hidden: No
+  Grid:
+          Layer            Node        IntfNode    InternalNode            Elem             Tap           PGTap
+           LISD               1               1               0               0               1               0
+          Total               1               1               0               0               1               0
+
+
+- Cell: HB4xp67_ASAP7_75t_L Tag: 
+ Temperature: 25
+* Cell: HB4xp67_ASAP7_75t_L Pin: VSS Instantiation: 90 Snapped: 0 PowerGate: No Hidden: No
+  Grid:
+          Layer            Node        IntfNode    InternalNode            Elem             Tap           PGTap
+           LISD               1               1               0               0               1               0
+          Total               1               1               0               0               1               0
+
+
+- Cell: HB4xp67_ASAP7_75t_SL Tag: 
+ Temperature: 25
+* Cell: HB4xp67_ASAP7_75t_SL Pin: VSS Instantiation: 211 Snapped: 0 PowerGate: No Hidden: No
+  Grid:
+          Layer            Node        IntfNode    InternalNode            Elem             Tap           PGTap
+           LISD               1               1               0               0               1               0
+          Total               1               1               0               0               1               0
+
+
+- Cell: INVx1_ASAP7_75t_SL Tag: 
+ Temperature: 25
+* Cell: INVx1_ASAP7_75t_SL Pin: VSS Instantiation: 6724 Snapped: 0 PowerGate: No Hidden: No
+  Grid:
+          Layer            Node        IntfNode    InternalNode            Elem             Tap           PGTap
+           LISD               1               1               0               0               1               0
+          Total               1               1               0               0               1               0
+
+
+- Cell: INVx2_ASAP7_75t_SL Tag: 
+ Temperature: 25
+* Cell: INVx2_ASAP7_75t_SL Pin: VSS Instantiation: 18 Snapped: 0 PowerGate: No Hidden: No
+  Grid:
+          Layer            Node        IntfNode    InternalNode            Elem             Tap           PGTap
+           LISD               1               1               0               0               1               0
+          Total               1               1               0               0               1               0
+
+
+- Cell: INVx3_ASAP7_75t_SL Tag: 
+ Temperature: 25
+* Cell: INVx3_ASAP7_75t_SL Pin: VSS Instantiation: 4 Snapped: 0 PowerGate: No Hidden: No
+  Grid:
+          Layer            Node        IntfNode    InternalNode            Elem             Tap           PGTap
+           LISD               1               1               0               0               1               0
+          Total               1               1               0               0               1               0
+
+
+- Cell: NAND2xp5_ASAP7_75t_SL Tag: 
+ Temperature: 25
+* Cell: NAND2xp5_ASAP7_75t_SL Pin: VSS Instantiation: 4037 Snapped: 0 PowerGate: No Hidden: No
+  Grid:
+          Layer            Node        IntfNode    InternalNode            Elem             Tap           PGTap
+           LISD               1               1               0               0               1               0
+          Total               1               1               0               0               1               0
+
+
+- Cell: NAND3xp33_ASAP7_75t_SL Tag: 
+ Temperature: 25
+* Cell: NAND3xp33_ASAP7_75t_SL Pin: VSS Instantiation: 386 Snapped: 0 PowerGate: No Hidden: No
+  Grid:
+          Layer            Node        IntfNode    InternalNode            Elem             Tap           PGTap
+           LISD               1               1               0               0               1               0
+          Total               1               1               0               0               1               0
+
+
+- Cell: NAND4xp25_ASAP7_75t_SL Tag: 
+ Temperature: 25
+* Cell: NAND4xp25_ASAP7_75t_SL Pin: VSS Instantiation: 112 Snapped: 0 PowerGate: No Hidden: No
+  Grid:
+          Layer            Node        IntfNode    InternalNode            Elem             Tap           PGTap
+           LISD               1               1               0               0               1               0
+          Total               1               1               0               0               1               0
+
+
+- Cell: NAND5xp2_ASAP7_75t_SL Tag: 
+ Temperature: 25
+* Cell: NAND5xp2_ASAP7_75t_SL Pin: VSS Instantiation: 109 Snapped: 0 PowerGate: No Hidden: No
+  Grid:
+          Layer            Node        IntfNode    InternalNode            Elem             Tap           PGTap
+           LISD               1               1               0               0               1               0
+          Total               1               1               0               0               1               0
+
+
+- Cell: NOR2xp33_ASAP7_75t_L Tag: 
+ Temperature: 25
+* Cell: NOR2xp33_ASAP7_75t_L Pin: VSS Instantiation: 1 Snapped: 0 PowerGate: No Hidden: No
+  Grid:
+          Layer            Node        IntfNode    InternalNode            Elem             Tap           PGTap
+           LISD               1               1               0               0               1               0
+          Total               1               1               0               0               1               0
+
+
+- Cell: NOR2xp33_ASAP7_75t_SL Tag: 
+ Temperature: 25
+* Cell: NOR2xp33_ASAP7_75t_SL Pin: VSS Instantiation: 4440 Snapped: 0 PowerGate: No Hidden: No
+  Grid:
+          Layer            Node        IntfNode    InternalNode            Elem             Tap           PGTap
+           LISD               1               1               0               0               1               0
+          Total               1               1               0               0               1               0
+
+
+- Cell: NOR3xp33_ASAP7_75t_SL Tag: 
+ Temperature: 25
+* Cell: NOR3xp33_ASAP7_75t_SL Pin: VSS Instantiation: 276 Snapped: 0 PowerGate: No Hidden: No
+  Grid:
+          Layer            Node        IntfNode    InternalNode            Elem             Tap           PGTap
+           LISD               1               1               0               0               1               0
+          Total               1               1               0               0               1               0
+
+
+- Cell: NOR4xp25_ASAP7_75t_SL Tag: 
+ Temperature: 25
+* Cell: NOR4xp25_ASAP7_75t_SL Pin: VSS Instantiation: 170 Snapped: 0 PowerGate: No Hidden: No
+  Grid:
+          Layer            Node        IntfNode    InternalNode            Elem             Tap           PGTap
+           LISD               1               1               0               0               1               0
+          Total               1               1               0               0               1               0
+
+
+- Cell: NOR5xp2_ASAP7_75t_SL Tag: 
+ Temperature: 25
+* Cell: NOR5xp2_ASAP7_75t_SL Pin: VSS Instantiation: 83 Snapped: 0 PowerGate: No Hidden: No
+  Grid:
+          Layer            Node        IntfNode    InternalNode            Elem             Tap           PGTap
+           LISD               1               1               0               0               1               0
+          Total               1               1               0               0               1               0
+
+
+- Cell: O2A1O1Ixp33_ASAP7_75t_SL Tag: 
+ Temperature: 25
+* Cell: O2A1O1Ixp33_ASAP7_75t_SL Pin: VSS Instantiation: 584 Snapped: 0 PowerGate: No Hidden: No
+  Grid:
+          Layer            Node        IntfNode    InternalNode            Elem             Tap           PGTap
+           LISD               1               1               0               0               1               0
+          Total               1               1               0               0               1               0
+
+
+- Cell: OA211x2_ASAP7_75t_SL Tag: 
+ Temperature: 25
+* Cell: OA211x2_ASAP7_75t_SL Pin: VSS Instantiation: 119 Snapped: 0 PowerGate: No Hidden: No
+  Grid:
+          Layer            Node        IntfNode    InternalNode            Elem             Tap           PGTap
+           LISD               1               1               0               0               1               0
+          Total               1               1               0               0               1               0
+
+
+- Cell: OA21x2_ASAP7_75t_SL Tag: 
+ Temperature: 25
+* Cell: OA21x2_ASAP7_75t_SL Pin: VSS Instantiation: 252 Snapped: 0 PowerGate: No Hidden: No
+  Grid:
+          Layer            Node        IntfNode    InternalNode            Elem             Tap           PGTap
+           LISD               1               1               0               0               1               0
+          Total               1               1               0               0               1               0
+
+
+- Cell: OA221x2_ASAP7_75t_SL Tag: 
+ Temperature: 25
+* Cell: OA221x2_ASAP7_75t_SL Pin: VSS Instantiation: 1 Snapped: 0 PowerGate: No Hidden: No
+  Grid:
+          Layer            Node        IntfNode    InternalNode            Elem             Tap           PGTap
+           LISD               1               1               0               0               1               0
+          Total               1               1               0               0               1               0
+
+
+- Cell: OA222x2_ASAP7_75t_SL Tag: 
+ Temperature: 25
+* Cell: OA222x2_ASAP7_75t_SL Pin: VSS Instantiation: 34 Snapped: 0 PowerGate: No Hidden: No
+  Grid:
+          Layer            Node        IntfNode    InternalNode            Elem             Tap           PGTap
+           LISD               1               1               0               0               1               0
+          Total               1               1               0               0               1               0
+
+
+- Cell: OA22x2_ASAP7_75t_SL Tag: 
+ Temperature: 25
+* Cell: OA22x2_ASAP7_75t_SL Pin: VSS Instantiation: 196 Snapped: 0 PowerGate: No Hidden: No
+  Grid:
+          Layer            Node        IntfNode    InternalNode            Elem             Tap           PGTap
+           LISD               1               1               0               0               1               0
+          Total               1               1               0               0               1               0
+
+
+- Cell: OA331x1_ASAP7_75t_SL Tag: 
+ Temperature: 25
+* Cell: OA331x1_ASAP7_75t_SL Pin: VSS Instantiation: 67 Snapped: 0 PowerGate: No Hidden: No
+  Grid:
+          Layer            Node        IntfNode    InternalNode            Elem             Tap           PGTap
+           LISD               1               1               0               0               1               0
+          Total               1               1               0               0               1               0
+
+
+- Cell: OA332x1_ASAP7_75t_SL Tag: 
+ Temperature: 25
+* Cell: OA332x1_ASAP7_75t_SL Pin: VSS Instantiation: 11 Snapped: 0 PowerGate: No Hidden: No
+  Grid:
+          Layer            Node        IntfNode    InternalNode            Elem             Tap           PGTap
+           LISD               1               1               0               0               1               0
+          Total               1               1               0               0               1               0
+
+
+- Cell: OA333x1_ASAP7_75t_SL Tag: 
+ Temperature: 25
+* Cell: OA333x1_ASAP7_75t_SL Pin: VSS Instantiation: 1 Snapped: 0 PowerGate: No Hidden: No
+  Grid:
+          Layer            Node        IntfNode    InternalNode            Elem             Tap           PGTap
+           LISD               1               1               0               0               1               0
+          Total               1               1               0               0               1               0
+
+
+- Cell: OA33x2_ASAP7_75t_SL Tag: 
+ Temperature: 25
+* Cell: OA33x2_ASAP7_75t_SL Pin: VSS Instantiation: 73 Snapped: 0 PowerGate: No Hidden: No
+  Grid:
+          Layer            Node        IntfNode    InternalNode            Elem             Tap           PGTap
+           LISD               1               1               0               0               1               0
+          Total               1               1               0               0               1               0
+
+
+- Cell: OAI211xp5_ASAP7_75t_SL Tag: 
+ Temperature: 25
+* Cell: OAI211xp5_ASAP7_75t_SL Pin: VSS Instantiation: 338 Snapped: 0 PowerGate: No Hidden: No
+  Grid:
+          Layer            Node        IntfNode    InternalNode            Elem             Tap           PGTap
+           LISD               1               1               0               0               1               0
+          Total               1               1               0               0               1               0
+
+
+- Cell: OAI21xp5_ASAP7_75t_SL Tag: 
+ Temperature: 25
+* Cell: OAI21xp5_ASAP7_75t_SL Pin: VSS Instantiation: 533 Snapped: 0 PowerGate: No Hidden: No
+  Grid:
+          Layer            Node        IntfNode    InternalNode            Elem             Tap           PGTap
+           LISD               1               1               0               0               1               0
+          Total               1               1               0               0               1               0
+
+
+- Cell: OAI221xp5_ASAP7_75t_SL Tag: 
+ Temperature: 25
+* Cell: OAI221xp5_ASAP7_75t_SL Pin: VSS Instantiation: 462 Snapped: 0 PowerGate: No Hidden: No
+  Grid:
+          Layer            Node        IntfNode    InternalNode            Elem             Tap           PGTap
+           LISD               1               1               0               0               1               0
+          Total               1               1               0               0               1               0
+
+
+- Cell: OAI222xp33_ASAP7_75t_SL Tag: 
+ Temperature: 25
+* Cell: OAI222xp33_ASAP7_75t_SL Pin: VSS Instantiation: 11 Snapped: 0 PowerGate: No Hidden: No
+  Grid:
+          Layer            Node        IntfNode    InternalNode            Elem             Tap           PGTap
+           LISD               1               1               0               0               1               0
+          Total               1               1               0               0               1               0
+
+
+- Cell: OAI22xp5_ASAP7_75t_SL Tag: 
+ Temperature: 25
+* Cell: OAI22xp5_ASAP7_75t_SL Pin: VSS Instantiation: 1160 Snapped: 0 PowerGate: No Hidden: No
+  Grid:
+          Layer            Node        IntfNode    InternalNode            Elem             Tap           PGTap
+           LISD               1               1               0               0               1               0
+          Total               1               1               0               0               1               0
+
+
+- Cell: OAI311xp33_ASAP7_75t_SL Tag: 
+ Temperature: 25
+* Cell: OAI311xp33_ASAP7_75t_SL Pin: VSS Instantiation: 217 Snapped: 0 PowerGate: No Hidden: No
+  Grid:
+          Layer            Node        IntfNode    InternalNode            Elem             Tap           PGTap
+           LISD               1               1               0               0               1               0
+          Total               1               1               0               0               1               0
+
+
+- Cell: OAI31xp33_ASAP7_75t_SL Tag: 
+ Temperature: 25
+* Cell: OAI31xp33_ASAP7_75t_SL Pin: VSS Instantiation: 172 Snapped: 0 PowerGate: No Hidden: No
+  Grid:
+          Layer            Node        IntfNode    InternalNode            Elem             Tap           PGTap
+           LISD               1               1               0               0               1               0
+          Total               1               1               0               0               1               0
+
+
+- Cell: OAI321xp33_ASAP7_75t_SL Tag: 
+ Temperature: 25
+* Cell: OAI321xp33_ASAP7_75t_SL Pin: VSS Instantiation: 619 Snapped: 0 PowerGate: No Hidden: No
+  Grid:
+          Layer            Node        IntfNode    InternalNode            Elem             Tap           PGTap
+           LISD               1               1               0               0               1               0
+          Total               1               1               0               0               1               0
+
+
+- Cell: OAI322xp33_ASAP7_75t_SL Tag: 
+ Temperature: 25
+* Cell: OAI322xp33_ASAP7_75t_SL Pin: VSS Instantiation: 193 Snapped: 0 PowerGate: No Hidden: No
+  Grid:
+          Layer            Node        IntfNode    InternalNode            Elem             Tap           PGTap
+           LISD               1               1               0               0               1               0
+          Total               1               1               0               0               1               0
+
+
+- Cell: OAI32xp33_ASAP7_75t_SL Tag: 
+ Temperature: 25
+* Cell: OAI32xp33_ASAP7_75t_SL Pin: VSS Instantiation: 375 Snapped: 0 PowerGate: No Hidden: No
+  Grid:
+          Layer            Node        IntfNode    InternalNode            Elem             Tap           PGTap
+           LISD               1               1               0               0               1               0
+          Total               1               1               0               0               1               0
+
+
+- Cell: OAI331xp33_ASAP7_75t_SL Tag: 
+ Temperature: 25
+* Cell: OAI331xp33_ASAP7_75t_SL Pin: VSS Instantiation: 155 Snapped: 0 PowerGate: No Hidden: No
+  Grid:
+          Layer            Node        IntfNode    InternalNode            Elem             Tap           PGTap
+           LISD               1               1               0               0               1               0
+          Total               1               1               0               0               1               0
+
+
+- Cell: OAI332xp33_ASAP7_75t_SL Tag: 
+ Temperature: 25
+* Cell: OAI332xp33_ASAP7_75t_SL Pin: VSS Instantiation: 16 Snapped: 0 PowerGate: No Hidden: No
+  Grid:
+          Layer            Node        IntfNode    InternalNode            Elem             Tap           PGTap
+           LISD               1               1               0               0               1               0
+          Total               1               1               0               0               1               0
+
+
+- Cell: OAI333xp33_ASAP7_75t_SL Tag: 
+ Temperature: 25
+* Cell: OAI333xp33_ASAP7_75t_SL Pin: VSS Instantiation: 50 Snapped: 0 PowerGate: No Hidden: No
+  Grid:
+          Layer            Node        IntfNode    InternalNode            Elem             Tap           PGTap
+           LISD               1               1               0               0               1               0
+          Total               1               1               0               0               1               0
+
+
+- Cell: OAI33xp33_ASAP7_75t_SL Tag: 
+ Temperature: 25
+* Cell: OAI33xp33_ASAP7_75t_SL Pin: VSS Instantiation: 80 Snapped: 0 PowerGate: No Hidden: No
+  Grid:
+          Layer            Node        IntfNode    InternalNode            Elem             Tap           PGTap
+           LISD               1               1               0               0               1               0
+          Total               1               1               0               0               1               0
+
+
+- Cell: OR2x2_ASAP7_75t_SL Tag: 
+ Temperature: 25
+* Cell: OR2x2_ASAP7_75t_SL Pin: VSS Instantiation: 626 Snapped: 0 PowerGate: No Hidden: No
+  Grid:
+          Layer            Node        IntfNode    InternalNode            Elem             Tap           PGTap
+           LISD               1               1               0               0               1               0
+          Total               1               1               0               0               1               0
+
+
+- Cell: OR3x1_ASAP7_75t_SL Tag: 
+ Temperature: 25
+* Cell: OR3x1_ASAP7_75t_SL Pin: VSS Instantiation: 45 Snapped: 0 PowerGate: No Hidden: No
+  Grid:
+          Layer            Node        IntfNode    InternalNode            Elem             Tap           PGTap
+           LISD               1               1               0               0               1               0
+          Total               1               1               0               0               1               0
+
+
+- Cell: OR4x1_ASAP7_75t_SL Tag: 
+ Temperature: 25
+* Cell: OR4x1_ASAP7_75t_SL Pin: VSS Instantiation: 9 Snapped: 0 PowerGate: No Hidden: No
+  Grid:
+          Layer            Node        IntfNode    InternalNode            Elem             Tap           PGTap
+           LISD               1               1               0               0               1               0
+          Total               1               1               0               0               1               0
+
+
+- Cell: OR5x1_ASAP7_75t_SL Tag: 
+ Temperature: 25
+* Cell: OR5x1_ASAP7_75t_SL Pin: VSS Instantiation: 101 Snapped: 0 PowerGate: No Hidden: No
+  Grid:
+          Layer            Node        IntfNode    InternalNode            Elem             Tap           PGTap
+           LISD               1               1               0               0               1               0
+          Total               1               1               0               0               1               0
+
+
+- Cell: TAPCELL_ASAP7_75t_L Tag: 
+ Temperature: 25
+* Cell: TAPCELL_ASAP7_75t_L Pin: VSS Instantiation: 10350 Snapped: 0 PowerGate: No Hidden: No
+  Grid:
+          Layer            Node        IntfNode    InternalNode            Elem             Tap           PGTap
+           LISD               1               1               0               0               1               0
+          Total               1               1               0               0               1               0
+
+
+- Cell: XNOR2x2_ASAP7_75t_SL Tag: 
+ Temperature: 25
+* Cell: XNOR2x2_ASAP7_75t_SL Pin: VSS Instantiation: 1 Snapped: 0 PowerGate: No Hidden: No
+  Grid:
+          Layer            Node        IntfNode    InternalNode            Elem             Tap           PGTap
+           LISD               1               1               0               0               1               0
+          Total               1               1               0               0               1               0
+
+
+- Cell: XNOR2xp5_ASAP7_75t_L Tag: 
+ Temperature: 25
+* Cell: XNOR2xp5_ASAP7_75t_L Pin: VSS Instantiation: 10 Snapped: 0 PowerGate: No Hidden: No
+  Grid:
+          Layer            Node        IntfNode    InternalNode            Elem             Tap           PGTap
+           LISD               1               1               0               0               1               0
+          Total               1               1               0               0               1               0
+
+
+- Cell: XNOR2xp5_ASAP7_75t_SL Tag: 
+ Temperature: 25
+* Cell: XNOR2xp5_ASAP7_75t_SL Pin: VSS Instantiation: 3236 Snapped: 0 PowerGate: No Hidden: No
+  Grid:
+          Layer            Node        IntfNode    InternalNode            Elem             Tap           PGTap
+           LISD               1               1               0               0               1               0
+          Total               1               1               0               0               1               0
+
+
+- Cell: XOR2xp5_ASAP7_75t_L Tag: 
+ Temperature: 25
+* Cell: XOR2xp5_ASAP7_75t_L Pin: VSS Instantiation: 5 Snapped: 0 PowerGate: No Hidden: No
+  Grid:
+          Layer            Node        IntfNode    InternalNode            Elem             Tap           PGTap
+           LISD               1               1               0               0               1               0
+          Total               1               1               0               0               1               0
+
+
+- Cell: XOR2xp5_ASAP7_75t_SL Tag: 
+ Temperature: 25
+* Cell: XOR2xp5_ASAP7_75t_SL Pin: VSS Instantiation: 1116 Snapped: 0 PowerGate: No Hidden: No
+  Grid:
+          Layer            Node        IntfNode    InternalNode            Elem             Tap           PGTap
+           LISD               1               1               0               0               1               0
+          Total               1               1               0               0               1               0
+
+
+
+Grid Statistics of Net VSS:
+- NODE
+  Total node: 72391
+    Top Level grid node: 72391
+      Top level interface node: 64179
+    Missing interface node: 0
+    Cell internal node: 0
+- ELEM
+  Total element: 82648
+    Top Level grid element: 82648
+    Cell internal element: 0
+- INST
+  Instance logically connected: 64179
+    Tech: 64179
+    StdCell: 0
+    Macro:
+      Early: 0
+      IR: 0
+      EM: 0
+    Current Region:  0
+  Dropped instance due to missing/incomplete cell library: 0
+- TAP
+  Total tap: 64179
+
+

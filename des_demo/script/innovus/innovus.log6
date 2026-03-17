@@ -1,0 +1,26 @@
+
+Cadence Innovus(TM) Implementation System.
+Copyright 2015 Cadence Design Systems, Inc. All rights reserved worldwide.
+
+Version:	v15.20-p005_1, built Wed Nov 11 11:16:39 PST 2015
+Options:	
+Date:		Tue Mar 17 13:42:19 2026
+Host:		IC (x86_64 w/Linux 2.6.32-573.el6.x86_64) (2cores*4cpus*12th Gen Intel(R) Core(TM) i7-12700H 24576KB)
+OS:		Red Hat Enterprise Linux Server release 6.7 (Santiago)
+
+License:
+		invs	Innovus Implementation System	15.2	checkout succeeded
+		8 CPU jobs allowed with the current license(s). Use setMultiCpuUsage to set your required CPU count.
+
+**INFO:  MMMC transition support version v31-84 
+
+<CMD> set_global _enable_mmmc_by_default_flow      $CTE::mmmc_default
+<CMD> suppressMessage ENCEXT-2799
+<CMD> getDrawView
+<CMD> loadWorkspace -name Physical
+<CMD> win
+
+*** Memory Usage v#1 (Current mem = 466.793M, initial mem = 164.598M) ***
+*** Message Summary: 0 warning(s), 0 error(s)
+
+--- Ending "Innovus" (totcpu=0:00:19.0, real=0:00:26.0, mem=466.8M) ---

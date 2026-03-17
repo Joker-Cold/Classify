@@ -1,0 +1,12 @@
+/home/jchu/Projects/ECO/Experiment/benchmark/des_demo/db/des3.v
+/home/jchu/Projects/ECO/Experiment/benchmark/des_demo/testbench/des3_test_po_vcd.v
+/home/jchu/Projects/ECO/Experiment/lib/asap7sc7p5t_AO_LVT_TT_201020.v
+/home/jchu/Projects/ECO/Experiment/lib/asap7sc7p5t_AO_SLVT_TT_201020.v
+/home/jchu/Projects/ECO/Experiment/lib/asap7sc7p5t_INVBUF_LVT_TT_201020.v
+/home/jchu/Projects/ECO/Experiment/lib/asap7sc7p5t_INVBUF_SLVT_TT_201020.v
+/home/jchu/Projects/ECO/Experiment/lib/asap7sc7p5t_OA_LVT_TT_201020.v
+/home/jchu/Projects/ECO/Experiment/lib/asap7sc7p5t_OA_SLVT_TT_201020.v
+/home/jchu/Projects/ECO/Experiment/lib/asap7sc7p5t_SEQ_LVT_TT_220101.v
+/home/jchu/Projects/ECO/Experiment/lib/asap7sc7p5t_SEQ_SLVT_TT_220101.v
+/home/jchu/Projects/ECO/Experiment/lib/asap7sc7p5t_SIMPLE_LVT_TT_201020.v
+/home/jchu/Projects/ECO/Experiment/lib/asap7sc7p5t_SIMPLE_SLVT_TT_201020.v

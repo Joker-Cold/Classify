@@ -1,0 +1,6 @@
+temperature -1
+extraction_tech_file /home/jchu/Projects/ECO/Experiment/qrc/qrcTechFile_typ03_scaled4xV06
+spice_subckts_xyscaling 1000
+use_powergate_data_from_lib 0
+default_frequency 2e+08
+decap_frequency 1e+08

@@ -13,6 +13,7 @@ build/
 # Pipeline generated output
 output/*.csv
 output/*.vcd
+output/*.html
 output/signal_manifest.json
 
 # Temp/working files

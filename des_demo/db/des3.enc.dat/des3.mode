@@ -1,0 +1,86 @@
+if {![namespace exists ::IMEX]} { namespace eval ::IMEX {} }
+set ::IMEX::dataVar [file dirname [file normalize [info script]]]
+set ::IMEX::libVar ${::IMEX::dataVar}/libs
+
+catch { setDesignMode -process 7 }
+catch { setAnalysisMode -analysisType onChipVariation }
+catch { setAnalysisMode -checkType setup }
+catch { setAnalysisMode -clkSrcPath true }
+catch { setAnalysisMode -clockPropagation sdcControl }
+catch { setAnalysisMode -usefulSkew true }
+catch { setOptMode -activeHoldViews { view_tc  } }
+catch { setOptMode -activeSetupViews { view_tc } }
+catch { setOptMode -autoHoldViews { view_tc } }
+catch { setOptMode -autoSetupViews { view_tc} }
+catch { setOptMode -autoTDGRSetupViews { view_tc} }
+catch { setOptMode -autoViewHoldTargetSlack 200 }
+catch { setOptMode -deleteInst true }
+catch { setOptMode -drcMargin 0 }
+catch { setOptMode -fixDrc true }
+catch { setOptMode -holdTargetSlack 0.02 }
+catch { setOptMode -optimizeFF true }
+catch { setOptMode -preserveAllSequential false }
+catch { setOptMode -setupTargetSlack 0.02 }
+catch { setExtractRCMode  -engine postRoute -total_c_th 0 -relative_c_th 1 -coupling_c_th 0.1 }
+catch {setNanoRouteMode -quiet -drouteAntennaFactor 1.000000}
+catch {setNanoRouteMode -quiet -droutePostRouteSpreadWire "auto"}
+catch {setNanoRouteMode -quiet -drouteStartIteration 0}
+catch {setNanoRouteMode -quiet -drouteUseLefPinTaperRule true}
+catch {setNanoRouteMode -quiet -drouteUseMinSpacingForBlockage auto}
+catch {setNanoRouteMode -quiet -extractDesignSignature 127439930}
+catch {setNanoRouteMode -quiet -extractRcModelFile "${::IMEX::libVar}/misc/rc_model.bin"}
+catch {setNanoRouteMode -quiet -extractThirdPartyCompatible false}
+catch {setNanoRouteMode -quiet -grouteExpTdStdDelay 5.000000}
+catch {setNanoRouteMode -quiet -grouteExpTdUseTifTimingEngineForImportDesign false}
+catch {setNanoRouteMode -quiet -routeBottomRoutingLayer 2}
+catch {setNanoRouteMode -quiet -routeStrictlyHonorNonDefaultRule "false"}
+catch {setNanoRouteMode -quiet -routeTopRoutingLayer 7}
+catch {setNanoRouteMode -quiet -routeWithSiPostRouteFix false}
+catch {setNanoRouteMode -quiet -timingEngine "${::IMEX::libVar}/misc/.timing_file_1156836.tif.gz"}
+
+catch { setPlaceMode -place_detail_dpt_flow true }
+catch { setIlmMode -keepHighFanoutPorts true -keepLoopBack false -keepFlatten true }
+catch { setUsefulSkewMode -ecoRoute false }
+catch { setViaGenMode -disable_via_merging true }
+catch { setViaGenMode -keep_existing_via 1 }
+catch { setViaGenMode -optimize_cross_via true }
+catch { setViaGenMode -use_cce true }
+catch { setViaGenMode -use_clone_via true }
+catch { setViaGenMode -use_fgc 1 }
+catch { setSrouteMode -viaConnectToShape noshape }
+catch { set_verify_drc_mode -check_only default }
+catch { set_verify_drc_mode -disable_rules "" }
+catch { set_verify_drc_mode -exclude_pg_net false }
+catch { setDelayCalMode -enable_high_fanout true }
+catch { setDelayCalMode -eng_copyNetPropToNewNet true }
+catch { setDelayCalMode -engine aae }
+catch { setDelayCalMode -ignoreNetLoad false }
+catch { setDelayCalMode -SIAware true }
+catch { setPinAssignMode -pinEditInBatch false }
+catch { setAddRingMode -avoid_short false }
+catch { setAddRingMode -extend_over_row false }
+catch { setAddRingMode -ignore_rows false }
+catch { setAddRingMode -orthogonal_only true }
+catch { setAddRingMode -ring_target default }
+catch { setAddRingMode -skip_crossing_trunks none }
+catch { setAddRingMode -skip_via_on_pin standardcell }
+catch { setAddRingMode -skip_via_on_wire_shape noshape }
+catch { setAddRingMode -stacked_via_bottom_layer M1 }
+catch { setAddRingMode -stacked_via_top_layer Pad }
+catch { setAddRingMode -via_using_exact_crossover_size true }
+catch { setHierMode -disableArt false }
+catch { setHierMode -reportPostRouteArtTiming false }
+catch { setHierMode -trialRouteHonorReadOnly false }
+catch { setTieHiLoMode -maxFanout 5 }
+catch { setSIMode -enable_delay_report true }
+catch { setSIMode -enable_glitch_propagation true }
+catch { setSIMode -enable_glitch_report true }
+catch { setSIMode -separate_delta_delay_on_data true }
+catch { setAddStripeMode -area_based_stripe true }
+catch { setAddStripeMode -preventive_color_opt false }
+catch { setAddStripeMode -use_exact_spacing true }
+catch { setAddStripeMode -use_fgc true }
+catch { setAddStripeMode -use_pthread true }
+catch { setRouteMode -earlyGlobalRouteSecondPG false }
+catch { setFPlanMode -maxIoHeight false }
+catch { setFPlanMode -powerRailLayer {} }

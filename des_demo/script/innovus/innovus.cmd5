@@ -1,0 +1,51 @@
+#######################################################
+#                                                     
+#  Innovus Command Logging File                     
+#  Created on Tue Mar 17 13:30:33 2026                
+#                                                     
+#######################################################
+
+#@(#)CDS: Innovus v15.20-p005_1 (64bit) 11/11/2015 11:16 (Linux 2.6.18-194.el5)
+#@(#)CDS: NanoRoute 15.20-p005_1 NR151028-1715/15_20-UB (database version 2.30, 298.6.1) {superthreading v1.26}
+#@(#)CDS: AAE 15.20-p002 (64bit) 11/11/2015 (Linux 2.6.18-194.el5)
+#@(#)CDS: CTE 15.20-p001_1 () Oct 29 2015 01:50:39 ( )
+#@(#)CDS: SYNTECH 15.20-b002_1 () Oct 20 2015 02:35:29 ( )
+#@(#)CDS: CPE v15.20-p002
+#@(#)CDS: IQRC/TQRC 15.1.2-s269 (64bit) Mon Aug 24 18:22:18 PDT 2015 (Linux 2.6.18-194.el5)
+
+set_global _enable_mmmc_by_default_flow      $CTE::mmmc_default
+suppressMessage ENCEXT-2799
+getDrawView
+loadWorkspace -name Physical
+win
+set init_design_uniquify 1
+set init_design_netlisttype Verilog
+set init_design_settop 1
+set init_top_cell des3
+set init_verilog ../../db/des3.v
+set init_lef_file {  ../../db/des3.enc.dat/libs/lef/asap7_tech_4x_201209.lef  ../../db/des3.enc.dat/libs/lef/asap7sc7p5t_28_L_4x_220121a.lef  ../../db/des3.enc.dat/libs/lef/asap7sc7p5t_28_SL_4x_220121a.lef  }
+set init_pwr_net VDD
+set init_gnd_net VSS
+set init_mmmc_file ../../db/des3.enc.dat/viewDefinition.tcl
+init_design
+defIn ../../db/des3.def
+globalNetConnect VDD -type pgpin -pin VDD -inst *
+globalNetConnect VSS -type pgpin -pin VSS -inst *
+setMultiCpuUsage -localCpu 8
+set_power_analysis_mode -method dynamic_vectorbased -power_grid_library ./des3_pg/techonly.cl -create_binary_db true -current_generation_method avg
+read_activity_file -format VCD ../../vcd/test.vcd -scope test/u0 -start 4000ns -end 5000ns
+set_dynamic_power_simulation -resolution 1ns
+report_power -o ../../db/power/avg
+setMultiCpuUsage -localCpu 4
+set_power_analysis_mode { } -method dynamic_vectorbased -create_binary_db true -current_generation_method avg
+read_activity_file -format VCD ../../vcd/test.vcd -scope test/u0 -start 4000ns -end 5000ns
+set_dynamic_power_simulation -resolution 1ns
+report_power -o ../../db/power/avg_v15
+set_power_analysis_mode -reset
+set_power_analysis_mode -method dynamic_vectorbased -create_binary_db true -current_generation_method avg
+read_activity_file -format VCD ../../vcd/test.vcd -scope test/u0 -start 4000ns -end 5000ns
+set_dynamic_power_simulation -resolution 1ns
+report_power -o ../../db/power/avg_v15
+set_power_analysis_mode -method dynamic_vectorbased -create_binary_db true -current_generation_method avg
+read_activity_file -format VCD ../../vcd/test.vcd -scope test/u0 -start 4000ns -end 5000ns
+set_dynamic_power_simulation -resolution 1ns

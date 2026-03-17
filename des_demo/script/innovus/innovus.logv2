@@ -1,0 +1,407 @@
+[12/20 13:32:40      0s] 
+[12/20 13:32:40      0s] Cadence Innovus(TM) Implementation System.
+[12/20 13:32:40      0s] Copyright 2019 Cadence Design Systems, Inc. All rights reserved worldwide.
+[12/20 13:32:40      0s] 
+[12/20 13:32:40      0s] Version:	v19.10-p002_1, built Fri Apr 19 15:18:11 PDT 2019
+[12/20 13:32:40      0s] Options:	
+[12/20 13:32:40      0s] Date:		Sat Dec 20 13:32:40 2025
+[12/20 13:32:40      0s] Host:		hzhb-Super-Server (x86_64 w/Linux 6.5.0-41-generic) (48cores*192cpus*Intel(R) Xeon(R) Platinum 8475B 99840KB)
+[12/20 13:32:40      0s] OS:		CentOS Linux release 7.9.2009 (Core)
+[12/20 13:32:40      0s] 
+[12/20 13:32:40      0s] License:
+[12/20 13:32:41      0s] 		invs	Innovus Implementation System	19.1	checkout succeeded
+[12/20 13:32:41      0s] 		8 CPU jobs allowed with the current license(s). Use setMultiCpuUsage to set your required CPU count.
+[12/20 13:33:37     19s] @(#)CDS: Innovus v19.10-p002_1 (64bit) 04/19/2019 15:18 (Linux 2.6.32-431.11.2.el6.x86_64)
+[12/20 13:33:37     19s] @(#)CDS: NanoRoute 19.10-p002_1 NR190418-1643/19_10-UB (database version 18.20, 458.7.1) {superthreading v1.51}
+[12/20 13:33:37     19s] @(#)CDS: AAE 19.10-b002 (64bit) 04/19/2019 (Linux 2.6.32-431.11.2.el6.x86_64)
+[12/20 13:33:37     19s] @(#)CDS: CTE 19.10-p002_1 () Apr 19 2019 06:39:48 ( )
+[12/20 13:33:37     19s] @(#)CDS: SYNTECH 19.10-b001_1 () Apr  4 2019 03:00:51 ( )
+[12/20 13:33:37     19s] @(#)CDS: CPE v19.10-p002
+[12/20 13:33:37     19s] @(#)CDS: IQuantus/TQuantus 19.1.0-e101 (64bit) Thu Feb 28 10:29:46 PST 2019 (Linux 2.6.32-431.11.2.el6.x86_64)
+[12/20 13:33:37     19s] @(#)CDS: OA 22.60-p012 Thu Dec 20 13:36:08 2018
+[12/20 13:33:37     19s] @(#)CDS: SGN 18.10-d003 (18-Jul-2018) (64 bit executable, Qt5.9.1)
+[12/20 13:33:37     19s] @(#)CDS: RCDB 11.14.18
+[12/20 13:33:37     19s] @(#)CDS: STYLUS 19.10-b001_1 (03/15/2019 08:18 PDT)
+[12/20 13:33:37     19s] Create and set the environment variable TMPDIR to /tmp/innovus_temp_1808844_hzhb-Super-Server_jchu_Qk3o8z.
+
+[12/20 13:33:37     19s] Change the soft stacksize limit to 0.2%RAM (1031 mbytes). Set global soft_stack_size_limit to change the value.
+[12/20 13:33:50     20s] 
+[12/20 13:33:50     20s] **INFO:  MMMC transition support version v31-84 
+[12/20 13:33:50     20s] 
+[12/20 13:33:50     20s] <CMD> set_global _enable_mmmc_by_default_flow      $CTE::mmmc_default
+[12/20 13:33:50     20s] <CMD> suppressMessage ENCEXT-2799
+[12/20 13:33:53     20s] <CMD> getVersion
+[12/20 13:34:12     21s] [INFO] Loading PVS 20.10 fill procedures
+[12/20 13:34:14     21s] <CMD> win
+[12/20 13:35:09     25s] <CMD> encMessage warning 0
+[12/20 13:35:09     25s] Suppress "**WARN ..." messages.
+[12/20 13:35:09     25s] <CMD> encMessage debug 0
+[12/20 13:35:09     25s] <CMD> encMessage info 0
+[12/20 13:35:10     25s] Loading view definition file from /home/jchu/Projects/ECO/Experiment/benchmark/des_demo/db/des3.enc.dat/viewDefinition.tcl
+[12/20 13:35:10     25s] **WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'Y' of cell 'A2O1A1Ixp33_ASAP7_75t_L' is not defined in the library. (File /home/jchu/Projects/ECO/Experiment/lib/asap7sc7p5t_AO_LVT_TT_nldm_211120.lib)
+[12/20 13:35:10     25s] **WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'Y' of cell 'A2O1A1O1Ixp25_ASAP7_75t_L' is not defined in the library. (File /home/jchu/Projects/ECO/Experiment/lib/asap7sc7p5t_AO_LVT_TT_nldm_211120.lib)
+[12/20 13:35:10     25s] **WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'Y' of cell 'AO211x2_ASAP7_75t_L' is not defined in the library. (File /home/jchu/Projects/ECO/Experiment/lib/asap7sc7p5t_AO_LVT_TT_nldm_211120.lib)
+[12/20 13:35:10     25s] **WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'Y' of cell 'AO21x1_ASAP7_75t_L' is not defined in the library. (File /home/jchu/Projects/ECO/Experiment/lib/asap7sc7p5t_AO_LVT_TT_nldm_211120.lib)
+[12/20 13:35:10     25s] **WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'Y' of cell 'AO21x2_ASAP7_75t_L' is not defined in the library. (File /home/jchu/Projects/ECO/Experiment/lib/asap7sc7p5t_AO_LVT_TT_nldm_211120.lib)
+[12/20 13:35:10     25s] **WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'Y' of cell 'AO221x1_ASAP7_75t_L' is not defined in the library. (File /home/jchu/Projects/ECO/Experiment/lib/asap7sc7p5t_AO_LVT_TT_nldm_211120.lib)
+[12/20 13:35:10     25s] **WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'Y' of cell 'AO221x2_ASAP7_75t_L' is not defined in the library. (File /home/jchu/Projects/ECO/Experiment/lib/asap7sc7p5t_AO_LVT_TT_nldm_211120.lib)
+[12/20 13:35:10     25s] **WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'Y' of cell 'AO222x2_ASAP7_75t_L' is not defined in the library. (File /home/jchu/Projects/ECO/Experiment/lib/asap7sc7p5t_AO_LVT_TT_nldm_211120.lib)
+[12/20 13:35:10     25s] **WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'Y' of cell 'AO22x1_ASAP7_75t_L' is not defined in the library. (File /home/jchu/Projects/ECO/Experiment/lib/asap7sc7p5t_AO_LVT_TT_nldm_211120.lib)
+[12/20 13:35:10     25s] **WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'Y' of cell 'AO22x2_ASAP7_75t_L' is not defined in the library. (File /home/jchu/Projects/ECO/Experiment/lib/asap7sc7p5t_AO_LVT_TT_nldm_211120.lib)
+[12/20 13:35:10     25s] **WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'Y' of cell 'AO31x2_ASAP7_75t_L' is not defined in the library. (File /home/jchu/Projects/ECO/Experiment/lib/asap7sc7p5t_AO_LVT_TT_nldm_211120.lib)
+[12/20 13:35:10     25s] **WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'Y' of cell 'AO322x2_ASAP7_75t_L' is not defined in the library. (File /home/jchu/Projects/ECO/Experiment/lib/asap7sc7p5t_AO_LVT_TT_nldm_211120.lib)
+[12/20 13:35:10     25s] **WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'Y' of cell 'AO32x1_ASAP7_75t_L' is not defined in the library. (File /home/jchu/Projects/ECO/Experiment/lib/asap7sc7p5t_AO_LVT_TT_nldm_211120.lib)
+[12/20 13:35:10     25s] **WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'Y' of cell 'AO32x2_ASAP7_75t_L' is not defined in the library. (File /home/jchu/Projects/ECO/Experiment/lib/asap7sc7p5t_AO_LVT_TT_nldm_211120.lib)
+[12/20 13:35:10     25s] **WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'Y' of cell 'AO331x1_ASAP7_75t_L' is not defined in the library. (File /home/jchu/Projects/ECO/Experiment/lib/asap7sc7p5t_AO_LVT_TT_nldm_211120.lib)
+[12/20 13:35:10     25s] **WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'Y' of cell 'AO331x2_ASAP7_75t_L' is not defined in the library. (File /home/jchu/Projects/ECO/Experiment/lib/asap7sc7p5t_AO_LVT_TT_nldm_211120.lib)
+[12/20 13:35:10     25s] **WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'Y' of cell 'AO332x1_ASAP7_75t_L' is not defined in the library. (File /home/jchu/Projects/ECO/Experiment/lib/asap7sc7p5t_AO_LVT_TT_nldm_211120.lib)
+[12/20 13:35:10     25s] **WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'Y' of cell 'AO332x2_ASAP7_75t_L' is not defined in the library. (File /home/jchu/Projects/ECO/Experiment/lib/asap7sc7p5t_AO_LVT_TT_nldm_211120.lib)
+[12/20 13:35:10     25s] **WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'Y' of cell 'AO333x1_ASAP7_75t_L' is not defined in the library. (File /home/jchu/Projects/ECO/Experiment/lib/asap7sc7p5t_AO_LVT_TT_nldm_211120.lib)
+[12/20 13:35:10     25s] **WARN: (TECHLIB-436):	Attribute 'max_fanout' on 'output/inout' pin 'Y' of cell 'AO333x2_ASAP7_75t_L' is not defined in the library. (File /home/jchu/Projects/ECO/Experiment/lib/asap7sc7p5t_AO_LVT_TT_nldm_211120.lib)
+[12/20 13:35:11     27s] **WARN: (TECHLIB-1277):	The attribute 'input_signal_level' has been defined for output pin 'CON'. 'input_signal_level' cannot be defined at this level and is being ignored. (File /home/jchu/Projects/ECO/Experiment/lib/asap7sc7p5t_SIMPLE_LVT_TT_nldm_211120.lib, Line 11387)
+[12/20 13:35:11     27s] **WARN: (TECHLIB-1277):	The attribute 'input_signal_level' has been defined for output pin 'CON'. 'input_signal_level' cannot be defined at this level and is being ignored. (File /home/jchu/Projects/ECO/Experiment/lib/asap7sc7p5t_SIMPLE_LVT_TT_nldm_211120.lib, Line 14287)
+[12/20 13:35:13     28s] **WARN: (TECHLIB-1277):	The attribute 'input_signal_level' has been defined for output pin 'CON'. 'input_signal_level' cannot be defined at this level and is being ignored. (File /home/jchu/Projects/ECO/Experiment/lib/asap7sc7p5t_SIMPLE_SLVT_TT_nldm_211120.lib, Line 11387)
+[12/20 13:35:13     28s] **WARN: (TECHLIB-1277):	The attribute 'input_signal_level' has been defined for output pin 'CON'. 'input_signal_level' cannot be defined at this level and is being ignored. (File /home/jchu/Projects/ECO/Experiment/lib/asap7sc7p5t_SIMPLE_SLVT_TT_nldm_211120.lib, Line 14287)
+[12/20 13:35:13     28s] *** End library_loading (cpu=0.06min, real=0.05min, mem=66.2M, fe_cpu=0.48min, fe_real=2.57min, fe_mem=777.5M) ***
+[12/20 13:35:14     29s] *** Netlist is unique.
+[12/20 13:35:14     29s] Loading preference file /home/jchu/Projects/ECO/Experiment/benchmark/des_demo/db/des3.enc.dat/gui.pref.tcl ...
+[12/20 13:35:14     29s] **WARN: (IMPTCM-77):	Option "-drouteStartIteration" for command setNanoRouteMode is obsolete and will be removed in a future release. The obsolete option still works in this release but to avoid this warning and to ensure compatibility with future releases, remove the obsolete option from your script.
+[12/20 13:35:18     29s] **WARN: (IMPTR-2108):	For layer M10, the gaps of 30 out of 30 tracks are narrower than 16.000um (space 8.000 + width 8.000).
+[12/20 13:35:19     30s] Loading place ...
+[12/20 13:35:26     31s] **WARN: (IMPESI-621):	Timing window restoration data eosdb.dat not found. PBA-SI results may not match in save/restore flow.
+[12/20 13:35:26     31s] **WARN: (IMPCCOPT-2332):	The property adjacent_rows_legal is deprecated. It still works, but it may be removed in a future release.
+[12/20 13:35:26     31s] **WARN: (IMPCTE-107):	The following globals have been obsoleted since version 19.10-p002_1. They will be removed in the next release. 
+[12/20 13:35:26     31s] timing_enable_default_delay_arc
+[12/20 13:35:35     32s] <CMD> setLayerPreference powerNet -color {#0000FF #0010DE #0020BD #00319C #00417B #00525A #006239 #007318 #088300 #299400 #4AA400 #6AB400 #8BC500 #ACD500 #CDE600 #EEF600 #FFF900 #FFED00 #FFE200 #FFD600 #FFCB00 #FFBF00 #FFB400 #FFA800 #FF9500 #FF8000 #FF6A00 #FF5500 #FF4000 #FF2A00 #FF1500 #FF0000}
+[12/20 13:35:35     32s] <CMD> set_power_rail_display -plot none
+[12/20 13:35:35     32s] uiColorScale::config powerNet -max_value 0 -min_value 0 -hi_threshold 0 -lo_threshold 0
+[12/20 13:35:35     32s] 
+[12/20 13:35:35     32s] <CMD> setLayerPreference powerNet -color {#0000ff #0010de #0020bd #00319c #00417b #00525a #006239 #007318 #088300 #299400 #4aa400 #6ab400 #8bc500 #acd500 #cde600 #eef600 #fff900 #ffed00 #ffe200 #ffd600 #ffcb00 #ffbf00 #ffb400 #ffa800 #ff9500 #ff8000 #ff6a00 #ff5500 #ff4000 #ff2a00 #ff1500 #ff0000}
+[12/20 13:35:35     32s] <CMD> set_power_rail_display -enable_voltage_sources 0
+[12/20 13:35:35     32s] uiColorScale::config powerNet -max_value 5.0 -min_value 0 -hi_threshold 5.0 -lo_threshold 0
+[12/20 13:35:35     32s] <CMD> set_power_rail_display -enable_percentage_range 0
+[12/20 13:35:35     32s] uiColorScale::config powerNet -max_value 5.0 -min_value 0 -hi_threshold 5.0 -lo_threshold 0
+[12/20 13:35:35     32s] uiColorScale::config powerNet -max_value 5.0 -min_value 0 -hi_threshold 5.0 -lo_threshold 0
+[12/20 13:35:35     32s] 
+[12/20 13:35:35     32s] 
+[12/20 13:35:38     32s] <CMD> fit
+[12/20 13:35:44     32s] <CMD> set_power_rail_display -plot none
+[12/20 13:35:44     32s] uiColorScale::config powerNet -max_value 5.0 -min_value 0 -hi_threshold 5.0 -lo_threshold 0
+[12/20 13:35:44     32s] 
+[12/20 13:35:44     32s] <CMD> setLayerPreference powerNet -color {#0000ff #0010de #0020bd #00319c #00417b #00525a #006239 #007318 #088300 #299400 #4aa400 #6ab400 #8bc500 #acd500 #cde600 #eef600 #fff900 #ffed00 #ffe200 #ffd600 #ffcb00 #ffbf00 #ffb400 #ffa800 #ff9500 #ff8000 #ff6a00 #ff5500 #ff4000 #ff2a00 #ff1500 #ff0000}
+[12/20 13:35:54     34s] MGE PGDB.
+[12/20 13:35:54     34s] <CMD> ::read_power_rail_results -rail_directory ../../db/rail_power/PD_25C_dynamic_1 -instance_voltage_window { timing  whole  } -instance_voltage_method {  worst  best  avg  worstavg }
+[12/20 13:35:54     34s] MGE PGDB.
+[12/20 13:35:54     34s] avg best worst worstavg 
+[12/20 13:35:54     34s] timing whole 
+[12/20 13:35:54     34s] 
+[12/20 13:35:54     34s] Begin Loading State Directory.
+[12/20 13:35:54     34s] 
+[12/20 13:35:54     34s] 
+[12/20 13:35:54     34s] Begin Initializing Design.
+[12/20 13:35:54     34s] 
+[12/20 13:35:54     34s] No Nets are Specified, will Load All the Nets Automatically.
+[12/20 13:35:54     34s] Nets Number: 2.
+[12/20 13:35:54     34s] Icf Flow Enabled   :  0
+[12/20 13:35:55     34s] Loading CellIdMap Sucessfully.
+[12/20 13:35:55     34s] 
+[12/20 13:35:55     34s] Ended Initializing Design.: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=1174.35MB/2423.38MB/1198.27MB)
+[12/20 13:35:55     34s] 
+[12/20 13:35:55     34s] 
+[12/20 13:35:55     34s] Begin Building Rail DB.
+[12/20 13:35:55     34s] 
+[12/20 13:35:55     34s] 
+[12/20 13:35:55     34s] 72531 Nodes Loaded for VDD.
+[12/20 13:35:55     34s] 82787 Elements Loaded for VDD.
+[12/20 13:35:55     34s] 
+[12/20 13:35:55     34s] 
+[12/20 13:35:55     34s] 72392 Nodes Loaded for VSS.
+[12/20 13:35:55     34s] 82648 Elements Loaded for VSS.
+[12/20 13:35:55     34s] 
+[12/20 13:35:55     34s] 
+[12/20 13:35:55     34s] Total Nodes Number: 144922.
+[12/20 13:35:55     34s] Total Elements Number: 165435.
+[12/20 13:35:55     34s] 
+[12/20 13:35:55     34s] 
+[12/20 13:35:55     34s] Ended Building Rail DB.: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=1232.85MB/2451.48MB/1232.85MB)
+[12/20 13:35:55     34s] 
+[12/20 13:35:55     34s] 
+[12/20 13:35:55     34s] Begin Building Instance DB
+[12/20 13:35:55     34s] 
+[12/20 13:35:55     34s] Loading Instances from PGDB.
+[12/20 13:35:55     34s] 
+[12/20 13:35:55     34s] 64179 Instances Loaded for VDD.
+[12/20 13:35:55     34s] 
+[12/20 13:35:55     34s] 
+[12/20 13:35:55     34s] 64179 Instances Loaded for VSS.
+[12/20 13:35:55     34s] 
+[12/20 13:35:55     34s] 
+[12/20 13:35:55     34s] Total Instances Number: 64179.
+[12/20 13:35:55     34s] 
+[12/20 13:35:55     34s] Begin Building Pin Map.
+[12/20 13:35:55     34s] 
+[12/20 13:35:55     34s] Pin Name List: 2 Pins Loaded.
+[12/20 13:35:55     34s] 
+[12/20 13:35:55     34s] 
+[12/20 13:35:55     34s] End Building Pin Map.
+[12/20 13:35:55     34s] 
+[12/20 13:35:55     34s] Ended Building Instance DB: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=1235.85MB/2455.48MB/1235.85MB)
+[12/20 13:35:55     34s] 
+[12/20 13:35:55     34s] 
+[12/20 13:35:55     34s] Begin Loading Plots in Multi-Thread Mode
+[12/20 13:35:55     34s] 
+[12/20 13:35:55     34s] Begin Initializing ir Plot
+[12/20 13:35:55     34s] Ended Initializing ir Plot: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=1235.85MB/2456.48MB/1235.85MB)
+[12/20 13:35:55     34s] Ended Initializing ir Plot: (cpu=00:00:00:000, real=00:00:00:000, pid=1808844, tid=1813328)
+[12/20 13:35:55     34s] 
+[12/20 13:35:55     34s] Begin Initializing tc Plot
+[12/20 13:35:55     34s] Ended Initializing tc Plot: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=1237.35MB/2457.48MB/1237.35MB)
+[12/20 13:35:55     34s] Ended Initializing tc Plot: (cpu=00:00:00:000, real=00:00:00:000, pid=1808844, tid=1813328)
+[12/20 13:35:55     34s] 
+[12/20 13:35:55     34s] Begin Initializing dd Plot
+[12/20 13:35:55     34s] Ended Initializing dd Plot: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=1237.35MB/2458.48MB/1237.35MB)
+[12/20 13:35:55     34s] Ended Initializing dd Plot: (cpu=00:00:00:000, real=00:00:00:000, pid=1808844, tid=1813328)
+[12/20 13:35:55     34s] 
+[12/20 13:35:55     34s] Begin Initializing cap Plot
+[12/20 13:35:55     34s] Ended Initializing cap Plot: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=1238.85MB/2459.48MB/1238.85MB)
+[12/20 13:35:55     34s] Ended Initializing cap Plot: (cpu=00:00:00:000, real=00:00:00:000, pid=1808844, tid=1813328)
+[12/20 13:35:55     34s] 
+[12/20 13:35:55     34s] Begin Initializing Voltage Source Vu and Vc Plots
+[12/20 13:35:55     34s] Ended Initializing Voltage Source Vu and Vc Plots: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=1238.85MB/2459.48MB/1238.85MB)
+[12/20 13:35:55     34s] Ended Initializing Voltage Source Vu and Vc Plots: (cpu=00:00:00:000, real=00:00:00:000, pid=1808844, tid=1813328)
+[12/20 13:35:55     34s] 
+[12/20 13:35:55     34s] Begin Initializing unc Plot
+[12/20 13:35:55     34s] Ended Initializing unc Plot: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=1238.85MB/2460.48MB/1238.85MB)
+[12/20 13:35:55     34s] Ended Initializing unc Plot: (cpu=00:00:00:000, real=00:00:00:000, pid=1808844, tid=1813328)
+[12/20 13:35:55     34s] 
+[12/20 13:35:55     34s] Begin Initializing ivdn Plot.
+[12/20 13:35:55     34s] 
+[12/20 13:35:55     34s] Begin Initializing ivdd Plot.
+[12/20 13:35:55     34s] 
+[12/20 13:35:55     34s] Begin Initializing ipc Plot.
+[12/20 13:35:55     34s] 
+[12/20 13:35:55     34s] Begin Initializing ipceiv Plot.
+[12/20 13:35:55     34s] 
+[12/20 13:35:55     34s] Begin Loading ir Plot for VDD.
+[12/20 13:35:55     34s] 144922 Nodes of ir Loaded for VDD
+[12/20 13:35:55     34s] Ended Loading ir Plot for VDD.: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=1238.85MB/2461.48MB/1238.85MB)Ended Loading ir Plot for VDD.: (cpu=00:00:00:001, real=00:00:00:002, pid=1808844, tid=1813328)
+[12/20 13:35:55     34s] 
+[12/20 13:35:55     34s] Begin Loading ir Plot for VSS.
+[12/20 13:35:55     34s] 144922 Nodes of ir Loaded for VSS
+[12/20 13:35:55     34s] Ended Loading ir Plot for VSS.: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=1238.85MB/2461.48MB/1238.85MB)Ended Loading ir Plot for VSS.: (cpu=00:00:00:001, real=00:00:00:001, pid=1808844, tid=1813328)
+[12/20 13:35:55     34s] 
+[12/20 13:35:55     34s] Begin Loading tc Plot for VDD.
+[12/20 13:35:55     34s] 56350 Nodes of tc Loaded for VDD
+[12/20 13:35:55     34s] Ended Loading tc Plot for VDD.: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=1240.35MB/2461.48MB/1240.35MB)Ended Loading tc Plot for VDD.: (cpu=00:00:00:001, real=00:00:00:001, pid=1808844, tid=1813328)
+[12/20 13:35:55     34s] 
+[12/20 13:35:55     34s] Begin Loading tc Plot for VSS.
+[12/20 13:35:55     34s] 56293 Nodes of tc Loaded for VSS
+[12/20 13:35:55     34s] Ended Loading tc Plot for VSS.: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=1240.35MB/2461.48MB/1240.35MB)Ended Loading tc Plot for VSS.: (cpu=00:00:00:001, real=00:00:00:001, pid=1808844, tid=1813328)
+[12/20 13:35:55     34s] 
+[12/20 13:35:55     34s] Begin Loading dd Plot for VDD.
+[12/20 13:35:55     34s] 72530 Rail of dd Loaded for VDD
+[12/20 13:35:55     34s] Ended Loading dd Plot for VDD.: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=1240.35MB/2461.48MB/1240.35MB)Ended Loading dd Plot for VDD.: (cpu=00:00:00:001, real=00:00:00:001, pid=1808844, tid=1813328)
+[12/20 13:35:55     34s] 
+[12/20 13:35:55     34s] Begin Loading dd Plot for VSS.
+[12/20 13:35:55     34s] 72391 Rail of dd Loaded for VSS
+[12/20 13:35:55     34s] Ended Loading dd Plot for VSS.: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=1240.35MB/2461.48MB/1240.35MB)Ended Loading dd Plot for VSS.: (cpu=00:00:00:001, real=00:00:00:001, pid=1808844, tid=1813328)
+[12/20 13:35:55     34s] 
+[12/20 13:35:55     34s] Begin Loading cap Plot for VDD.
+[12/20 13:35:55     34s] 72531 Nodes of cap Loaded for VDD
+[12/20 13:35:55     34s] Ended Loading cap Plot for VDD.: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=1240.35MB/2461.48MB/1240.35MB)Ended Loading cap Plot for VDD.: (cpu=00:00:00:000, real=00:00:00:000, pid=1808844, tid=1813328)
+[12/20 13:35:55     34s] 
+[12/20 13:35:55     34s] Begin Loading cap Plot for VSS.
+[12/20 13:35:55     34s] 72392 Nodes of cap Loaded for VSS
+[12/20 13:35:55     34s] Ended Loading cap Plot for VSS.: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=1240.35MB/2461.48MB/1240.35MB)Ended Loading cap Plot for VSS.: (cpu=00:00:00:000, real=00:00:00:000, pid=1808844, tid=1813328)
+[12/20 13:35:55     34s] 
+[12/20 13:35:55     34s] Begin Loading Voltage Source, Vu and Vc for All Nets.
+[12/20 13:35:55     34s] 8 Nodes of vsrcs Loaded for VDD
+[12/20 13:35:55     34s] 8 Nodes of vc Loaded for VDD
+[12/20 13:35:55     34s] 8 Nodes of vsrcs Loaded for VSS
+[12/20 13:35:55     34s] 8 Nodes of vc Loaded for VSS
+[12/20 13:35:55     34s] Ended Loading Voltage Source, Vu and Vc for All Nets.: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=1240.35MB/2461.48MB/1240.35MB)
+[12/20 13:35:55     34s] Ended Loading Voltage Source, Vu and Vc for All Nets.: (cpu=00:00:00:000, real=00:00:00:000, pid=1808844, tid=1813328)
+[12/20 13:35:55     34s] 
+[12/20 13:35:55     34s] Begin Loading unc for All Nets.
+[12/20 13:35:55     34s] 0 Nodes of unc Loaded for VDD
+[12/20 13:35:55     34s] 0 Nodes of unc Loaded for VSS
+[12/20 13:35:55     34s] Ended Loading unc for All Nets.: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=1240.35MB/2461.48MB/1240.35MB)
+[12/20 13:35:55     34s] 
+[12/20 13:35:55     34s] Ended Loading unc for All Nets.: (cpu=00:00:00:000, real=00:00:00:000, pid=1808844, tid=1813328)
+[12/20 13:35:55     34s] 
+[12/20 13:35:55     34s] 
+[12/20 13:35:55     34s] Begin Initializing InstPeak DB.
+[12/20 13:35:55     34s] 
+[12/20 13:35:55     34s] 0 Instances Loaded by Names without CellIDMap for Instance Peak Current.
+[12/20 13:35:55     34s] 
+[12/20 13:35:55     34s] Ended Initializing InstPeak DB.: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=1255.35MB/2475.48MB/1255.35MB)
+[12/20 13:35:55     34s] 
+[12/20 13:35:55     34s] Ended Initializing InstPeak DB.: (cpu=00:00:00:000, real=00:00:00:000, pid=1808844, tid=1813328)
+[12/20 13:35:55     34s] 
+[12/20 13:35:55     34s] Begin Initializing IVDN DB.
+[12/20 13:35:55     34s] 
+[12/20 13:35:55     34s] 0 Instances Loaded by Names without CellIDMap for IVDN.
+[12/20 13:35:55     34s] 
+[12/20 13:35:55     34s] Ended Initializing IVDN DB.: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=1240.35MB/2461.48MB/1240.35MB)
+[12/20 13:35:55     34s] 
+[12/20 13:35:55     34s] Ended Initializing IVDN DB.: (cpu=00:00:00:000, real=00:00:00:000, pid=1808844, tid=1813328)
+[12/20 13:35:55     34s] 64179 Instance Based Instances Voltage Net Loaded for VSS (Avg, timing)
+[12/20 13:35:55     34s] 64179 Instance Based Instances Voltage Net Loaded for VSS (Best, timing)
+[12/20 13:35:55     34s] 64179 Instance Based Instances Voltage Net Loaded for VSS (Worst, timing)
+[12/20 13:35:55     34s] 64179 Instance Based Instances Voltage Net Loaded for VSS (WorstAvg, timing)
+[12/20 13:35:55     34s] 64179 Instance Based Instances Voltage Net Loaded for VSS (Avg, whole)
+[12/20 13:35:55     34s] 64179 Instance Based Instances Voltage Net Loaded for VSS (Best, whole)
+[12/20 13:35:55     34s] 64179 Instance Based Instances Voltage Net Loaded for VSS (Worst, whole)
+[12/20 13:35:55     34s] 64179 Instance Based Instances Voltage Net Loaded for VDD (Avg, timing)
+[12/20 13:35:55     34s] 64179 Instance Based Instances Voltage Net Loaded for VDD (Best, timing)
+[12/20 13:35:55     34s] 64179 Instance Based Instances Voltage Net Loaded for VDD (Worst, timing)
+[12/20 13:35:55     34s] 64179 Instance Based Instances Voltage Net Loaded for VDD (WorstAvg, timing)
+[12/20 13:35:55     34s] 64179 Instance Based Instances Voltage Net Loaded for VDD (Avg, whole)
+[12/20 13:35:55     34s] 64179 Instance Based Instances Voltage Net Loaded for VDD (Best, whole)
+[12/20 13:35:55     34s] 64179 Instance Based Instances Voltage Net Loaded for VDD (Worst, whole)
+[12/20 13:35:55     34s] 
+[12/20 13:35:55     34s] 
+[12/20 13:35:55     34s] 
+[12/20 13:35:55     34s] 
+[12/20 13:35:55     34s] Begin Initializing IVDD DB.
+[12/20 13:35:55     34s] 
+[12/20 13:35:55     34s] 0 Instances Loaded by Names without CellIDMap for IVDD.
+[12/20 13:35:55     34s] 
+[12/20 13:35:55     34s] Ended Initializing IVDD DB.: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=1250.85MB/2470.48MB/1250.85MB)
+[12/20 13:35:55     34s] 
+[12/20 13:35:55     34s] Ended Initializing IVDD DB.: (cpu=00:00:00:000, real=00:00:00:000, pid=1808844, tid=1813328)
+[12/20 13:35:55     34s] 64179 Instance Based Instances Voltage Domain Loaded for VDD and VSS (Avg, timing)
+[12/20 13:35:55     34s] 64179 Instance Based Instances Voltage Domain Loaded for VDD and VSS (Best, timing)
+[12/20 13:35:55     34s] 64179 Instance Based Instances Voltage Domain Loaded for VDD and VSS (Worst, timing)
+[12/20 13:35:55     34s] 64179 Instance Based Instances Voltage Domain Loaded for VDD and VSS (WorstAvg, timing)
+[12/20 13:35:55     34s] 64179 Instance Based Instances Voltage Domain Loaded for VDD and VSS (Avg, whole)
+[12/20 13:35:55     34s] 64179 Instance Based Instances Voltage Domain Loaded for VDD and VSS (Best, whole)
+[12/20 13:35:55     34s] 64179 Instance Based Instances Voltage Domain Loaded for VDD and VSS (Worst, whole)
+[12/20 13:35:55     34s] Ended Loading ivdd and ivdn for All Nets.: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=1255.35MB/2475.48MB/1255.35MB)
+[12/20 13:35:55     34s] Ended Loading ivdd and ivdn for All Nets.: (cpu=00:00:00:095, real=00:00:00:099, pid=1808844, tid=1813328)
+[12/20 13:35:55     34s] 
+[12/20 13:35:55     34s] [Warning] Can not get instance peak current and instance switch data under path: ../../db/rail_power/PD_25C_dynamic_1/Reports/ResultDB/info.json
+[12/20 13:35:55     34s] [Error] No IVDD Nets Pairs for creating Mcyc.
+[12/20 13:35:55     34s] Begin Loading EIV Window instance switch and peak current for All Nets.
+[12/20 13:35:55     34s] Begin Initializing McycDB.
+[12/20 13:35:55     34s] 
+[12/20 13:35:55     34s] 
+[12/20 13:35:55     34s] 
+[12/20 13:35:55     34s] 
+[12/20 13:35:55     34s] Ended Loading EIV Window instance switch and peak current for All Nets.: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=1255.35MB/2475.48MB/1255.35MB)
+[12/20 13:35:55     34s] Ended Loading EIV Window instance switch and peak current for All Nets.: (cpu=00:00:00:000, real=00:00:00:000, pid=1808844, tid=1813328)
+[12/20 13:35:55     34s] 
+[12/20 13:35:55     34s] Ended Loading ir Plot percentage data.: (cpu=00:00:00:001, real=00:00:00:001, pid=1808844, tid=1813328)
+[12/20 13:35:55     34s] 
+[12/20 13:35:55     34s] 
+[12/20 13:35:55     34s] Ended Loading Plots in Multi-Thread Mode: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=1255.35MB/2475.48MB/1255.35MB)
+[12/20 13:35:55     34s] 
+[12/20 13:35:55     34s] 
+[12/20 13:35:55     34s] Begin reading tpd data from DB
+[12/20 13:35:55     34s] 
+[12/20 13:35:56     35s] 
+[12/20 13:35:56     35s] Ended reading tpd data from DB: (cpu=0:00:01, real=0:00:00, mem(process/total/peak)=1256.85MB/2475.48MB/1256.85MB)
+[12/20 13:35:56     35s] 
+[12/20 13:35:56     35s] calculate sorted Tile based Power Density for reporting
+[12/20 13:35:56     35s] 
+[12/20 13:35:56     35s] Begin Building query for Plots in Multi-Thread Mode
+[12/20 13:35:56     35s] 
+[12/20 13:35:56     35s] 
+[12/20 13:35:56     35s] Begin Initializing Node Based Data Query
+[12/20 13:35:56     35s] 
+[12/20 13:35:56     35s] 
+[12/20 13:35:56     35s] Ended Initializing Node Based Data Query: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=1256.85MB/2476.48MB/1256.85MB)
+[12/20 13:35:56     35s] 
+[12/20 13:35:56     35s] 
+[12/20 13:35:56     35s] Begin Build Node Based Data Query
+[12/20 13:35:56     35s] 
+[12/20 13:35:56     35s] 
+[12/20 13:35:56     35s] Ended Build Node Based Data Query: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=1258.35MB/2476.48MB/1258.35MB)
+[12/20 13:35:56     35s] 
+[12/20 13:35:56     35s] 
+[12/20 13:35:56     35s] Begin Set Query for ir
+[12/20 13:35:56     35s] 
+[12/20 13:35:56     35s] 
+[12/20 13:35:56     35s] Ended Set Query for ir: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=1258.35MB/2476.48MB/1258.35MB)
+[12/20 13:35:56     35s] 
+[12/20 13:35:56     35s] 
+[12/20 13:35:56     35s] Begin Initializing Sparse Node Based Data Query
+[12/20 13:35:56     35s] 
+[12/20 13:35:56     35s] 
+[12/20 13:35:56     35s] Begin Set Query for vc
+[12/20 13:35:56     35s] 
+[12/20 13:35:56     35s] 
+[12/20 13:35:56     35s] Ended Set Query for vc: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=1258.35MB/2476.48MB/1258.35MB)
+[12/20 13:35:56     35s] 
+[12/20 13:35:56     35s] 
+[12/20 13:35:56     35s] Begin Set Query for tc
+[12/20 13:35:56     35s] 
+[12/20 13:35:56     35s] 
+[12/20 13:35:56     35s] Ended Set Query for tc: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=1258.35MB/2476.48MB/1258.35MB)
+[12/20 13:35:56     35s] 
+[12/20 13:35:56     35s] 
+[12/20 13:35:56     35s] Begin Set Query for unc
+[12/20 13:35:56     35s] 
+[12/20 13:35:56     35s] 
+[12/20 13:35:56     35s] Ended Set Query for unc: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=1258.35MB/2476.48MB/1258.35MB)
+[12/20 13:35:56     35s] 
+[12/20 13:35:56     35s] 
+[12/20 13:35:56     35s] Begin Set Query for dd
+[12/20 13:35:56     35s] 
+[12/20 13:35:56     35s] 
+[12/20 13:35:56     35s] Ended Set Query for dd: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=1258.35MB/2476.48MB/1258.35MB)
+[12/20 13:35:56     35s] 
+[12/20 13:35:56     35s] 
+[12/20 13:35:56     35s] Begin Set Query for cap
+[12/20 13:35:56     35s] 
+[12/20 13:35:56     35s] 
+[12/20 13:35:56     35s] Ended Set Query for cap: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=1258.35MB/2476.48MB/1258.35MB)
+[12/20 13:35:56     35s] 
+[12/20 13:35:56     35s] 
+[12/20 13:35:56     35s] Ended Building query for Plots in Multi-Thread Mode: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=1258.35MB/2476.48MB/1258.35MB)
+[12/20 13:35:56     35s] 
+[12/20 13:35:56     35s] 
+[12/20 13:35:56     35s] Begin Preparing Data for Renders
+[12/20 13:35:56     35s] 
+[12/20 13:35:56     35s] Instances Number: 64179.
+[12/20 13:35:56     35s] Instances Number: 64179.
+[12/20 13:35:56     35s] 
+[12/20 13:35:56     35s] Begin Generating Image cache for plots
+[12/20 13:35:56     35s] 
+[12/20 13:35:56     35s] 
+[12/20 13:35:56     35s] Ended Generating Image cache for plots: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=1298.85MB/2515.48MB/1298.85MB)
+[12/20 13:35:56     35s] 
+[12/20 13:35:56     35s] 
+[12/20 13:35:56     35s] Ended Preparing Data for Renders: (cpu=0:00:00, real=0:00:00, mem(process/total/peak)=1298.85MB/2515.48MB/1298.85MB)
+[12/20 13:35:56     35s] 
+[12/20 13:35:56     35s] 
+[12/20 13:35:56     35s] Ended Loading State Directory.: (cpu=0:00:00, real=0:00:01, mem(process/total/peak)=1298.85MB/2515.48MB/1298.85MB)
+[12/20 13:35:56     35s] 
+[12/20 13:36:09     36s] <CMD> set_power_rail_display -plot ivdd
+[12/20 13:36:09     36s] uiColorScale::config powerNet -max_value 5.0 -min_value 0 -hi_threshold 5.0 -lo_threshold 0
+[12/20 13:36:09     36s] 
+[12/20 13:36:09     36s] <CMD> setLayerPreference powerNet -color {#0000ff #0010de #0020bd #00319c #00417b #00525a #006239 #007318 #088300 #299400 #4aa400 #6ab400 #8bc500 #acd500 #cde600 #eef600 #fff900 #ffed00 #ffe200 #ffd600 #ffcb00 #ffbf00 #ffb400 #ffa800 #ff9500 #ff8000 #ff6a00 #ff5500 #ff4000 #ff2a00 #ff1500 #ff0000}
+[12/20 13:36:12     36s] <CMD> set_power_rail_display -enable_result_browser 1
+[12/20 13:36:12     36s] 
+[12/20 13:40:17     55s] 
+--------------------------------------------------------------------------------
+Exiting Innovus on Sat Dec 20 13:40:17 2025
+  Total CPU time:     0:01:16
+  Total real time:    0:08:34
+  Peak memory (main): 1350.20MB
+
+[12/20 13:40:17     55s] 
+[12/20 13:40:17     55s] *** Memory Usage v#1 (Current mem = 1666.617M, initial mem = 262.148M) ***
+[12/20 13:40:17     55s] 
+[12/20 13:40:17     55s] *** Summary of all messages that are not suppressed in this session:
+[12/20 13:40:17     55s] Severity  ID               Count  Summary                                  
+[12/20 13:40:17     55s] WARNING   IMPESI-621           1  Timing window restoration data eosdb.dat...
+[12/20 13:40:17     55s] WARNING   IMPCCOPT-2332        1  The property %s is deprecated. It still ...
+[12/20 13:40:17     55s] WARNING   IMPTR-2108           1  For layer M%d, the gaps of %d out of %d ...
+[12/20 13:40:17     55s] WARNING   IMPCTE-107           1  The following globals have been obsolete...
+[12/20 13:40:17     55s] WARNING   IMPTCM-77            1  Option "%s" for command %s is obsolete a...
+[12/20 13:40:17     55s] WARNING   TECHLIB-436         20  Attribute '%s' on '%s' pin '%s' of cell ...
+[12/20 13:40:17     55s] WARNING   TECHLIB-1277         4  The %s '%s' has been defined for %s %s '...
+[12/20 13:40:17     55s] *** Message Summary: 29 warning(s), 0 error(s)
+[12/20 13:40:17     55s] 
+[12/20 13:40:17     55s] --- Ending "Innovus" (totcpu=0:00:55.6, real=0:07:37, mem=1666.6M) ---

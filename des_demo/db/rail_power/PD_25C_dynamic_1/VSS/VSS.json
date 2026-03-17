@@ -1,0 +1,35 @@
+{
+    "net_name": "VSS",
+    "smg": {
+        "config": {
+            "name": "VSS",
+            "output_path": "..\/..\/db\/rail_power\/PD_25C_dynamic_1\/VSS",
+            "nominal_voltage": "0"
+        },
+        "result": {
+            "layerInfo": {
+                "path": "..\/..\/db\/rail_power\/PD_25C_dynamic_1\/VSS\/layerInfo",
+                "type": "proto.voltus.layer_manager.LayerManager"
+            },
+            "pgdb": {
+                "path": "..\/..\/db\/rail_power\/PD_25C_dynamic_1\/VSS"
+            },
+            "cellview": {
+                "path": "..\/..\/db\/rail_power\/PD_25C_dynamic_1\/VSS\/VSS.cellviews",
+                "type": "txt"
+            },
+            "pgv_table": {
+                "path": "..\/..\/db\/rail_power\/PD_25C_dynamic_1\/VSS\/VSS.pgv_table.rpt",
+                "type": "txt"
+            },
+            "grid_report": {
+                "path": "..\/..\/db\/rail_power\/PD_25C_dynamic_1\/VSS\/VSS.grid.report",
+                "type": "txt"
+            },
+            "missing_pgv": {
+                "path": "..\/..\/db\/rail_power\/PD_25C_dynamic_1\/VSS\/VSS.missingPGVData.protobuf",
+                "type": "protobuf.VOLTUS.SMGDATA.MissingPGV"
+            }
+        }
+    }
+}
