@@ -1,8 +1,0 @@
-addvs pad_vdd_4 9 r=1e-08 l=0 c=0 volt- 0.7
-addvs pad_vdd_5 25 r=1e-08 l=0 c=0 volt- 0.7
-addvs pad_vdd_6 43 r=1e-08 l=0 c=0 volt- 0.7
-addvs pad_vdd_7 59 r=1e-08 l=0 c=0 volt- 0.7
-addvs pad_vdd_0 75 r=1e-08 l=0 c=0 volt- 0.7
-addvs pad_vdd_2 82 r=1e-08 l=0 c=0 volt- 0.7
-addvs pad_vdd_1 97 r=1e-08 l=0 c=0 volt- 0.7
-addvs pad_vdd_3 103 r=1e-08 l=0 c=0 volt- 0.7

@@ -48,7 +48,6 @@ Signal: data_valid
 Optional:
 
 - time range
-- output format (list / csv)
 
 ---
 

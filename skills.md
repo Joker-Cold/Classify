@@ -15,12 +15,7 @@
 | ------------------------------ | --------------- | ----------------------------------------- |
 | `vcd_format.md`                | VCD格式合规检查 | 验证VCD文件结构合法性；调试解析错误时     |
 | `parse_vcd_signal.md`          | VCD信号解析     | 从VCD提取单信号或全部信号波形             |
-| `vcd_to_csv.md`                | VCD转CSV        | 将VCD波形数据转换为CSV数据集（task1）     |
-| `toggle_count.md`              | 跳变次数统计    | 按时钟周期窗口统计信号跳变数（task2）     |
-| `worst_case_identification.md` | 最坏情况识别    | 识别高跳变窗口、提取最坏功耗场景（task4） |
-| `csv_to_vcd.md`                | CSV重建VCD      | 从CSV3+manifest重建压缩VCD文件（task5）   |
 | `compare_vcd_waveform.md`      | VCD波形对比     | 对比原始VCD与压缩VCD；回归测试验证        |
-| `WAVEFORM_TOOLS.md`            | 工具快速参考    | 查询命令行用法；了解整体工具架构          |
 
 ---
 
@@ -44,9 +39,7 @@
 #### 对于 Python（VCD处理）:
 * **异常处理**：处理大型 VCD 文件时，是否有逐行读取（Generator）以避免内存崩溃。
 * **路径兼容性**：使用 `os.path` 或 `pathlib` 处理路径，避免硬编码分隔符。
-* **硬编码检查**：信号名、文件名、位宽等是否从 `signal_manifest.json` 动态读取，而非写死。
-* **符号池检查**：task5 的 VCD symbol 分配是否支持超过15个信号（使用完整 ASCII 可打印字符集）。
-* **初始值回溯**：CSV转VCD时，最坏窗口的 `$dumpvars` 是否回溯到窗口开始前的真实信号状态。
+* **硬编码检查**：信号名、文件名、位宽等是否动态读取，而非写死。
 * **正则表达式**：解析 VCD/Log 文件时，Regex 模式是否覆盖标量和向量两种格式。
 
 #### 对于临时文件：

@@ -1,87 +1,122 @@
-# Continue Task: Phase 1 覆盖率 + 远程 Rail Analysis 补跑
+# Continue Task: Worst-Case Window Selection + 物理位置映射 + 覆盖率验证
 
-## 已完成
+## 当前进展总览
 
-### 1. coverage_tier1.py — 已完成并验证通过
-- 路径: `db/analyse/coverage_tier1.py`
-- 功能: 解析 Voltus Rail Analysis 报告，自动计算覆盖率指标
-- 输出: `db/analyse/results/` 下的 CSV + Markdown 报告
-- 验证: win1 C₁=81.8%, win2 C₁=100% 与手动计算一致
+项目目标: 压缩 VCD 文件，只保留 worst-case power 窗口，不影响芯片功耗验证精度。
 
-### 2. 远程服务器 Innovus 环境 — 已配置
-- 服务器: `ssh -p 2223 myzhu@10.98.193.24` (SSH key 免密)
-- Innovus **v20.10** (非 v15)
-- 共享 tmux 会话: `tmux attach -t shared`
-- 项目路径: `/home/myzhu/data/des_demo/`
-- Power 数据 (win1~5 的 ptiavg) 已存在于 `db/power/avg_v15_winX/avg_v15_winX/`
+### 已完成的工具链
 
-### 3. v20 Rail Analysis 首次尝试 — 失败，需修复
-- 脚本: `/home/myzhu/data/des_demo/script/innovus/rerun_rail_v20.tcl`
-- 输出目录: `rail_power_v20_win{3,4,5}` 已创建但报告不完整（无 Reports/VDD/*.rpt）
-- 错误: **Rail Analysis is unsuccessful due to errors**
+| 工具 | 路径 | 功能 | 状态 |
+|------|------|------|------|
+| VCD 解析器 | `code/parse_vcd_signal.py` | VCD header/waveform 解析，多 scope 消歧 | ✅ |
+| VCD→JSONL | `code/vcd_to_jsonl.py` | VCD 转 JSONL（hold-last-value） | ✅ |
+| Toggle 标记 | `code/jsonl_toggle_mark.py` | 逐 bit XOR toggle 计算 | ✅ |
+| Phase-Aware 选窗 | `code/select_worst_window.py` | 核心算法库：aggregate_by_clock, detect_phases, select_windows | ✅ |
+| 选窗 CLI | `code/find_worst_window.py` | Phase-Aware + 空间集中度选窗 | ✅ |
+| **VCD→DEF 物理映射** | `code/vcd_def_mapper.py` | **本次新增**，VCD 信号→芯片物理坐标 | ✅ |
+| 覆盖率分析 | `db/analyse/coverage_tier1.py` | Voltus Rail 报告解析 + 覆盖率计算 | ✅ (需适配 v20) |
+| VCD 切片 | `code/vcd_slicer.py` | VCD 时间窗口裁剪 | ✅ |
 
-## 待修复问题
+### 已完成的验证数据
 
-### 问题 1: VCD 未拆分（用户指出的根本原因）
-- v15 脚本 `full_irdrop_v15.tcl` 在**功耗分析阶段**用 `read_activity_file -start/-end` 指定时间窗口
-- 当前 `rerun_rail_v20.tcl` **跳过了功耗分析**，直接用已有的 ptiavg 做 rail analysis
-- 但已有的 ptiavg 是 v15 用同一个 VCD 的不同时间段生成的，应该没问题
-- **用户怀疑**: 可能需要将 VCD 拆分为独立文件，而不是用 `-start/-end` 参数
-- 需要确认: v20 的 `read_activity_file` 是否支持 `-start/-end`？还是需要预先拆分 VCD？
+- **v20 Rail Analysis**: 5 等分窗口全部跑通，worst IR drop = win2 (26mV)
+- **Phase-Aware 选窗验证**: depletion_ratio=0.7 选出 3790~4390ns 覆盖实际 worst-case 4050ns
 
-### 问题 2: Rail Analysis 失败的具体原因
-从 `innovus.log7` 看到的历史错误 (供参考):
-- `VOLTUS-1185`: Specify power grid libraries with `-power_grid_library`
-- `VOLTUS-1129`: Rail analysis mode should be set properly
-- `IMPTCM-48`: `set_pg_nets` 语法错误 (两条命令写在同一行)
+---
 
-但我们的 v20 脚本已修正了这些。tmux 中看到的实际错误是:
+## 本次完成: VCD→DEF 物理位置映射器
+
+### `code/vcd_def_mapper.py`
+
+**功能**: 将 VCD 仿真信号映射到 DEF 物理芯片坐标
+
+**映射策略** (按优先级):
+1. **COMPONENTS 直接匹配** — DEF path 完全一致的 cell 放置坐标
+2. **PINS 匹配** — 顶层端口 (desOut, desIn 等)
+3. **NETS driver 匹配** — net 的驱动 cell (pin=Q/QN/Y/Z) 的放置坐标 ← 最常用
+4. **FE_PHN→FE_PHC** — Physical Net→Physical Cell 名称转换
+5. **Bus 信号** — 用第一个 bit 的 net driver 坐标
+
+**关键实现细节**:
+- VCD scope→DEF path: 去掉 testbench (`test`) + 顶层实例 (`u0`)，`.`→`/`
+- DEF 括号转义: `\[` → `[` (COMPONENTS/NETS 一致处理)
+- 流式解析 91 万行 DEF 文件，不加载到内存
+- 坐标自动除以 UNITS (4000) 转换为 um
+
+**映射结果**:
 ```
-Rail Analysis is unsuccessful due to errors.
-**ERROR: (PRL-387): "Rail Analysis" failed to finish successfully.
-**ERROR: (VOLTUS-1055): Rail analysis failed to finish successfully
-```
-需要查看 voltus 子进程的详细日志来定位。
+Total:     42,410 VCD signals
+Mapped:    42,340 (99.8%)
+Unmapped:      70 (testbench 变量 / CTS clk / 子模块内部端口)
 
-### 问题 3: 需要清理旧的失败输出
+Source breakdown:
+  net_driver:     42,021  ← 使用驱动 cell 放置坐标（最精确）
+  bus_net_driver:    310
+  pin:                 6
+  bus_net_route:       3
+```
+
+**输出**:
+- `output/signal_location_map.csv` — 42,410 行 (signal_name, scope, width, x_um, y_um, source_type, cell_type)
+- `output/signal_location_map.html` — Plotly scatter plot
+
+**运行命令**:
 ```bash
-ssh -p 2223 myzhu@10.98.193.24 'rm -rf ~/data/des_demo/db/rail_power_v20_win{3,4,5}'
+python code/vcd_def_mapper.py \
+    --vcd des_demo/vcd/test.vcd \
+    --def des_demo/db/des3.def \
+    --output output/signal_location_map.csv \
+    --html output/signal_location_map.html
 ```
 
-## 下一步计划
+---
 
-### 方案 A: 重新跑完整流程 (功耗 + Rail)
-如果需要用 v20 重新做功耗分析:
-1. 在 Innovus v20 中加载设计
-2. 用 `read_activity_file` 读 VCD 的各时间窗口，生成新的 power 数据
-3. 用新 power 数据做 rail analysis
+## 待完成任务
 
-### 方案 B: 拆分 VCD 后重跑
-1. 用 Python 脚本将 `test.vcd` 按时间窗口拆成 5 个独立 VCD
-2. 每个窗口用独立 VCD 做功耗分析
-3. 再做 rail analysis
+### 1. 将物理坐标集成到选窗算法 (高优先)
+- **目标**: 用物理坐标替代 VCD scope 层次做空间集中度分析
+- `find_worst_window.py` 当前的 `build_scope_map()` 用 VCD scope 做模块级集中度
+- 可用 `vcd_def_mapper.py` 的坐标做 **区域级集中度** (grid-based spatial concentration)
+- 思路: 将芯片划分为 NxN 网格，计算每个窗口中 toggle 的空间分布集中度
+- 公式: `σ_spatial = max(grid_toggle) / total_toggle` 或用 Gini 系数
 
-### 方案 C: 修复现有脚本只跑 Rail
-如果已有的 ptiavg 数据兼容 v20:
-1. 排查 voltus 子进程的具体错误
-2. 修复脚本后重跑
+### 2. 用 v20 数据重跑覆盖率分析
+- `coverage_tier1.py` 需适配 v20 的报告路径（多一层 `PD_25C_dynamic_1/`）
+- 重新计算 C₁, C_peak, C_layer, C_violation 指标
+
+### 3. 修复 full_irdrop_v20.tcl
+- 在 `set_rail_analysis_mode` 中加回 `-limit_number_of_steps false`
+- 使其可以一次性跑完功耗 + Rail 全流程
+
+### 4. 选窗验证 — 用选窗算法选出的窗口 vs 等分窗口
+- 用 Phase-Aware 选出 worst window → vcd_slicer 切片 → 上传服务器 → Voltus 跑 Rail
+- 与等分 5 窗口的 worst IR drop 对比，验证选窗精度
+
+---
 
 ## 关键路径和文件
 
 | 项目 | 路径 |
 |------|------|
-| VCD 源文件 | `/home/myzhu/data/des_demo/vcd/test.vcd` |
-| Power 数据 | `db/power/avg_v15_winX/avg_v15_winX/dynamic_{VDD,VSS}.ptiavg` |
-| v20 脚本 | `script/innovus/rerun_rail_v20.tcl` |
-| v15 全流程脚本 | `script/innovus/full_irdrop_v15.tcl` |
-| PPL 文件 | `script/innovus/ring_pads_vdd.ppl`, `ring_pads_vss.ppl` |
-| PG Library | `script/innovus/des3_pg_v20/techonly.cl` (已生成) |
+| VCD 源文件 | `des_demo/vcd/test.vcd` |
+| DEF 文件 | `des_demo/db/des3.def` (91万行) |
+| 物理映射输出 | `output/signal_location_map.csv` |
+| Toggle JSONL | `output/test_toggles.jsonl` |
+| Power 数据 (v20) | `db/power/avg_v20_winX/dynamic_{VDD,VSS}.ptiavg` |
+| Rail 报告 (v20) | `db/rail_power_v20_winX/PD_25C_dynamic_1/Reports/` |
+| v20 Rail-only 脚本 | `script/innovus/rerun_rail_v20_fix.tcl` ✅ |
 | 覆盖率脚本 | `db/analyse/coverage_tier1.py` |
+| 算法文档 | `docs/algorithm_worst_window.md` |
 
-## 时间窗口定义
+## 远程服务器
+- SSH: `ssh -p 2223 myzhu@10.98.193.24` (key auth)
+- Innovus v20.10, 项目路径: `/home/myzhu/data/des_demo/`
+- 共享终端: `tmux attach -t shared`
+
+## 时间窗口定义 (等分)
 ```
 win1: 0ns     ~ 2370ns
-win2: 2370ns  ~ 4740ns
+win2: 2370ns  ~ 4740ns    ← worst IR drop (26mV)
 win3: 4740ns  ~ 7110ns
 win4: 7110ns  ~ 9480ns
 win5: 9480ns  ~ 11850ns

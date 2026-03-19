@@ -1,0 +1,40 @@
+{
+  "total_time_ns": 11849.0,
+  "budget_ratio": 0.1,
+  "phases": [
+    {
+      "id": 1,
+      "start_ns": 450.0,
+      "end_ns": 5650.0,
+      "n_active": 53,
+      "avg_toggles": 5019,
+      "peak_toggles": 5975
+    },
+    {
+      "id": 2,
+      "start_ns": 6350.0,
+      "end_ns": 11350.0,
+      "n_active": 51,
+      "avg_toggles": 5061,
+      "peak_toggles": 6713
+    }
+  ],
+  "windows": [
+    {
+      "id": 1,
+      "start_ns": 3789.9999999999995,
+      "end_ns": 4390.0,
+      "duration_ns": 600.0000000000005,
+      "toggle_sum": 31961,
+      "phase_id": 1
+    },
+    {
+      "id": 2,
+      "start_ns": 9600.0,
+      "end_ns": 10100.0,
+      "duration_ns": 500.0,
+      "toggle_sum": 24022,
+      "phase_id": 2
+    }
+  ]
+}

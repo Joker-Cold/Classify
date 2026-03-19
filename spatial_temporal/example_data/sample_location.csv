@@ -1,0 +1,10 @@
+signal_name,scope,width,x_um,y_um,source_type,cell_type
+CTS_16,test.u0.u2,1,337.248,289.296,net_driver,BUFx6f_ASAP7_75t_SL
+CTS_19,test.u0,1,180.0,337.896,net_driver,BUFx5_ASAP7_75t_SL
+CTS_21,test.u0,1,172.008,240.696,net_driver,BUFx6f_ASAP7_75t_SL
+CTS_25,test.u0,1,30.312,219.096,net_driver,BUFx5_ASAP7_75t_SL
+CTS_26,test.u0,1,33.984,171.576,net_driver,BUFx5_ASAP7_75t_SL
+CTS_28,test.u0,1,34.416,219.096,net_driver,BUFx3_ASAP7_75t_SL
+CTS_30,test.u0,1,31.608,200.736,net_driver,BUFx5_ASAP7_75t_SL
+CTS_31,test.u0,1,34.632,237.456,net_driver,BUFx5_ASAP7_75t_SL
+CTS_32,test.u0,1,54.288,288.216,net_driver,BUFx6f_ASAP7_75t_SL

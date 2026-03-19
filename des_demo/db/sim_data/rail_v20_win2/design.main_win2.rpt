@@ -1,0 +1,25 @@
+RAIL ANALYSIS REPORT
+Generated Date: Thu Mar 19 10:50:37 2026
+Host Name: hzhb-Super-Server
+
+
+==============================
+
+==============================
+User: myzhu 
+Hostname: hzhb-Super-Server 
+Peak Memory: 0 Mbytes 
+Total CPU time: 00:09:17 
+Total Wall Clock time: 00:02:33 
+Exit status: Successful 
+State Directory: ../../db/rail_power_v20_win2/PD_25C_dynamic_1 
+Units: Volt, Amp, Ohm, fF 
+
+
+==============================
+POWER NETS
+==============================
+Net Name: VSS
+Net Name: VDD
+Analysis Method: dynamic 
+

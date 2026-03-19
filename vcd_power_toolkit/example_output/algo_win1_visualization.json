@@ -1,0 +1,171 @@
+{
+  "parameters": {
+    "mx": 10,
+    "ny": 10,
+    "kt": 12,
+    "top_t": 1,
+    "warmup_cycles": 0,
+    "clock_ns": 50.0,
+    "timescale_ps": 10.0,
+    "warmup_ticks": 0
+  },
+  "simulation": {
+    "t_max_ticks": 60000,
+    "t_max_ns": 600.0,
+    "total_toggles": 25231
+  },
+  "selection": {
+    "n_windows_selected": 6,
+    "n_windows_total": 12,
+    "selected_window_indices": [
+      2,
+      4,
+      6,
+      8,
+      10,
+      11
+    ],
+    "selected_toggles": 24891,
+    "toggle_coverage_pct": 98.65
+  },
+  "merged_intervals": [
+    {
+      "start_tick": 10000,
+      "end_tick": 15000,
+      "start_ns": 100.0,
+      "end_ns": 150.0,
+      "duration_ns": 50.0
+    },
+    {
+      "start_tick": 20000,
+      "end_tick": 25000,
+      "start_ns": 200.0,
+      "end_ns": 250.0,
+      "duration_ns": 50.0
+    },
+    {
+      "start_tick": 30000,
+      "end_tick": 35000,
+      "start_ns": 300.0,
+      "end_ns": 350.0,
+      "duration_ns": 50.0
+    },
+    {
+      "start_tick": 40000,
+      "end_tick": 45000,
+      "start_ns": 400.0,
+      "end_ns": 450.0,
+      "duration_ns": 50.0
+    },
+    {
+      "start_tick": 50000,
+      "end_tick": 60000,
+      "start_ns": 500.0,
+      "end_ns": 600.0,
+      "duration_ns": 100.0
+    }
+  ],
+  "compression": {
+    "output_ticks": 30000,
+    "output_ns": 300.0,
+    "ratio_pct": 50.0
+  },
+  "per_window_detail": [
+    {
+      "index": 0,
+      "start_ns": 0.0,
+      "end_ns": 50.0,
+      "toggles": 0,
+      "region_votes": 0,
+      "selected": false
+    },
+    {
+      "index": 1,
+      "start_ns": 50.0,
+      "end_ns": 100.0,
+      "toggles": 68,
+      "region_votes": 0,
+      "selected": false
+    },
+    {
+      "index": 2,
+      "start_ns": 100.0,
+      "end_ns": 150.0,
+      "toggles": 3963,
+      "region_votes": 10,
+      "selected": true
+    },
+    {
+      "index": 3,
+      "start_ns": 150.0,
+      "end_ns": 200.0,
+      "toggles": 68,
+      "region_votes": 0,
+      "selected": false
+    },
+    {
+      "index": 4,
+      "start_ns": 200.0,
+      "end_ns": 250.0,
+      "toggles": 3955,
+      "region_votes": 6,
+      "selected": true
+    },
+    {
+      "index": 5,
+      "start_ns": 250.0,
+      "end_ns": 300.0,
+      "toggles": 68,
+      "region_votes": 0,
+      "selected": false
+    },
+    {
+      "index": 6,
+      "start_ns": 300.0,
+      "end_ns": 350.0,
+      "toggles": 4274,
+      "region_votes": 3,
+      "selected": true
+    },
+    {
+      "index": 7,
+      "start_ns": 350.0,
+      "end_ns": 400.0,
+      "toggles": 68,
+      "region_votes": 0,
+      "selected": false
+    },
+    {
+      "index": 8,
+      "start_ns": 400.0,
+      "end_ns": 450.0,
+      "toggles": 4178,
+      "region_votes": 3,
+      "selected": true
+    },
+    {
+      "index": 9,
+      "start_ns": 450.0,
+      "end_ns": 500.0,
+      "toggles": 68,
+      "region_votes": 0,
+      "selected": false
+    },
+    {
+      "index": 10,
+      "start_ns": 500.0,
+      "end_ns": 550.0,
+      "toggles": 4237,
+      "region_votes": 4,
+      "selected": true
+    },
+    {
+      "index": 11,
+      "start_ns": 550.0,
+      "end_ns": 600.0,
+      "toggles": 4284,
+      "region_votes": 44,
+      "selected": true
+    }
+  ]
+}

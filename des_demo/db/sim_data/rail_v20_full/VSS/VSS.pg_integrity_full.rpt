@@ -1,0 +1,28 @@
+* Missing Cell Power-Grid Views
+
+Cell Name
+------------------------------------------------------------------
+
+
+* Physically Disconnected Instances
+
+
+
+* Instances with Floating Power Pins
+
+
+* Disconnected Wire Segments
+
+
+
+* Weakly Connected Metal Segments
+
+Layer      | Location (um)
+------------------------------------------------------------------
+
+Found 0 weakly connected metal segments
+
+
+
+* Dropped Voltage Sources
+
