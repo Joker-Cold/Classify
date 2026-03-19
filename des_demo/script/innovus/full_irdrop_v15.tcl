@@ -63,8 +63,8 @@ foreach win $windows {
     # --- IR Drop 分析 ---
     set_pg_nets -net VDD -voltage 0.7 -threshold 0.651
     set_pg_nets -net VSS -voltage 0   -threshold 0.1
-    set_power_pads -net VDD -format xy -file ./ring_pads_vdd.ppl
-    set_power_pads -net VSS -format xy -file ./ring_pads_vss.ppl
+    set_power_pads -net VDD -format xy -file ./ring_pads_vdd_clean.ppl
+    set_power_pads -net VSS -format xy -file ./ring_pads_vss_clean.ppl
     set_power_data -format current \
         [list ../../db/power/avg_v15_win${idx}/dynamic_VDD.ptiavg \
               ../../db/power/avg_v15_win${idx}/dynamic_VSS.ptiavg]

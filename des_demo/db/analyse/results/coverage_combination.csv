@@ -1,0 +1,5 @@
+windows,C1,C_peak,C_layer_avg,C_layer_min,C_violation
+win1+win2,100.0%,100.0%,97.3%,94.2%,PASS
+win1+win3,81.8%,104.4%,95.6%,92.5%,PASS
+win2+win3,100.0%,104.4%,97.3%,94.2%,PASS
+win1+win2+win3,100.0%,104.4%,97.3%,94.2%,PASS

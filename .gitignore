@@ -25,3 +25,30 @@ temp/
 
 # Claude Code
 .claude/
+
+# ===== EDA (Innovus/Voltus) generated results =====
+# Power analysis intermediate data (ptiavg binary traces, PTIData)
+des_demo/db/power/avg_v15*/*/PTIData/
+des_demo/db/power/avg_v15*/*/*.ptiavg
+des_demo/db/power/avg_v15*/*/*.ptiavg.*
+
+# Rail analysis - ignore everything except Reports
+# Solver intermediates: mesh, matrix, binary blobs, lock files
+des_demo/db/rail_power*/*/PD_*/VDD/
+des_demo/db/rail_power*/*/PD_*/VSS/
+des_demo/db/rail_power*/*/PD_*/hmatrix/
+des_demo/db/rail_power*/*/PD_*/Reports/des3_mcp_ploc.ckt
+des_demo/db/rail_power*/*/PD_*/Reports/EIVDB/
+des_demo/db/rail_power*/*/PD_*/Reports/Waveforms/
+des_demo/db/rail_power*/*/PD_*/Reports/report_generation.log
+des_demo/db/rail_power*/*/PD_*/Reports/VDD_VSS.iv
+des_demo/db/rail_power*/*/PD_*/Reports/VDD_VSS.worst.iv
+
+# Innovus work directory (session temp)
+des_demo/script/innovus/work/
+des_demo/script/innovus/des3_pg_v15/
+des_demo/script/innovus/des3_pg/
+
+# EDA common temp files
+*.lock
+*.sfe.session
