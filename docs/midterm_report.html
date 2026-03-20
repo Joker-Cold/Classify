@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+        <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>&#x6bd5;&#x4e1a;&#x8bbe;&#x8ba1;&#xff08;&#x8bba;&#x6587;&#xff09;&#x4e2d;&#x671f;&#x62a5;&#x544a;</title>
+            <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only],
+.vscode-high-contrast:not(.vscode-high-contrast-light) img[src$=\#gh-light-mode-only],
+.vscode-high-contrast-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+            
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+<style>
+:root {
+  --color-note: #0969da;
+  --color-tip: #1a7f37;
+  --color-warning: #9a6700;
+  --color-severe: #bc4c00;
+  --color-caution: #d1242f;
+  --color-important: #8250df;
+}
+
+</style>
+<style>
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-note: #2f81f7;
+    --color-tip: #3fb950;
+    --color-warning: #d29922;
+    --color-severe: #db6d28;
+    --color-caution: #f85149;
+    --color-important: #a371f7;
+  }
+}
+
+</style>
+<style>
+.markdown-alert {
+  padding: 0.5rem 1rem;
+  margin-bottom: 16px;
+  color: inherit;
+  border-left: .25em solid #888;
+}
+
+.markdown-alert>:first-child {
+  margin-top: 0
+}
+
+.markdown-alert>:last-child {
+  margin-bottom: 0
+}
+
+.markdown-alert .markdown-alert-title {
+  display: flex;
+  font-weight: 500;
+  align-items: center;
+  line-height: 1
+}
+
+.markdown-alert .markdown-alert-title .octicon {
+  margin-right: 0.5rem;
+  display: inline-block;
+  overflow: visible !important;
+  vertical-align: text-bottom;
+  fill: currentColor;
+}
+
+.markdown-alert.markdown-alert-note {
+  border-left-color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-note .markdown-alert-title {
+  color: var(--color-note);
+}
+
+.markdown-alert.markdown-alert-important {
+  border-left-color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-important .markdown-alert-title {
+  color: var(--color-important);
+}
+
+.markdown-alert.markdown-alert-warning {
+  border-left-color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-warning .markdown-alert-title {
+  color: var(--color-warning);
+}
+
+.markdown-alert.markdown-alert-tip {
+  border-left-color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-tip .markdown-alert-title {
+  color: var(--color-tip);
+}
+
+.markdown-alert.markdown-alert-caution {
+  border-left-color: var(--color-caution);
+}
+
+.markdown-alert.markdown-alert-caution .markdown-alert-title {
+  color: var(--color-caution);
+}
+
+</style>
+        
+        </head>
+        <body class="vscode-body vscode-light">
+            <h1 id="毕业设计论文中期报告">毕业设计（论文）中期报告</h1>
+<p><strong>课题名称</strong>：基于 VCD 波形分析的芯片最差功耗场景自动选取方法研究</p>
+<p><strong>专业</strong>：微电子科学与工程</p>
+<hr>
+<h2 id="目录">目录</h2>
+<ol>
+<li><a href="#1-%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1%E7%9A%84%E8%BF%9B%E5%B1%95%E6%83%85%E5%86%B5">毕业设计的进展情况</a>
+<ul>
+<li>1.1 <a href="#11-%E8%AF%BE%E9%A2%98%E5%B7%A5%E4%BD%9C%E5%AE%8C%E6%88%90%E6%83%85%E5%86%B5">课题工作完成情况</a></li>
+<li>1.2 <a href="#12-%E7%9F%A5%E8%AF%86%E6%8A%80%E8%83%BD%E5%AD%A6%E4%B9%A0%E6%83%85%E5%86%B5">知识技能学习情况</a></li>
+<li>1.3 <a href="#13-%E8%81%8C%E4%B8%9A%E7%B4%A0%E5%85%BB%E5%AD%A6%E4%B9%A0%E5%9F%B9%E5%85%BB">职业素养学习培养</a></li>
+</ul>
+</li>
+<li><a href="#2-%E5%AD%98%E5%9C%A8%E7%9A%84%E9%97%AE%E9%A2%98%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88">存在的问题及解决方案</a>
+<ul>
+<li>2.1 <a href="#21-%E5%AD%98%E5%9C%A8%E7%9A%84%E4%B8%BB%E8%A6%81%E9%97%AE%E9%A2%98">存在的主要问题</a></li>
+<li>2.2 <a href="#22-%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%E4%B8%8E%E5%8F%AF%E8%A1%8C%E6%80%A7%E7%A0%94%E7%A9%B6">解决方案与可行性研究</a></li>
+</ul>
+</li>
+<li><a href="#3-%E5%89%8D%E6%9C%9F%E5%B7%A5%E4%BD%9C%E5%AE%8C%E6%88%90%E5%BA%A6%E4%B8%8E%E5%90%8E%E7%BB%AD%E5%AE%9E%E6%96%BD%E8%AE%A1%E5%88%92">前期工作完成度与后续实施计划</a></li>
+<li><a href="#%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE">参考文献</a></li>
+</ol>
+<hr>
+<h2 id="1-毕业设计的进展情况">1. 毕业设计的进展情况</h2>
+<h3 id="11-课题工作完成情况">1.1 课题工作完成情况</h3>
+<h4 id="1研究背景与问题定义">（1）研究背景与问题定义</h4>
+<p>本课题针对芯片电源完整性（PI）验证中仿真时间过长的工程痛点，研究如何从完整的 VCD 仿真波形中自动选取最差功耗（worst-case power）时间窗口，在大幅压缩仿真向量规模的同时，保持对 IR Drop 热点的有效覆盖。核心研究问题为：在不影响功耗验证有效性的前提下，将 VCD 激励压缩至原始规模的 10% 以内。</p>
+<h4 id="2量化评估标准的建立">（2）量化评估标准的建立</h4>
+<p>由于传统验证覆盖率（功能覆盖率、代码覆盖率）不适用于功耗热点场景，本课题提出了面向 IR Drop 的<strong>三级渐进式热点覆盖率（Hotspot Coverage）指标体系</strong>：</p>
+<ul>
+<li>
+<p><strong>Tier-1 全局指标</strong>（已实现）：通过自动解析 Voltus 仿真报告（main.rpt, layerbased_ir.rpt, dynpwr.rpt），计算以下覆盖率指标：</p>
+<ul>
+<li><strong>C₁（全局最坏 IR Drop 捕获率）</strong>：C₁ = ΔV(sub)/ΔV(full)，其中 ΔV = V_nom − V_min。该指标直接反映子集能否捕获全集的最坏电压跌落，是 sign-off 最核心的判据。</li>
+<li><strong>C_peak（峰值电流捕获率）</strong>：C_peak = I_peak(sub)/I_peak(full)，峰值电流是 IR Drop 的直接驱动因素。</li>
+<li><strong>C_layer(l)（逐金属层 IR Drop 覆盖率）</strong>：C_layer(l) = ΔV_l(sub)/ΔV_l(full)，l ∈ {M1, M2, ..., M6, LISD}。不同金属层的 IR Drop 物理机制不同（上层以 lateral drop 为主，下层以 via drop 为主），逐层检验可避免局部盲区。取所有层的最小值 C_layer_min 和均值 C_layer_avg 作为汇总指标。</li>
+<li><strong>C_violation（违规一致性）</strong>：判断全集和子集的违规状态是否一致（全集有违规时子集也应检出）。</li>
+<li><strong>多窗口包络组合</strong>：当使用多个窗口时，取各窗口的最极端值——电压取 MIN(V_min)、电流取 MAX(I_peak)、逐层取 MAX(ΔV_l)——作为联合结果计算覆盖率。</li>
+<li><strong>判定准则</strong>：C₁ ≥ 95% 且 C_layer_min ≥ 80% 为 PASS；C₁ 在 90%~95% 为 MARGINAL；C₁ &lt; 90% 为 FAIL。</li>
+</ul>
+</li>
+<li>
+<p><strong>Tier-2 空间指标</strong>（已设计，待实现）：定义 Hotspot 集合 H = {inst | V_nom − V(inst) &gt; θ}（θ 为 IR Drop 阈值，如 7%×V_nom），计算子集对全集 Hotspot 的 Recall（检出率）、Precision 和 F1 值。该指标需从 Voltus 导出逐 instance 电压数据。</p>
+</li>
+<li>
+<p><strong>Tier-3 统计指标</strong>（已设计，待实现）：C₃ = Q_p(ΔV_sub)/Q_p(ΔV_full)（p=99%），用分位数比值替代单点极值，提供比 C₁ 更鲁棒的分布相似度度量。</p>
+</li>
+</ul>
+<h4 id="3两种优化选窗方案的建立">（3）两种优化选窗方案的建立</h4>
+<p><strong>方案一：Phase-Aware + 空间集中度选窗（vcd_power_toolkit）</strong></p>
+<p>该方案关注局部最坏解，不追求全局覆盖，核心思路为精确定位 IR Drop 最严重的时间段。算法包括三个关键步骤：</p>
+<ol>
+<li><strong>时钟周期聚合</strong>：按时钟边沿将信号翻转（toggle）聚合到对应周期，消除周期内时序差异</li>
+<li><strong>Phase 检测</strong>：基于翻转率阈值自动识别高活跃相位（如加密/解密切换），分相独立选窗</li>
+<li><strong>退耦电容耗尽模型</strong>：通过 depletion_ratio = 0.7 参数，将窗口定位于活跃相位的 70%~80% 位置——这是退耦电容累积耗尽、IR Drop 达到极值的物理位置，而非简单的 toggle 峰值位置</li>
+<li><strong>空间集中度评分</strong>（可选）：结合 DEF 物理坐标或 VCD scope 层次，计算翻转空间集中度 σ = max(group_toggle)/total，通过 effective = total × (1+α×σ) 对空间集中的窗口加权</li>
+</ol>
+<p><strong>方案二：全局覆盖选窗（spatial_temporal）</strong></p>
+<p>该方案采用常规思路，考虑全局时空覆盖，稳妥保障覆盖率。目前已完成方案设计，仿真数据待生成。</p>
+<h4 id="4实验验证">（4）实验验证</h4>
+<p>在 DES3（三重 DES 加密核，ASAP7 7nm 工艺，42,410 信号，64,179 标准单元）上进行了完整验证。共执行 8 次独立 Voltus Dynamic IR Drop 仿真：</p>
+<table>
+<thead>
+<tr>
+<th>仿真类型</th>
+<th>编号</th>
+<th>时间范围</th>
+<th>占全 VCD 比例</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>全集基线</td>
+<td>full</td>
+<td>0~11850ns</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>等分窗口</td>
+<td>eq_win1~5</td>
+<td>各 2370ns</td>
+<td>各 20%</td>
+</tr>
+<tr>
+<td>算法选窗</td>
+<td>algo_win1</td>
+<td>3790~4390ns</td>
+<td>5.1%</td>
+</tr>
+<tr>
+<td>算法选窗</td>
+<td>algo_win2</td>
+<td>9600~10100ns</td>
+<td>4.2%</td>
+</tr>
+</tbody>
+</table>
+<p><strong>核心实验结果</strong>：</p>
+<table>
+<thead>
+<tr>
+<th>方案</th>
+<th>VCD 占比</th>
+<th>C₁ (IR Drop 捕获率)</th>
+<th>C_layer_min</th>
+<th>Tier-1 判定</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>算法选窗 (win1+win2)</td>
+<td><strong>9.3%</strong></td>
+<td><strong>100.0%</strong></td>
+<td><strong>100.0%</strong></td>
+<td><strong>PASS</strong></td>
+</tr>
+<tr>
+<td>等分最优单窗 (win2)</td>
+<td>20%</td>
+<td>100.0%</td>
+<td>100.0%</td>
+<td>PASS</td>
+</tr>
+<tr>
+<td>等分两窗 (win2+win4)</td>
+<td>40%</td>
+<td>100.0%</td>
+<td>100.0%</td>
+<td>PASS</td>
+</tr>
+<tr>
+<td>等分全部 (win1~5)</td>
+<td>100%</td>
+<td>100.0%</td>
+<td>100.0%</td>
+<td>PASS</td>
+</tr>
+</tbody>
+</table>
+<p>算法选窗在仅 9.3% 的仿真时长内达到了与全集完全一致的 Tier-1 覆盖率，验证了 Phase-Aware + 空间集中度选窗方法的有效性。同时发现，等分方案中 5 个窗口的覆盖率差异显著（C₁ 从 84.6% 到 100%），其中 eq_win3 判定为 FAIL（C_layer_min = 79.9%），说明盲目选窗无法保证验证质量。</p>
+<h4 id="5vcd-信号到物理位置的映射">（5）VCD 信号到物理位置的映射</h4>
+<p>开发了 VCD 信号到 DEF 物理坐标的自动映射工具，通过解析 DEF 文件的 COMPONENTS/PINS/NETS 段，将 VCD scope 层次路径转换为 DEF instance 路径（剥离 testbench 和顶层 instance 前缀，分隔符 '.' 转 '/'），优先使用 net driver cell 的坐标定位信号。在 DES3 设计上映射成功率达 99.8%（42,340/42,410 信号），未映射信号为 testbench 变量和 CTS 内部端口。该映射为空间集中度评分的 Grid 模式（将坐标映射到 NxN 物理网格）提供了坐标基础。</p>
+<h4 id="6工具链开发">（6）工具链开发</h4>
+<p>完成了完整的 JSONL-based 分析工具链：VCD 解析 → 信号翻转标记 → 热力图可视化 → 选窗算法 → 覆盖率自动评估，实现了从原始 VCD 到覆盖率报告的端到端自动化流程。</p>
+<h3 id="12-知识技能学习情况">1.2 知识技能学习情况</h3>
+<p>在本课题研究过程中，系统学习并掌握了以下知识和技能：</p>
+<ol>
+<li>
+<p><strong>EDA 工具操作</strong>：学习了 Cadence Innovus v20.10 的 Dynamic IR Drop 仿真流程，包括电源网格建模、Voltus 引擎配置、Rail Analysis 参数设置与报告解析，能独立完成从 VCD 加载到 IR Drop 报告生成的完整流程。</p>
+</li>
+<li>
+<p><strong>电源完整性理论</strong>：深入理解了 PDN（Power Distribution Network）的基本分析方法，包括退耦电容的充放电模型、IR Drop 的时空分布特性、金属层级 IR Drop 的物理机制（上层 lateral drop vs 下层 via drop）等。</p>
+</li>
+<li>
+<p><strong>编程与自动化</strong>：使用 Python 开发了完整的分析工具链，涉及 VCD 格式解析、DEF 物理设计文件解析、大规模信号处理、Plotly 数据可视化、文本报告自动解析等。同时学习了 Python 与 EDA 工具（Innovus Tcl）的联动方法。</p>
+</li>
+<li>
+<p><strong>算法设计</strong>：设计并实现了 Phase-Aware 多窗口选取算法，涉及时间序列分析、相位检测、滑动窗口优化、空间集中度评分等算法概念。</p>
+</li>
+</ol>
+<h3 id="13-职业素养学习培养">1.3 职业素养学习培养</h3>
+<p>在毕业设计过程中，培养了以下职业素养：</p>
+<ol>
+<li>
+<p><strong>工程规范意识</strong>：在电源完整性验证工作中，严格遵循 sign-off 标准（IR Drop 阈值 7% × Vnom），理解了芯片设计中安全裕量的工程意义。所提出的覆盖率评估方法遵循保守原则——C_layer &gt; 100% 意味着子集比全集更悲观，从 sign-off 角度是安全的。</p>
+</li>
+<li>
+<p><strong>科学严谨性</strong>：在覆盖率方法论中，系统分析了指标体系的科学性，包括 C &gt; 100% 的物理解释（初始条件偏差）、单一设计验证的统计局限性、阈值选择缺乏灵敏度分析等问题，并在文档中如实记录。</p>
+</li>
+<li>
+<p><strong>团队协作与资源管理</strong>：在远程 EDA 服务器上进行仿真时，合理使用共享计算资源（8 核并行），通过 tmux 会话管理长时间仿真任务，体现了对共享资源的负责任使用态度。</p>
+</li>
+<li>
+<p><strong>知识产权意识</strong>：测试电路 DES3 来源于开源社区（OpenCores, 作者 Rudolf Usselmann），工艺 PDK 使用学术开放的 ASAP7，在研究过程中注意了知识产权的合规使用。</p>
+</li>
+</ol>
+<hr>
+<h2 id="2-存在的问题及解决方案">2. 存在的问题及解决方案</h2>
+<h3 id="21-存在的主要问题">2.1 存在的主要问题</h3>
+<h4 id="问题一覆盖率评估体系尚不完整">问题一：覆盖率评估体系尚不完整</h4>
+<p>目前仅实现了 Tier-1 全局覆盖率指标，Tier-2 空间 Hotspot 覆盖率和 Tier-3 统计分位数覆盖率尚未实现。Tier-1 虽然能捕获全局最坏 IR Drop，但无法回答&quot;子集是否检出了所有危险区域&quot;这一关键问题。此外，当前设计全部 0 violation，C_violation 指标无区分力。</p>
+<h4 id="问题二压缩率-覆盖率-trade-off-曲线数据不足">问题二：压缩率-覆盖率 Trade-off 曲线数据不足</h4>
+<p>当前仅有 5.1%（algo_win1）、9.3%（algo_win1+win2）、20%（等分单窗）等有限数据点，尚未建立完整的压缩率-覆盖率关系曲线，无法确定是否存在覆盖率急剧下降的&quot;拐点&quot;。</p>
+<h4 id="问题三单一设计验证的泛化性有限">问题三：单一设计验证的泛化性有限</h4>
+<p>目前仅在 DES3 一个电路上完成验证。DES3 是组合逻辑为主的对称设计，toggle 分布相对均匀。无法保证方法在高度非对称设计（如 CPU/GPU 不同功能模块）、大量时钟门控设计（toggle 分布极度不均）或多电压域设计中同样有效。</p>
+<h4 id="问题四初始条件偏差的影响">问题四：初始条件偏差的影响</h4>
+<p>子集 VCD 切片从 t=0 重新仿真，退耦电容从满充状态开始，与全集仿真中同一时段的初始条件不同。这导致部分金属层覆盖率超过 100%（最高 LISD 层 106.5%），虽然从 sign-off 角度是保守安全的，但引入了系统性偏差。</p>
+<h4 id="问题五空间-时间联合优化方案spatial_temporal尚未验证">问题五：空间-时间联合优化方案（spatial_temporal）尚未验证</h4>
+<p>第二种优化方案已完成设计但尚未进行仿真验证，缺少与 Phase-Aware 方案的对比数据。</p>
+<h3 id="22-解决方案与可行性研究">2.2 解决方案与可行性研究</h3>
+<h4 id="针对问题一渐进式实现-tier-23-覆盖率">针对问题一：渐进式实现 Tier-2/3 覆盖率</h4>
+<ul>
+<li><strong>Tier-2 Hotspot 覆盖率</strong>：需从 Innovus/Voltus 中导出逐 instance 的最坏电压数据（通过 Tcl 脚本 <code>report_rail -instance</code> 命令），计算 Hotspot Recall 和 F1 值。技术方案已设计完毕，实现的瓶颈在于 EDA license 时间和数据导出的 Tcl 脚本开发。</li>
+<li><strong>替代方案</strong>：可通过简化的 IR-Power 模型（基于 toggle rate 和 PDN 阻抗矩阵）快速预测空间 IR Drop 分布，避免对每个子集都执行完整 Voltus 仿真。也有文献报道使用机器学习方法（如图神经网络）从 toggle 特征快速预测 IR Drop 分布，可作为 Tier-2 的近似替代。</li>
+</ul>
+<h4 id="针对问题二构建多点-trade-off-曲线">针对问题二：构建多点 Trade-off 曲线</h4>
+<ul>
+<li>通过调整选窗算法的窗口数量和窗口长度参数，在 5%~50% 的压缩率范围内生成更多数据点</li>
+<li>绘制覆盖率 vs 压缩率曲线，分析拐点位置</li>
+<li>该实验的可行性较高，主要耗时在 Voltus 仿真（每次约 5~10 分钟）</li>
+</ul>
+<h4 id="针对问题三增加验证设计规模">针对问题三：增加验证设计规模</h4>
+<ul>
+<li>在现有 DES3 基础上，计划增加 1~2 个不同类型的设计进行交叉验证</li>
+<li>同时探索更大规模仿真向量（更长 VCD）下的算法表现</li>
+<li>在论文中明确标注验证范围和适用条件</li>
+</ul>
+<h4 id="针对问题四warm-up-机制">针对问题四：Warm-up 机制</h4>
+<ul>
+<li>在 VCD 切片时，在目标窗口前添加 warm-up 余量周期，使 Voltus 仿真前段作为退耦电容预热期</li>
+<li>当前算法的 depletion_ratio=0.7 已部分缓解该问题（窗口起始前有足够活跃周期）</li>
+</ul>
+<h4 id="针对问题五推进-spatial_temporal-方案仿真">针对问题五：推进 spatial_temporal 方案仿真</h4>
+<ul>
+<li>生成 spatial_temporal 方案的选窗 VCD，提交 Voltus 仿真</li>
+<li>与 Phase-Aware 方案进行相同指标下的对比分析</li>
+</ul>
+<hr>
+<h2 id="3-前期工作完成度与后续实施计划">3. 前期工作完成度与后续实施计划</h2>
+<h3 id="31-前期工作完成度">3.1 前期工作完成度</h3>
+<table>
+<thead>
+<tr>
+<th>序号</th>
+<th>工作内容</th>
+<th>完成情况</th>
+<th>备注</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>文献调研与方案设计</td>
+<td>✅ 100%</td>
+<td>完成 IR Drop 理论、选窗算法文献调研</td>
+</tr>
+<tr>
+<td>2</td>
+<td>VCD 解析与信号处理工具链</td>
+<td>✅ 100%</td>
+<td>含 VCD 头解析、波形提取、JSONL 转换</td>
+</tr>
+<tr>
+<td>3</td>
+<td>翻转率分析与可视化</td>
+<td>✅ 100%</td>
+<td>翻转热力图、差分热力图</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Phase-Aware 选窗算法</td>
+<td>✅ 100%</td>
+<td>含相位检测、退耦耗尽模型、空间集中度</td>
+</tr>
+<tr>
+<td>5</td>
+<td>VCD-DEF 物理坐标映射</td>
+<td>✅ 100%</td>
+<td>映射成功率 99.8%</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Tier-1 覆盖率自动评估</td>
+<td>✅ 100%</td>
+<td>自动解析 Voltus 报告并计算四项指标</td>
+</tr>
+<tr>
+<td>7</td>
+<td>DES3 全集 + 等分窗口仿真</td>
+<td>✅ 100%</td>
+<td>6 次 Voltus 仿真</td>
+</tr>
+<tr>
+<td>8</td>
+<td>DES3 算法选窗仿真</td>
+<td>✅ 100%</td>
+<td>algo_win1/win2, 2 次仿真</td>
+</tr>
+<tr>
+<td>9</td>
+<td>Tier-2/3 覆盖率实现</td>
+<td>⬜ 0%</td>
+<td>待 instance 级数据导出</td>
+</tr>
+<tr>
+<td>10</td>
+<td>spatial_temporal 方案仿真</td>
+<td>⬜ 0%</td>
+<td>待提交仿真</td>
+</tr>
+<tr>
+<td>11</td>
+<td>压缩率-覆盖率曲线</td>
+<td>🔲 20%</td>
+<td>已有部分数据点</td>
+</tr>
+<tr>
+<td>12</td>
+<td>论文撰写</td>
+<td>🔲 10%</td>
+<td>已有方法论文档和实验数据</td>
+</tr>
+</tbody>
+</table>
+<p><strong>总体完成度约 65%</strong>。</p>
+<h3 id="32-后续实施计划">3.2 后续实施计划</h3>
+<table>
+<thead>
+<tr>
+<th>阶段</th>
+<th>时间安排</th>
+<th>工作内容</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>第一阶段</td>
+<td>3月下旬</td>
+<td>完成 spatial_temporal 方案仿真验证，与 Phase-Aware 方案对比分析</td>
+</tr>
+<tr>
+<td>第二阶段</td>
+<td>4月上旬</td>
+<td>实现 Tier-2 Hotspot 覆盖率（Tcl 脚本 + Python 分析）；构建完整 Trade-off 曲线</td>
+</tr>
+<tr>
+<td>第三阶段</td>
+<td>4月中旬</td>
+<td>（如条件允许）增加 1 个不同类型设计的交叉验证；灵敏度分析</td>
+</tr>
+<tr>
+<td>第四阶段</td>
+<td>4月下旬~5月</td>
+<td>论文撰写：绪论、相关工作、方法论、实验结果与分析、结论</td>
+</tr>
+<tr>
+<td>第五阶段</td>
+<td>5月中旬</td>
+<td>论文修改、查重、答辩准备</td>
+</tr>
+</tbody>
+</table>
+<h3 id="33-知识技能学习计划">3.3 知识技能学习计划</h3>
+<ul>
+<li>继续深入学习 Voltus 高级功能（instance-level 报告导出、多电压域分析）</li>
+<li>学习机器学习在 EDA 领域的应用文献，评估是否可用于 IR Drop 快速预测</li>
+<li>提升学术论文写作能力，参考 IEEE/ACM 相关会议论文的写作规范</li>
+</ul>
+<hr>
+<h2 id="参考文献">参考文献</h2>
+<p>[1] S. X. D. Tan and C. J. R. Shi, &quot;Efficient very large scale integration power/ground network analysis via Green's function method,&quot; IEEE Journal of Solid-State Circuits, vol. 38, no. 6, pp. 949-959, Jun. 2003.</p>
+<p>[2] T. Y. Wang and C. C. P. Chen, &quot;Vectorless power supply noise analysis using multigrid method for large-scale on-chip power/ground networks,&quot; in Proc. DAC, 2004, pp. 830-833.</p>
+<p>[3] N. H. Abdul Ghani and F. N. Najm, &quot;Fast vectorless power grid verification using an approximate inverse technique,&quot; in Proc. DAC, 2009, pp. 184-189.</p>
+<p>[4] Z. Qi, H. Meng, and J. Wang, &quot;Machine learning-based IR drop prediction for fast power integrity analysis,&quot; in Proc. ASP-DAC, 2023, pp. 628-633.</p>
+<p>[5] R. Usselmann, &quot;DES/Triple DES IP Core,&quot; OpenCores. [Online]. Available: <a href="https://opencores.org/projects/des">https://opencores.org/projects/des</a></p>
+<p>[6] L. T. Clark et al., &quot;ASAP7: A 7-nm FinFET predictive process design kit,&quot; Microelectronics Journal, vol. 53, pp. 105-115, Jul. 2016.</p>
+
+            
+            
+        </body>
+        </html>

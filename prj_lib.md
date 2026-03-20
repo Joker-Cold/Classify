@@ -8,62 +8,103 @@
 
 ```
 Classify/
-├── code/                       # Python 源码（核心工具）
-│   ├── parse_vcd_signal.py     # VCD 解析器（核心库）
-│   ├── vcd_to_jsonl.py         # VCD → JSONL 转换
-│   ├── jsonl_bit_diff.py       # 逐 bit 有符号差分
-│   ├── jsonl_toggle_mark.py    # 逐 bit 翻转标记（XOR）
-│   ├── diff_to_html.py         # 差分热力图可视化（Plotly）
-│   ├── toggles_to_html.py      # 翻转率热力图可视化（Plotly）
-│   ├── vcd_validator.py        # VCD 格式合规校验
-│   └── mhtml_to_md.py          # Claude 聊天 MHTML → Markdown
+├── vcd_power_toolkit/             # ★ 主工具包（完整发布版）
+│   ├── README.md                  # 使用指南 & 完整工作流
+│   ├── requirements.txt           # pip 依赖 (plotly)
+│   ├── code/                      # 全部 14 个 Python 脚本
+│   │   ├── parse_vcd_signal.py    # VCD 解析核心库
+│   │   ├── vcd_to_jsonl.py        # VCD → JSONL 转换
+│   │   ├── jsonl_bit_diff.py      # 逐 bit 有符号差分
+│   │   ├── jsonl_toggle_mark.py   # 逐 bit 翻转标记（XOR）
+│   │   ├── diff_to_html.py        # 差分热力图可视化
+│   │   ├── toggles_to_html.py     # 翻转率热力图可视化
+│   │   ├── toggle_heatmap.py      # 时空 toggle 热力图
+│   │   ├── select_worst_window.py # Phase-Aware 选窗核心算法（库）
+│   │   ├── find_worst_window.py   # 选窗 CLI（调用 select_worst_window）
+│   │   ├── vcd_slicer.py          # VCD 时间窗口切割
+│   │   ├── vcd_validator.py       # VCD 格式校验
+│   │   ├── vcd_def_mapper.py      # VCD 信号 → DEF 物理坐标
+│   │   ├── spatial_temporal_select.py # 空间-时间联合选窗
+│   │   └── coverage_tier1.py      # ★ Voltus IR Drop 覆盖率分析
+│   ├── docs/                      # 算法文档
+│   │   ├── algorithm_worst_window.md  # MAVIREC 算法伪代码
+│   │   └── spatial_temporal_guide.md  # 空间-时间选窗参数指南
+│   └── example_output/            # 示例输出
+│       ├── algo_win1_visualization.{html,json}
+│       ├── coverage_report_v20.md
+│       └── coverage_tier1_v20.csv
 │
-├── data/                       # 输入数据（VCD 源文件）
-│   ├── sim_output.vcd          # 主测试 VCD（124 信号，嵌套 scope）
-│   └── random_test.vcd         # 小型测试 VCD（4 信号，单 scope）
+├── spatial_temporal/              # 空间-时间选窗精简包
+│   ├── README.md
+│   ├── code/                      # 6 个脚本子集
+│   │   ├── parse_vcd_signal.py
+│   │   ├── vcd_to_jsonl.py
+│   │   ├── jsonl_toggle_mark.py
+│   │   ├── vcd_def_mapper.py
+│   │   ├── vcd_validator.py
+│   │   └── spatial_temporal_select.py
+│   └── example_data/              # 示例数据
 │
-├── output/                     # 输出（.gitignore 管理）
-│   ├── sim_output.jsonl        # vcd_to_jsonl 输出
-│   ├── *.html                  # 可视化 HTML
-│   └── des_demo_summary.md     # DES3 设计全流程总结
+├── vcd_def2html/                  # 旧版 DEF→HTML 流程（遗留）
+│   ├── README.md
+│   └── code/                      # 含 run_pipeline.py 等 7 个脚本
 │
-├── des_demo/                   # EDA 后端实验项目（DES3 加密核）
-│   ├── README.md               # 项目说明
-│   ├── rtl/                    # RTL 源码（Verilog）
-│   ├── netlist/                # Genus 综合后网表
-│   ├── sdc/                    # 时序约束
-│   ├── testbench/              # VCS 仿真 Testbench
-│   ├── vcd/                    # 仿真 VCD + VCS 编译产物
-│   ├── script/                 # EDA 脚本（Genus / Innovus / Voltus）
-│   └── db/                     # EDA 数据库 & 分析结果
-│       ├── des3.v / .def / .spef / .enc   # 后端物理设计文件
-│       ├── power/              # 功耗分析结果（avg / per-window）
-│       ├── rail_power/         # IR Drop 分析（v15 完整版）
-│       ├── rail_power_v15/     # IR Drop 分析（v15 分窗版）
-│       ├── analyse/            # 覆盖率分析脚本 & 结果
-│       └── *.md                # 分析框架文档
+├── docs/                          # 顶层算法文档
+│   ├── algorithm_worst_window.md  # MAVIREC 算法论文级伪代码
+│   ├── algorithm_worst_window.html
+│   └── paper_MAVIREC_summary.md   # 研究总结 & 相关工作
 │
-├── skills/                     # 技能文档库
-│   ├── vcd_format.md           # VCD 格式合规检查清单
-│   ├── parse_vcd_signal.md     # 信号解析算法说明
-│   ├── compare_vcd_waveform.md # VCD 波形回归对比
-│   └── VMware_SSH_Setup_Log.md # SSH 远程 EDA 环境配置
+├── code/                          # [已清空] 原开发目录，代码已移入 toolkit
 │
-├── skills.md                   # 技能索引 + Self-Check Protocol
-├── temp/                       # 临时文件（工作总结等）
-├── .gitignore                  # Git 忽略规则
-└── prj_lib.md                  # 本文件
+├── des_demo/                      # EDA 后端实验项目（DES3 加密核）
+│   ├── README.md
+│   ├── rtl/                       # RTL 源码（Verilog）
+│   ├── netlist/                   # Genus 综合后网表
+│   ├── sdc/                       # 时序约束
+│   ├── testbench/                 # VCS 仿真 Testbench（含 2x 版本）
+│   ├── vcd/                       # 仿真 VCD（含算法选窗切片）
+│   ├── script/                    # EDA 脚本（Genus / Innovus / Voltus）
+│   └── db/                        # EDA 数据库 & 分析结果
+│       ├── des3.{v,def,spef,enc}  # 后端物理设计文件
+│       ├── power/                 # 功耗分析（avg / per-window）
+│       ├── rail_power/            # IR Drop 分析（v15 完整版）
+│       ├── sim_data/              # ★ v20 Voltus 仿真数据（完整版）
+│       │   ├── power_v20_{full,win1~5}/   # 功耗（等分5窗+全集）
+│       │   ├── rail_v20_{full,win1~5}/    # IR Drop（等分5窗+全集）
+│       │   └── algo_grid_win{1,2}/        # 算法选窗 IR Drop
+│       └── analyse/               # ★ 覆盖率分析脚本 & 结果
+│
+├── output/                        # 生成输出（.gitignore 管理）
+├── .gitignore
+└── prj_lib.md                     # 本文件
 ```
+
+**已删除**（2026-03-19 精简）：
+- `code/*.py` — 全部迁移至 `vcd_power_toolkit/code/`
+- `data/` — 测试 VCD 已整合至 `des_demo/vcd/`
+- `skills/` & `skills.md` — 技能文档库（不再维护）
 
 ---
 
-## 一、code/ — Python 源码
+## 一、vcd_power_toolkit/ — 主工具包
 
-### 1.1 parse_vcd_signal.py（核心库）
-| 属性 | 值 |
-|------|-----|
-| 行数 | ~360 |
-| 角色 | VCD 解析器，全项目的基础依赖 |
+> 所有活跃代码的 single source of truth，完整工作流见 `vcd_power_toolkit/README.md`
+
+### 脚本依赖关系
+
+```
+parse_vcd_signal.py (核心 VCD 解析器)
+    ↑ import
+    ├── vcd_to_jsonl.py
+    ├── vcd_slicer.py
+    └── vcd_def_mapper.py
+
+select_worst_window.py (选窗算法库)
+    ↑ import
+    └── find_worst_window.py
+```
+
+### 1.1 parse_vcd_signal.py（核心库，~358 行）
 
 **类 `VCDSignalParser`：**
 - `parse_header()` — 解析 VCD 头部（scope / variable / timescale）
@@ -73,293 +114,273 @@ Classify/
 
 **多 scope 支持**：scope_type 跟踪、in_task 标志、同名信号自动消歧。
 
-**CLI**：
-```bash
-python parse_vcd_signal.py <vcd> [signal] [--list] [--start T] [--end T]
-```
+### 1.2 JSONL 分析链
+
+| 脚本 | 行数 | 功能 |
+|------|------|------|
+| `vcd_to_jsonl.py` | ~94 | VCD → 合并 JSONL（hold-last-value） |
+| `jsonl_bit_diff.py` | ~111 | 相邻时间点逐 bit 有符号差分（+1/-1/0） |
+| `jsonl_toggle_mark.py` | ~113 | XOR 翻转标记（1=翻转，0=未变） |
+| `diff_to_html.py` | ~177 | Plotly 差分热力图（红=上升沿，蓝=下降沿） |
+| `toggles_to_html.py` | ~167 | Plotly 翻转率热力图 |
+| `toggle_heatmap.py` | ~276 | 时空 toggle 热力图（独立可视化） |
+
+### 1.3 select_worst_window.py（Phase-Aware 选窗算法，~554 行）
+
+**核心函数**：
+- `aggregate_by_clock(data, clock_ns)` — 按时钟周期聚合 toggle 统计
+- `detect_phases(cycles, threshold)` — 检测连续高活跃相位
+- `select_windows(phases, budget, depletion_ratio)` — 基于退耦耗尽估计选窗
+- `generate_html()` — 可视化输出
+
+**支持两种输入**：Voltus togglestats 文件 / JSONL toggle 文件
+
+### 1.4 find_worst_window.py（选窗 CLI，~480 行）
+
+Phase-Aware + 空间集中度选窗，两种空间模式：
+- **Grid 模式**（`--vcd` + `--def`）：DEF 坐标 → NxN 网格（默认 8x8）
+- **Scope 模式**（仅 `--vcd`）：VCD scope 层次结构
+
+集中度公式：`σ = max(group_toggle)/total`，`effective = total × (1+α×σ)`
+
+**关键**：空间评分不用于 Phase 检测，仅用于窗口排序。
+
+### 1.5 VCD 辅助工具
+
+| 脚本 | 行数 | 功能 |
+|------|------|------|
+| `vcd_slicer.py` | ~258 | VCD 时间窗口切割 |
+| `vcd_validator.py` | ~145 | IEEE 1364 VCD 合规校验 |
+| `vcd_def_mapper.py` | ~484 | VCD 信号 → DEF 物理坐标映射 |
+| `spatial_temporal_select.py` | ~1004 | 空间-时间联合选窗 + 可视化 |
+
+### 1.6 coverage_tier1.py（★ 覆盖率分析，~660 行）
+
+自动解析 Voltus Rail Analysis 报告，计算子集相对全集的覆盖率。
+
+**指标定义**：
+- **C₁** = (Vnom - Vmin_sub) / (Vnom - Vmin_full) — IR Drop 覆盖率
+- **C_peak** = Ipeak_sub / Ipeak_full — 峰值电流覆盖率
+- **C_layer(l)** = IRdrop_sub(l) / IRdrop_full(l) — 逐层 IR Drop 覆盖率
+- **C_layer_avg / C_layer_min** — 各层均值 / 最小值
+- **C_violation** — 违规一致性（PASS/FAIL）
+
+**数据结构**：`MainRptData`（main.rpt）, `LayerIR`（layerbased_ir.rpt）, `DynPwrData`（dynpwr.rpt）, `WindowData`
+
+**输入报告**（Voltus 生成）：
+| 报告文件 | 提取信息 |
+|----------|----------|
+| `VDD.main.rpt` | Vnom, Vmin, Ipeak, Violations |
+| `VDD.layerbased_ir.rpt` | 逐层 IR Drop（M1~M7, LISD） |
+| `VDD_dynpwr.rpt` | 动态峰值电流 |
 
 ---
 
-### 1.2 vcd_to_jsonl.py（VCD → JSONL）
-| 属性 | 值 |
-|------|-----|
-| 行数 | ~94 |
-| 角色 | 将 VCD 转为合并 JSONL 格式（每行一个时间点） |
-
-- 实现 "hold-last-value" 语义，每个时间点输出所有信号的完整状态
-- 输出：`{"time": 0, "signals": {"sig1": "0", "sig2": "1"}}`
-
-```bash
-python vcd_to_jsonl.py data/sim_output.vcd [--output-dir output/]
-```
-
----
-
-### 1.3 jsonl_bit_diff.py（逐 bit 差分）
-| 属性 | 值 |
-|------|-----|
-| 行数 | ~111 |
-| 角色 | 计算相邻时间点的逐 bit 有符号差分（+1 / -1 / 0） |
-
-- 输出：`{"time": 100, "signals": {"sig1": [1, -1], "sig2": [0]}}`
-- 用途：标记上升沿（+1）和下降沿（-1）
-
-```bash
-python jsonl_bit_diff.py output/sim_output.jsonl [-o output/diff.jsonl]
-```
-
----
-
-### 1.4 jsonl_toggle_mark.py（逐 bit 翻转标记）
-| 属性 | 值 |
-|------|-----|
-| 行数 | ~113 |
-| 角色 | XOR 标记每个 bit 是否发生翻转 |
-
-- 输出：`{"time": 100, "signals": {"sig1": "10", "sig2": "1"}}`（1 = 翻转，0 = 未变）
-
-```bash
-python jsonl_toggle_mark.py output/sim_output.jsonl [-o output/toggles.jsonl]
-```
-
----
-
-### 1.5 diff_to_html.py（差分热力图）
-| 属性 | 值 |
-|------|-----|
-| 行数 | ~177 |
-| 角色 | 将 bit-diff JSONL 可视化为 Plotly 交互热力图 |
-
-- 上方：逐信号热力图（红 = 上升沿，蓝 = 下降沿）
-- 下方：每时间点总上升/下降 bit 堆叠柱状图
-
-```bash
-python diff_to_html.py output/diff.jsonl [-o output/diff.html]
-```
-
----
-
-### 1.6 toggles_to_html.py（翻转率热力图）
-| 属性 | 值 |
-|------|-----|
-| 行数 | ~167 |
-| 角色 | 将 toggle-mark JSONL 可视化为翻转率热力图 |
-
-- 上方：逐信号翻转率热力图（YlOrRd 色阶，0.0 ~ 1.0）
-- 下方：每时间点总翻转 bit 数柱状图
-
-```bash
-python toggles_to_html.py output/toggles.jsonl [-o output/toggles.html]
-```
-
----
-
-### 1.7 vcd_validator.py（VCD 校验器）
-| 属性 | 值 |
-|------|-----|
-| 行数 | ~145 |
-| 角色 | 校验 VCD 文件是否符合 IEEE 1364 标准 |
-
-- 检查项：头部结构、变量定义、符号唯一性、值变化格式、时间单调性
-- 支持与参考 VCD 的结构对比
-
-```bash
-python vcd_validator.py <file.vcd> [--ref reference.vcd]
-```
-
----
-
-### 1.8 mhtml_to_md.py（辅助工具）
-| 属性 | 值 |
-|------|-----|
-| 行数 | ~291 |
-| 角色 | 从 Claude.ai 导出的 MHTML 聊天记录提取为 Markdown |
-
-```bash
-python mhtml_to_md.py data/chat.mhtml [-o output/chat.md]
-```
-
----
-
-## 二、data/ — 输入数据
-
-| 文件 | 说明 |
-|------|------|
-| `sim_output.vcd` | 主测试 VCD，124 信号，嵌套 scope（tb_top → u_soc → 子模块） |
-| `random_test.vcd` | 小型测试 VCD，4 信号，单 scope，用于快速验证 |
-
----
-
-## 三、output/ — 输出
-
-| 路径 | 生成者 | 说明 |
-|------|--------|------|
-| `sim_output.jsonl` | vcd_to_jsonl | 合并 JSONL |
-| `*.html` | 各可视化脚本 | 交互 HTML 图表 |
-| `des_demo_summary.md` | 文档 | DES3 设计全流程总结 |
-
----
-
-## 四、des_demo/ — EDA 后端实验项目
+## 二、des_demo/ — EDA 后端实验项目
 
 ### 设计概览
 - **芯片**：Triple DES (3DES) 加密核，51 级流水线，100 MHz
 - **工艺**：ASAP7 7nm PDK
-- **标称电压**：0.7V，最差 IR Drop 0.033V（Vmin = 0.667V）
+- **标称电压**：0.7V，最差 IR Drop 0.026V（Vmin = 0.674V，v20 基线）
 
-### 4.1 rtl/ — RTL 源码
+### 2.1 RTL & 综合
+
 | 文件 | 功能 |
 |------|------|
-| `des3.v` | 顶层 3DES 模块 |
-| `des.v` | 单级 DES 核心 |
-| `crp.v` | 密钥旋转 / 处理 |
-| `key_sel.v` | 密钥选择逻辑（39KB，最大文件） |
-| `sbox1~8.v` | S-Box 查找表（8 个文件） |
+| `rtl/des3.v` | 顶层 3DES 模块 |
+| `rtl/des.v` | 单级 DES 核心 |
+| `rtl/crp.v` | 密钥旋转 / 处理 |
+| `rtl/key_sel.v` | 密钥选择逻辑 |
+| `rtl/sbox1~8.v` | S-Box 查找表 × 8 |
+| `netlist/des3_netlist.v` | Genus 综合网表（5.1MB，~94K 行） |
+| `sdc/des3.sdc` | 100 MHz 时钟，51 级多周期路径 |
 
-### 4.2 netlist/ — 综合网表
-- `des3_netlist.v` — Genus 生成的门级网表（5.1MB，~94K 行）
+### 2.2 VCD 向量仿真
 
-### 4.3 sdc/ — 时序约束
-- `des3.sdc` — 100 MHz 时钟，51 级多周期路径约束
+**Testbench**：
+| 文件 | 说明 |
+|------|------|
+| `testbench/des3_test_po_vcd.v` | VCS Testbench（10 组加密测试向量，VCD dump） |
+| `testbench/des3_test_po_vcd_2x.v` | 2x 版本 Testbench |
 
-### 4.4 testbench/ — 仿真
-- `des3_test_po_vcd.v` — VCS Testbench（10 组测试向量，时钟生成，VCD 输出）
+**仿真 VCD 文件**（`vcd/` 目录）：
+| 文件 | 说明 |
+|------|------|
+| `test.vcd` | 完整仿真 VCD（5.8MB，42K+ 信号） |
+| `test_2x.vcd` | 2x 变体 VCD |
+| `test_selected.vcd` | 手动选窗 VCD |
+| `test_win1_algo.vcd` | 算法选窗 1（3790~4390ns，600ns） |
+| `test_win2_algo.vcd` | 算法选窗 2（9600~10100ns，500ns） |
+| `vcs.sh` | VCS 编译执行脚本 |
 
-### 4.5 vcd/ — 仿真波形
-- `test.vcd` — 完整仿真 VCD（5.8MB）
-- `vcs.sh` — VCS 执行脚本
+**仿真流程**：
+```
+RTL + Testbench → VCS 编译 → 仿真运行 → VCD dump
+  ↓                                        ↓
+netlist (Genus)                      test.vcd (42K+ signals)
+```
 
-### 4.6 script/ — EDA 工具脚本
+### 2.3 EDA 工具脚本
 
 | 路径 | 工具 | 功能 |
 |------|------|------|
-| `script/genus/genus.tcl` | Genus | 综合流程脚本 |
-| `script/innovus/innovus.tcl` | Innovus | P&R 流程（布局、电源网格、引脚） |
-| `script/innovus/full_irdrop_v15.tcl` | Voltus | 完整 IR Drop 分析流程（v15） |
-| `script/innovus/load_design_v15.tcl` | Innovus | 设计加载（v15） |
-| `script/innovus/rerun_rail_v20.tcl` | Innovus | v20 IR Drop 重跑（失败，待调试） |
+| `script/genus/genus.tcl` | Genus | 综合流程 |
+| `script/innovus/innovus.tcl` | Innovus | P&R（布局、电源网格、引脚） |
+| `script/innovus/load_design_v15.tcl` | Innovus | v15 设计加载 |
+| `script/innovus/full_irdrop_v15.tcl` | Voltus | v15 完整 IR Drop 分析 |
+| `script/innovus/rerun_rail_v15.tcl` | Voltus | v15 Rail 分析重跑 |
+| `script/innovus/irdrop_algo_windows.tcl` | Voltus | ★ 算法选窗 IR Drop 分析（v20） |
 | `script/innovus/power_analyze.tcl` | Voltus | 功耗分析设置 |
 | `script/innovus/rail_analyze.tcl` | Voltus | Rail 分析设置 |
 
-### 4.7 db/ — EDA 数据库
+### 2.4 物理设计文件（`db/`）
 
-#### 物理设计文件
 | 文件 | 大小 | 说明 |
 |------|------|------|
-| `des3.def` | 38.7MB | 布局 DEF |
+| `des3.def` | 38.7MB | 布局 DEF（914K 行） |
 | `des3.spef` | 33.9MB | 寄生参数 |
 | `des3.v` | 6.3MB | 后端网表 |
-| `des3.enc` | — | Innovus 加密设计文件 |
-| `des3.enc.dat/` | — | PDK / 库文件 |
+| `des3.enc` | — | Innovus 加密设计 |
 
-#### power/ — 功耗分析
-| 子目录 | 说明 |
-|--------|------|
-| `avg/` | 原始全 VCD 功耗分析 |
-| `avg_v15/` | v15 全 VCD 功耗分析 |
-| `avg_v15_win1~5/` | 分窗功耗（每窗 2370ns） |
+### 2.5 Voltus 仿真数据（★ `db/sim_data/`，v20 完整版）
 
-#### rail_power/ & rail_power_v15/ — IR Drop 分析
+v20 Voltus 动态分析结果，含全 VCD + 等分5窗 + 算法选窗：
 
-**关键报告文件**（`Reports/VDD/` 下）：
-| 报告 | 内容 |
-|------|------|
-| `VDD.main.rpt` | 全局摘要：Vmin、IR Drop、Ipeak、Violations |
-| `VDD.layerbased_ir.rpt` | 逐层 IR Drop（M1 ~ M7） |
-| `VDD_dynpwr.rpt` | 动态峰值电流 |
-| `VDD.pgv_table.rpt` | 标准单元利用率 |
-| `EIVDB/*.blob` | 二进制电压分布数据 |
+| 子目录 | 说明 | 窗口范围 |
+|--------|------|----------|
+| `power_v20_full/` | 全 VCD 功耗 | 0~11850ns |
+| `power_v20_win{1~5}/` | 等分窗口功耗 | 每窗 2370ns |
+| `rail_v20_full/` | 全 VCD IR Drop（基线） | 0~11850ns |
+| `rail_v20_win{1~5}/` | 等分窗口 IR Drop | 每窗 2370ns |
+| `algo_grid_win1/` | 算法选窗 1 IR Drop | 3790~4390ns |
+| `algo_grid_win2/` | 算法选窗 2 IR Drop | 9600~10100ns |
 
-**分窗数据完整性**：
-| 窗口 | main.rpt | layerbased_ir.rpt | dynpwr.rpt | 状态 |
-|------|:---:|:---:|:---:|------|
-| Full (v15) | ✅ | ✅ | ✅ | 完整 |
-| win1 | ✅ | ✅ | ✅ | 完整 |
-| win2 | ✅ | ✅ | ✅ | 完整 |
-| win3 | ❌ | ✅ | ✅ | 缺 main.rpt |
-| win4, win5 | ❌ | ❌ | ❌ | 仅 pgv_table.rpt |
+### 2.6 覆盖率分析（★ `db/analyse/`）
 
-#### analyse/ — 覆盖率分析
 | 文件 | 说明 |
 |------|------|
-| `coverage_tier1.py` | Phase 1 覆盖率计算脚本（~550 行） |
-| `results/coverage_tier1.csv` | 单窗口覆盖率指标 |
-| `results/coverage_combination.csv` | 多窗口组合覆盖率 |
-| `results/coverage_report.md` | Markdown 格式报告 |
+| `coverage_tier1.py` | Phase 1 覆盖率计算脚本（~550 行，与 toolkit 版本独立） |
 | `continue_task.md` | Phase 2 续接任务 & 待解决问题 |
+| `v20_rail_analysis_summary.md` | v20 Rail 分析结果总结 |
 
-**覆盖率指标**：
-- **C₁** = (Vnom - Vmin_sub) / (Vnom - Vmin_full) — IR Drop 覆盖率
-- **C_peak** = Ipeak_sub / Ipeak_full — 峰值电流覆盖率
-- **C_layer** = IRdrop_sub(l) / IRdrop_full(l) — 逐层覆盖率
-- **C_violation** = 违规一致性 PASS/FAIL
-
-**当前结果**：
-| 窗口 | C₁ | C_peak | C_layer_min |
-|------|-----|--------|------------|
-| win1 | 81.8% | 98.4% | 45.8% |
-| win2 | 100% | 100% | 94.2% |
-| win1+win2 | 100% | 100% | 94.2% |
-
-#### 框架文档（db/ 下）
+**输出**（`results/` 目录）：
 | 文件 | 说明 |
 |------|------|
-| `coverage_analysis_guide.md` | 可用数据目录 & 分析优先级 |
-| `irdrop_coverage_framework.md` | 三级覆盖率指标体系（C₁/C₂/C₃） |
-| `coverage_calculation_plan.md` | 四阶段实施计划 |
+| `coverage_tier1_v20.csv` | v20 单窗口覆盖率 |
+| `coverage_combination_v20.csv` | v20 多窗口组合覆盖率 |
+| `coverage_report_v20.md` | ★ v20 覆盖率完整报告 |
+| `coverage_tier1.csv` | v15 单窗口覆盖率 |
+| `coverage_combination.csv` | v15 组合覆盖率 |
+| `coverage_report.md` | v15 覆盖率报告 |
+| `window_selection.{html,json}` | 选窗可视化 |
 
----
+**v20 覆盖率结果**（基线：Vnom=0.7V, Vmin=0.674V, IR Drop=26mV）：
 
-## 五、skills/ — 技能文档
+| 窗口 | C₁ | C_layer_avg | C_layer_min | C_violation |
+|------|-----|-------------|-------------|-------------|
+| eq_win1 | 92.3% | 75.9% | 56.6% | PASS |
+| eq_win2 | 100% | 102.7% | 100% | PASS |
+| eq_win3 | 84.6% | 80.9% | 79.9% | PASS |
+| eq_win4 | 96.2% | 87.3% | 76.3% | PASS |
+| eq_win5 | 96.2% | 98.6% | 95.7% | PASS |
+| **algo_win1** | **100%** | **103.5%** | **100%** | **PASS** |
+| **algo_win2** | **100%** | **103.5%** | **100%** | **PASS** |
 
-| 文件 | 用途 |
+> 算法选窗（algo_win1/2）以不到全 VCD 10% 的时长达到 100% 的 IR Drop 覆盖率。
+
+**组合覆盖**：
+- `algo_win1 + algo_win2`：C₁=100%, C_layer_min=100%
+- `eq_win2 + eq_win4`：C₁=100%, C_layer_min=100%
+
+### 2.7 框架文档
+
+| 文件 | 说明 |
 |------|------|
-| `vcd_format.md` | VCD IEEE 1364 格式 8 项合规清单 |
-| `parse_vcd_signal.md` | 信号提取算法：符号表 → 波形映射 |
-| `compare_vcd_waveform.md` | 双 VCD 回归对比（PASS/FAIL + mismatch 表） |
-| `VMware_SSH_Setup_Log.md` | SSH 远程 EDA 环境配置记录 |
+| `db/irdrop_coverage_framework.md` | 三级覆盖率指标体系（C₁/C₂/C₃） |
+| `db/coverage_calculation_plan.md` | 四阶段实施计划 |
+| `db/coverage_analysis_guide.md` | 可用数据目录 & 分析优先级 |
 
 ---
 
-## 六、数据流总览
+## 三、docs/ — 算法文档
+
+| 文件 | 说明 |
+|------|------|
+| `algorithm_worst_window.md` | MAVIREC 算法论文级伪代码 + Mermaid 流程图 |
+| `algorithm_worst_window.html` | HTML 渲染版 |
+| `paper_MAVIREC_summary.md` | 研究总结 & 相关工作 |
+
+---
+
+## 四、辅助模块
+
+### 4.1 spatial_temporal/（空间-时间选窗精简包）
+
+仅含空间-时间联合选窗所需的最小脚本集（6 个），附带 README 和示例数据。适合独立部署。
+
+### 4.2 vcd_def2html/（遗留）
+
+旧版 VCD→DEF→HTML 流程，含 `run_pipeline.py`。功能已被 `vcd_power_toolkit` 替代。
+
+---
+
+## 五、数据流总览
 
 ```
-                    JSONL 分析流水线
-                    ═══════════════
-  sim_output.vcd
-       │
-       ├──→ vcd_to_jsonl      ──→ sim_output.jsonl
-       ├──→ jsonl_bit_diff    ──→ *_diff.jsonl     ──→ diff_to_html    ──→ diff.html
-       └──→ jsonl_toggle_mark ──→ *_toggles.jsonl  ──→ toggles_to_html ──→ toggles.html
+               ┌─────────────────────────────────────────────────┐
+               │            VCD Power Analysis Toolkit           │
+               └─────────────────────────────────────────────────┘
 
-                    EDA 验证流程
-                    ═══════════
-  des_demo/vcd/test.vcd
-       │
-       ├──→ [Voltus] 全 VCD 功耗 + IR Drop ──→ rail_power_v15/ (基线)
-       ├──→ [Voltus] 分窗功耗 + IR Drop     ──→ avg_v15_win1~5/ → rail_power_v15_win1~5/
-       └──→ [coverage_tier1.py] 覆盖率计算  ──→ analyse/results/
+  ① JSONL 分析链
+  ═══════════════
+  test.vcd
+      │
+      ├──→ vcd_to_jsonl      ──→ test.jsonl
+      ├──→ jsonl_bit_diff    ──→ *_diff.jsonl     ──→ diff_to_html    ──→ diff.html
+      └──→ jsonl_toggle_mark ──→ *_toggles.jsonl  ──→ toggles_to_html ──→ toggles.html
+
+  ② 选窗 & 切割
+  ═══════════════
+  *_toggles.jsonl + (可选 test.vcd + des3.def)
+      │
+      ├──→ find_worst_window ──→ 窗口排序报告 + 可视化 HTML
+      └──→ vcd_slicer        ──→ test_win1_algo.vcd / test_win2_algo.vcd
+
+  ③ EDA 验证（Voltus）
+  ═══════════════════
+  test_win{1,2}_algo.vcd + des3.{v,def,spef}
+      │
+      ├──→ [Voltus] 功耗分析   ──→ power_v20_*/
+      ├──→ [Voltus] IR Drop    ──→ rail_v20_* / algo_grid_win*/
+      └──→ coverage_tier1.py   ──→ coverage_report_v20.md (覆盖率验证)
 ```
 
 ---
 
-## 七、快速命令参考
+## 六、快速命令参考
 
 ```bash
-# JSONL 分析链
-python code/vcd_to_jsonl.py data/sim_output.vcd
-python code/jsonl_bit_diff.py output/sim_output.jsonl
-python code/jsonl_toggle_mark.py output/sim_output.jsonl
-python code/diff_to_html.py output/sim_output_diff.jsonl
-python code/toggles_to_html.py output/sim_output_toggles.jsonl
+# 进入工具包
+cd vcd_power_toolkit/code
 
-# 信号查看
-python code/parse_vcd_signal.py data/sim_output.vcd --list
-python code/parse_vcd_signal.py data/sim_output.vcd tb_top.clk
+# JSONL 分析链
+python vcd_to_jsonl.py <path>/test.vcd
+python jsonl_toggle_mark.py output/test.jsonl
+python toggles_to_html.py output/test_toggles.jsonl
+
+# Phase-Aware 选窗
+python find_worst_window.py output/test_toggles.jsonl --window-ns 1185
+
+# 空间集中度选窗（Grid 模式）
+python find_worst_window.py output/test_toggles.jsonl --window-ns 1185 \
+    --vcd ../des_demo/vcd/test.vcd --def ../des_demo/db/des3.def
+
+# VCD 切割
+python vcd_slicer.py ../des_demo/vcd/test.vcd --start 3790 --end 4390
 
 # VCD 校验
-python code/vcd_validator.py output/compressed.vcd --ref data/sim_output.vcd
+python vcd_validator.py output/sliced.vcd --ref ../des_demo/vcd/test.vcd
 
 # 覆盖率分析
-python des_demo/db/analyse/coverage_tier1.py --db-root des_demo/db
+python coverage_tier1.py --db-root ../des_demo/db
 ```

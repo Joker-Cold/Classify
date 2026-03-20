@@ -138,6 +138,23 @@ def parse_layerbased_ir(filepath: Path) -> list[LayerIR]:
     return layers
 
 
+def parse_totalcurrent(filepath: Path) -> float:
+    """解析 VDD.avg*.totalcurrent, 返回 Ipeak (A). 找不到返回 0."""
+    if not filepath.exists():
+        return 0.0
+    peak = 0.0
+    for line in filepath.read_text(encoding="utf-8", errors="replace").splitlines():
+        parts = line.split()
+        if len(parts) >= 3:
+            try:
+                val = float(parts[2])
+                if val > peak:
+                    peak = val
+            except ValueError:
+                continue
+    return peak
+
+
 def parse_dynpwr(filepath: Path) -> DynPwrData | None:
     """解析 VDD_dynpwr.rpt"""
     if not filepath.exists():
@@ -177,6 +194,18 @@ WIN_PATHS_V20 = {
     "eq_win5": ("sim_data/rail_v20_win5", "VDD"),
     "algo_win1": ("sim_data/algo_grid_win1/rail/Reports", "VDD"),
     "algo_win2": ("sim_data/algo_grid_win2/rail/Reports", "VDD"),
+}
+
+# v20 power 路径映射: (目录前缀, totalcurrent 文件名)
+V20_POWER_PATHS = {
+    "full":      ("sim_data/power_v20_full",          "VDD.avg_full.totalcurrent"),
+    "eq_win1":   ("sim_data/power_v20_win1",          "VDD.avg_win1.totalcurrent"),
+    "eq_win2":   ("sim_data/power_v20_win2",          "VDD.avg_win2.totalcurrent"),
+    "eq_win3":   ("sim_data/power_v20_win3",          "VDD.avg_win3.totalcurrent"),
+    "eq_win4":   ("sim_data/power_v20_win4",          "VDD.avg_win4.totalcurrent"),
+    "eq_win5":   ("sim_data/power_v20_win5",          "VDD.avg_win5.totalcurrent"),
+    "algo_win1": ("sim_data/algo_grid_win1/power",    "VDD.avg.totalcurrent"),
+    "algo_win2": ("sim_data/algo_grid_win2/power",    "VDD.avg.totalcurrent"),
 }
 
 # v20 文件名后缀映射 (tag 用于匹配 VDD.main_{tag}.rpt)
@@ -232,6 +261,8 @@ class CoverageResult:
     c_layer_avg: float | None = None
     c_layer_min: float | None = None
     c_violation: str = "N/A"         # PASS / FAIL / N/A
+    c_margin: float | None = None    # margin(sub) / margin(full)
+    c_overall: float | None = None   # min(C1, C_layer_min, C_margin)
 
 
 def compute_coverage(full: WindowData, sub: WindowData) -> CoverageResult:
@@ -271,6 +302,18 @@ def compute_coverage(full: WindowData, sub: WindowData) -> CoverageResult:
         else:
             res.c_violation = "FAIL"
 
+    # --- C_margin: margin(sub) / margin(full) ---
+    if full.main and sub.main and full.main.threshold > 0:
+        margin_full = full.main.vmin - full.main.threshold
+        margin_sub = sub.main.vmin - sub.main.threshold
+        if margin_full != 0:
+            res.c_margin = margin_sub / margin_full
+
+    # --- C_overall: min of available metrics ---
+    metrics = [v for v in [res.c1, res.c_layer_min, res.c_margin] if v is not None]
+    if metrics:
+        res.c_overall = min(metrics)
+
     return res
 
 
@@ -285,6 +328,8 @@ class CombinationResult:
     c_layer_avg: float | None = None
     c_layer_min: float | None = None
     c_violation: str = "N/A"
+    c_margin: float | None = None
+    c_overall: float | None = None
 
 
 def compute_combination(full: WindowData, subs: list[WindowData]) -> CombinationResult:
@@ -345,6 +390,19 @@ def compute_combination(full: WindowData, subs: list[WindowData]) -> Combination
         else:
             res.c_violation = "FAIL"
 
+    # --- C_margin: use worst (lowest) Vmin across windows ---
+    if full.main and full.main.threshold > 0 and vmins:
+        margin_full = full.main.vmin - full.main.threshold
+        worst_vmin_margin = min(vmins)
+        margin_sub = worst_vmin_margin - full.main.threshold
+        if margin_full != 0:
+            res.c_margin = margin_sub / margin_full
+
+    # --- C_overall ---
+    metrics = [v for v in [res.c1, res.c_layer_min, res.c_margin] if v is not None]
+    if metrics:
+        res.c_overall = min(metrics)
+
     return res
 
 
@@ -366,7 +424,8 @@ def write_single_csv(results: list[CoverageResult], filepath: Path):
             if l not in all_layers:
                 all_layers.append(l)
 
-    headers = ["window", "C1", "C_peak", "C_layer_avg", "C_layer_min", "C_violation"]
+    headers = ["window", "C1", "C_peak", "C_layer_avg", "C_layer_min",
+               "C_margin", "C_overall", "C_violation"]
     headers += [f"C_layer_{l}" for l in all_layers]
 
     with open(filepath, "w", newline="", encoding="utf-8") as f:
@@ -379,6 +438,8 @@ def write_single_csv(results: list[CoverageResult], filepath: Path):
                 fmt_pct(r.c_peak),
                 fmt_pct(r.c_layer_avg),
                 fmt_pct(r.c_layer_min),
+                fmt_pct(r.c_margin),
+                fmt_pct(r.c_overall),
                 r.c_violation,
             ]
             for l in all_layers:
@@ -387,7 +448,8 @@ def write_single_csv(results: list[CoverageResult], filepath: Path):
 
 
 def write_combination_csv(results: list[CombinationResult], filepath: Path):
-    headers = ["windows", "C1", "C_peak", "C_layer_avg", "C_layer_min", "C_violation"]
+    headers = ["windows", "C1", "C_peak", "C_layer_avg", "C_layer_min",
+               "C_margin", "C_overall", "C_violation"]
     with open(filepath, "w", newline="", encoding="utf-8") as f:
         w = csv.writer(f)
         w.writerow(headers)
@@ -398,8 +460,56 @@ def write_combination_csv(results: list[CombinationResult], filepath: Path):
                 fmt_pct(r.c_peak),
                 fmt_pct(r.c_layer_avg),
                 fmt_pct(r.c_layer_min),
+                fmt_pct(r.c_margin),
+                fmt_pct(r.c_overall),
                 r.c_violation,
             ])
+
+
+def _verdict(c_overall: float | None) -> str:
+    """判定: >=90% PASS, 80~90% MARGINAL, <80% FAIL"""
+    if c_overall is None:
+        return "N/A"
+    if c_overall >= 0.9:
+        return "PASS"
+    if c_overall >= 0.8:
+        return "MARGINAL"
+    return "FAIL"
+
+
+def write_tradeoff_csv(
+    single: list[CoverageResult],
+    combos: list[CombinationResult],
+    durations: dict[str, int],
+    full_duration: int,
+    filepath: Path,
+):
+    """写 trade-off CSV: 压缩率 vs 覆盖率"""
+    rows = []
+    # 单窗口
+    for r in single:
+        dur = durations.get(r.window, 0)
+        if dur > 0:
+            ratio = dur / full_duration
+            rows.append((r.window, dur, ratio, r.c1, r.c_layer_min, r.c_margin, r.c_overall))
+    # 组合
+    for r in combos:
+        win_names = r.windows.split("+")
+        dur = sum(durations.get(n, 0) for n in win_names)
+        if dur > 0:
+            ratio = dur / full_duration
+            rows.append((r.windows, dur, ratio, r.c1, r.c_layer_min, r.c_margin, r.c_overall))
+    # 按压缩率排序
+    rows.sort(key=lambda x: x[2])
+
+    headers = ["windows", "duration_ns", "compression_ratio",
+               "C1", "C_layer_min", "C_margin", "C_overall"]
+    with open(filepath, "w", newline="", encoding="utf-8") as f:
+        w = csv.writer(f)
+        w.writerow(headers)
+        for name, dur, ratio, c1, clm, cm, co in rows:
+            w.writerow([name, dur, f"{ratio*100:.1f}%",
+                        fmt_pct(c1), fmt_pct(clm), fmt_pct(cm), fmt_pct(co)])
 
 
 def write_markdown_report(
@@ -410,6 +520,8 @@ def write_markdown_report(
     filepath: Path,
     version: str = "v15",
     window_descs: dict[str, str] | None = None,
+    durations: dict[str, int] | None = None,
+    full_duration: int = 0,
 ):
     lines = []
     lines.append(f"# IR Drop Coverage Report ({version})\n")
@@ -423,7 +535,7 @@ def write_markdown_report(
         lines.append(f"- **Worst IR drop**: {ir_drop:.4f} V ({ir_drop*1000:.1f} mV)")
         ipeak = get_ipeak(full)
         if ipeak and ipeak > 0:
-            lines.append(f"- **Ipeak**: {ipeak} mA")
+            lines.append(f"- **Ipeak**: {ipeak:.3f} mA")
         lines.append(f"- **Violations**: {full.main.num_violations}")
         lines.append(f"- **Threshold**: {full.main.threshold} V")
     lines.append("")
@@ -477,8 +589,8 @@ def write_markdown_report(
             if l not in all_layers:
                 all_layers.append(l)
 
-    hdr = "| Window | C1 | C_layer_avg | C_layer_min | C_violation |"
-    sep = "|--------|------|-------------|-------------|-------------|"
+    hdr = "| Window | C1 | C_layer_avg | C_layer_min | C_margin | C_overall | C_violation |"
+    sep = "|--------|------|-------------|-------------|----------|-----------|-------------|"
     for l in all_layers:
         hdr += f" {l} |"
         sep += "------|"
@@ -486,7 +598,9 @@ def write_markdown_report(
     lines.append(sep)
 
     for r in single:
-        row = f"| {r.window} | {fmt_pct(r.c1)} | {fmt_pct(r.c_layer_avg)} | {fmt_pct(r.c_layer_min)} | {r.c_violation} |"
+        row = (f"| {r.window} | {fmt_pct(r.c1)} | {fmt_pct(r.c_layer_avg)} "
+               f"| {fmt_pct(r.c_layer_min)} | {fmt_pct(r.c_margin)} "
+               f"| {fmt_pct(r.c_overall)} | {r.c_violation} |")
         for l in all_layers:
             row += f" {fmt_pct(r.c_layer.get(l))} |"
         lines.append(row)
@@ -495,13 +609,55 @@ def write_markdown_report(
     # --- 多窗口组合覆盖率 ---
     if combos:
         lines.append("## Multi-Window Combination Coverage\n")
-        lines.append("| Windows | C1 | C_layer_avg | C_layer_min | C_violation |")
-        lines.append("|---------|------|-------------|-------------|-------------|")
+        lines.append("| Windows | C1 | C_layer_avg | C_layer_min | C_margin | C_overall | C_violation |")
+        lines.append("|---------|------|-------------|-------------|----------|-----------|-------------|")
         for r in combos:
             lines.append(
                 f"| {r.windows} | {fmt_pct(r.c1)} "
-                f"| {fmt_pct(r.c_layer_avg)} | {fmt_pct(r.c_layer_min)} | {r.c_violation} |"
+                f"| {fmt_pct(r.c_layer_avg)} | {fmt_pct(r.c_layer_min)} "
+                f"| {fmt_pct(r.c_margin)} | {fmt_pct(r.c_overall)} | {r.c_violation} |"
             )
+        lines.append("")
+
+    # --- Trade-off: Coverage vs Compression ---
+    if durations and full_duration > 0:
+        lines.append("## Trade-off: Coverage vs Compression\n")
+        # 收集数据点
+        tradeoff_rows = []
+        for r in single:
+            dur = durations.get(r.window, 0)
+            if dur > 0:
+                ratio = dur / full_duration * 100
+                tradeoff_rows.append((r.window, dur, ratio, r.c_overall))
+        for r in combos:
+            win_names = r.windows.split("+")
+            dur = sum(durations.get(n, 0) for n in win_names)
+            if dur > 0:
+                ratio = dur / full_duration * 100
+                tradeoff_rows.append((r.windows, dur, ratio, r.c_overall))
+        tradeoff_rows.sort(key=lambda x: x[2])
+
+        lines.append("| Windows | Duration (ns) | Compression | C_overall | Verdict |")
+        lines.append("|---------|--------------|-------------|-----------|---------|")
+        for name, dur, ratio, co in tradeoff_rows:
+            lines.append(
+                f"| {name} | {dur} | {ratio:.1f}% | {fmt_pct(co)} | {_verdict(co)} |"
+            )
+        lines.append("")
+
+    # --- 判定结果 ---
+    lines.append("## Verdict Summary\n")
+    lines.append("Criteria: C_overall >= 90% → **PASS**, 80~90% → **MARGINAL**, <80% → **FAIL**\n")
+    lines.append("### Single Windows\n")
+    for r in single:
+        v = _verdict(r.c_overall)
+        lines.append(f"- **{r.window}**: C_overall={fmt_pct(r.c_overall)} → **{v}**")
+    lines.append("")
+    if combos:
+        lines.append("### Combinations\n")
+        for r in combos:
+            v = _verdict(r.c_overall)
+            lines.append(f"- **{r.windows}**: C_overall={fmt_pct(r.c_overall)} → **{v}**")
         lines.append("")
 
     filepath.write_text("\n".join(lines), encoding="utf-8")
@@ -513,7 +669,10 @@ def write_markdown_report(
 def _run_analysis(db_root: Path, results_dir: Path, version: str,
                   full_path: tuple, win_paths: dict, file_tags: dict,
                   window_descs: dict[str, str],
-                  combo_groups: list[list[str]] | None = None):
+                  combo_groups: list[list[str]] | None = None,
+                  durations: dict[str, int] | None = None,
+                  full_duration: int = 0,
+                  power_paths: dict[str, tuple[str, str]] | None = None):
     """通用分析流程: 加载数据 → 计算覆盖率 → 输出"""
     suffix = f"_{version}" if version != "v15" else ""
 
@@ -549,16 +708,34 @@ def _run_analysis(db_root: Path, results_dir: Path, version: str,
         print(f"ERROR: No window data for {version}!")
         return
 
+    # --- 从 power 报告补充 Ipeak (totalcurrent) ---
+    if power_paths:
+        all_wd = {"full": full}
+        all_wd.update({w.name: w for w in windows})
+        for wname, wd in all_wd.items():
+            if wname in power_paths:
+                pdir, pfile = power_paths[wname]
+                ipeak_a = parse_totalcurrent(db_root / pdir / pfile)
+                if ipeak_a > 0:
+                    ipeak_ma = ipeak_a * 1000  # A → mA
+                    # 注入到 dynpwr (不覆盖已有 rail 数据)
+                    if not wd.dynpwr:
+                        wd.dynpwr = DynPwrData()
+                    if wd.dynpwr.ipeak_loaded <= 0:
+                        wd.dynpwr.ipeak_loaded = ipeak_a
+                    print(f"  {wname}: Ipeak from totalcurrent = {ipeak_ma:.3f} mA")
+
     # --- 单窗口覆盖率 ---
     single_results = []
     print(f"\n=== [{version}] Single Window Coverage ===")
-    print(f"{'Window':<12} {'C1':>8} {'C_layer_avg':>12} {'C_layer_min':>12} {'Violation':>10}")
-    print("-" * 58)
+    print(f"{'Window':<12} {'C1':>8} {'C_layer_avg':>12} {'C_layer_min':>12} {'C_margin':>10} {'C_overall':>10} {'Violation':>10}")
+    print("-" * 78)
     for w in windows:
         cov = compute_coverage(full, w)
         single_results.append(cov)
         print(f"{cov.window:<12} {fmt_pct(cov.c1):>8} "
-              f"{fmt_pct(cov.c_layer_avg):>12} {fmt_pct(cov.c_layer_min):>12} {cov.c_violation:>10}")
+              f"{fmt_pct(cov.c_layer_avg):>12} {fmt_pct(cov.c_layer_min):>12} "
+              f"{fmt_pct(cov.c_margin):>10} {fmt_pct(cov.c_overall):>10} {cov.c_violation:>10}")
 
     # --- 多窗口组合覆盖率 ---
     combo_results = []
@@ -593,9 +770,25 @@ def _run_analysis(db_root: Path, results_dir: Path, version: str,
         print(f"Saved: {csv2}")
 
     write_markdown_report(single_results, combo_results, full, windows, md_path,
-                          version=version, window_descs=window_descs)
+                          version=version, window_descs=window_descs,
+                          durations=durations, full_duration=full_duration)
     print(f"Saved: {md_path}")
 
+    # Trade-off CSV
+    if durations and full_duration > 0:
+        tradeoff_csv = results_dir / f"tradeoff{suffix}.csv"
+        write_tradeoff_csv(single_results, combo_results, durations,
+                           full_duration, tradeoff_csv)
+        print(f"Saved: {tradeoff_csv}")
+
+
+# 窗口时长 (ns), 用于计算压缩率
+V20_WINDOW_DURATIONS = {
+    "eq_win1": 2370, "eq_win2": 2370, "eq_win3": 2370,
+    "eq_win4": 2370, "eq_win5": 2370,
+    "algo_win1": 600, "algo_win2": 500,
+}
+V20_FULL_DURATION = 11850  # ns
 
 # 窗口说明
 V20_WINDOW_DESCS = {
@@ -653,7 +846,10 @@ def main():
     else:
         _run_analysis(db_root, results_dir, "v20",
                       FULL_SET_PATH_V20, WIN_PATHS_V20, V20_FILE_TAGS,
-                      V20_WINDOW_DESCS, V20_COMBO_GROUPS)
+                      V20_WINDOW_DESCS, V20_COMBO_GROUPS,
+                      durations=V20_WINDOW_DURATIONS,
+                      full_duration=V20_FULL_DURATION,
+                      power_paths=V20_POWER_PATHS)
 
 
 if __name__ == "__main__":

@@ -1,6 +1,6 @@
-windows,C1,C_peak,C_layer_avg,C_layer_min,C_violation
-algo_win1+algo_win2,100.0%,N/A,103.5%,100.0%,PASS
-eq_win2+eq_win4,100.0%,N/A,102.7%,100.0%,PASS
-eq_win2+eq_win5,100.0%,N/A,102.7%,100.0%,PASS
-eq_win1+eq_win2+eq_win3+eq_win4+eq_win5,100.0%,N/A,102.7%,100.0%,PASS
-algo_win1+algo_win2+eq_win2,100.0%,N/A,103.5%,100.0%,PASS
+windows,C1,C_peak,C_layer_avg,C_layer_min,C_margin,C_overall,C_violation
+algo_win1+algo_win2,100.0%,91.6%,103.5%,100.0%,100.0%,100.0%,PASS
+eq_win2+eq_win4,100.0%,99.1%,102.7%,100.0%,100.0%,100.0%,PASS
+eq_win2+eq_win5,100.0%,94.5%,102.7%,100.0%,100.0%,100.0%,PASS
+eq_win1+eq_win2+eq_win3+eq_win4+eq_win5,100.0%,99.1%,102.7%,100.0%,100.0%,100.0%,PASS
+algo_win1+algo_win2+eq_win2,100.0%,94.5%,103.5%,100.0%,100.0%,100.0%,PASS
