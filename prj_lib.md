@@ -34,6 +34,36 @@ Classify/
 │       ├── coverage_report_v20.md
 │       └── coverage_tier1_v20.csv
 │
+├── RC_Tile_Worst_Window/          # ★★ RC 加权 Tile 选窗算法包（最新）
+│   ├── README.md                  # 使用指南 & 完整工作流（含参数说明）
+│   ├── code/                      # 7 个 Python 脚本
+│   │   ├── find_worst_window.py   # ★ 主脚本：RC-Tile 危险窗口选择 + VCD 拼接（~1066 行）
+│   │   ├── spef_parser.py         # ★ SPEF 解析器：提取每 net 的 c_load / r_net（~245 行）
+│   │   ├── parse_vcd_signal.py    # VCD 解析器（上游依赖）
+│   │   ├── vcd_to_jsonl.py        # Step 1: VCD → JSONL
+│   │   ├── jsonl_toggle_mark.py   # Step 2: JSONL → Toggle JSONL
+│   │   ├── vcd_def_mapper.py      # Step 3: VCD + DEF → 坐标 CSV
+│   │   └── vcd_validator.py       # 辅助：验证 VCD 格式
+│   ├── example_data/              # 格式参考
+│   │   ├── sample_location.csv
+│   │   └── sample_toggles.jsonl
+│   └── sim_result/                # 实际运行结果
+│       ├── intermediate/          # 中间产物（JSONL / Toggle / Location CSV）
+│       ├── report/                # HTML + JSON 报告
+│       └── vcd/                   # 输出压缩 VCD
+│
+├── RC_Tile_Worst_Window_verify/   # ★★ RC-Tile 算法 Innovus 验证实验
+│   ├── plan.md                    # ★ 详细验证计划 & 4 轮实验进度（m0~m2，含瓶颈分析）
+│   ├── results.md                 # ★ 各 case 对比表（full/algo/spatial/rctile_m0~m2）
+│   ├── inputs/                    # 从远程下载的原始数据（test.vcd/des3.def/des3.spef）
+│   ├── intermediate/              # Step A 中间产物（JSONL / toggle / location CSV）
+│   ├── vcd/                       # Step B 产物（test_rctile{,_m1,_m1b,_m2}.vcd）
+│   ├── report/                    # HTML + JSON 可视化报告（各轮次）
+│   ├── tcl/                       # Innovus TCL（irdrop_rctile_{,m1,m1b,m2}_windows.tcl）
+│   ├── results/                   # 从远程下载的 IR Drop .rpt 报告
+│   └── code/
+│       └── compare.py             # 多 case IR drop 对比分析脚本
+│
 ├── spatial_temporal/              # 空间-时间选窗精简包
 │   ├── README.md
 │   ├── code/                      # 6 个脚本子集
@@ -43,35 +73,49 @@ Classify/
 │   │   ├── vcd_def_mapper.py
 │   │   ├── vcd_validator.py
 │   │   └── spatial_temporal_select.py
-│   └── example_data/              # 示例数据
+│   ├── example_data/              # 示例数据
+│   │   ├── sample_location.csv
+│   │   └── sample_toggles.jsonl
+│   └── sim_result/                # ★ 实际运行结果
+│       ├── intermediate/          # 中间产物（信号-坐标映射）
+│       ├── report/                # 选窗报告 + 可视化
+│       └── vcd/                   # 压缩后 VCD（10x10 网格, kt=24）
 │
 ├── vcd_def2html/                  # 旧版 DEF→HTML 流程（遗留）
 │   ├── README.md
 │   └── code/                      # 含 run_pipeline.py 等 7 个脚本
 │
-├── docs/                          # 顶层算法文档
-│   ├── algorithm_worst_window.md  # MAVIREC 算法论文级伪代码
-│   ├── algorithm_worst_window.html
-│   └── paper_MAVIREC_summary.md   # 研究总结 & 相关工作
-│
-├── code/                          # [已清空] 原开发目录，代码已移入 toolkit
+├── docs/                          # 顶层文档（算法 + 论文材料）
+│   ├── algorithm_worst_window.{md,html}    # MAVIREC 算法论文级伪代码 & 实验记录
+│   ├── algorithm_worst_window_lite.md      # ★ RC-Tile 算法精简版说明（面向论文）
+│   ├── coverage_methodology.{md,html}      # ★ PI 仿真覆盖率评估方法论
+│   ├── paper_MAVIREC_summary.{md,html}     # MAVIREC 研究总结 & 相关工作
+│   ├── paper_Hu2025_VCD_summary.md         # ★ Hu2025 论文解读（TODAES 2025，ML辅助VCD处理）
+│   ├── greedy-noodling-puffin.md           # MAVIREC v2 升级计划（融合 Hu2025 多特征方案）
+│   ├── final_prj.md               # ★ 毕业设计论文目录结构
+│   ├── midterm_report.md          # ★ 中期报告
+│   └── work_have_done.md          # ★ 毕业设计工作总结
 │
 ├── des_demo/                      # EDA 后端实验项目（DES3 加密核）
 │   ├── README.md
+│   ├── Middle_resuld.md           # ★ DES3 PI 仿真中期实验结果
 │   ├── rtl/                       # RTL 源码（Verilog）
 │   ├── netlist/                   # Genus 综合后网表
 │   ├── sdc/                       # 时序约束
 │   ├── testbench/                 # VCS 仿真 Testbench（含 2x 版本）
-│   ├── vcd/                       # 仿真 VCD（含算法选窗切片）
+│   ├── vcd/                       # 仿真 VCD（含算法选窗切片 + VCS 编译产物）
+│   ├── output/                    # ★ 算法选窗中间产物（JSONL）
 │   ├── script/                    # EDA 脚本（Genus / Innovus / Voltus）
 │   └── db/                        # EDA 数据库 & 分析结果
 │       ├── des3.{v,def,spef,enc}  # 后端物理设计文件
 │       ├── power/                 # 功耗分析（avg / per-window）
 │       ├── rail_power/            # IR Drop 分析（v15 完整版）
-│       ├── sim_data/              # ★ v20 Voltus 仿真数据（完整版）
-│       │   ├── power_v20_{full,win1~5}/   # 功耗（等分5窗+全集）
-│       │   ├── rail_v20_{full,win1~5}/    # IR Drop（等分5窗+全集）
-│       │   └── algo_grid_win{1,2}/        # 算法选窗 IR Drop
+│       ├── sim_data/              # ★ v20 Voltus 仿真数据（完整版，本地）
+│       │   ├── power_v20_{full,win1~5}/     # 功耗（等分5窗+全集）
+│       │   ├── rail_v20_{full,win1~5}/      # IR Drop（等分5窗+全集）
+│       │   ├── algo_grid_win{1,2}/          # 算法选窗 IR Drop
+│       │   ├── power_v20_spatial/           # ★ 空间选窗功耗
+│       │   └── rail_v20_spatial/            # ★ 空间选窗 IR Drop
 │       └── analyse/               # ★ 覆盖率分析脚本 & 结果
 │
 ├── output/                        # 生成输出（.gitignore 管理）
@@ -80,9 +124,15 @@ Classify/
 ```
 
 **已删除**（2026-03-19 精简）：
-- `code/*.py` — 全部迁移至 `vcd_power_toolkit/code/`
+- `code/*.py` — 全部迁移至 `vcd_power_toolkit/code/`（仅剩 `__pycache__`）
 - `data/` — 测试 VCD 已整合至 `des_demo/vcd/`
 - `skills/` & `skills.md` — 技能文档库（不再维护）
+
+**RC-Tile 相关远程数据**（`myserver:~/data/des_demo/db/`，本地无镜像）：
+- `rail_power_v20_rctile_win1/` — m0/m1 IR Drop 结果（25 mV，ratio=0.962）
+- `rail_power_v20_rctile_m1_win1/` — m1 peak-tile 对照（同 m0）
+- `rail_power_v20_rctile_m1b_win1/` — m1b self-tune ρ 结果（25 mV，ratio=0.962）
+- `rail_power_v20_rctile_m2_win1/` — m2 小窗结果（21 mV，ratio=0.808）
 
 ---
 
@@ -118,11 +168,11 @@ select_worst_window.py (选窗算法库)
 
 | 脚本 | 行数 | 功能 |
 |------|------|------|
-| `vcd_to_jsonl.py` | ~94 | VCD → 合并 JSONL（hold-last-value） |
-| `jsonl_bit_diff.py` | ~111 | 相邻时间点逐 bit 有符号差分（+1/-1/0） |
-| `jsonl_toggle_mark.py` | ~113 | XOR 翻转标记（1=翻转，0=未变） |
-| `diff_to_html.py` | ~177 | Plotly 差分热力图（红=上升沿，蓝=下降沿） |
-| `toggles_to_html.py` | ~167 | Plotly 翻转率热力图 |
+| `vcd_to_jsonl.py` | ~93 | VCD → 合并 JSONL（hold-last-value） |
+| `jsonl_bit_diff.py` | ~110 | 相邻时间点逐 bit 有符号差分（+1/-1/0） |
+| `jsonl_toggle_mark.py` | ~112 | XOR 翻转标记（1=翻转，0=未变） |
+| `diff_to_html.py` | ~176 | Plotly 差分热力图（红=上升沿，蓝=下降沿） |
+| `toggles_to_html.py` | ~166 | Plotly 翻转率热力图 |
 | `toggle_heatmap.py` | ~276 | 时空 toggle 热力图（独立可视化） |
 
 ### 1.3 select_worst_window.py（Phase-Aware 选窗算法，~554 行）
@@ -150,7 +200,7 @@ Phase-Aware + 空间集中度选窗，两种空间模式：
 | 脚本 | 行数 | 功能 |
 |------|------|------|
 | `vcd_slicer.py` | ~258 | VCD 时间窗口切割 |
-| `vcd_validator.py` | ~145 | IEEE 1364 VCD 合规校验 |
+| `vcd_validator.py` | ~144 | IEEE 1364 VCD 合规校验 |
 | `vcd_def_mapper.py` | ~484 | VCD 信号 → DEF 物理坐标映射 |
 | `spatial_temporal_select.py` | ~1004 | 空间-时间联合选窗 + 可视化 |
 
@@ -212,6 +262,13 @@ Phase-Aware + 空间集中度选窗，两种空间模式：
 | `test_win1_algo.vcd` | 算法选窗 1（3790~4390ns，600ns） |
 | `test_win2_algo.vcd` | 算法选窗 2（9600~10100ns，500ns） |
 | `vcs.sh` | VCS 编译执行脚本 |
+| `csrc/`, `simv`, `simv.daidir/` | VCS 编译产物（二进制） |
+
+**算法选窗中间产物**（`output/` 目录）：
+| 文件 | 说明 |
+|------|------|
+| `test_win{1,2}_algo.jsonl` | 算法选窗 JSONL |
+| `test_win{1,2}_algo_toggles.jsonl` | 算法选窗 toggle 标记 |
 
 **仿真流程**：
 ```
@@ -222,16 +279,26 @@ netlist (Genus)                      test.vcd (42K+ signals)
 
 ### 2.3 EDA 工具脚本
 
+**本地** (`des_demo/script/innovus/`，用于参考/模板)：
+
 | 路径 | 工具 | 功能 |
 |------|------|------|
-| `script/genus/genus.tcl` | Genus | 综合流程 |
 | `script/innovus/innovus.tcl` | Innovus | P&R（布局、电源网格、引脚） |
 | `script/innovus/load_design_v15.tcl` | Innovus | v15 设计加载 |
 | `script/innovus/full_irdrop_v15.tcl` | Voltus | v15 完整 IR Drop 分析 |
-| `script/innovus/rerun_rail_v15.tcl` | Voltus | v15 Rail 分析重跑 |
-| `script/innovus/irdrop_algo_windows.tcl` | Voltus | ★ 算法选窗 IR Drop 分析（v20） |
-| `script/innovus/power_analyze.tcl` | Voltus | 功耗分析设置 |
-| `script/innovus/rail_analyze.tcl` | Voltus | Rail 分析设置 |
+| `script/innovus/irdrop_algo_windows.tcl` | Voltus | ★ Phase-Aware 算法选窗 IR Drop（v20，模板） |
+
+**远程** (`myserver:~/data/des_demo/script/innovus/`，实际执行)：
+
+| 脚本 | 功能 |
+|------|------|
+| `full_irdrop_v20.tcl` | v20 五等分窗口完整 baseline |
+| `irdrop_algo_windows.tcl` | 旧 Phase-Aware + Grid 算法 2 窗口 |
+| `irdrop_spatial_temporal.tcl` | spatial_temporal 压缩 VCD |
+| `irdrop_rctile_windows.tcl` | ★ RC-Tile m0（sum-based） |
+| `irdrop_rctile_m1_windows.tcl` | ★ RC-Tile m1（peak-tile score） |
+| `irdrop_rctile_m1b_windows.tcl` | ★ RC-Tile m1b（self-tune ρ） |
+| `irdrop_rctile_m2_windows.tcl` | ★ RC-Tile m2（small-window argmax） |
 
 ### 2.4 物理设计文件（`db/`）
 
@@ -244,7 +311,7 @@ netlist (Genus)                      test.vcd (42K+ signals)
 
 ### 2.5 Voltus 仿真数据（★ `db/sim_data/`，v20 完整版）
 
-v20 Voltus 动态分析结果，含全 VCD + 等分5窗 + 算法选窗：
+v20 Voltus 动态分析结果，含全 VCD + 等分5窗 + 算法选窗 + 空间选窗：
 
 | 子目录 | 说明 | 窗口范围 |
 |--------|------|----------|
@@ -254,6 +321,8 @@ v20 Voltus 动态分析结果，含全 VCD + 等分5窗 + 算法选窗：
 | `rail_v20_win{1~5}/` | 等分窗口 IR Drop | 每窗 2370ns |
 | `algo_grid_win1/` | 算法选窗 1 IR Drop | 3790~4390ns |
 | `algo_grid_win2/` | 算法选窗 2 IR Drop | 9600~10100ns |
+| `power_v20_spatial/` | ★ 空间选窗功耗 | — |
+| `rail_v20_spatial/` | ★ 空间选窗 IR Drop | — |
 
 ### 2.6 覆盖率分析（★ `db/analyse/`）
 
@@ -269,6 +338,7 @@ v20 Voltus 动态分析结果，含全 VCD + 等分5窗 + 算法选窗：
 | `coverage_tier1_v20.csv` | v20 单窗口覆盖率 |
 | `coverage_combination_v20.csv` | v20 多窗口组合覆盖率 |
 | `coverage_report_v20.md` | ★ v20 覆盖率完整报告 |
+| `tradeoff_v20.csv` | ★ v20 权衡分析（覆盖率 vs 压缩比） |
 | `coverage_tier1.csv` | v15 单窗口覆盖率 |
 | `coverage_combination.csv` | v15 组合覆盖率 |
 | `coverage_report.md` | v15 覆盖率报告 |
@@ -292,39 +362,97 @@ v20 Voltus 动态分析结果，含全 VCD + 等分5窗 + 算法选窗：
 - `algo_win1 + algo_win2`：C₁=100%, C_layer_min=100%
 - `eq_win2 + eq_win4`：C₁=100%, C_layer_min=100%
 
-### 2.7 框架文档
+### 2.7 项目文档
 
 | 文件 | 说明 |
 |------|------|
+| `Middle_resuld.md` | ★ DES3 PI 仿真中期实验结果 |
 | `db/irdrop_coverage_framework.md` | 三级覆盖率指标体系（C₁/C₂/C₃） |
 | `db/coverage_calculation_plan.md` | 四阶段实施计划 |
 | `db/coverage_analysis_guide.md` | 可用数据目录 & 分析优先级 |
 
 ---
 
-## 三、docs/ — 算法文档
+## 三、docs/ — 算法文档 & 论文材料
 
 | 文件 | 说明 |
 |------|------|
-| `algorithm_worst_window.md` | MAVIREC 算法论文级伪代码 + Mermaid 流程图 |
-| `algorithm_worst_window.html` | HTML 渲染版 |
-| `paper_MAVIREC_summary.md` | 研究总结 & 相关工作 |
+| `algorithm_worst_window.{md,html}` | MAVIREC 算法论文级伪代码 + Mermaid 流程图 + RC-Tile 实验数据 |
+| `algorithm_worst_window_lite.md` | ★ RC-Tile 算法精简说明（5 阶段 + 参数指南，面向论文） |
+| `coverage_methodology.{md,html}` | ★ PI 仿真覆盖率评估方法论（伪代码 & 科学性分析） |
+| `paper_MAVIREC_summary.{md,html}` | MAVIREC 研究总结 & 相关工作 |
+| `paper_Hu2025_VCD_summary.md` | ★ Hu2025 论文解读（TODAES 2025，ML 辅助 VCD 处理，浙大/湖工大） |
+| `greedy-noodling-puffin.md` | MAVIREC v2 升级计划（融合 Hu2025 VCD+DEF 多特征方案） |
+| `final_prj.md` | ★ 毕业设计论文目录结构（含深度标注 & 篇幅建议） |
+| `midterm_report.md` | ★ 毕业设计中期报告 |
+| `work_have_done.md` | ★ 毕业设计工作总结（完整版） |
 
 ---
 
-## 四、辅助模块
+## 四、RC_Tile_Worst_Window/ — RC 加权 Tile 选窗算法（★ 最新）
 
-### 4.1 spatial_temporal/（空间-时间选窗精简包）
+> 基于 **RC 加权 tile 指纹 + Top-3 集中度 + Phase-Aware ρ-Depletion** 的最坏功耗噪声窗口筛选算法。
+> 与 `spatial_temporal/` 共享上游预处理（Steps 1~3），SPEF 加入后升级为 RC 加权模式。
+
+### 4.1 核心脚本
+
+**`find_worst_window.py`（~1066 行）**——6 阶段算法：
+
+| Stage | 功能 |
+|-------|------|
+| 1 Cycle Aggregation | 扫描 toggle JSONL → 每周期总 toggle c_i，θ = k_θ · median(c_i) 标记活跃 cycle |
+| 2 Phase Detection | 连续活跃 cycle（允许 gap 个空洞）合并为 phase，丢弃长度 < n_min 的短 phase |
+| 3 RC-Weighted Tile Fingerprint | 版图划分为 N²_grid tile，SPEF R_NET 归一化为 R̂_k ∈ [0.5, 2.5]，P_t,k = I_t,k · R̂_k |
+| 4 Danger Score | σ_top3,t = ΣP_t,top3 / ΣP_t；**当前 e_t = max_k P_t,k**（peak-tile，修改 ①） |
+| 5 Window Generation | center = ps + ρ·D，r = max(K_min, ⌈η·N_c⌉)，**S(W) = max e_t in W**（修改 ①） |
+| 6 VCD Splice | 两遍扫描 VCD，段间时间重映射，插入 $comment 标记 |
+
+**`spef_parser.py`（~245 行）**——从 SPEF 提取每 net 的 c_load (fF) 和 r_net (Ω)，合并至坐标 CSV。
+无 SPEF 时主脚本自动退化为 R̂_k=1 模式。
+
+### 4.2 算法迭代记录（m0~m2，对应 RC_Tile_Worst_Window_verify/）
+
+| 轮次 | 修改内容 | 窗口（ns） | β | Innovus peak drop | ratio vs full | 状态 |
+|------|----------|-----------|---|-------------------|---------------|------|
+| m0 | sum-based score，ρ=0.7 | 6500~10050 | 29.83% | 25 mV | 0.962 | ✅ |
+| m1 | peak-tile e_t + max S(W)（修改 ①） | 同 m0 | 29.83% | 25 mV | 0.962 | ✅ |
+| m1b | self-tune ρ = argmax(e_t)/D ≈ 0.911 | 8300~11850 | 29.83% | 25 mV | 0.962 | ✅ |
+| m2 | 小窗 L=5 cycles + center=argmax(e_t) | 10600~10850 | **2.1%** | 21 mV | **0.808** | ✅ |
+
+**关键发现**：Python peak-tile score 把 cycle 215（cluster ②）排 rank#1，但 Innovus full-chip worst 在 cycle 81（cluster ①，4050 ns），两簇 e_t 仅差 1.5%。m0/m1/m1b 靠大窗"边带救场"（窗口意外包住 cycle 197 @ 9850 ns，Innovus 区域 worst），m2 紧窗暴露了 Python 排序偏差。全设计 worst 在 cluster ① 未被覆盖，需 top-K argmax 或 phase 碎片化。
+
+### 4.3 与其他模块的关系
+
+```
+RC_Tile_Worst_Window/         共享 Steps 1~3 中间产物        spatial_temporal/
+    │                         (JSONL / toggle / coord CSV)         │
+    ├─ 引入 SPEF RC 加权 ──────────────────────────────────────────┤
+    ├─ 面向 DVD 风险定位                                            ├─ 面向 toggle 覆盖率压缩
+    └─ 输出 VCD splice（多段）                                     └─ 输出单段压缩 VCD
+```
+
+---
+
+## 五、辅助模块
+
+### 5.1 spatial_temporal/（空间-时间选窗精简包）
 
 仅含空间-时间联合选窗所需的最小脚本集（6 个），附带 README 和示例数据。适合独立部署。
 
-### 4.2 vcd_def2html/（遗留）
+**已产出实际运行结果**（`sim_result/`）：
+| 子目录 | 内容 |
+|--------|------|
+| `intermediate/` | 信号-坐标映射（signal_location_map.csv + .html） |
+| `report/` | 选窗报告（selection_report.json）+ 可视化（visualization.html） |
+| `vcd/` | 压缩后 VCD（compressed_10x10_kt24.vcd，10×10 网格） |
+
+### 5.2 vcd_def2html/（遗留）
 
 旧版 VCD→DEF→HTML 流程，含 `run_pipeline.py`。功能已被 `vcd_power_toolkit` 替代。
 
 ---
 
-## 五、数据流总览
+## 六、数据流总览
 
 ```
                ┌─────────────────────────────────────────────────┐
@@ -344,20 +472,31 @@ v20 Voltus 动态分析结果，含全 VCD + 等分5窗 + 算法选窗：
   *_toggles.jsonl + (可选 test.vcd + des3.def)
       │
       ├──→ find_worst_window ──→ 窗口排序报告 + 可视化 HTML
+      ├──→ spatial_temporal_select ──→ 空间-时间联合选窗（10x10 网格）
       └──→ vcd_slicer        ──→ test_win1_algo.vcd / test_win2_algo.vcd
 
   ③ EDA 验证（Voltus）
   ═══════════════════
   test_win{1,2}_algo.vcd + des3.{v,def,spef}
       │
-      ├──→ [Voltus] 功耗分析   ──→ power_v20_*/
-      ├──→ [Voltus] IR Drop    ──→ rail_v20_* / algo_grid_win*/
+      ├──→ [Voltus] 功耗分析   ──→ power_v20_* / power_v20_spatial/
+      ├──→ [Voltus] IR Drop    ──→ rail_v20_* / algo_grid_win* / rail_v20_spatial/
       └──→ coverage_tier1.py   ──→ coverage_report_v20.md (覆盖率验证)
+
+  ④ RC-Tile 选窗（★ 最新流程）
+  ═══════════════════════════
+  test.vcd + des3.def + des3.spef
+      │
+      ├──→ vcd_to_jsonl / jsonl_toggle_mark  ──→ test_toggles.jsonl
+      ├──→ vcd_def_mapper                    ──→ signal_location_map.csv
+      ├──→ spef_parser                       ──→ signal_location_rc.csv (+ RC)
+      ├──→ find_worst_window (RC-Tile)       ──→ test_rctile_m*.vcd + report*.json
+      └──→ [Voltus on myserver]              ──→ rail_power_v20_rctile_m* (远程)
 ```
 
 ---
 
-## 六、快速命令参考
+## 七、快速命令参考
 
 ```bash
 # 进入工具包
@@ -383,4 +522,34 @@ python vcd_validator.py output/sliced.vcd --ref ../des_demo/vcd/test.vcd
 
 # 覆盖率分析
 python coverage_tier1.py --db-root ../des_demo/db
+```
+
+```bash
+# RC-Tile 选窗流程（在 Docker grj-dev 中执行，路径前加 MSYS_NO_PATHCONV=1）
+cd RC_Tile_Worst_Window_verify
+
+# Step A：预处理（VCD → JSONL → toggle → coord → RC）
+docker exec grj-dev python /app/Classify/RC_Tile_Worst_Window/code/vcd_to_jsonl.py \
+    /app/Classify/RC_Tile_Worst_Window_verify/inputs/test.vcd \
+    --output-dir /app/Classify/RC_Tile_Worst_Window_verify/intermediate/
+docker exec grj-dev python /app/Classify/RC_Tile_Worst_Window/code/jsonl_toggle_mark.py \
+    /app/Classify/RC_Tile_Worst_Window_verify/intermediate/test.jsonl
+docker exec grj-dev python /app/Classify/RC_Tile_Worst_Window/code/vcd_def_mapper.py \
+    --vcd .../inputs/test.vcd --def .../inputs/des3.def \
+    --output .../intermediate/signal_location_map.csv
+docker exec grj-dev python /app/Classify/RC_Tile_Worst_Window/code/spef_parser.py \
+    --spef .../inputs/des3.spef \
+    --location .../intermediate/signal_location_map.csv \
+    --output   .../intermediate/signal_location_rc.csv
+
+# Step B：RC-Tile 危险窗口选择
+docker exec grj-dev python /app/Classify/RC_Tile_Worst_Window/code/find_worst_window.py \
+    --location .../intermediate/signal_location_rc.csv \
+    --toggles  .../intermediate/test_toggles.jsonl \
+    --vcd .../inputs/test.vcd \
+    --n-grid 8 --k-theta 1.0 --rho 0.7 --eta 0.15 \
+    --k-min 2 --gap 1 --n-min 3 --clock-ns 50 --timescale-ps 10 \
+    --output .../vcd/test_rctile.vcd \
+    --html .../report/visualization.html \
+    --json-out .../report/report.json
 ```

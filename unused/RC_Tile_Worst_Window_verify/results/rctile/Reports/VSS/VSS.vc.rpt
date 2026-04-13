@@ -1,0 +1,24 @@
+Voltage source current:
+      Range  Source       Source        Location    Layer
+      Index  Current      Name          (um)
+      -----  --------     -------------------------------
+         3    2.3087e-03A   pad_vss_3   382.97, 202.96  M5
+         7    1.2225e-03A   pad_vss_2   382.97, 2.30  M5
+         2    2.4721e-03A   pad_vss_1   2.30, 202.96  M5
+         8    9.3289e-04A   pad_vss_0   2.30, 2.30  M5
+         1    2.9112e-03A   pad_vss_7   202.90, 382.97  M6
+         5    1.7141e-03A   pad_vss_6   2.30, 382.97  M6
+         2    2.5534e-03A   pad_vss_5   202.90, 2.30  M6
+         8    1.0114e-03A   pad_vss_4   2.30, 2.30  M6
+*
+* Data filtering results for voltage source current:
+  Minimum, Average, Maximum Voltage Source Current: 0.933mA, 1.891mA, 2.911mA
+  Total Current: 15.126mA
+    Range 1(   2.664mA  -     2.911mA ):         1 ( 12.50%)
+    Range 2(   2.417mA  -     2.664mA ):         2 ( 25.00%)
+    Range 3(   2.169mA  -     2.417mA ):         1 ( 12.50%)
+    Range 4(   1.922mA  -     2.169mA ):         0 (  0.00%)
+    Range 5(   1.675mA  -     1.922mA ):         1 ( 12.50%)
+    Range 6(   1.427mA  -     1.675mA ):         0 (  0.00%)
+    Range 7(   1.180mA  -     1.427mA ):         1 ( 12.50%)
+    Range 8(   0.933mA  -     1.180mA ):         2 ( 25.00%)

@@ -1,0 +1,238 @@
+{
+    "num_nets": "2",
+    "net_info": [
+        {
+            "die": "",
+            "net": "VSS",
+            "nominal_voltage": "0",
+            "power_or_ground": "ground"
+        },
+        {
+            "die": "",
+            "net": "VDD",
+            "nominal_voltage": "0.699999988",
+            "power_or_ground": "power"
+        }
+    ],
+    "instance_voltage": [
+        {
+            "analysis_mode": "Avg",
+            "measurement_mode": "elapsed",
+            "min": "0.69869959354400635",
+            "max": "0.69988447427749634",
+            "average": "0.69906373262873478",
+            "size": "64179",
+            "die": "",
+            "net": "VDD"
+        },
+        {
+            "analysis_mode": "Avg",
+            "measurement_mode": "window",
+            "min": "0.6762116551399231",
+            "max": "0.6986764669418335",
+            "average": "0.68773422250446636",
+            "size": "45047",
+            "die": "",
+            "net": "VDD"
+        },
+        {
+            "analysis_mode": "Best",
+            "measurement_mode": "elapsed",
+            "min": "0.6990935206413269",
+            "max": "0.69990396499633789",
+            "average": "0.69934157138823361",
+            "size": "64179",
+            "die": "",
+            "net": "VDD"
+        },
+        {
+            "analysis_mode": "Best",
+            "measurement_mode": "window",
+            "min": "0.67694658041000366",
+            "max": "0.69968175888061523",
+            "average": "0.69489659058742581",
+            "size": "45047",
+            "die": "",
+            "net": "VDD"
+        },
+        {
+            "analysis_mode": "Worst",
+            "measurement_mode": "elapsed",
+            "min": "0.67488795518875122",
+            "max": "0.69679683446884155",
+            "average": "0.68214154516793024",
+            "size": "64179",
+            "die": "",
+            "net": "VDD"
+        },
+        {
+            "analysis_mode": "Worst",
+            "measurement_mode": "window",
+            "min": "0.67488795518875122",
+            "max": "0.69705921411514282",
+            "average": "0.68132708247558393",
+            "size": "45047",
+            "die": "",
+            "net": "VDD"
+        },
+        {
+            "analysis_mode": "WorstAvg",
+            "measurement_mode": "window",
+            "min": "0.67539089918136597",
+            "max": "0.69804644584655762",
+            "average": "0.68462031262774159",
+            "size": "45047",
+            "die": "",
+            "net": "VDD"
+        },
+        {
+            "analysis_mode": "Avg",
+            "measurement_mode": "elapsed",
+            "min": "0.000220760382944718",
+            "max": "0.0013116555055603385",
+            "average": "0.0009686957760818766",
+            "size": "64179",
+            "die": "",
+            "net": "VSS"
+        },
+        {
+            "analysis_mode": "Avg",
+            "measurement_mode": "window",
+            "min": "0.0010730514768511057",
+            "max": "0.021914195269346237",
+            "average": "0.011827231879308646",
+            "size": "45014",
+            "die": "",
+            "net": "VSS"
+        },
+        {
+            "analysis_mode": "Best",
+            "measurement_mode": "elapsed",
+            "min": "0.00015757545770611614",
+            "max": "0.00093899783678352833",
+            "average": "0.0006920345375251481",
+            "size": "64179",
+            "die": "",
+            "net": "VSS"
+        },
+        {
+            "analysis_mode": "Best",
+            "measurement_mode": "window",
+            "min": "0.0004666944732889533",
+            "max": "0.021614657714962959",
+            "average": "0.0042221615766086639",
+            "size": "45014",
+            "die": "",
+            "net": "VSS"
+        },
+        {
+            "analysis_mode": "Worst",
+            "measurement_mode": "elapsed",
+            "min": "0.0042711105197668076",
+            "max": "0.02268272265791893",
+            "average": "0.017483042825350525",
+            "size": "64179",
+            "die": "",
+            "net": "VSS"
+        },
+        {
+            "analysis_mode": "Worst",
+            "measurement_mode": "window",
+            "min": "0.0010730514768511057",
+            "max": "0.02268272265791893",
+            "average": "0.018191378654971658",
+            "size": "45014",
+            "die": "",
+            "net": "VSS"
+        },
+        {
+            "analysis_mode": "WorstAvg",
+            "measurement_mode": "window",
+            "min": "0.0010730514768511057",
+            "max": "0.022663954645395279",
+            "average": "0.01499525270175763",
+            "size": "45014",
+            "die": "",
+            "net": "VSS"
+        }
+    ],
+    "effective_instance_voltage": [
+        {
+            "analysis_mode": "Avg",
+            "measurement_mode": "elapsed",
+            "min": "0.69739215669687837",
+            "max": "0.69966371389455162",
+            "average": "0.69809503685265284",
+            "size": "64179",
+            "die": "",
+            "power_net": "VDD",
+            "ground_net": "VSS"
+        },
+        {
+            "analysis_mode": "Avg",
+            "measurement_mode": "window",
+            "min": "0.65485434606671333",
+            "max": "0.69682958826888353",
+            "average": "0.67582349146469323",
+            "size": "45047",
+            "die": "",
+            "power_net": "VDD",
+            "ground_net": "VSS"
+        },
+        {
+            "analysis_mode": "Best",
+            "measurement_mode": "elapsed",
+            "min": "0.69815556693356484",
+            "max": "0.6997463837324176",
+            "average": "0.69864952784673839",
+            "size": "64179",
+            "die": "",
+            "power_net": "VDD",
+            "ground_net": "VSS"
+        },
+        {
+            "analysis_mode": "Best",
+            "measurement_mode": "window",
+            "min": "0.65539218299090862",
+            "max": "0.69920475280378014",
+            "average": "0.68997587652967896",
+            "size": "45047",
+            "die": "",
+            "power_net": "VDD",
+            "ground_net": "VSS"
+        },
+        {
+            "analysis_mode": "Worst",
+            "measurement_mode": "elapsed",
+            "min": "0.65243169479072094",
+            "max": "0.6922291312366724",
+            "average": "0.66468275264465226",
+            "size": "64179",
+            "die": "",
+            "power_net": "VDD",
+            "ground_net": "VSS"
+        },
+        {
+            "analysis_mode": "Worst",
+            "measurement_mode": "window",
+            "min": "0.65243169479072094",
+            "max": "0.69395707291550934",
+            "average": "0.6631847750953489",
+            "size": "45047",
+            "die": "",
+            "power_net": "VDD",
+            "ground_net": "VSS"
+        },
+        {
+            "analysis_mode": "WorstAvg",
+            "measurement_mode": "window",
+            "min": "0.65320110134780407",
+            "max": "0.69610232394188643",
+            "average": "0.66972012392986491",
+            "size": "45047",
+            "die": "",
+            "power_net": "VDD",
+            "ground_net": "VSS"
+        }
+    ]
+}

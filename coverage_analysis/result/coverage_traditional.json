@@ -1,0 +1,30 @@
+{
+  "summary": {
+    "n_runs": 1,
+    "C_int_mean_%": 106.08,
+    "C_int_min_%": 106.08,
+    "C_int_std_%": 0.0,
+    "C_k_%": {
+      "1": 0.0,
+      "3": 0.0,
+      "5": 0.0,
+      "10": 0.0
+    }
+  },
+  "verdict": "MARGINAL",
+  "per_run": [
+    {
+      "orig": "/app/Classify/coverage_analysis/result/reference_full.iv",
+      "comp": "/app/Classify/coverage_analysis/result/traditional_comp.iv",
+      "v_orig_max_mV": 49.98,
+      "v_comp_max_mV": 53.02,
+      "C_int_%": 106.08,
+      "hit_topk": {
+        "1": 0,
+        "3": 0,
+        "5": 0,
+        "10": 0
+      }
+    }
+  ]
+}

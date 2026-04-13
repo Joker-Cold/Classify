@@ -1,0 +1,115 @@
+{
+  "parameters": {
+    "n_grid": 8,
+    "k_theta": 1.0,
+    "rho": 0.7,
+    "eta": 0.15,
+    "k_min": 2,
+    "gap": 1,
+    "n_min": 3,
+    "clock_ns": 50.0,
+    "timescale_ps": 10.0
+  },
+  "simulation": {
+    "n_cycles": 478,
+    "t_max_ns": 23900.0,
+    "n_signals": 42167,
+    "spef_used": false
+  },
+  "phases": [
+    {
+      "index": 1,
+      "i_start": 1,
+      "i_end": 476,
+      "duration_cycles": 475,
+      "t_start_ns": 50.0,
+      "t_end_ns": 23800.0
+    }
+  ],
+  "windows": [
+    {
+      "i_start": 51,
+      "i_end": 56,
+      "n_cycles": 5,
+      "t_start_ns": 2550.0,
+      "t_end_ns": 2800.0,
+      "score": 645.51
+    },
+    {
+      "i_start": 291,
+      "i_end": 296,
+      "n_cycles": 5,
+      "t_start_ns": 14550.0,
+      "t_end_ns": 14800.0,
+      "score": 639.211
+    },
+    {
+      "i_start": 305,
+      "i_end": 310,
+      "n_cycles": 5,
+      "t_start_ns": 15250.0,
+      "t_end_ns": 15500.0,
+      "score": 632.893
+    },
+    {
+      "i_start": 71,
+      "i_end": 76,
+      "n_cycles": 5,
+      "t_start_ns": 3550.0,
+      "t_end_ns": 3800.0,
+      "score": 626.058
+    },
+    {
+      "i_start": 93,
+      "i_end": 98,
+      "n_cycles": 5,
+      "t_start_ns": 4650.0,
+      "t_end_ns": 4900.0,
+      "score": 599.392
+    },
+    {
+      "i_start": 321,
+      "i_end": 326,
+      "n_cycles": 5,
+      "t_start_ns": 16050.0,
+      "t_end_ns": 16300.0,
+      "score": 590.102
+    },
+    {
+      "i_start": 341,
+      "i_end": 346,
+      "n_cycles": 5,
+      "t_start_ns": 17050.0,
+      "t_end_ns": 17300.0,
+      "score": 583.37
+    },
+    {
+      "i_start": 105,
+      "i_end": 110,
+      "n_cycles": 5,
+      "t_start_ns": 5250.0,
+      "t_end_ns": 5500.0,
+      "score": 570.757
+    },
+    {
+      "i_start": 353,
+      "i_end": 358,
+      "n_cycles": 5,
+      "t_start_ns": 17650.0,
+      "t_end_ns": 17900.0,
+      "score": 519.742
+    }
+  ],
+  "compression": {
+    "beta_out": 0.0941,
+    "beta_out_pct": 9.41,
+    "n_phases": 1,
+    "n_windows": 9
+  },
+  "splice_stats": {
+    "n_changes": 378802,
+    "n_times": 45,
+    "n_segments": 9,
+    "total_output_ticks": 225000
+  }
+}

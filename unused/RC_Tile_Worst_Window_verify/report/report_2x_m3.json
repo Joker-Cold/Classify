@@ -1,0 +1,59 @@
+{
+  "parameters": {
+    "n_grid": 8,
+    "k_theta": 1.0,
+    "rho": 0.7,
+    "eta": 0.15,
+    "k_min": 2,
+    "gap": 1,
+    "n_min": 3,
+    "clock_ns": 50.0,
+    "timescale_ps": 10.0
+  },
+  "simulation": {
+    "n_cycles": 478,
+    "t_max_ns": 23900.0,
+    "n_signals": 42167,
+    "spef_used": false
+  },
+  "phases": [
+    {
+      "index": 1,
+      "i_start": 1,
+      "i_end": 476,
+      "duration_cycles": 475,
+      "t_start_ns": 50.0,
+      "t_end_ns": 23800.0
+    }
+  ],
+  "windows": [
+    {
+      "i_start": 329,
+      "i_end": 334,
+      "n_cycles": 5,
+      "t_start_ns": 16450.0,
+      "t_end_ns": 16700.0,
+      "score": 1094.131
+    },
+    {
+      "i_start": 83,
+      "i_end": 88,
+      "n_cycles": 5,
+      "t_start_ns": 4150.0,
+      "t_end_ns": 4400.0,
+      "score": 1066.631
+    }
+  ],
+  "compression": {
+    "beta_out": 0.0209,
+    "beta_out_pct": 2.09,
+    "n_phases": 1,
+    "n_windows": 2
+  },
+  "splice_stats": {
+    "n_changes": 90817,
+    "n_times": 10,
+    "n_segments": 2,
+    "total_output_ticks": 50000
+  }
+}

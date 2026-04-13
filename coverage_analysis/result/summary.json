@@ -1,0 +1,25 @@
+{
+  "nominal_voltage_V": 0.7,
+  "n_instances_orig": 53829,
+  "n_instances_comp": 26140,
+  "n_instances_def": 64179,
+  "ir_orig_max_mV": 49.98,
+  "ir_comp_max_mV": 53.02,
+  "ir_orig_min_mV": 8.3,
+  "ir_comp_min_mV": 6.57,
+  "ir_orig_mean_mV": 36.7294,
+  "ir_comp_mean_mV": 40.7657,
+  "worst_inst_orig": "u2/CTS_ccl_a_buf_00126",
+  "worst_inst_comp": "u1/CTS_ccl_a_buf_00056",
+  "C_int_%": 106.08,
+  "C_k": {
+    "k=1": "MISS",
+    "k=3": "MISS",
+    "k=5": "MISS",
+    "k=10": "MISS"
+  },
+  "verdict": "MARGINAL",
+  "top1_orig": "u2/CTS_ccl_a_buf_00126",
+  "top1_comp": "u1/CTS_ccl_a_buf_00056",
+  "top1_match": false
+}

@@ -1,0 +1,101 @@
+POWER NET REPORT 
+Generated Date: Wed Apr  8 12:29:51 2026
+Host Name: hzhb-Super-Server
+
+
+==============================
+POWER NET 
+==============================
+Power Net: VDD
+Voltage: 0.700
+Threshold: 0.651
+
+
+==============================
+POWER-GRID VIEW
+==============================
+Power-Grid Views Used: 100
+
+
+==============================
+POWER-GRID ATTRIBUTES
+==============================
+Total Resistor Elements: 82787
+    Please refer to ../VDD/grid.gif for more details
+Top-level Resistor Elements:82787
+Cell Library Resistor Elements: 0
+Total Number of Current Taps: 64179
+    Please refer to ../VDD/tc.gif for more details
+
+
+==============================
+IR DROP ANALYSIS
+==============================
+Layer based IR Drop Report: See Report
+Minimum, Average, Maximum IR drop: 0.678V 0.685V 0.700V
+    Please refer to ../VDD/ir_linear.gif for more details
+Dynamic Worst Case Interval:269 (0.269us) 
+Peak Dynamic Current Specified: 0.000A
+Peak Dynamic Current Loaded: 0.000A
+Number of Violations: 0
+    Please refer to ../VDD/ir_limit.gif for more details
+
+
+==============================
+EFFECTIVE RESISTANCE ANALYSIS
+==============================
+Minimum, Average, Maximum Reff: NA, NA, NA
+
+
+==============================
+CURRENT DENSITY ANALYSIS
+==============================
+Minimum, Average, Maximum J/Jmax:
+Number of Violations: 0
+    Please refer to ../../db/rail_power_v20_spatial_2x_win03/PD_25C_dynamic_1/Reports/VDD/rj.gif for more details
+
+
+==============================
+POWER SWITCH ANALYSIS
+==============================
+PowerGate Current I/Idsat violations: 
+    Please refer to ../../db/rail_power_v20_spatial_2x_win03/PD_25C_dynamic_1/Reports/VDD/pi.gif for more details
+Minimum, Average, Maximum I/Idsat (pi): NA, NA, NA
+Minimum, Average, Maximum IRdrop Across PowerGate (pv): 0, 0, 0
+Power Switch ECO file for Soc Encounter: 
+
+
+==============================
+PACKAGE ANALYSIS
+==============================
+Voltage Drop Across Package (vu): NA, NA, NA
+
+
+==============================
+CAPACITANCE ANALYSIS
+==============================
+Decap Optimization method: area  
+Total Coupling Capacitance: 38.746pF
+    Please refer to ../VDD/dd.gif for more details
+Grid Coupling Capacitance: 1.853pF
+Gate Coupling Capacitance (internal): 0.000F
+Loading Coupling Capacitance: 36.893pF
+Capacitance Offered by Placed Decaps: 0.000F
+Additional Capacitance Required: 0.000F
+    Please refer to ../VDD/dr.gif for more details
+Total Feasible Capacitance: 0.000F
+Total Leakage Current of Placed Decaps: 0.000A
+Total Leakage Current of ECO Decaps: 0.000A
+What-if ECO File:   
+SoC Encounter ECO File: ../../db/rail_power_v20_spatial_2x_win03/PD_25C_dynamic_1//VDD/vs2fe_eco.tcl 
+
+
+==============================
+ADDITIONAL FILES
+==============================
+Instance Voltage File: ../../db/rail_power_v20_spatial_2x_win03/PD_25C_dynamic_1/Reports/VDD/VDD.iv
+Dynamic IR drop Waveform File (dynamic): ../../db/rail_power_v20_spatial_2x_win03/PD_25C_dynamic_1//VDD/VDD.ptiavg 
+Effective Instance Voltage File (dynamic): ../../db/rail_power_v20_spatial_2x_win03/PD_25C_dynamic_1/Reports/VDD_VSS.iv 
+Summary: ../../db/rail_power_v20_spatial_2x_win03/PD_25C_dynamic_1//VDD/results 
+
+
