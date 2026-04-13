@@ -50,3 +50,26 @@ des_demo/script/innovus/des3_pg/
 # EDA common temp files
 *.lock
 *.sfe.session
+
+# ===== Pipeline intermediate / generated results =====
+# JSONL intermediates (large toggle data)
+**/sim_result/intermediate/
+# Generated report JSON (can be large, regenerated from code)
+**/sim_result/report/report.json
+# Generated VCD output
+**/sim_result/vcd/
+# output dir (JSONL, HTML)
+output/
+# coverage_analysis generated results
+coverage_analysis/result/*.html
+coverage_analysis/result/*.iv
+coverage_analysis/example_data/
+# HTML visualizations
+**/*visualization*.html
+
+# ===== Voltus sim_data (power/rail results, large binary) =====
+des_demo/db/sim_data/
+des_demo/db/power/avg_v15*/*/power.rpt
+
+# Sample/intermediate JSONL data
+**/*.jsonl
