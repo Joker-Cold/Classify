@@ -54,39 +54,125 @@
 
 ### 3.1 量化评估标准的建立
 
-由于传统验证覆盖率（功能覆盖率、代码覆盖率）不适用于功耗热点场景，本课题提出了面向 IR Drop 的**三级渐进式热点覆盖率（Hotspot Coverage）指标体系**：
+> 代码实现：`coverage_analysis/`
 
-**Tier-1 全局指标（已实现）**：通过自动解析 Voltus 仿真报告（main.rpt, layerbased_ir.rpt, dynpwr.rpt），计算以下覆盖率指标：
+由于传统验证覆盖率（功能覆盖率、代码覆盖率）不适用于功耗热点场景，本课题建立了面向 IR Drop 的**双维度热点覆盖率（Hotspot Coverage）指标体系**，通过解析 Voltus 仿真输出的 `.iv`（instance voltage）文件自动计算：
 
-- **C₁（全局最坏 IR Drop 捕获率）**：C₁ = ΔV(sub)/ΔV(full)，直接反映子集能否捕获全集的最坏电压跌落，是 sign-off 最核心的判据。
-- **C_peak（峰值电流捕获率）**：C_peak = I_peak(sub)/I_peak(full)，峰值电流是 IR Drop 的直接驱动因素。
-- **C_violation（违规一致性）**：判断全集和子集的违规状态是否一致。
-- **多窗口包络组合**：当使用多个窗口时，取各窗口的最极端值作为联合结果计算覆盖率。
+**C_int（强度覆盖率）**：
 
-**判定准则**：C₁ ≥ 95% 且 C_peak ≥ 90% 为 PASS；C₁ 在 90%~95% 为 MARGINAL；C₁ < 90% 为 FAIL。
+$$C_{int} = \frac{V_{comp\_max}}{V_{orig\_max}} \times 100\%$$
 
-### 3.2 Phase-Aware + 空间集中度选窗优化方案[5]
+衡量压缩 VCD 仿真是否保留了最坏 IR Drop 强度。C_int ≥ 100% 表示保守估计（安全），C_int < 95% 表示显著低估（危险）。
 
-该方案关注局部最坏解，核心思路为精确定位 IR Drop 最严重的时间段。算法包括：
+**C_k（位置覆盖率）**：
 
-1. **时钟周期聚合**：按时钟边沿将信号翻转（toggle）聚合到对应周期，消除周期内时序差异
-2. **Phase 检测**：基于翻转率阈值自动识别高活跃相位（如加密/解密切换），分相独立选窗
-3. **退耦电容耗尽模型**：通过 depletion_ratio = 0.7 参数，将窗口定位于活跃相位的 70%~80% 位置——这是退耦电容累积耗尽、IR Drop 达到极值的物理位置
-4. **空间集中度评分（可选）**：结合 DEF 物理坐标或 VCD scope 层次，计算翻转空间集中度，对空间集中的窗口加权
+$$C_k = P_{top\text{-}k} = \frac{|S_{orig}^{(k)} \cap S_{comp}^{(k)}|}{k}$$
 
-### 3.3 VCD 信号到物理位置的映射
+衡量压缩 VCD 仿真是否保留了 top-k 热点的空间位置。对 k ∈ {1, 3, 5, 10} 分别评估，采用严格全命中判定。
 
-开发了 VCD 信号到 DEF 物理坐标的自动映射工具，通过解析 DEF 文件的 COMPONENTS/PINS/NETS 段，将 VCD scope 层次路径转换为 DEF instance 路径。在 DES3 设计上映射成功率达 **99.8%**（42,340/42,410 信号）。该映射为空间集中度评分的 Grid 模式提供了坐标基础。
+**判定准则**：C_int_min ≥ 95% 且 C_k(1) ≥ 90% 为 **PASS**；其中一个满足为 **MARGINAL**；两者均不满足为 **FAIL**。
 
-### 3.4 工具链开发
+**工具链**：`evaluate.py` 接收原始与压缩两组 `.iv` 文件，自动计算 C_int、C_k 并输出 JSON 报告；`extract_results.py` 结合 DEF 物理坐标生成逐 instance 的 IR Drop 对照表（`ir_drop_map.csv`）和 top-20 热点排名变化表；`visualize_hotspot.py` 生成交互式 Plotly 可视化面板（柱状图、排名散点图、空间分布图、数据表）。
 
-完成了完整的 JSONL-based 分析工具链：
+### 3.2 传统向量分析——功耗矩阵生成
 
-**VCD 解析 → 信号翻转标记 → 热力图可视化 → 选窗算法 → 覆盖率自动评估**
+> 代码实现：`Traditional_Vector_Profiling/`
 
-实现了从原始 VCD 到覆盖率报告的端到端自动化流程。
+基于 Wen et al. ICCAD 2023 的功率模型，实现了从原始 VCD 到空间-时间功耗矩阵的完整生成流水线。
 
-### 3.5 实验验证
+**功率模型**：对每个 instance 在每个时间窗口内计算三分量功耗：
+
+$$P_{inst,t} = P_{sw} + P_{int} + P_{leak}$$
+
+其中 $P_{sw} = \Sigma_{toggles} \times 0.5 \times C_{net} \times V_{DD}^2 / T_{win}$，$P_{int}$ 通过 Liberty LUT 查表插值获取，$P_{leak}$ 为静态漏电。按物理坐标将 instance 映射到 M×N tile 网格后汇总，输出功耗矩阵 `power_matrix_mW[T][ny][mx]`。
+
+**数据流水线**：
+
+```
+VCD → vcd_to_jsonl.py → JSONL → jsonl_toggle_mark.py → Toggle JSONL
+Liberty .lib → parse_lib_power.py → lib_power.json（cell功率LUT）
+SPEF → parse_spef.py → net_cap.json（net电容）
+DEF → traditional_select.py（instance坐标+cell类型）
+                    ↓
+    traditional_select.py → report.json [T][ny][mx] 功耗矩阵
+```
+
+在 DES3 设计上生成了 593×50×50 的功耗矩阵（593 个 20ns 窗口，50×50 tile 网格）。
+
+### 3.3 热点传播风险评估
+
+> 代码实现：`risk_propagation_profiling/`
+
+将论文中的 Green 函数推广为**可插拔的热点传播核函数**，实现了基于空间传播模型的 IR-drop 风险评分算法。核心思想：某 tile 的 IR-drop 风险不仅取决于自身功耗，还受周围 tile 功耗经 PDN 传播的影响。
+
+**风险评分公式**：
+
+$$S_{r,t} = \frac{\sum_{r' \in R} P_{r',t} \cdot G(r, r')}{\sum_{r' \in R} G(r, r')}$$
+
+分子为所有 tile 功耗以传播核为权重的加权和，分母为归一化因子（消除边界效应）。
+
+**三种传播核函数**（$d = \sqrt{dx^2 + dy^2}$，$\alpha$ 为自影响因子）：
+
+| 核函数 | $G(r, r')$ 当 $r \neq r'$ | 物理含义 |
+|--------|---------------------------|----------|
+| 欧氏距离（论文原始） | $1 / d$ | 自由空间 Green 函数，IR-drop 随距离线性衰减 |
+| 指数衰减 | $\exp(-d)$ | 近场主导，远程影响迅速消失 |
+| 对数衰减 | $1 / \ln(1+d)$ | 衰减较缓，远程 tile 仍有显著影响 |
+
+当 $r = r'$ 时，$G = \alpha$（实验中 $\alpha = 5$），控制自身功耗对 IR-drop 的权重。
+
+**实现优化**：由于网格规则，G 仅取决于偏移量 $(di, dj)$，预计算为 $[2N-1] \times [2M-1]$ 的相对核矩阵，所有窗口复用。归一化矩阵也仅计算一次。
+
+**实验结果**：三种核函数对 DES3 的 593 个窗口产生了不同的风险排名（top-10 窗口交集为 0），其中指数核的最大风险分为 0.0004（最差窗口 422），欧氏核和对数核约为 0.0001（最差窗口 342/352），表明核函数的选择对热点定位有显著影响。
+
+### 3.4 最差窗口选取与 VCD 裁剪
+
+> 代码实现：`worst_k_windows/`
+
+实现了通用的 top-k 最差窗口选取与 VCD 时间区间裁剪工具，作为独立模块可与任意上游评分算法对接。
+
+**选取算法**：从风险评分向量 `worst_per_window[T]` 中取 top-k 最大值对应的窗口索引，转换为 VCD 时钟区间后进行区间合并（支持预热 warmup 扩展）。
+
+**VCD 裁剪算法**（两遍扫描）：
+1. 第一遍：流式扫描 VCD，在每个区间边界处快照信号状态（hold-last-value）
+2. 第二遍：在每个区间入口写 `$dumpvars`（从快照恢复完整信号状态），然后写区间内的 value changes，时间戳连续重映射
+
+**数据流**：
+
+```
+risk_propagation_profiling/sim_result/report/risk_<kernel>.json
+        ↓  （worst_per_window + parameters）
+worst_k_windows/code/select_worst_k.py
+        ↓  --top-k 10  --vcd traditional.vcd
+worst_k_windows/sim_result/report/worst_k_<kernel>.json  （top-k 索引+评分）
+worst_k_windows/sim_result/vcd/worst_k_<kernel>.vcd      （压缩 VCD）
+```
+
+该模块可独立于 risk_propagation_profiling 使用——只要输入 JSON 包含 `worst_per_window` 数组和 `parameters.T`、`parameters.t_max_ticks` 即可。
+
+### 3.5 VCD 信号到物理位置的映射
+
+开发了 VCD 信号到 DEF 物理坐标的自动映射工具，通过解析 DEF 文件的 COMPONENTS/PINS/NETS 段，将 VCD scope 层次路径转换为 DEF instance 路径。在 DES3 设计上映射成功率达 **99.8%**（42,340/42,410 信号）。该映射为空间集中度评分和功耗矩阵的 tile 划分提供了坐标基础。
+
+### 3.6 端到端工具链
+
+完成了从原始 VCD 到覆盖率报告的完整自动化工具链，各模块通过 JSON 文件解耦、独立运行：
+
+```
+原始 VCD + DEF + SPEF + Liberty
+        ↓
+Traditional_Vector_Profiling → report.json [T][ny][mx] 功耗矩阵
+        ↓
+risk_propagation_profiling → risk_<kernel>.json [T][ny][mx] 风险矩阵
+        ↓
+worst_k_windows → worst_k_<kernel>.vcd 压缩 VCD
+        ↓
+Voltus 仿真（原始 vs 压缩）→ .iv 文件
+        ↓
+coverage_analysis → 覆盖率报告 (C_int, C_k) + 可视化
+```
+
+### 3.7 实验验证
 
 **测试电路**：选择 DES3（组合逻辑密集、翻转活跃、流水线结构使不同时钟周期的功耗有明显差异，适合验证选窗算法）。
 
@@ -104,8 +190,8 @@
 
 - **EDA 工具操作**：学习了 Cadence Innovus v20.10 的 Dynamic IR Drop 仿真流程，包括电源网格建模、Voltus 引擎配置、Rail Analysis 参数设置与报告解析，能独立完成从 VCD 加载到 IR Drop 报告生成的完整流程。
 - **电源完整性理论**：深入理解了 PDN 的基本分析方法，包括退耦电容的充放电模型、IR Drop 的时空分布特性等。阅读了经典专著《Power Integrity Modeling and Design for Semiconductors and Systems》[4]。
-- **编程与自动化**：使用 Python 开发了完整的分析工具链，涉及 VCD 格式解析、DEF 物理设计文件解析、大规模信号处理、Plotly 数据可视化、文本报告自动解析等。
-- **算法设计**：设计并实现了 Phase-Aware 多窗口选取算法，涉及时间序列分析、相位检测、滑动窗口优化、空间集中度评分等算法概念。
+- **编程与自动化**：使用 Python 开发了模块化的分析工具链（6 个独立模块），涉及 VCD 格式解析、DEF/SPEF/Liberty 物理设计文件解析、大规模信号处理、Plotly 数据可视化、Voltus 报告自动解析等。
+- **算法设计**：设计并实现了多种选窗算法，包括 Phase-Aware 选窗、基于传统功率模型的功耗矩阵生成、基于可插拔核函数的热点传播风险评分、top-k 窗口选取与 VCD 裁剪等，涉及信号处理、空间卷积、二维核函数设计等算法概念。
 
 ---
 
@@ -122,17 +208,17 @@
 
 ### 6.1 存在的主要问题
 
-1. **覆盖率评估体系尚不完整**：目前仅实现了 Tier-1 全局覆盖率指标，无法回答"子集是否检出了所有危险区域"这一关键问题。
+1. **核函数选择缺乏理论指导**：三种传播核函数（欧氏/指数/对数）产生了差异显著的风险排名（top-10 交集为 0），目前缺乏选择最优核函数的理论依据，需要通过 Voltus 仿真闭环验证确定哪种核函数的覆盖率最优。
 2. **压缩率-覆盖率 Trade-off 曲线数据不足**：仅有 5.1%、9.3%、20% 等有限数据点，尚未建立完整的关系曲线。
 3. **单一设计验证的泛化性有限**：目前仅在 DES3 一个电路上完成验证，无法保证方法在高度非对称设计中同样有效。
 4. **初始条件偏差的影响**：子集 VCD 切片从 t=0 重新仿真，退耦电容从满充状态开始，与全集仿真中同一时段的初始条件不同。
 
 ### 6.2 解决方案
 
-1. **渐进式实现 Tier-2/3 覆盖率**：引入 Tier-2 空间 Hotspot 覆盖率和 Tier-3 统计分位数覆盖率。可通过简化的 IR-Power 模型快速预测空间 IR Drop 分布。
-2. **构建多点 Trade-off 曲线**：通过调整选窗算法参数，在 5%~50% 压缩率范围内生成更多数据点，绘制覆盖率 vs 压缩率曲线，分析拐点位置。
+1. **核函数闭环验证**：对三种核函数各自选出的 top-k 窗口分别生成压缩 VCD，送入 Voltus 仿真后用 coverage_analysis 模块评估 C_int 和 C_k，以仿真结果确定最优核函数。
+2. **构建多点 Trade-off 曲线**：通过调整 top-k 和 alpha 参数，在 5%~50% 压缩率范围内生成更多数据点，绘制覆盖率 vs 压缩率曲线，分析拐点位置。
 3. **增加验证设计规模**：在现有 DES3 基础上，增加 1~2 个不同类型的设计进行交叉验证，在论文中明确标注验证范围和适用条件。
-4. **Warm-up 机制**：在 VCD 切片时，在目标窗口前添加 warm-up 余量周期，使 Voltus 仿真前段作为退耦电容预热期。
+4. **Warm-up 机制**：worst_k_windows 模块已支持 `--warmup-ticks` 参数，在 VCD 切片时于目标窗口前添加预热余量周期，使 Voltus 仿真前段作为退耦电容预热期。
 
 ---
 
@@ -159,3 +245,5 @@
 [4] SWAMINATHAN M, ENGIN A E, 2007. Power integrity modeling and design for semiconductors and systems[M]. Upper Saddle River: Prentice Hall.
 
 [5] V. A. Chhabria, Y. Zhang, H. Ren, B. Keller, B. Khailany and S. S. Sapatnekar, "MAVIREC: ML-Aided Vectored IR-Drop Estimation and Classification," 2021 DATE, Grenoble, France, 2021, pp. 1825-1828.
+
+[6] Y. -F. Wen, S. -J. Chen, Z. -W. Li and S. S. Sapatnekar, "Risk Propagation Based Vector Profiling for High Coverage Dynamic IR-Drop Analysis," 2023 IEEE/ACM International Conference on Computer Aided Design (ICCAD), San Francisco, CA, USA, 2023.
