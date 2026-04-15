@@ -108,12 +108,17 @@ def _full_name_to_net_path(full_name, top_scope):
     return '/'.join(parts)
 
 
-_OUTPUT_PINS = {'Y', 'Q', 'QN', 'Z', 'ZN', 'CO', 'S', 'SN'}
+_OUTPUT_PINS = {'Y', 'Q', 'QN', 'Z', 'ZN', 'CO', 'S', 'SN',
+                'o', 'q', 'qn', 'y', 'z'}  # ISPD2012 contest.lib uses lowercase 'o'
 
 
 def parse_def_nets_drivers(def_path):
-    """{net_name: driver_inst_name}  (output pin = Y/Q/QN/Z/ZN/...)"""
+    """Returns (drivers, pin_to_net):
+       drivers     = {net_name: driver_inst_name}  (output pin ∈ _OUTPUT_PINS)
+       pin_to_net  = {'inst/pin': net_name}        (reverse index, all connections)
+    """
     drivers = {}
+    pin_to_net = {}
     in_nets = False
     cur_net = None
     driver_found = False
@@ -142,16 +147,19 @@ def parse_def_nets_drivers(def_path):
                 continue
 
             # Connection line: ( inst pin ) ...
-            if not driver_found and '( ' in s:
+            if '( ' in s:
                 for m in re.finditer(r'\(\s*(\S+)\s+(\S+)\s*\)', s):
                     inst = m.group(1).replace('\\[', '[').replace('\\]', ']')
                     pin  = m.group(2)
-                    if pin in _OUTPUT_PINS:
+                    # reverse index: every (inst,pin) → net
+                    if inst != 'PIN':       # DEF top-level port placeholder
+                        pin_to_net[f'{inst}/{pin}'] = cur_net
+                    # first output pin encountered = driver
+                    if not driver_found and pin in _OUTPUT_PINS:
                         drivers[cur_net] = inst
                         driver_found = True
-                        break
 
-    return drivers
+    return drivers, pin_to_net
 
 
 # ══════════════════════════════════════════════════════════════════════════════
@@ -201,7 +209,8 @@ def lookup_energy(cell_data, C_load_fF, slew_ps=40):
 # ══════════════════════════════════════════════════════════════════════════════
 
 def build_signal_power_map(vcd_path, lib_power, net_cap, def_components,
-                           def_net_drivers, dbu_scale, tile_bounds, mx, ny, slew_ps):
+                           def_net_drivers, def_pin_to_net,
+                           dbu_scale, tile_bounds, mx, ny, slew_ps):
     """
     Returns {sig_name: {C_net_pF, energy_int_fJ, leakage_pW, tile: (iy, ix)}}
 
@@ -246,11 +255,15 @@ def build_signal_power_map(vcd_path, lib_power, net_cap, def_components,
         # ── net path (used for SPEF and DEF NETS lookup) ──────────────────────
         net_path = _full_name_to_net_path(full_name, top_scope)
 
+        # If net_path is 'inst/pin' (typical for internal VCD signals),
+        # resolve it to the actual net name via DEF pin→net reverse index.
+        resolved_net = def_pin_to_net.get(net_path, net_path)
+
         # ── SPEF capacitance ──────────────────────────────────────────────────
-        C_pF = net_cap.get(net_path, avg_cap_pF)
+        C_pF = net_cap.get(resolved_net, avg_cap_pF)
 
         # ── DEF NETS → driver instance → DEF COMPONENTS ──────────────────────
-        driver_inst = def_net_drivers.get(net_path)
+        driver_inst = def_net_drivers.get(resolved_net)
         comp = def_components.get(driver_inst) if driver_inst else None
 
         tile       = None
@@ -428,9 +441,10 @@ def main():
     dbu_scale  = parse_def_units(args.def_file)
     def_comps  = parse_def_components(args.def_file)
     print(f'  {len(def_comps)} instances, DBU scale={dbu_scale}')
-    print(f'  Parsing DEF NETS for driver mapping ...')
-    def_net_drivers = parse_def_nets_drivers(args.def_file)
-    print(f'  {len(def_net_drivers)} nets with driver found')
+    print(f'  Parsing DEF NETS for driver + pin→net mapping ...')
+    def_net_drivers, def_pin_to_net = parse_def_nets_drivers(args.def_file)
+    print(f'  {len(def_net_drivers)} nets with driver found, '
+          f'{len(def_pin_to_net)} (inst,pin) → net entries')
 
     # ── tile setup ────────────────────────────────────────────────────────────
     tile_bounds = compute_tile_bounds(def_comps, dbu_scale)
@@ -441,7 +455,8 @@ def main():
     print(f'Building signal power map (VCD={args.vcd}) ...')
     signal_map = build_signal_power_map(
         args.vcd, lib_power, net_cap, def_comps,
-        def_net_drivers, dbu_scale, tile_bounds, args.mx, args.ny, args.slew_ps
+        def_net_drivers, def_pin_to_net,
+        dbu_scale, tile_bounds, args.mx, args.ny, args.slew_ps
     )
 
     # ── time parameters ───────────────────────────────────────────────────────

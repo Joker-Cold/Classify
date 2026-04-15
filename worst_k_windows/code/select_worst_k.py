@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 """
-Worst-K Windows Selection — 最差窗口选取与 VCD 裁剪
+Worst-K Windows Selection — 热点窗口选取与 VCD 裁剪
 
-从风险报告中选取 top-k 最差窗口，生成压缩 VCD。
+从风险报告中按阈值（默认 ≥ max_worst 的 60%）选取热点窗口生成压缩 VCD，
+同时在报告中展示 top-k 最差窗口。
 可独立于 risk_propagation_profiling 使用，只要输入 JSON 包含
 worst_per_window[T] 和 parameters.t_max_ticks、parameters.T。
 
@@ -130,10 +131,13 @@ def splice_vcd_v2(vcd_path, merged_intervals, output_path):
              'n_segments': len(merged_intervals),
              'total_output_ticks': cumulative}
 
-    # 第一遍：收集边界状态
+    # 第一遍：收集每段入口的 hold-last-value 状态 + 段内出现过 value change 的信号集合
+    # （只 dump 段内真正变化的信号，避免大规模电路下 dumpvars 冗余开销）
     boundary_states = {}
+    segment_signals = [set() for _ in merged_intervals]
     last_values = {}
     next_boundary = 0
+    cur_seg = -1  # 当前时间戳所属段索引（-1 表示不在任何段内）
 
     with open(vcd_path, encoding='utf-8') as f:
         in_val = in_dv = False
@@ -156,12 +160,13 @@ def splice_vcd_v2(vcd_path, merged_intervals, output_path):
                     t = int(s[1:])
                 except ValueError:
                     continue
+                # 到达或越过若干段边界 → 为每个被越过的段记录入口状态
                 while (next_boundary < len(merged_intervals) and
                        t >= merged_intervals[next_boundary][0]):
                     boundary_states[next_boundary] = dict(last_values)
                     next_boundary += 1
-                if next_boundary >= len(merged_intervals):
-                    break
+                # 判断当前时间戳落在哪个段
+                cur_seg = _find_interval(t, merged_intervals, cur_seg)
                 continue
             if s.startswith('$'):
                 continue
@@ -169,12 +174,19 @@ def splice_vcd_v2(vcd_path, merged_intervals, output_path):
             if parsed:
                 sym, raw = parsed
                 last_values[sym] = raw
+                if cur_seg >= 0:
+                    segment_signals[cur_seg].add(sym)
 
     while next_boundary < len(merged_intervals):
         boundary_states[next_boundary] = dict(last_values)
         next_boundary += 1
 
+    total_active = sum(len(s) for s in segment_signals)
+    n_all = len(sym_width)
     print(f'  边界状态: {len(boundary_states)} 个区间')
+    print(f'  段内活跃信号: 合计 {total_active}  (全量 {n_all} × {len(merged_intervals)}段'
+          f' = {n_all*len(merged_intervals)}，裁剪比 '
+          f'{100*(1 - total_active/max(1, n_all*len(merged_intervals))):.1f}%)')
 
     # 第二遍：写输出 VCD
     with open(vcd_path, encoding='utf-8') as fin, \
@@ -196,10 +208,15 @@ def splice_vcd_v2(vcd_path, merged_intervals, output_path):
             fout.write(f'#{out_t}\n')
             fout.write('$dumpvars\n')
             state = boundary_states.get(iidx, {})
-            for sym in sorted(state):
-                fout.write(state[sym] + '\n')
-            for sym, w in sym_width.items():
-                if sym not in state:
+            active = segment_signals[iidx]
+            # 仅 dump 段内实际发生 value change 的信号入口值
+            # 段内无变化的信号：toggle 数固定为 0，initial value 不影响功耗分析
+            for sym in sorted(active):
+                if sym in state:
+                    fout.write(state[sym] + '\n')
+                else:
+                    # 段内首次变化前无已知值：用 x 占位，交由段内首次 VC 覆盖
+                    w = sym_width.get(sym, 1)
                     fout.write(f"x{sym}\n" if w == 1 else f"b{'x'*w} {sym}\n")
             fout.write('$end\n')
             last_written_idx = iidx
@@ -248,33 +265,46 @@ def splice_vcd_v2(vcd_path, merged_intervals, output_path):
 # Top-K 选取
 # ══════════════════════════════════════════════════════════════════════════════
 
+def _entry(idx, worst_per_window, worst_tiles, max_score):
+    e = {
+        'window_idx': idx,
+        'worst_score': worst_per_window[idx],
+        'score_ratio': (worst_per_window[idx] / max_score) if max_score > 0 else 0.0,
+    }
+    if worst_tiles is not None:
+        e['worst_tile'] = worst_tiles[idx]
+    return e
+
+
 def select_top_k(worst_per_window, worst_tiles, k):
-    """选取 top-k 最差窗口。
-
-    Args:
-        worst_per_window: [T] 每窗口最差评分
-        worst_tiles: [T] 每窗口最差 tile 坐标 [iy, ix]（可为 None）
-        k: 选取数量
-
-    Returns:
-        top_k_list: [{"window_idx", "worst_score", "worst_tile"}, ...]
-    """
+    """选取 top-k 最差窗口（仅用于报告）。"""
     T = len(worst_per_window)
     k = min(k, T)
-
+    max_score = max(worst_per_window) if T else 0.0
     ranked = sorted(range(T), key=lambda i: worst_per_window[i], reverse=True)
+    return [_entry(i, worst_per_window, worst_tiles, max_score) for i in ranked[:k]]
 
-    top_k_list = []
-    for idx in ranked[:k]:
-        entry = {
-            'window_idx': idx,
-            'worst_score': worst_per_window[idx],
-        }
-        if worst_tiles is not None:
-            entry['worst_tile'] = worst_tiles[idx]
-        top_k_list.append(entry)
 
-    return top_k_list
+def select_hotspots(worst_per_window, worst_tiles, threshold_ratio):
+    """选取热点窗口：评分 ≥ threshold_ratio × max(worst_per_window)。
+
+    Args:
+        threshold_ratio: 阈值比例（如 0.6 表示 ≥ 最差值 60%）
+
+    Returns:
+        hotspots: 按评分降序排列的窗口条目列表
+        max_score: 最差评分
+        threshold: 实际阈值分数
+    """
+    T = len(worst_per_window)
+    if T == 0:
+        return [], 0.0, 0.0
+    max_score = max(worst_per_window)
+    threshold = threshold_ratio * max_score
+    selected = [i for i in range(T) if worst_per_window[i] >= threshold]
+    selected.sort(key=lambda i: worst_per_window[i], reverse=True)
+    return ([_entry(i, worst_per_window, worst_tiles, max_score) for i in selected],
+            max_score, threshold)
 
 
 # ══════════════════════════════════════════════════════════════════════════════
@@ -287,8 +317,10 @@ def main():
     )
     p.add_argument('--risk-report', required=True,
                    help='风险报告 JSON 路径（需含 worst_per_window 和 parameters）')
+    p.add_argument('--threshold-ratio', type=float, default=0.6,
+                   help='热点阈值比例：评分 ≥ ratio × max(worst) 的窗口被选中（默认: 0.6）')
     p.add_argument('--top-k', type=int, default=10,
-                   help='选取最差窗口数量（默认: 10）')
+                   help='报告中附加展示的 top-k 窗口数（仅用于报告，不影响 VCD 选取；默认: 10）')
     p.add_argument('--vcd', required=True,
                    help='原始 VCD 文件路径')
     p.add_argument('--warmup-ticks', type=int, default=0,
@@ -311,17 +343,32 @@ def main():
 
     print(f'  核函数: {kernel_name}  窗口数: {T}  t_max: {t_max}')
 
-    # 选取 top-k
+    # 阈值选取热点（用于 VCD 裁剪）
+    hotspots, max_score, threshold = select_hotspots(
+        worst_per_window, worst_tiles, args.threshold_ratio)
+    # Top-K（仅用于报告展示）
     top_k_list = select_top_k(worst_per_window, worst_tiles, args.top_k)
 
-    print(f'\nTop-{args.top_k} 最差窗口:')
-    print(f'  {"排名":>4}  {"窗口":>6}  {"评分":>10}  {"Tile":>10}')
-    print('  ' + '-' * 36)
-    for rank, entry in enumerate(top_k_list, 1):
-        tile_str = f'({entry["worst_tile"][0]},{entry["worst_tile"][1]})' \
-            if 'worst_tile' in entry else 'N/A'
-        print(f'  {rank:>4}  {entry["window_idx"]:>6}  '
-              f'{entry["worst_score"]:>10.4f}  {tile_str:>10}')
+    print(f'\n最差评分: {max_score:.4f}   阈值 (≥{args.threshold_ratio*100:.0f}%): {threshold:.4f}')
+    print(f'命中热点窗口: {len(hotspots)} / {T}  '
+          f'(时间占比 {len(hotspots)/T*100:.1f}%)')
+
+    def _print_rows(rows):
+        print(f'  {"排名":>4}  {"窗口":>6}  {"评分":>10}  {"占比":>7}  {"Tile":>10}')
+        print('  ' + '-' * 46)
+        for rank, entry in enumerate(rows, 1):
+            tile_str = f'({entry["worst_tile"][0]},{entry["worst_tile"][1]})' \
+                if 'worst_tile' in entry else 'N/A'
+            print(f'  {rank:>4}  {entry["window_idx"]:>6}  '
+                  f'{entry["worst_score"]:>10.4f}  '
+                  f'{entry["score_ratio"]*100:>6.1f}%  {tile_str:>10}')
+
+    print(f'\nTop-{args.top_k} 最差窗口（报告用）:')
+    _print_rows(top_k_list)
+
+    show_n = min(len(hotspots), 20)
+    print(f'\n热点窗口（前 {show_n} / {len(hotspots)}）:')
+    _print_rows(hotspots[:show_n])
 
     # 保存选取报告
     report_path = os.path.join(args.output_dir, 'report',
@@ -330,17 +377,25 @@ def main():
 
     report = {
         'kernel': kernel_name,
+        'threshold_ratio': args.threshold_ratio,
+        'threshold_score': threshold,
+        'max_score': max_score,
+        'n_hotspots': len(hotspots),
         'top_k': args.top_k,
         'warmup_ticks': args.warmup_ticks,
         'parameters': parameters,
+        'hotspot_windows': hotspots,
         'top_k_windows': top_k_list,
     }
     with open(report_path, 'w') as f:
         json.dump(report, f, indent=2)
     print(f'\n选取报告 → {report_path}')
 
-    # VCD 裁剪
-    selected_indices = [e['window_idx'] for e in top_k_list]
+    # VCD 裁剪（使用热点窗口）
+    selected_indices = [e['window_idx'] for e in hotspots]
+    if not selected_indices:
+        print('\n未命中任何热点窗口，跳过 VCD 裁剪。')
+        return
     merged = expand_and_merge(selected_indices, T, t_max, args.warmup_ticks)
 
     print(f'\n区间合并: {len(selected_indices)} 个窗口 → {len(merged)} 个区间')

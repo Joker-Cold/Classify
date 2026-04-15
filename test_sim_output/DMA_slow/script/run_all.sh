@@ -35,13 +35,13 @@ fi
 
 # ---- Step 2: P&R ----
 echo "[2/4] Running Innovus P&R ..."
-innovus -nowin -init "$SCRIPT_DIR/pr_flow.tcl" \
+innovus -nowin -init "$SCRIPT_DIR/innovus/pr_flow.tcl" \
         -log "$SCRIPT_DIR/pr_flow.log" 2>&1 | tee "$SCRIPT_DIR/pr_flow.stdout"
 echo "      P&R complete."
 
 # ---- Step 3: Full VCD Voltus ----
 echo "[3/4] Running Voltus (full VCD) ..."
-innovus -nowin -init "$SCRIPT_DIR/voltus_full.tcl" \
+innovus -nowin -init "$SCRIPT_DIR/innovus/voltus_full.tcl" \
         -log "$SCRIPT_DIR/voltus_full.log" 2>&1 | tee "$SCRIPT_DIR/voltus_full.stdout"
 echo "      Voltus full done."
 
@@ -58,7 +58,7 @@ if [ ! -f "$VCD_COMPRESSED" ]; then
 fi
 
 export METHOD="$METHOD"
-innovus -nowin -init "$SCRIPT_DIR/voltus_compressed.tcl" \
+innovus -nowin -init "$SCRIPT_DIR/innovus/voltus_compressed.tcl" \
         -log "$SCRIPT_DIR/voltus_compressed_${METHOD}.log" \
         2>&1 | tee "$SCRIPT_DIR/voltus_compressed_${METHOD}.stdout"
 echo "      Voltus compressed ($METHOD) done."
