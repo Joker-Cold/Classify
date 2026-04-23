@@ -189,8 +189,10 @@ def splice_vcd_v2(vcd_path, merged_intervals, output_path):
           f'{100*(1 - total_active/max(1, n_all*len(merged_intervals))):.1f}%)')
 
     # 第二遍：写输出 VCD
+    # newline='\n' 阻止 Windows 默认把 '\n' → '\r\n'，确保 LF-only 输出
+    # （Voltus read_activity_file 不接受 CRLF，会报 VOLTUS_POWR-1735 语法错误）
     with open(vcd_path, encoding='utf-8') as fin, \
-         open(output_path, 'w', encoding='utf-8') as fout:
+         open(output_path, 'w', encoding='utf-8', newline='\n') as fout:
 
         for hl in header_lines:
             fout.write(hl)
@@ -307,6 +309,45 @@ def select_hotspots(worst_per_window, worst_tiles, threshold_ratio):
             max_score, threshold)
 
 
+def select_best_continuous_block(worst_per_window, worst_tiles, threshold_ratio):
+    """选取最优连续窗口块。
+
+    算法:
+    1. 用阈值确定目标窗口数 K = len([w >= threshold_ratio * max])
+    2. 滑动大小为 K 的连续块，找 sum 最大的起始位置
+    3. 返回连续块索引 [best_start, ..., best_start+K-1]
+
+    K=0 时 fallback 到 K=1。
+    返回格式与 select_hotspots() 相同: (entries, max_score, threshold)
+    """
+    T = len(worst_per_window)
+    if T == 0:
+        return [], 0.0, 0.0
+    max_score = max(worst_per_window)
+    threshold = threshold_ratio * max_score
+
+    # 确定连续块大小 K（与 select_hotspots 选出的窗口数相同）
+    K = sum(1 for w in worst_per_window if w >= threshold)
+    if K == 0:
+        K = 1
+
+    # 滑动窗口找 sum 最大的连续块
+    cur_sum = sum(worst_per_window[:K])
+    best_sum = cur_sum
+    best_start = 0
+    for i in range(1, T - K + 1):
+        cur_sum += worst_per_window[i + K - 1] - worst_per_window[i - 1]
+        if cur_sum > best_sum:
+            best_sum = cur_sum
+            best_start = i
+
+    selected = list(range(best_start, best_start + K))
+    # 按评分降序排列（与 select_hotspots 一致）
+    selected.sort(key=lambda i: worst_per_window[i], reverse=True)
+    return ([_entry(i, worst_per_window, worst_tiles, max_score) for i in selected],
+            max_score, threshold)
+
+
 # ══════════════════════════════════════════════════════════════════════════════
 # Main
 # ══════════════════════════════════════════════════════════════════════════════
@@ -325,6 +366,8 @@ def main():
                    help='原始 VCD 文件路径')
     p.add_argument('--warmup-ticks', type=int, default=0,
                    help='每个窗口前的预热时钟数（默认: 0）')
+    p.add_argument('--continuous', action='store_true',
+                   help='连续窗口模式: 选取最优连续块而非离散热点窗口')
     p.add_argument('--output-dir', default='sim_result',
                    help='输出目录（默认: sim_result/）')
     args = p.parse_args()
@@ -344,12 +387,18 @@ def main():
     print(f'  核函数: {kernel_name}  窗口数: {T}  t_max: {t_max}')
 
     # 阈值选取热点（用于 VCD 裁剪）
-    hotspots, max_score, threshold = select_hotspots(
-        worst_per_window, worst_tiles, args.threshold_ratio)
+    if args.continuous:
+        hotspots, max_score, threshold = select_best_continuous_block(
+            worst_per_window, worst_tiles, args.threshold_ratio)
+    else:
+        hotspots, max_score, threshold = select_hotspots(
+            worst_per_window, worst_tiles, args.threshold_ratio)
     # Top-K（仅用于报告展示）
     top_k_list = select_top_k(worst_per_window, worst_tiles, args.top_k)
 
-    print(f'\n最差评分: {max_score:.4f}   阈值 (≥{args.threshold_ratio*100:.0f}%): {threshold:.4f}')
+    mode_str = '连续块' if args.continuous else '离散热点'
+    print(f'\n模式: {mode_str}')
+    print(f'最差评分: {max_score:.4f}   阈值 (≥{args.threshold_ratio*100:.0f}%): {threshold:.4f}')
     print(f'命中热点窗口: {len(hotspots)} / {T}  '
           f'(时间占比 {len(hotspots)/T*100:.1f}%)')
 
@@ -377,6 +426,7 @@ def main():
 
     report = {
         'kernel': kernel_name,
+        'continuous': args.continuous,
         'threshold_ratio': args.threshold_ratio,
         'threshold_score': threshold,
         'max_score': max_score,

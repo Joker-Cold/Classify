@@ -291,6 +291,12 @@ def build_mapping(vcd_signals: list, components: dict, pins: dict, nets: dict,
                     x, y = nets[net_key]["first_route"]
                     source_type = "net_route"
 
+        # Strategy 3b: Parent component match (ISPD2012 flat designs)
+        # VCD: tb.u0.inst.pin → def_path = "inst/pin" → match "inst" as component
+        if x is None and def_prefix and def_prefix in components:
+            x, y, cell_type = components[def_prefix]
+            source_type = "parent_component"
+
         # Strategy 4: FE_PHN net → FE_PHC component (PHN→PHC)
         if x is None and "FE_PHN" in base_name:
             phc_name = base_name.replace("FE_PHN", "FE_PHC")

@@ -138,6 +138,31 @@ innovus
 
 **Voltus pad 文件格式**：4 列 `name x y layer`，坐标须在 ring 金属上。
 
+#### 已知坑：Windows 写出的 VCD 带 CRLF 行尾 → Voltus 拒读
+
+Python 在 Windows 下用 `open(path, 'w')` 默认的 `newline=None` 会把所有
+`\n` 翻译成 `\r\n`。CRLF VCD 喂给 `read_activity_file` 会立刻报错：
+
+```
+** ERROR: (VOLTUS_POWR-1735):  [<vcd> line 3, col 6] syntax error
+** ERROR: (VOLTUS_POWR-1151): Voltus Power Analysis was unable to complete
+          during the processing of VCD.
+```
+
+该错误对 `voltus` 独立二进制、`innovus -init voltus_*.tcl` 包壳两种调用方式都一视同仁，
+因为 VCD parser 是 Voltus 引擎内置的同一份代码。
+
+**根治**：`worst_k_windows/code/select_worst_k.py` 写 VCD 时显式 `newline='\n'`：
+
+```python
+# splice_vcd_v2(): 强制 LF 以兼容 Voltus
+with open(output_path, 'w', encoding='utf-8', newline='\n') as fout:
+    ...
+```
+
+**已有 CRLF VCD 的应急处理**：上传后远端 `sed -i 's/\r$//' <vcd>`，
+或本地跑 `bash worst_k_windows/code/regen_t08_all.sh` 一键重生成。
+
 ### Stage 5：对比实验（本项目核心）
 
 对同一电路用三组 VCD 运行 Voltus，比较选窗算法的覆盖率：
@@ -273,3 +298,28 @@ Dynamic Rail Simulation 亦砍到 ~6 s（**≈14 ×**）—— 这两个计算�
 - `analysis_summary.md` — 精度 & Jaccard 对比
 - `runtime_efficiency.md` — 阶段级耗时分解 & 加速比
 - `../docs/Part4.md` — ISPD2012 混合后端 + Innovus v20 workaround 备忘
+
+## 压缩率-精度扫描经验 (Phase 1/2, 2026-04-16)
+
+**矩阵**：4 kernel × 6 threshold = 24 cells/电路。产物放在 `{circuit}/analysis/{sweep_results.csv, sweep_pareto.html, sweep_report.md}`。
+
+### 流水线三件套（结构同构，电路间只需换名字）
+- **本地 VCD 再生**：`worst_k_windows/code/sweep_{circuit}.sh` — 调 `select_worst_k.py` 产 24 个 `{circuit}_hotspot_t{T}_{kernel}.vcd`（LF 行尾已强制）。
+- **远程 Voltus 扫描**：`{circuit}/script/run_sweep_remote.sh` — `setsid + nohup` 启动，`voltus_hotspot.tcl` 读 `METHOD`+`THRESH` env var；`skip-existing` 基于 rail 报告存在性。
+- **本地聚合**：`{circuit}/analysis/aggregate_sweep.py` — 解析 `VDD_VSS.iv`/`VDD.main.rpt`/`VDD.layerbased_ir.rpt`，算 C_int / Jaccard@K / layer ratio，导 CSV + Plotly + MD。
+
+### 结论对比
+
+| 电路 | Full worst drop | Pareto 甜点 | 压缩% | C_int | J@10 |
+|---|---:|:---|:---:|:---:|:---:|
+| DMA_slow (2.9K inst)     | 103.4 mV | traditional/exponential t=0.95 | 65% | 100.1% | 0.18 |
+| DMA_slow (2.9K inst)     | 103.4 mV | logarithmic t=0.5 (Jaccard 王) | 90% | 99.7%  | 0.54 |
+| des_perf_slow (49K inst) | 447.2 mV | **traditional t=0.7** | 78% | 100.4% | 0.33 |
+
+### 关键坑 & 经验
+1. **"剔除 exponential" 不普适**：DMA 上 exp≡traditional，des_perf 上两者在 t=0.6 压缩率差 8.5pp — kernel 等价性受功率矩阵稀疏度影响，跨电路需独立验证。
+2. **电路规模 ↑ ⇒ Jaccard ↓**：49K 实例的 des_perf J@10 峰值仅 0.33（DMA 0.54）。Top-K 静态匹配对大电路不公平，C_int 更具稳健性。
+3. **ENOSPC 磁盘坑**：EDA 服务器 /（916G）常年 100% 满，des_perf 跑到 t=0.95 logarithmic 时 Voltus 报 `VOLTUS_POWR-1151 errno 28`。清理策略：完成 cell 的 `sim_data/t*/power/` 可删（~900 MB/电路）、`logs/sweep/run_t*/` 工作目录可删；`rail/.../Reports/` 必保。
+4. **VCD 大小 ≠ 压缩率单调性的代理**：`logarithmic t=0.95` 可能只选出几百实例、VCD 极小但 C_int 也崩（DMA 97.3% / des_perf 93%）— 高阈值 × 空间扩散核的组合在小电路尤其脆弱。
+5. **risk_propagation.py 输出坑**：脚本内部 `os.path.join(args.output_dir, 'report', ...)`，传 `--output-dir report/` 会变 `report/report/risk_*.json`。传父目录 `analysis/` 即可。
+6. **exp 核的自权重 alpha=5** 意味着中心 tile 权重是临位 exp(-1)≈0.37 的 13 倍 — 窗口排序里自身 toggle 权重压倒空间项；当功率图稀疏时退化为 traditional，不稀疏时显著发散。
